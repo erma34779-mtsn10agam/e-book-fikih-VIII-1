@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fikih Kelas 8 Semester 1 | Ermawati, S.H.I.</title>
+    
+    <!-- Google Fonts: Playfair Display (Luxury Serif) & Inter (Modern Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           VARIABEL TEMA (Ganti warna di sini jika perlu)
+           ========================================= */
+        :root {
+            --bg-dark: #022c22;       /* Deep Emerald Green */
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --gold-primary: #d4af37;  /* Luxury Gold */
+            --gold-light: #f3e5ab;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-gold: rgba(212, 175, 55, 0.2);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* =========================================
+           RESET & BASE STYLES
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================================
+           UTILITY CLASSES
+           ========================================= */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .gold-text {
+            color: var(--gold-primary);
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 50%, var(--gold-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            margin: 1rem auto 0;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+        }
+
+        /* =========================================
+           HEADER & HERO SECTION
+           ========================================= */
+        header {
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(2, 44, 34, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-gold);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text .author-info {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--gold-primary);
+        }
+
+        .hero-text .author-info strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, #b8941f 100%);
+            color: var(--bg-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Placeholder untuk Cover Buku */
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .book-cover {
+            width: 350px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(212, 175, 55, 0.3),
+                20px 20px 60px rgba(0, 0, 0, 0.6);
+            transition: var(--transition);
+            /* Background placeholder jika gambar belum ada */
+            background: linear-gradient(135deg, #064e3b 0%, #022c22 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-primary);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 2rem;
+            border: 2px solid var(--gold-primary);
+        }
+
+        .book-cover:hover {
+            transform: translateY(-10px) rotateY(-5deg);
+        }
+
+        /* =========================================
+           AUTHOR SECTION
+           ========================================= */
+        .author-section {
+            padding: 6rem 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 20px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Placeholder untuk Photo Penulis */
+        .author-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--gold-primary);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            flex-shrink: 0;
+            /* Background placeholder jika gambar belum ada */
+            background: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .author-details h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .author-details .role {
+            color: var(--gold-primary);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .author-details p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .contact-item i {
+            color: var(--gold-primary);
+        }
+
+        /* =========================================
+           CURRICULUM / MEETINGS SECTION
+           ========================================= */
+        .curriculum-section {
+            padding: 6rem 0;
+        }
+
+        .bab-divider {
+            text-align: center;
+            margin: 4rem 0 2rem;
+            position: relative;
+        }
+
+        .bab-divider h3 {
+            display: inline-block;
+            background: var(--bg-dark);
+            padding: 0 1.5rem;
+            color: var(--gold-primary);
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .bab-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-gold), transparent);
+            z-index: 0;
+        }
+
+        .meetings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .meeting-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .meeting-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold-primary), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .meeting-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--gold-primary);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .meeting-card:hover::before {
+            opacity: 1;
+        }
+
+        .meeting-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9rem;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .meeting-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .meeting-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .meeting-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gold-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .meeting-link:hover {
+            gap: 1rem;
+            color: var(--gold-light);
+        }
+
+        /* Special styling for UTS and UAS */
+        .meeting-card.exam {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(2, 44, 34, 0.8) 100%);
+            border: 1px solid var(--gold-primary);
+        }
+
+        .meeting-card.exam .meeting-number {
+            color: var(--bg-dark);
+            background: var(--gold-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: rgba(0, 0, 0, 0.4);
+            border-top: 1px solid var(--border-gold);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-content .heart {
+            color: var(--gold-primary);
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN
+           ========================================= */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .hero-text .author-info {
+                border-left: none;
+                border-top: 3px solid var(--gold-primary);
+                padding-left: 0;
+                padding-top: 1rem;
+            }
+
+            .book-cover {
+                width: 280px;
+                height: 400px;
+            }
+
+            .author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-info {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .meetings-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Fikih <span class="gold-text">Kelas 8</span></div>
+                <a href="#curriculum" class="btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">
+                    Lihat Materi <i class="fas fa-arrow-down"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Membangun Generasi <br><span class="gold-text">Cinta Ilahi</span> Melalui Fikih</h1>
+                    <div class="author-info">
+                        <strong>Ermawati, S.H.I.</strong>
+                        Guru Fikih, MTsN 10 Agam<br>
+                        <span style="font-size: 0.9rem; margin-top: 0.5rem; display: block;">
+                            <i class="fas fa-envelope" style="color: var(--gold-primary); margin-right: 0.5rem;"></i> erma34779@gmail.com
+                        </span>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">
+                        Buku panduan pembelajaran Fikih kelas 8 semester 1 yang dirancang dengan pendekatan cinta kepada Allah Swt., mencakup 17 pertemuan komprehensif dari Sujud, Zakat, Puasa, hingga I'tikaf.
+                    </p>
+                    <a href="#curriculum" class="btn-primary">
+                        Jelajahi Materi <i class="fas fa-book-open"></i>
+                    </a>
+                </div>
+                
+                <div class="hero-image">
+                    <!-- 
+                        PANDUAN PENGGANTIAN COVER:
+                        Ganti src="cover-buku.png" dengan path file gambar cover buku Anda.
+                        Pastikan file 'cover-buku.png' berada di folder yang sama dengan file HTML ini.
+                    -->
+                    <img src="cover-buku.png" alt="Cover Buku Fikih Kelas 8 Semester 1" class="book-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="book-cover" style="display: none;">
+                        <div>
+                            <i class="fas fa-book-quran" style="font-size: 3rem; margin-bottom: 1rem; display: block;"></i>
+                            Cover Buku<br>(Ganti dengan file:<br><strong>cover-buku.png</strong>)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section class="author-section">
+        <div class="container">
+            <div class="author-card">
+                <!-- 
+                    PANDUAN PENGGANTIAN PHOTO PENULIS:
+                    Ganti src="photo-penulis.png" dengan path file foto penulis Anda.
+                    Pastikan file 'photo-penulis.png' berada di folder yang sama dengan file HTML ini.
+                -->
+                <img src="photo-penulis.png" alt="Ermawati, S.H.I." class="author-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="author-photo" style="display: none;">
+                    Foto<br>Penulis<br>(<strong>photo-penulis.png</strong>)
+                </div>
+                
+                <div class="author-details">
+                    <h3>Ermawati, <span class="gold-text">S.H.I.</span></h3>
+                    <span class="role">Penulis & Pengajar Fikih di MTsN 10 Agam</span>
+                    <p>
+                        Berdedikasi untuk menyajikan materi Fikih yang tidak hanya menekankan pada aspek hukum dan tata cara ibadah, tetapi juga menanamkan nilai-nilai cinta, pengagungan, dan rasa syukur kepada Allah Swt. dalam setiap bab pembelajaran.
+                    </p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-school"></i>
+                            <span>MTsN 10 Agam</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>erma34779@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="curriculum-section">
+        <div class="container">
+            <h2 class="section-title">Struktur <span class="gold-text">Pembelajaran</span></h2>
+            <p class="section-subtitle">17 Pertemuan yang dirancang untuk membangun pemahaman dan pengamalan ibadah secara kaffah</p>
+
+            <!-- BAB 1 -->
+            <div class="bab-divider">
+                <h3>BAB 1: Sujud</h3>
+            </div>
+            <div class="meetings-grid">
+                <div class="meeting-card">
+                    <div class="meeting-number">Pertemuan 1</div>
+                    <h4 class="meeting-title">Sujud Sahwi</h4>
+                    <p class="meeting-desc">Menganalisis ketentuan sujud sahwi sebagai wujud cinta dan pengakuan atas sifat Maha Sempurna Allah Swt.</p>
+                    <a href="1.html" target="_blank" class="meeting-link">Buka Materi <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="meeting-card">
+                    <div class="meeting-number">Pertemuan 2</div>
+                    <h4 class="meeting-title">Sujud Syukur</h4>
+                    <p class="meeting-desc">Menganalisis ketentuan sujud syukur sebagai ekspresi cinta dan terima kasih atas nikmat Allah Swt.</p>
+                    <a href="2.html" target="_blank" class="meeting-link">Buka Materi <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="meeting-card">
+                    <div class="meeting-number">Pertemuan 3</div>
+                    <h4 class="meeting-title">Sujud Tilawah</h4>
+                    <p class="meeting-desc">Menganalisis ketentuan sujud tilawah sebagai bentuk cinta dan pengagungan terhadap firman Allah Swt.</p>
+                    <a href="3.html" target="_blank" class="meeting-link">Buka Materi <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="meeting-card">
+                    <div class="meeting-number">Pertemuan 4</div>
+                    <h4 class="meeting-title">Praktik Sujud</h4>
+                    <p class="meeting-desc">Membandingkan dan mempraktikkan ketiga jenis sujud sebagai implementasi rasa cinta kepada Allah Swt. dalam ibadah.</p>
+                    <a href="4.html" target="_blank" class="meeting-link">Buka Materi <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- BAB 2 -->
+            <div class="bab-divider">
+                <h3>BAB 2: Zakat</h3>
+            </div>
+            <div class="meetings-grid">
+                <div class="meeting-card">
+                    <div class="meeting-number">Pertemuan 5</div>
+                    <h4 class="meeting-title">Konsep Dasar Zakat</h4>
+                    <p class="meeting-desc">Menganalisis pengertian, hukum, dalil, dan mustahik zakat sebagai fondasi ibadah yang didasari rasa cinta.</p>
+                    <a href="5.html" target="_blank" class="meeting-link">Buka Materi <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="meeting-card">
+                    <div class="meeting-number">Pertemuan 6</div>
+                    <h4 class="meeting-title">Zakat Fitrah</h4>
+                    <p class="meeting-desc">Ketentuan zakat fitrah sebagai wujud penyucian diri dan cinta kepada sesama di hari raya.</p>
+                    <a href="6.html" target="_blank" class="meeting-link">Buka Materi <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="meeting-card">
+                    <div class="meeting-number">Pertemuan 7</div>
+                    <h4 class="meeting-title">Zakat Mal (Emas, Perak & Perdagangan)</h4>
+                    <p class="meeting-desc">Menganalisis ketentuan zakat mal untuk emas, perak, dan harta perdagangan.</p>
+                    <a href="7.html" target="_blank" class="meeting-link">Buka Materi <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="meeting-card">
+                    <div class="meeting-number">Pertemuan 8</div>
+                    <h4 class="meeting-title">Zakat Mal (Pertanian, Ternak & Rikaz)</h4>
+                    <p class="meeting-desc">Menganalisis ketentuan zakat mal untuk hasil pertanian, hewan ternak, dan barang temuan (rikaz).</p>
+                    <a href="8.html" target="_blank" class="meeting-link">Buka Materi <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="meeting-card">
+                    <div class="meeting-number">Pertemuan 9</div>
+                    <h4 class="meeting-title">Perhitungan & Hikmah Zakat</h4>
+                    <p class="meeting-desc">Mempraktikkan perhitungan zakat dan menyimpulkan hikmah zakat sebagai bukti cinta kepada Allah dan sesama.</p>
+                    <a href="9.html" target="_blank" class="meeting-link">Buka Materi <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- UTS -->
+            <div class="bab-divider">
+                <h3>Evaluasi Tengah Semester</h3>
+            </div>
+            <div class="meetings-grid" style="max-width: 600px; margin: 0 auto;">
+                <div class="meeting-card exam">
+                    <div class="meeting-number">Pertemuan 10</div>
+                    <h4 class="meeting-title">Ujian Tengah Semester (UTS)</h4>
+                    <p class="meeting-desc">Evaluasi komprehensif pemahaman siswa terhadap materi Bab 1 (Sujud) dan Bab 2 (Zakat) beserta praktik perhitungannya.</p>
+                    <a href="10.html" target="_blank" class="meeting-link">Akses Soal UTS <i class="fas fa-file-pen"></i></a>
+                </div>
+            </div>
+
+            <!-- BAB 3 -->
+            <div class="bab-divider">
+                <h3>BAB 3: Puasa</h3>
+            </div>
+            <div class="meetings-grid">
+                <div class="meeting-card">
+                    <div class="meeting-number">Pertemuan 11</div>
+                    <h4 class="meeting-title">Ketentuan Umum Puasa</h4>
+                    <p class="meeting-desc">Menganalisis syarat, rukun, sunnah, dan hal yang membatalkan puasa sebagai dasar ibadah yang dilandasi cinta.</p>
+                    <a href="11.html" target="_blank" class="meeting-link">Buka Materi <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="meeting-card">
+                    <div class="meeting-number">Pertemuan 12</div>
+                    <h4 class="meeting-title">Puasa Wajib</h4>
+                    <p class="meeting-desc">Ketentuan puasa wajib (Ramadhan, nazar, dan kafarat) sebagai puncak ekspresi cinta dan ketaatan tahunan.</p>
+                    <a href="12.html" target="_blank" class="meeting-link">Buka Materi <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="meeting-card">
+                    <div class="meeting-number">Pertemuan 13</div>
+                    <h4 class="meeting-title">Puasa Sunnah</h4>
+                    <p class="meeting-desc">Mengidentifikasi berbagai macam puasa sunnah sebagai amalan tambahan untuk meningkatkan derajat cinta kepada Allah.</p>
+                    <a href="13.html" target="_blank" class="meeting-link">Buka Materi <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="meeting-card">
+                    <div class="meeting-number">Pertemuan 14</div>
+                    <h4 class="meeting-title">Hikmah & Larangan Puasa</h4>
+                    <p class="meeting-desc">Menyimpulkan hikmah puasa serta mengidentifikasi puasa yang diharamkan dan dimakruhkan.</p>
+                    <a href="14.html" target="_blank" class="meeting-link">Buka Materi <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- BAB 4 -->
+            <div class="bab-divider">
+                <h3>BAB 4: I'tikaf</h3>
+            </div>
+            <div class="meetings-grid">
+                <div class="meeting-card">
+                    <div class="meeting-number">Pertemuan 15</div>
+                    <h4 class="meeting-title">Ketentuan I'tikaf</h4>
+                    <p class="meeting-desc">Menganalisis pengertian, hukum, syarat, rukun, dan hal yang membatalkan i'tikaf sebagai sarana menumbuhkan cinta kepada Allah.</p>
+                    <a href="15.html" target="_blank" class="meeting-link">Buka Materi <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="meeting-card">
+                    <div class="meeting-number">Pertemuan 16</div>
+                    <h4 class="meeting-title">Hikmah & Adab I'tikaf</h4>
+                    <p class="meeting-desc">Menyimpulkan hikmah i'tikaf dan mempraktikkan adab-adabnya sebagai wujud cinta pada kesucian ibadah dan masjid.</p>
+                    <a href="16.html" target="_blank" class="meeting-link">Buka Materi <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- UAS -->
+            <div class="bab-divider">
+                <h3>Evaluasi Akhir Semester</h3>
+            </div>
+            <div class="meetings-grid" style="max-width: 600px; margin: 0 auto;">
+                <div class="meeting-card exam">
+                    <div class="meeting-number">Pertemuan 17</div>
+                    <h4 class="meeting-title">Ujian Akhir Semester (UAS)</h4>
+                    <p class="meeting-desc">Evaluasi komprehensif seluruh materi Fikih semester 1 (Sujud, Zakat, Puasa, dan I'tikaf) sebagai tolak ukur pencapaian pembelajaran.</p>
+                    <a href="17.html" target="_blank" class="meeting-link">Akses Soal UAS <i class="fas fa-file-pen"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 1rem; color: var(--gold-primary);">
+                    Fikih Kelas 8 Semester 1
+                </p>
+                <p>&copy; 2026 Ermawati, S.H.I. - MTsN 10 Agam. All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+                    Dibuat dengan <i class="fas fa-heart heart"></i> untuk pendidikan Islam yang lebih baik.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script untuk animasi scroll sederhana -->
+    <script>
+        // Animasi muncul saat di-scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Terapkan animasi pada semua kartu pertemuan
+        document.querySelectorAll('.meeting-card, .author-card').forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.05}s`;
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
