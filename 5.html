@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 5: Konsep Dasar Zakat | Fikih Kelas 8 Semester 1</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        :root {
+            --bg-dark: #022c22;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-input: rgba(255, 255, 255, 0.05);
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-gold: rgba(212, 175, 55, 0.3);
+            --success: #10b981;
+            --error: #ef4444;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            background-image: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: var(--gold-primary); transition: var(--transition); }
+        a:hover { color: var(--gold-light); }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 2rem; }
+
+        /* Navigasi */
+        .top-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 0; border-bottom: 1px solid var(--border-gold); margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;
+        }
+        .nav-link {
+            display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500; font-size: 0.95rem;
+            border: 1px solid var(--border-gold); padding: 0.5rem 1rem; border-radius: 50px;
+        }
+        .nav-link:hover { background: var(--gold-primary); color: var(--bg-dark); }
+
+        /* Header */
+        .materi-header { text-align: center; margin-bottom: 3rem; }
+        .bab-tag { display: inline-block; color: var(--gold-primary); font-family: 'Playfair Display', serif; font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .materi-title {
+            font-size: 2.8rem; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 50%, var(--gold-primary) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .materi-desc { color: var(--text-secondary); font-size: 1.15rem; max-width: 750px; margin: 0 auto 2rem; }
+
+        .author-badge {
+            display: inline-flex; align-items: center; gap: 1rem; background: var(--bg-card);
+            border: 1px solid var(--border-gold); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 3rem;
+        }
+        .author-badge i { color: var(--gold-primary); font-size: 1.5rem; }
+        .author-info { text-align: left; }
+        .author-info strong { display: block; color: var(--text-primary); font-size: 1.1rem; }
+        .author-info span { color: var(--text-secondary); font-size: 0.9rem; }
+
+        /* Konten */
+        .content-section {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 2.5rem; margin-bottom: 2rem;
+        }
+        .section-title {
+            color: var(--gold-primary); font-size: 1.6rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
+        }
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold-primary); padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0;
+        }
+        .highlight-box h4 { color: var(--gold-light); margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; }
+        
+        ul.custom-list { list-style: none; padding-left: 0; }
+        ul.custom-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+        ul.custom-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold-primary); }
+
+        /* Tabel Mewah */
+        .table-wrapper { overflow-x: auto; margin: 1.5rem 0; }
+        .luxury-table {
+            width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.02); border-radius: 8px; overflow: hidden;
+        }
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-primary); padding: 1rem; text-align: left;
+            font-family: 'Playfair Display', serif; font-weight: 600; border-bottom: 2px solid var(--border-gold);
+        }
+        .luxury-table td {
+            padding: 1rem; border-bottom: 1px solid var(--border-gold); color: var(--text-secondary); vertical-align: top;
+        }
+        .luxury-table tr:last-child td { border-bottom: none; }
+        .luxury-table tr:hover td { background: rgba(212, 175, 55, 0.05); color: var(--text-primary); }
+
+        /* Kutipan */
+        .quran-quote {
+            text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(2, 44, 34, 0.8) 100%);
+            border: 1px solid var(--border-gold); border-radius: 16px; margin: 3rem 0;
+        }
+        .arabic-text { font-family: 'Traditional Arabic', serif; font-size: 1.8rem; color: var(--gold-primary); margin-bottom: 1rem; line-height: 2; }
+        .quote-translation { font-style: italic; color: var(--text-secondary); font-size: 1.05rem; }
+        .quote-source { display: block; margin-top: 1rem; color: var(--gold-light); font-weight: 600; font-size: 0.9rem; }
+
+        .fiqh-rule {
+            text-align: center; padding: 1.5rem; border: 1px dashed var(--gold-primary); border-radius: 12px; margin: 1.5rem 0;
+        }
+        .fiqh-rule .arabic { font-family: 'Traditional Arabic', serif; font-size: 1.5rem; color: var(--gold-primary); margin-bottom: 0.5rem; }
+        .fiqh-rule .translation { color: var(--text-secondary); font-style: italic; }
+
+        /* Kata Kunci */
+        .keywords { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .keyword-tag {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-light); padding: 0.4rem 1rem; border-radius: 20px;
+            font-size: 0.85rem; border: 1px solid var(--border-gold);
+        }
+
+        /* Mustahik Cards */
+        .mustahik-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .mustahik-card {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .mustahik-card:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-3px);
+            border-color: var(--gold-primary);
+        }
+        .mustahik-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gold-primary);
+        }
+        .mustahik-number {
+            display: inline-block;
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+        .mustahik-name {
+            color: var(--gold-light);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .mustahik-arabic {
+            font-family: 'Traditional Arabic', serif;
+            color: var(--gold-primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .mustahik-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Quiz Styles */
+        .quiz-container {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 2.5rem; margin-top: 4rem;
+        }
+        .quiz-header { text-align: center; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-gold); }
+        
+        .quiz-meta {
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+            background: rgba(212, 175, 55, 0.08); padding: 1rem 1.5rem; border-radius: 12px; margin-bottom: 2rem;
+        }
+        .timer-display {
+            display: flex; align-items: center; gap: 0.5rem; color: var(--gold-primary); font-weight: 600; font-size: 1.1rem;
+        }
+        .timer-display i { font-size: 1.3rem; }
+        .progress-wrapper { flex: 1; min-width: 200px; margin: 0 1rem; }
+        .progress-label { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.25rem; }
+        .progress-bar {
+            width: 100%; height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%; background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+            width: 0%; transition: width 0.4s ease; border-radius: 4px;
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { display: block; margin-bottom: 0.5rem; color: var(--gold-light); font-weight: 500; font-size: 0.95rem; }
+        .form-input, .form-select, .form-textarea {
+            width: 100%; background: var(--bg-input); border: 1px solid var(--border-gold); border-radius: 8px;
+            padding: 0.85rem 1rem; color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 1rem; transition: var(--transition);
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none; border-color: var(--gold-primary); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        .form-textarea { min-height: 120px; resize: vertical; }
+
+        .question-card { 
+            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.1); 
+            border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; transition: var(--transition);
+        }
+        .question-card.correct { border-color: var(--success); background: rgba(16, 185, 129, 0.05); }
+        .question-card.incorrect { border-color: var(--error); background: rgba(239, 68, 68, 0.05); }
+        
+        .question-text { font-weight: 600; margin-bottom: 1rem; color: var(--text-primary); }
+        .points-badge {
+            display: inline-block; background: var(--gold-primary); color: var(--bg-dark); font-size: 0.75rem;
+            font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+        }
+        .topic-badge {
+            display: inline-block; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); 
+            font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+            border: 1px solid var(--border-gold);
+        }
+        
+        .radio-group { display: flex; flex-direction: column; gap: 0.75rem; }
+        .radio-label {
+            display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; border-radius: 8px;
+            cursor: pointer; transition: var(--transition); border: 1px solid transparent;
+        }
+        .radio-label:hover { background: rgba(212, 175, 55, 0.05); }
+        .radio-label input[type="radio"] { accent-color: var(--gold-primary); width: 18px; height: 18px; }
+        
+        .feedback {
+            margin-top: 1rem; padding: 0.85rem 1rem; border-radius: 8px; font-size: 0.9rem; display: none;
+        }
+        .feedback.show { display: block; animation: fadeIn 0.4s ease; }
+        .feedback.correct { background: rgba(16, 185, 129, 0.1); border-left: 3px solid var(--success); color: #a7f3d0; }
+        .feedback.incorrect { background: rgba(239, 68, 68, 0.1); border-left: 3px solid var(--error); color: #fecaca; }
+        .feedback strong { display: block; margin-bottom: 0.25rem; }
+
+        .result-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(2, 44, 34, 0.9) 100%);
+            border: 2px solid var(--gold-primary); border-radius: 16px; padding: 2rem; margin: 2rem 0; display: none;
+        }
+        .result-box.active { display: block; animation: fadeIn 0.5s ease; }
+        .score-display { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold-primary); margin: 1rem 0; }
+        
+        .score-breakdown {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0;
+        }
+        .score-item {
+            background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px; text-align: center;
+            border: 1px solid var(--border-gold);
+        }
+        .score-item .label { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.25rem; }
+        .score-item .value { font-size: 1.5rem; font-weight: 700; color: var(--gold-primary); }
+        
+        .weakness-analysis {
+            background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;
+        }
+        .weakness-analysis h4 { color: #fecaca; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .weakness-list { list-style: none; }
+        .weakness-list li { 
+            padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+            color: var(--text-secondary); font-size: 0.9rem;
+        }
+        .weakness-list li:last-child { border-bottom: none; }
+        .weakness-list li strong { color: var(--gold-light); }
+
+        .btn-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.5rem;
+            border-radius: 8px; font-weight: 600; cursor: pointer; transition: var(--transition); border: none; font-size: 0.95rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--gold-primary) 0%, #b8941f 100%); color: var(--bg-dark); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4); }
+        .btn-outline { background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-primary); }
+        .btn-outline:hover { background: var(--gold-primary); color: var(--bg-dark); }
+        .btn-secondary { background: rgba(255, 255, 255, 0.1); color: var(--text-primary); border: 1px solid var(--border-gold); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+
+        .footer { text-align: center; padding: 3rem 0; margin-top: 4rem; border-top: 1px solid var(--border-gold); color: var(--text-secondary); font-size: 0.9rem; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .materi-title { font-size: 2rem; }
+            .content-section, .quiz-container { padding: 1.5rem; }
+            .btn-group { grid-template-columns: 1fr; }
+            .quiz-meta { flex-direction: column; align-items: stretch; }
+            .mustahik-grid { grid-template-columns: 1fr; }
+        }
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .btn-group, .footer, .quiz-meta { display: none !important; }
+            .content-section, .quiz-container, .result-box { border: 1px solid #ccc; background: white; color: black; break-inside: avoid; }
+            .arabic-text, .materi-title, .section-title { color: #000 !important; -webkit-text-fill-color: #000 !important; }
+            .form-input, .form-textarea { border: 1px solid #ccc; color: black; }
+            .feedback { background: #f3f4f6 !important; color: black !important; border-left-color: #333 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="main-content">
+        <!-- Navigasi Atas -->
+        <nav class="top-nav">
+            <a href="index.html" class="nav-link"><i class="fas fa-arrow-left"></i> Daftar Isi</a>
+            <span style="color: var(--text-secondary); font-weight: 500;">Fikih Kelas 8 Semester 1</span>
+            <a href="6.html" class="nav-link">Pertemuan 6 <i class="fas fa-arrow-right"></i></a>
+        </nav>
+
+        <!-- Header Materi -->
+        <header class="materi-header">
+            <div class="bab-tag">💰 — BAB DUA: ZAKAT —</div>
+            <h1 class="materi-title">Pertemuan 5: Konsep Dasar Zakat</h1>
+            <p class="materi-desc">
+                Menganalisis konsep dasar zakat (pengertian, hukum, dalil, dan mustahik) sebagai fondasi ibadah yang didasari rasa cinta. 
+                Materi ini menjadi pintu masuk BAB 2 yang akan mengantarkan kita memahami keindahan sistem ekonomi Islam.
+            </p>
+            
+            <div class="author-badge">
+                <i class="fas fa-user-graduate"></i>
+                <div class="author-info">
+                    <strong>Ermawati, S.H.I.</strong>
+                    <span>Guru Fikih, MTsN 10 Agam</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- A. Pengertian -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-book-open"></i> A. Pengertian Zakat</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Untuk memahami zakat secara utuh, kita perlu menelaahnya dari dua sisi, yaitu bahasa (etimologi) dan istilah (terminologi):
+            </p>
+            <ul class="custom-list">
+                <li><strong>Secara Bahasa (Etimologi):</strong> Kata <em>"Zakat"</em> (الزَّكَاةُ) berasal dari kata <em>"zaka"</em> yang memiliki tiga makna utama:
+                    <ul style="list-style: none; padding-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>📌 <strong>An-Namaa'</strong> (النَّمَاءُ) = <strong>Bertumbuh</strong> dan berkembang</li>
+                        <li>📌 <strong>Ath-Thaharah</strong> (الطَّهَارَةُ) = <strong>Menyucikan</strong> dan membersihkan</li>
+                        <li>📌 <strong>Al-Barakah</strong> (البَرَكَةُ) = <strong>Berakah</strong> dan kebaikan</li>
+                    </ul>
+                </li>
+                <li><strong>Secara Istilah (Terminologi):</strong> Mengeluarkan sebagian harta tertentu (sesuai nisab dan haul) kepada golongan tertentu (mustahik) dengan niat ibadah karena Allah Swt., sebagai wujud syukur atas nikmat harta yang diberikan.</li>
+            </ul>
+            <div class="highlight-box">
+                <h4><i class="fas fa-heart"></i> Konsep Kunci: Fondasi Ibadah Berbasis Cinta</h4>
+                <p>Zakat bukan sekadar "pajak" atau "sumbangan", melainkan <strong>ibadah harta</strong> yang menjadi rukun Islam ketiga. Ia adalah wujud <strong>cinta kepada Allah</strong> yang dibuktikan dengan melepaskan sebagian harta yang dicintai, dan sekaligus <strong>cinta kepada sesama</strong> dengan membantu mereka yang membutuhkan. Zakat menyucikan harta dari hak orang lain dan menyucikan jiwa dari sifat kikir.</p>
+            </div>
+        </section>
+
+        <!-- B. Dalil Naqli -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-scroll"></i> B. Dalil Naqli (Landasan Hukum)</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Zakat adalah ibadah yang sangat ditekankan dalam Islam. Perintah zakat disebutkan dalam Al-Qur'an sebanyak <strong>82 kali</strong>, dan sering kali beriringan dengan perintah shalat. Berikut adalah dalil-dalil utamanya:
+            </p>
+            <div class="quran-quote">
+                <div class="arabic-text">
+                    خُذْ مِنْ أَمْوَالِهِمْ صَدَقَةً تُطَهِّرُهُمْ وَتُزَكِّيهِم بِهَا
+                </div>
+                <p class="quote-translation">
+                    "Ambillah zakat dari sebagian harta mereka, dengan zakat itu kamu membersihkan dan mensucikan mereka."
+                </p>
+                <span class="quote-source">— QS. At-Taubah [9]: 103</span>
+            </div>
+            <div class="quran-quote">
+                <div class="arabic-text">
+                    وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ وَارْكَعُوا مَعَ الرَّاكِعِينَ
+                </div>
+                <p class="quote-translation">
+                    "Dan dirikanlah shalat, tunaikanlah zakat, dan ruku'lah beserta orang-orang yang ruku'."
+                </p>
+                <span class="quote-source">— QS. Al-Baqarah [2]: 43</span>
+            </div>
+            <div class="quran-quote">
+                <div class="arabic-text">
+                    وَالَّذِينَ فِي أَمْوَالِهِمْ حَقٌّ مَّعْلُومٌ لِّلسَّائِلِ وَالْمَحْرُومِ
+                </div>
+                <p class="quote-translation">
+                    "Dan orang-orang yang dalam hartanya tersedia bagian tertentu, bagi orang (miskin) yang meminta dan orang yang tidak mempunyai apa-apa (yang tidak meminta)."
+                </p>
+                <span class="quote-source">— QS. Al-Ma'arij [70]: 24-25</span>
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1.5rem;">
+                <strong>Hadits Nabi saw.:</strong>
+            </p>
+            <div class="highlight-box">
+                <h4>📌 Hadits tentang Zakat</h4>
+                <p style="font-family: 'Traditional Arabic', serif; font-size: 1.3rem; text-align: center; margin: 1rem 0; color: var(--gold-primary);">
+                    بُنِيَ الإِسْلامُ عَلَى خَمْسٍ: شَهَادَةِ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ وَأَنَّ مُحَمَّدًا رَسُولُ اللَّهِ، وَإِقَامِ الصَّلاَةِ، وَإِيتَاءِ الزَّكَاةِ، وَحَجِّ الْبَيْتِ، وَصَوْمِ رَمَضَانَ
+                </p>
+                <p style="text-align: center; font-style: italic; color: var(--text-primary);">"Islam dibangun atas lima perkara: bersaksi bahwa tiada tuhan selain Allah dan Muhammad adalah utusan Allah, mendirikan shalat, <strong>menunaikan zakat</strong>, haji ke Baitullah, dan puasa Ramadhan."</p>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">— HR. Bukhari no. 8 dan Muslim no. 16</p>
+            </div>
+        </section>
+
+        <!-- C. Hukum Zakat (Tabel) -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-balance-scale"></i> C. Hukum Zakat</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Hukum zakat dalam Islam adalah <strong>wajib 'ain</strong> (wajib bagi setiap individu muslim yang memenuhi syarat). Berikut rincian hukumnya:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 30%;">Aspek</th>
+                            <th>Ketentuan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hukum Dasar</strong></td>
+                            <td><span style="color: var(--gold-primary); font-weight: 600;">Wajib 'ain</span> bagi setiap muslim yang memenuhi syarat (nisab & haul).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Termasuk Rukun Islam</strong></td>
+                            <td>Zakat adalah <strong>rukun Islam ke-3</strong> setelah syahadat dan shalat.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mengingkari Kewajiban</strong></td>
+                            <td>Orang yang <strong>mengingkari kewajiban zakat</strong> (jahal/mengingkari) dianggap keluar dari Islam (murtad) menurut jumhur ulama.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tidak Membayar Zakat</strong></td>
+                            <td>Orang yang <strong>tidak membayar zakat karena kikir</strong> (tetapi mengakui kewajibannya) tetap muslim, tetapi berdosa besar dan akan diazab di akhirat.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sanksi Dunia</strong></td>
+                            <td>Negara berhak <strong>memaksa dan mengambil</strong> harta orang yang enggan membayar zakat, ditambah setengah hartanya sebagai sanksi.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- D. Syarat Wajib Zakat -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-clipboard-check"></i> D. Syarat Wajib Zakat</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Tidak semua muslim wajib membayar zakat. Ada beberapa syarat yang harus dipenuhi:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Syarat</th>
+                            <th>Penjelasan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. Islam</strong></td>
+                            <td>Hanya muslim yang wajib membayar zakat. Non-muslim tidak wajib (meskipun boleh menerima zakat sebagai muallaf).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Merdeka</strong></td>
+                            <td>Berstatus merdeka, bukan budak. Budak tidak wajib zakat karena hartanya milik tuan.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Milik Penuh (Milkiyyah Tammah)</strong></td>
+                            <td>Harta tersebut adalah milik penuh dan dapat dikuasai sepenuhnya oleh pemiliknya.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4. Mencapai Nisab</strong></td>
+                            <td>Harta telah mencapai <strong>batas minimal</strong> yang ditentukan syariat untuk setiap jenis harta.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5. Haul</strong></td>
+                            <td>Harta telah dimiliki selama <strong>1 tahun hijriah penuh</strong> (kecuali zakat pertanian dan rikaz yang tidak memerlukan haul).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6. Lebih dari Kebutuhan Pokok</strong></td>
+                            <td>Harta tersebut adalah <strong>kelebihan dari kebutuhan pokok</strong> (makan, tempat tinggal, pakaian, kendaraan, dll).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7. Bebas dari Hutang yang Mendesak</strong></td>
+                            <td>Tidak terbebani hutang yang harus segera dibayar dan dapat menghabiskan harta.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- E. Mustahik (8 Golongan Penerima Zakat) -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-users"></i> E. Mustahik: 8 Golongan Penerima Zakat</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Allah Swt. telah menetapkan 8 golongan yang berhak menerima zakat (mustahik) dalam QS. At-Taubah ayat 60. Berikut penjelasan lengkapnya:
+            </p>
+            <div class="quran-quote">
+                <div class="arabic-text">
+                    إِنَّمَا الصَّدَقَاتُ لِلْفُقَرَاءِ وَالْمَسَاكِينِ وَالْعَامِلِينَ عَلَيْهَا وَالْمُؤَلَّفَةِ قُلُوبُهُمْ وَفِي الرِّقَابِ وَالْغَارِمِينَ وَفِي سَبِيلِ اللَّهِ وَابْنِ السَّبِيلِ
+                </div>
+                <p class="quote-translation">
+                    "Sesungguhnya zakat-zakat itu, hanyalah untuk orang-orang fakir, orang-orang miskin, pengurus-pengurus zakat, para muallaf yang dibujuk hatinya, untuk (memerdekakan) budak, orang-orang yang berhutang, untuk jalan Allah dan untuk mereka yang sedang dalam perjalanan."
+                </p>
+                <span class="quote-source">— QS. At-Taubah [9]: 60</span>
+            </div>
+
+            <div class="mustahik-grid">
+                <div class="mustahik-card">
+                    <div class="mustahik-number">1</div>
+                    <div class="mustahik-name">Fakir</div>
+                    <div class="mustahik-arabic">الفُقَرَاء</div>
+                    <div class="mustahik-desc">Orang yang <strong>tidak memiliki harta dan pekerjaan</strong>, atau memiliki harta/pekerjaan tetapi <strong>tidak mencukupi setengah dari kebutuhan pokoknya</strong>.</div>
+                </div>
+                <div class="mustahik-card">
+                    <div class="mustahik-number">2</div>
+                    <div class="mustahik-name">Miskin</div>
+                    <div class="mustahik-arabic">المَسَاكِين</div>
+                    <div class="mustahik-desc">Orang yang <strong>memiliki harta/pekerjaan</strong> tetapi <strong>tidak mencukupi kebutuhan pokoknya</strong> (lebih dari setengah, tetapi belum cukup seluruhnya).</div>
+                </div>
+                <div class="mustahik-card">
+                    <div class="mustahik-number">3</div>
+                    <div class="mustahik-name">Amil Zakat</div>
+                    <div class="mustahik-arabic">العَامِلِينَ عَلَيْهَا</div>
+                    <div class="mustahik-desc">Orang yang <strong>ditugaskan untuk mengumpulkan dan mendistribusikan zakat</strong>. Mereka berhak mendapat bagian dari zakat sebagai upah kerja, meskipun mereka kaya.</div>
+                </div>
+                <div class="mustahik-card">
+                    <div class="mustahik-number">4</div>
+                    <div class="mustahik-name">Muallaf</div>
+                    <div class="mustahik-arabic">المُؤَلَّفَةِ قُلُوبُهُمْ</div>
+                    <div class="mustahik-desc">Orang yang <strong>baru masuk Islam</strong> atau orang yang <strong>diharapkan masuk Islam</strong> atau orang yang <strong>keislamannya perlu dikuatkan</strong>. Diberi zakat untuk memperkuat iman mereka.</div>
+                </div>
+                <div class="mustahik-card">
+                    <div class="mustahik-number">5</div>
+                    <div class="mustahik-name">Riqab (Budak)</div>
+                    <div class="mustahik-arabic">الرِّقَاب</div>
+                    <div class="mustahik-desc">Budak yang <strong>dijanjikan merdeka oleh tuannya dengan tebusan tertentu</strong> (mukatab). Zakat digunakan untuk membantu mereka menebus diri agar merdeka.</div>
+                </div>
+                <div class="mustahik-card">
+                    <div class="mustahik-number">6</div>
+                    <div class="mustahik-name">Gharim (Orang Berhutang)</div>
+                    <div class="mustahik-arabic">الغَارِمِين</div>
+                    <div class="mustahik-desc">Orang yang <strong>berhutang dan tidak mampu melunasi</strong>. Terdiri dari: (1) berhutang untuk kemaslahatan diri, (2) berhutang untuk mendamaikan orang berselisih, (3) berhutang karena menjamin hutang orang lain.</div>
+                </div>
+                <div class="mustahik-card">
+                    <div class="mustahik-number">7</div>
+                    <div class="mustahik-name">Fisabilillah</div>
+                    <div class="mustahik-arabic">فِي سَبِيلِ اللَّهِ</div>
+                    <div class="mustahik-desc">Orang yang <strong>berjuang di jalan Allah</strong>, seperti mujahidin, pelajar agama, dai, atau orang yang melakukan amal kebajikan untuk kepentingan umat Islam tanpa mendapat gaji.</div>
+                </div>
+                <div class="mustahik-card">
+                    <div class="mustahik-number">8</div>
+                    <div class="mustahik-name">Ibnu Sabil</div>
+                    <div class="mustahik-arabic">ابْنِ السَّبِيل</div>
+                    <div class="mustahik-desc">Orang yang <strong>kehabisan bekal dalam perjalanan</strong> (musafir) yang bukan untuk maksiat, meskipun di negerinya ia kaya. Termasuk juga pelajar yang jauh dari keluarga.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- F. Perbedaan Zakat, Infaq, Shadaqah -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-columns"></i> F. Perbedaan Zakat, Infaq, dan Shadaqah</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Ketiga istilah ini sering dianggap sama, padahal memiliki perbedaan yang signifikan:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th>Zakat</th>
+                            <th>Infaq</th>
+                            <th>Shadaqah</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Pengertian</strong></td>
+                            <td>Mengeluarkan sebagian harta tertentu kepada mustahik tertentu</td>
+                            <td>Mengeluarkan harta untuk kepentingan umum Islam</td>
+                            <td>Pemberian sukarela kepada siapa saja</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hukum</strong></td>
+                            <td><span style="color: var(--gold-primary); font-weight: 600;">Wajib</span> (jika memenuhi syarat)</td>
+                            <td>Sunnah / Mubah</td>
+                            <td>Sunnah / Mubah</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jumlah</strong></td>
+                            <td>Tertentu (2,5%, 5%, 10%, 20% tergantung jenis harta)</td>
+                            <td>Tidak terbatas</td>
+                            <td>Tidak terbatas (bisa berupa uang atau barang)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Penerima</strong></td>
+                            <td>Hanya 8 golongan mustahik</td>
+                            <td>Siapa saja (masjid, sekolah, yatim, dll)</td>
+                            <td>Siapa saja (termasuk non-muslim)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waktu</strong></td>
+                            <td>Setelah mencapai nisab & haul</td>
+                            <td>Kapan saja</td>
+                            <td>Kapan saja</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Niat</strong></td>
+                            <td>Wajib niat zakat</td>
+                            <td>Niat infaq</td>
+                            <td>Niat shadaqah</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dosa jika tidak dilakukan</strong></td>
+                            <td>Berdosa (jika memenuhi syarat)</td>
+                            <td>Tidak berdosa</td>
+                            <td>Tidak berdosa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="highlight-box">
+                <h4>💡 Catatan Penting</h4>
+                <p><strong>Zakat</strong> adalah ibadah wajib yang terikat aturan ketat. <strong>Infaq</strong> adalah pengeluaran harta untuk kepentingan Islam (membangun masjid, sekolah, dll). <strong>Shadaqah</strong> adalah istilah yang lebih luas, mencakup segala bentuk kebaikan (senyum, menyingkirkan duri dari jalan, dll) selain harta.</p>
+            </div>
+        </section>
+
+        <!-- G. Hikmah Zakat -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-heart"></i> G. Hikmah Zakat</h2>
+            <ul class="custom-list">
+                <li><strong>Menyucikan Harta dan Jiwa:</strong> Zakat membersihkan harta dari hak orang lain dan membersihkan jiwa dari sifat kikir, tamak, dan cinta berlebihan pada harta.</li>
+                <li><strong>Mewujudkan Keadilan Sosial:</strong> Zakat menjadi mekanisme redistribusi kekayaan yang adil, sehingga kesenjangan antara si kaya dan si miskin dapat dikurangi.</li>
+                <li><strong>Memperkuat Ukhuwah Islamiyah:</strong> Zakat mempererat tali persaudaraan antara si kaya dan si miskin, menumbuhkan rasa cinta dan saling peduli.</li>
+                <li><strong>Mendukung Dakwah Islam:</strong> Melalui mustahik fisabilillah dan muallaf, zakat menjadi sumber dana dakwah dan penguatan umat.</li>
+                <li><strong>Menggerakkan Roda Ekonomi:</strong> Zakat yang didistribusikan dengan baik akan meningkatkan daya beli masyarakat dan menggerakkan perekonomian umat.</li>
+                <li><strong>Bentuk Syukur kepada Allah:</strong> Zakat adalah wujud terima kasih atas nikmat harta yang diberikan Allah, sehingga harta tersebut akan bertambah berkah.</li>
+                <li><strong>Menolong yang Lemah:</strong> Zakat memberikan jaring pengaman sosial bagi fakir miskin, gharim, dan ibnu sabil agar mereka dapat hidup dengan layak.</li>
+            </ul>
+        </section>
+
+        <!-- H. Kaidah Fiqh Pendukung -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-gavel"></i> H. Teori Pendukung: Kaidah Fiqh</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Dalam memahami hakikat zakat, para ulama merumuskan kaidah fiqh yang sangat mendalam:
+            </p>
+            <div class="fiqh-rule">
+                <div class="arabic">مَا أَخْرَجَهُ الْإِنْسَانُ مِنْ مَالِهِ بِاسْمِ الزَّكَاةِ، فَهُوَ يُزَكِّي مَا بَقِيَ وَيُطَهِّرُهُ</div>
+                <div class="translation">"Apa yang dikeluarkan seseorang dari hartanya dengan nama zakat, maka ia menyucikan dan membersihkan apa yang tersisa."</div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 1rem;">
+                <strong>Aplikasi:</strong> Zakat bukan mengurangi harta, melainkan <strong>menyucikan dan memberkahinya</strong>. Harta yang dizakati akan terasa cukup, berkah, dan membawa kebahagiaan. Sebaliknya, harta yang tidak dizakati akan terasa kurang, tidak berkah, dan membawa kegelisahan.
+            </p>
+            
+            <div class="quran-quote" style="margin-top: 2rem;">
+                <div class="arabic-text">
+                    مَّثَلُ الَّذِينَ يُنفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سَنَابِلَ فِي كُلِّ سُنبُلَةٍ مِّائَةُ حَبَّةٍ
+                </div>
+                <p class="quote-translation">
+                    "Perumpamaan (nafkah yang dikeluarkan oleh) orang-orang yang menafkahkan hartanya di jalan Allah adalah serupa dengan sebutir benih yang menumbuhkan tujuh bulir, pada tiap-tiap bulir: seratus biji."
+                </p>
+                <span class="quote-source">— QS. Al-Baqarah [2]: 261</span>
+            </div>
+        </section>
+
+        <!-- Kata Kunci -->
+        <section style="margin: 3rem 0;">
+            <h3 style="color: var(--gold-primary); margin-bottom: 1rem; font-size: 1.2rem;">◆ Kata Kunci Pertemuan Ini</h3>
+            <div class="keywords">
+                <span class="keyword-tag">Zakat</span>
+                <span class="keyword-tag">Tazkiyah (Menyucikan)</span>
+                <span class="keyword-tag">Nama' (Bertumbuh)</span>
+                <span class="keyword-tag">Rukun Islam ke-3</span>
+                <span class="keyword-tag">Nisab</span>
+                <span class="keyword-tag">Haul</span>
+                <span class="keyword-tag">Mustahik (8 Golongan)</span>
+                <span class="keyword-tag">Fakir & Miskin</span>
+                <span class="keyword-tag">Amil Zakat</span>
+                <span class="keyword-tag">Muallaf</span>
+                <span class="keyword-tag">Riqab</span>
+                <span class="keyword-tag">Gharim</span>
+                <span class="keyword-tag">Fisabilillah</span>
+                <span class="keyword-tag">Ibnu Sabil</span>
+                <span class="keyword-tag">Infaq</span>
+                <span class="keyword-tag">Shadaqah</span>
+                <span class="keyword-tag">QS. At-Taubah: 60</span>
+            </div>
+        </section>
+
+        <!-- Referensi -->
+        <section class="content-section" style="background: rgba(212, 175, 55, 0.05);">
+            <h2 class="section-title"><i class="fas fa-bookmark"></i> I. Referensi Pendukung</h2>
+            <ul class="custom-list" style="font-size: 0.95rem;">
+                <li>Kementerian Agama RI. (2021). <em>Pendidikan Agama Islam dan Budi Pekerti Kelas VIII</em>. Jakarta: Kementerian Agama RI.</li>
+                <li>As-Sayyid Sabiq. (2010). <em>Fiqih Sunnah Jilid 2</em>. (Terjemahan). Bandung: Al-Ma'arif. (Bab Zakat)</li>
+                <li>Imam An-Nawawi. <em>Al-Majmu' Syarah Al-Muhadzdzab</em> (Kitab Rujukan Madzhab Syafi'i tentang Zakat).</li>
+                <li>Yusuf Al-Qardhawi. (2007). <em>Hukum Zakat</em>. (Terjemahan). Jakarta: Literasi Antar Nusa.</li>
+                <li>UU No. 23 Tahun 2011 tentang <em>Pengelolaan Zakat</em>.</li>
+                <li>Al-Qur'anul Karim dan Terjemahannya, Kementerian Agama RI.</li>
+            </ul>
+        </section>
+
+        <!-- =========================================
+             UJI FORMATIF (ENHANCED VERSION)
+             ========================================= -->
+        <div class="quiz-container" id="uji-formatif">
+            <div class="quiz-header">
+                <h2 style="color: var(--gold-primary); font-size: 1.8rem; margin-bottom: 0.5rem;">📝 Uji Formatif Pertemuan 5</h2>
+                <p style="color: var(--text-secondary);">Evaluasi Pemahaman Materi Konsep Dasar Zakat</p>
+                <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--gold-light);">
+                    📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) &nbsp;|&nbsp; ✍️ Bagian B: Essay (5 soal, 20 poin/soal)
+                </div>
+            </div>
+
+            <!-- Timer & Progress -->
+            <div class="quiz-meta">
+                <div class="timer-display">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>Waktu: <span id="timer">00:00</span></span>
+                </div>
+                <div class="progress-wrapper">
+                    <div class="progress-label">Progres Pengerjaan: <span id="progress-text">0/15 soal dijawab</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="quizForm">
+                <!-- Identitas -->
+                <div class="content-section" style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1.5rem; font-size: 1.2rem;">📋 Identitas Siswa</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div class="form-group">
+                            <label class="form-label">Nama Lengkap *</label>
+                            <input type="text" id="nama" class="form-input" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">No. Absen / NIS *</label>
+                            <input type="text" id="nis" class="form-input" placeholder="Contoh: 12345" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tanggal Ujian</label>
+                            <input type="date" id="tanggal" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Kelas</label>
+                            <select id="kelas" class="form-select">
+                                <option value="VIII-A">VIII-A</option>
+                                <option value="VIII-B">VIII-B</option>
+                                <option value="VIII-C">VIII-C</option>
+                                <option value="VIII-D">VIII-D</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <h3 style="color: var(--text-primary); margin: 2rem 0 1.5rem; font-size: 1.3rem;">📋 Bagian A: Pilihan Ganda</h3>
+                
+                <div class="question-card" data-topic="pengertian">
+                    <p class="question-text">1. Secara bahasa, kata "zakat" memiliki makna berikut, <strong>kecuali</strong>... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Pengertian</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q1" value="A"> A. Bertumbuh (an-namaa')</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="B"> B. Menyucikan (ath-thaharah)</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="C"> C. Berkah (al-barakah)</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="D"> D. Mengurangi (an-naqs)</label>
+                    </div>
+                    <div class="feedback" id="fb-q1"></div>
+                </div>
+
+                <div class="question-card" data-topic="hukum">
+                    <p class="question-text">2. Zakat termasuk rukun Islam yang ke... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Hukum</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q2" value="A"> A. Pertama</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="B"> B. Kedua</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="C"> C. Ketiga</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="D"> D. Keempat</label>
+                    </div>
+                    <div class="feedback" id="fb-q2"></div>
+                </div>
+
+                <div class="question-card" data-topic="dalil">
+                    <p class="question-text">3. Ayat Al-Qur'an yang menyebutkan 8 golongan penerima zakat (mustahik) adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Dalil Naqli</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q3" value="A"> A. QS. Al-Baqarah: 43</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="B"> B. QS. At-Taubah: 103</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="C"> C. QS. At-Taubah: 60</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="D"> D. QS. Al-Ma'arij: 24-25</label>
+                    </div>
+                    <div class="feedback" id="fb-q3"></div>
+                </div>
+
+                <div class="question-card" data-topic="mustahik">
+                    <p class="question-text">4. Orang yang baru masuk Islam atau diharapkan masuk Islam termasuk golongan mustahik... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Mustahik</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q4" value="A"> A. Fakir</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="B"> B. Miskin</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="C"> C. Muallaf</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="D"> D. Gharim</label>
+                    </div>
+                    <div class="feedback" id="fb-q4"></div>
+                </div>
+
+                <div class="question-card" data-topic="mustahik">
+                    <p class="question-text">5. Orang yang ditugaskan untuk mengumpulkan dan mendistribusikan zakat disebut... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Mustahik</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q5" value="A"> A. Muallaf</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="B"> B. Amil Zakat</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="C"> C. Fisabilillah</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="D"> D. Ibnu Sabil</label>
+                    </div>
+                    <div class="feedback" id="fb-q5"></div>
+                </div>
+
+                <div class="question-card" data-topic="syarat">
+                    <p class="question-text">6. Batas minimal harta yang harus dimiliki agar wajib dikeluarkan zakatnya disebut... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Syarat</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q6" value="A"> A. Haul</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="B"> B. Nisab</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="C"> C. Mustahik</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="D"> D. Muzakki</label>
+                    </div>
+                    <div class="feedback" id="fb-q6"></div>
+                </div>
+
+                <div class="question-card" data-topic="perbedaan">
+                    <p class="question-text">7. Perbedaan utama antara zakat dan infaq adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Perbedaan</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q7" value="A"> A. Zakat sunnah, infaq wajib</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="B"> B. Zakat wajib (jika memenuhi syarat), infaq sunnah</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="C"> C. Zakat untuk masjid, infaq untuk fakir miskin</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="D"> D. Tidak ada perbedaan, keduanya sama</label>
+                    </div>
+                    <div class="feedback" id="fb-q7"></div>
+                </div>
+
+                <div class="question-card" data-topic="hikmah">
+                    <p class="question-text">8. Salah satu hikmah zakat adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Hikmah</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q8" value="A"> A. Menambah sifat kikir dan tamak</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="B"> B. Menyucikan harta dan jiwa, serta mewujudkan keadilan sosial</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="C"> C. Mengurangi harta secara permanen</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="D"> D. Membuat si miskin semakin bergantung</label>
+                    </div>
+                    <div class="feedback" id="fb-q8"></div>
+                </div>
+
+                <div class="question-card" data-topic="mustahik">
+                    <p class="question-text">9. Orang yang kehabisan bekal dalam perjalanan (musafir) yang bukan untuk maksiat termasuk golongan mustahik... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Mustahik</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q9" value="A"> A. Gharim</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="B"> B. Fisabilillah</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="C"> C. Ibnu Sabil</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="D"> D. Riqab</label>
+                    </div>
+                    <div class="feedback" id="fb-q9"></div>
+                </div>
+
+                <div class="question-card" data-topic="contoh">
+                    <p class="question-text">10. Pak Ahmad memiliki harta simpanan sebesar Rp100.000.000 yang telah dimiliki selama 1 tahun. Ia ingin mengeluarkan zakat mal. Berapa zakat yang harus dikeluarkan? 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Contoh Kasus</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q10" value="A"> A. Rp1.000.000</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="B"> B. Rp2.500.000</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="C"> C. Rp5.000.000</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="D"> D. Rp10.000.000</label>
+                    </div>
+                    <div class="feedback" id="fb-q10"></div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <h3 style="color: var(--text-primary); margin: 3rem 0 1.5rem; font-size: 1.3rem;">✍️ Bagian B: Essay</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                    💡 <em>Catatan: Sistem akan memberikan nilai simulasi berdasarkan kelengkapan jawaban (>30 karakter). Penilaian akhir yang sebenarnya tetap berada di wewenang guru.</em>
+                </p>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 1: Jelaskan pengertian zakat secara bahasa dan istilah! Sebutkan 3 makna bahasa dari kata "zakat"! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay1" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 2: Sebutkan dan jelaskan 8 golongan mustahik (penerima zakat) berdasarkan QS. At-Taubah ayat 60! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay2" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 3: Jelaskan perbedaan antara zakat, infaq, dan shadaqah! Berikan masing-masing satu contoh! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay3" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 4: Sebutkan syarat-syarat wajib zakat dan jelaskan masing-masing! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay4" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 5: Jelaskan hikmah disyariatkannya zakat bagi individu dan masyarakat! Hubungkan dengan konsep "cinta kepada Allah dan sesama"! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay5" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <!-- Hasil Uji -->
+                <div id="hasil-uji" class="result-box">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1rem;">📊 Hasil Uji Formatif</h3>
+                    
+                    <div class="score-breakdown">
+                        <div class="score-item">
+                            <div class="label">Pilihan Ganda</div>
+                            <div class="value"><span id="mc-result">0</span>/100</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Essay (Simulasi)</div>
+                            <div class="value"><span id="essay-result">0</span>/100</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Waktu Pengerjaan</div>
+                            <div class="value" id="time-result">00:00</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Benar PG</div>
+                            <div class="value"><span id="correct-count">0</span>/10</div>
+                        </div>
+                    </div>
+                    
+                    <div style="border-top: 1px solid var(--border-gold); padding-top: 1rem; margin-top: 1rem; text-align: center;">
+                        <div style="color: var(--gold-light); font-size: 1rem; margin-bottom: 0.5rem;">Skor Akhir Total</div>
+                        <div class="score-display"><span id="total-result">0</span> <span style="font-size: 1.5rem; color: var(--text-secondary);">/ 200</span></div>
+                        <div id="grade-display" style="font-size: 1.2rem; color: var(--gold-light); margin-top: 0.5rem;"></div>
+                    </div>
+
+                    <!-- Analisis Kelemahan -->
+                    <div class="weakness-analysis" id="weakness-analysis" style="display: none;">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Analisis Kelemahan & Saran Perbaikan</h4>
+                        <ul class="weakness-list" id="weakness-list"></ul>
+                    </div>
+                </div>
+
+                <!-- Tombol Aksi -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary" onclick="calculateScore()">
+                        <i class="fas fa-check-circle"></i> KIRIM JAWABAN & LIHAT HASIL
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="downloadPDF()">
+                        <i class="fas fa-file-pdf"></i> UNDUH PDF LENGKAP
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="downloadTXT()">
+                        <i class="fas fa-file-alt"></i> UNDUH SKOR (TXT)
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="resetQuiz()">
+                        <i class="fas fa-redo"></i> MULAI ULANG
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="sendEmail()">
+                        <i class="fas fa-envelope"></i> KIRIM KE EMAIL GURU
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 1rem; color: var(--gold-primary);">
+                Fikih Kelas 8 Semester 1
+            </p>
+            <p>&copy; 2026 Ermawati, S.H.I. — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p style="margin-top: 0.5rem;">
+                Email: <a href="mailto:erma34779@gmail.com" style="color: var(--gold-primary);">erma34779@gmail.com</a>
+            </p>
+            <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem;">
+                <a href="index.html" class="nav-link" style="font-size: 0.85rem;"><i class="fas fa-book"></i> Daftar Isi</a>
+                <a href="6.html" class="nav-link" style="font-size: 0.85rem;">Pertemuan 6 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- =========================================
+         JAVASCRIPT LOGIC (ENHANCED)
+         ========================================= -->
+    <script>
+        // =========================================
+        // DATA SOAL & KUNCI JAWABAN
+        // =========================================
+        const quizData = {
+            q1: { 
+                correct: 'D', 
+                topic: 'Pengertian',
+                explanation: 'Kata "zakat" memiliki 3 makna bahasa: (1) An-namaa\' = bertumbuh, (2) Ath-thaharah = menyucikan, (3) Al-barakah = berkah. "Mengurangi" (an-naqs) BUKAN makna zakat, karena zakat justru menambah berkah, bukan mengurangi.' 
+            },
+            q2: { 
+                correct: 'C', 
+                topic: 'Hukum',
+                explanation: 'Zakat adalah rukun Islam ke-3 setelah syahadat (ke-1) dan shalat (ke-2). Urutan rukun Islam: Syahadat, Shalat, Zakat, Puasa Ramadhan, Haji.' 
+            },
+            q3: { 
+                correct: 'C', 
+                topic: 'Dalil Naqli',
+                explanation: 'QS. At-Taubah ayat 60 secara rinci menyebutkan 8 golongan mustahik: fakir, miskin, amil, muallaf, riqab, gharim, fisabilillah, dan ibnu sabil.' 
+            },
+            q4: { 
+                correct: 'C', 
+                topic: 'Mustahik',
+                explanation: 'Muallaf adalah orang yang baru masuk Islam atau diharapkan masuk Islam, atau orang yang keislamannya perlu dikuatkan. Mereka diberi zakat untuk memperkuat iman.' 
+            },
+            q5: { 
+                correct: 'B', 
+                topic: 'Mustahik',
+                explanation: 'Amil Zakat adalah orang yang ditugaskan untuk mengumpulkan dan mendistribusikan zakat. Mereka berhak mendapat bagian dari zakat sebagai upah kerja, meskipun mereka kaya.' 
+            },
+            q6: { 
+                correct: 'B', 
+                topic: 'Syarat',
+                explanation: 'Nisab adalah batas minimal harta yang harus dimiliki agar wajib dikeluarkan zakatnya. Sedangkan "haul" adalah waktu kepemilikan (1 tahun hijriah). Muzakki adalah orang yang membayar zakat.' 
+            },
+            q7: { 
+                correct: 'B', 
+                topic: 'Perbedaan',
+                explanation: 'Zakat hukumnya WAJIB (jika memenuhi syarat nisab & haul), sedangkan infaq hukumnya SUNNAH/MAKRUH. Zakat terikat aturan ketat (nisab, haul, mustahik), sedangkan infaq lebih fleksibel.' 
+            },
+            q8: { 
+                correct: 'B', 
+                topic: 'Hikmah',
+                explanation: 'Hikmah zakat: menyucikan harta dan jiwa, mewujudkan keadilan sosial, memperkuat ukhuwah islamiyah, mendukung dakwah, menggerakkan ekonomi, bentuk syukur, dan menolong yang lemah.' 
+            },
+            q9: { 
+                correct: 'C', 
+                topic: 'Mustahik',
+                explanation: 'Ibnu Sabil (ابْنِ السَّبِيل) secara harfiah berarti "anak jalan" = musafir/orang yang sedang dalam perjalanan dan kehabisan bekal, meskipun di negerinya ia kaya.' 
+            },
+            q10: { 
+                correct: 'B', 
+                topic: 'Contoh Kasus',
+                explanation: 'Zakat mal (emas/perak/uang) = 2,5% × harta. Jadi: 2,5% × Rp100.000.000 = Rp2.500.000. Catatan: Harta harus mencapai nisab (setara 85 gram emas) dan haul (1 tahun).' 
+            }
+        };
+
+        // =========================================
+        // TIMER & PROGRESS
+        // =========================================
+        let timerInterval;
+        let seconds = 0;
+        let quizStarted = false;
+
+        function startTimer() {
+            if (quizStarted) return;
+            quizStarted = true;
+            timerInterval = setInterval(() => {
+                seconds++;
+                const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+                const secs = (seconds % 60).toString().padStart(2, '0');
+                document.getElementById('timer').innerText = `${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function getFormattedTime() {
+            const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const secs = (seconds % 60).toString().padStart(2, '0');
+            return `${mins}:${secs}`;
+        }
+
+        // Update progress
+        function updateProgress() {
+            let answered = 0;
+            for (let i = 1; i <= 10; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+            }
+            for (let i = 1; i <= 5; i++) {
+                if (document.getElementById(`essay${i}`).value.trim().length > 0) answered++;
+            }
+            const total = 15;
+            const percent = (answered / total) * 100;
+            document.getElementById('progress-fill').style.width = percent + '%';
+            document.getElementById('progress-text').innerText = `${answered}/${total} soal dijawab`;
+        }
+
+        // Event listeners untuk progress & timer
+        document.querySelectorAll('input[type="radio"]').forEach(el => {
+            el.addEventListener('change', () => { startTimer(); updateProgress(); });
+        });
+        document.querySelectorAll('textarea').forEach(el => {
+            el.addEventListener('input', () => { startTimer(); updateProgress(); });
+        });
+
+        // =========================================
+        // HITUNG SKOR (ENHANCED)
+        // =========================================
+        function calculateScore() {
+            const nama = document.getElementById('nama').value.trim();
+            if (!nama) {
+                alert('Mohon isi Nama Lengkap terlebih dahulu!');
+                document.getElementById('nama').focus();
+                return;
+            }
+
+            stopTimer();
+
+            let mcScore = 0;
+            let correctCount = 0;
+            const topicStats = {};
+
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const data = quizData[`q${i}`];
+                const card = document.querySelector(`.question-card[data-topic="${data.topic}"]`);
+                const feedback = document.getElementById(`fb-q${i}`);
+                
+                if (!topicStats[data.topic]) {
+                    topicStats[data.topic] = { correct: 0, total: 0 };
+                }
+                topicStats[data.topic].total++;
+
+                if (selected && selected.value === data.correct) {
+                    mcScore += 10;
+                    correctCount++;
+                    topicStats[data.topic].correct++;
+                    card.classList.add('correct');
+                    card.classList.remove('incorrect');
+                    feedback.className = 'feedback show correct';
+                    feedback.innerHTML = `<strong><i class="fas fa-check-circle"></i> BENAR!</strong> ${data.explanation}`;
+                } else {
+                    card.classList.add('incorrect');
+                    card.classList.remove('correct');
+                    feedback.className = 'feedback show incorrect';
+                    const userAnswer = selected ? selected.value : 'Tidak dijawab';
+                    feedback.innerHTML = `<strong><i class="fas fa-times-circle"></i> KURANG TEPAT</strong> 
+                        Jawaban Anda: ${userAnswer} | Jawaban Benar: <strong>${data.correct}</strong><br>
+                        <em style="margin-top: 0.5rem; display: block;">${data.explanation}</em>`;
+                }
+            }
+
+            let essayScore = 0;
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim();
+                if (answer.length > 30) {
+                    essayScore += 20;
+                } else if (answer.length > 0) {
+                    essayScore += 10;
+                }
+            }
+
+            const totalScore = mcScore + essayScore;
+            
+            document.getElementById('mc-result').innerText = mcScore;
+            document.getElementById('essay-result').innerText = essayScore;
+            document.getElementById('total-result').innerText = totalScore;
+            document.getElementById('correct-count').innerText = correctCount;
+            document.getElementById('time-result').innerText = getFormattedTime();
+            
+            let grade = '';
+            const percentage = (totalScore / 200) * 100;
+            if (percentage >= 90) grade = '🏆 MUMTAZ (Istimewa)';
+            else if (percentage >= 80) grade = '🌟 JAYYID JIDDAN (Sangat Baik)';
+            else if (percentage >= 70) grade = '✨ JAYYID (Baik)';
+            else if (percentage >= 60) grade = '📖 MAQBUL (Cukup)';
+            else grade = '💪 PERLU BIMBINGAN LANJUT';
+            document.getElementById('grade-display').innerText = grade;
+
+            // Analisis Kelemahan
+            const weaknesses = [];
+            for (const [topic, stats] of Object.entries(topicStats)) {
+                if (stats.correct < stats.total) {
+                    const percent = (stats.correct / stats.total) * 100;
+                    let suggestion = '';
+                    switch(topic) {
+                        case 'Pengertian': suggestion = 'Pelajari kembali 3 makna bahasa zakat: an-namaa\' (bertumbuh), ath-thaharah (menyucikan), al-barakah (berkah).'; break;
+                        case 'Hukum': suggestion = 'Hafalkan urutan rukun Islam: Syahadat, Shalat, Zakat (ke-3), Puasa, Haji.'; break;
+                        case 'Dalil Naqli': suggestion = 'Ulangi QS. At-Taubah: 60 (8 mustahik), QS. At-Taubah: 103, dan QS. Al-Baqarah: 43.'; break;
+                        case 'Mustahik': suggestion = 'Hafalkan 8 mustahik: Fakir, Miskin, Amil, Muallaf, Riqab, Gharim, Fisabilillah, Ibnu Sabil.'; break;
+                        case 'Syarat': suggestion = 'Pelajari 7 syarat wajib zakat: Islam, Merdeka, Milik Penuh, Nisab, Haul, Lebih dari Kebutuhan, Bebas Hutang Mendesak.'; break;
+                        case 'Perbedaan': suggestion = 'Bandingkan zakat (wajib), infaq (sunnah untuk Islam), dan shadaqah (sunnah umum) dalam tabel.'; break;
+                        case 'Hikmah': suggestion = 'Renungkan 7 hikmah zakat bagi individu dan masyarakat.'; break;
+                        case 'Contoh Kasus': suggestion = 'Pelajari perhitungan zakat mal: 2,5% × harta yang mencapai nisab & haul.'; break;
+                    }
+                    weaknesses.push({ topic, percent, suggestion });
+                }
+            }
+
+            const weaknessBox = document.getElementById('weakness-analysis');
+            const weaknessList = document.getElementById('weakness-list');
+            if (weaknesses.length > 0) {
+                weaknessList.innerHTML = weaknesses.map(w => 
+                    `<li><strong>📌 ${w.topic.toUpperCase()}</strong> (${w.percent.toFixed(0)}% benar)<br>${w.suggestion}</li>`
+                ).join('');
+                weaknessBox.style.display = 'block';
+            } else {
+                weaknessBox.style.display = 'none';
+            }
+
+            const resultBox = document.getElementById('hasil-uji');
+            resultBox.classList.add('active');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            if (essayScore < 100) {
+                setTimeout(() => {
+                    alert('Catatan: Nilai Essay adalah simulasi otomatis berdasarkan kelengkapan jawaban. Guru akan meninjau jawaban Anda secara manual.');
+                }, 500);
+            }
+        }
+
+        // =========================================
+        // DOWNLOAD PDF
+        // =========================================
+        function downloadPDF() {
+            const element = document.getElementById('main-content');
+            const nama = document.getElementById('nama').value || 'Siswa';
+            
+            const opt = {
+                margin: [0.5, 0.5, 0.5, 0.5],
+                filename: `Uji_Formatif_Pertemuan_5_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, backgroundColor: '#022c22' },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            const btn = event.target.closest('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses PDF...';
+            btn.disabled = true;
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }).catch(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                alert('Gagal membuat PDF. Silakan coba lagi.');
+            });
+        }
+
+        // =========================================
+        // DOWNLOAD TXT (DETAIL LENGKAP)
+        // =========================================
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value;
+            const tanggal = document.getElementById('tanggal').value || new Date().toLocaleDateString('id-ID');
+            const mc = document.getElementById('mc-result').innerText;
+            const essay = document.getElementById('essay-result').innerText;
+            const total = document.getElementById('total-result').innerText;
+            const correct = document.getElementById('correct-count').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText;
+
+            let pgDetail = '';
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const userAns = selected ? selected.value : '-';
+                const correctAns = quizData[`q${i}`].correct;
+                const status = userAns === correctAns ? '✓ BENAR' : '✗ SALAH';
+                pgDetail += `  Soal ${i.toString().padStart(2, ' ')}: Jawaban Anda = ${userAns} | Kunci = ${correctAns} | ${status}\n`;
+            }
+
+            let essayDetail = '';
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim() || '(Tidak dijawab)';
+                const shortAns = answer.length > 100 ? answer.substring(0, 100) + '...' : answer;
+                essayDetail += `  Essay ${i}: ${shortAns}\n\n`;
+            }
+
+            const text = `╔══════════════════════════════════════════════════════════╗
+║          HASIL UJI FORMATIF - FIKIH KELAS 8             ║
+║              MTsN 10 AGAM - SEMESTER 1                  ║
+╚══════════════════════════════════════════════════════════╝
+
+Mata Pelajaran : Fikih Kelas 8 Semester 1
+Materi         : Pertemuan 5 - Konsep Dasar Zakat
+Bab            : BAB 2 - Zakat
+Sekolah        : MTsN 10 Agam
+Guru Pengampu  : Ermawati, S.H.I. (erma34779@gmail.com)
+Tanggal Ujian  : ${tanggal}
+Waktu Pengerjaan: ${waktu}
+
+═══════════════════════════════════════════════════════════
+                    IDENTITAS SISWA
+═══════════════════════════════════════════════════════════
+Nama Lengkap : ${nama}
+NIS          : ${nis}
+Kelas        : ${kelas}
+
+═══════════════════════════════════════════════════════════
+                  RINGKASAN NILAI
+═══════════════════════════════════════════════════════════
+Nilai Pilihan Ganda   : ${mc} / 100  (${correct}/10 benar)
+Nilai Essay (Simulasi): ${essay} / 100
+───────────────────────────────────────────────────────────
+NILAI AKHIR TOTAL     : ${total} / 200
+PREDIKAT              : ${grade}
+
+═══════════════════════════════════════════════════════════
+                 DETAIL JAWABAN PILIHAN GANDA
+═══════════════════════════════════════════════════════════
+${pgDetail}
+═══════════════════════════════════════════════════════════
+                 DETAIL JAWABAN ESSAY
+═══════════════════════════════════════════════════════════
+${essayDetail}
+═══════════════════════════════════════════════════════════
+CATATAN PENTING
+═══════════════════════════════════════════════════════════
+• Pertemuan 5 adalah pertemuan pertama BAB 2 (Zakat).
+• Nilai Essay di atas adalah SIMULASI OTOMATIS berdasarkan 
+  kelengkapan jawaban (>30 karakter).
+• Penilaian akhir yang sebenarnya berada di wewenang guru 
+  pengampu (Ibu Ermawati, S.H.I.).
+• Silakan hubungi guru untuk koreksi dan bimbingan lebih lanjut.
+
+═══════════════════════════════════════════════════════════
+Dokumen ini digenerate otomatis pada: ${new Date().toLocaleString('id-ID')}
+© 2026 Ermawati, S.H.I. - MTsN 10 Agam
+═══════════════════════════════════════════════════════════`;
+            
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Skor_Detail_Pertemuan5_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // =========================================
+        // RESET QUIZ
+        // =========================================
+        function resetQuiz() {
+            if(!confirm('Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang?')) return;
+            
+            document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+            document.querySelectorAll('textarea').forEach(el => el.value = '');
+            document.getElementById('nama').value = '';
+            document.getElementById('nis').value = '';
+            document.getElementById('tanggal').value = '';
+            
+            document.getElementById('mc-result').innerText = '0';
+            document.getElementById('essay-result').innerText = '0';
+            document.getElementById('total-result').innerText = '0';
+            document.getElementById('correct-count').innerText = '0';
+            document.getElementById('time-result').innerText = '00:00';
+            document.getElementById('grade-display').innerText = '';
+            document.getElementById('hasil-uji').classList.remove('active');
+            document.getElementById('weakness-analysis').style.display = 'none';
+            
+            document.querySelectorAll('.question-card').forEach(el => {
+                el.classList.remove('correct', 'incorrect');
+            });
+            document.querySelectorAll('.feedback').forEach(el => {
+                el.className = 'feedback';
+                el.innerHTML = '';
+            });
+            
+            stopTimer();
+            seconds = 0;
+            quizStarted = false;
+            document.getElementById('timer').innerText = '00:00';
+            document.getElementById('progress-fill').style.width = '0%';
+            document.getElementById('progress-text').innerText = '0/15 soal dijawab';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // =========================================
+        // KIRIM EMAIL
+        // =========================================
+        function sendEmail() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value;
+            const total = document.getElementById('total-result').innerText;
+            const mc = document.getElementById('mc-result').innerText;
+            const essay = document.getElementById('essay-result').innerText;
+            const correct = document.getElementById('correct-count').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText || 'Belum dinilai';
+            
+            if (total === '0' || !document.getElementById('hasil-uji').classList.contains('active')) {
+                alert('Silakan kerjakan uji formatif dan klik "KIRIM JAWABAN & LIHAT HASIL" terlebih dahulu sebelum mengirim email.');
+                return;
+            }
+
+            const subject = encodeURIComponent(`Hasil Uji Formatif Pertemuan 5 (Konsep Dasar Zakat) - ${nama} - ${kelas}`);
+            const body = encodeURIComponent(`Assalamu'alaikum Wr. Wb.
+
+Yth. Ibu Ermawati, S.H.I.,
+
+Berikut adalah hasil uji formatif saya pada Pertemuan 5 (Konsep Dasar Zakat):
+
+═══════════════════════════════════
+IDENTITAS SISWA
+═══════════════════════════════════
+Nama  : ${nama}
+NIS   : ${nis}
+Kelas : ${kelas}
+
+═══════════════════════════════════
+HASIL PENILAIAN
+═══════════════════════════════════
+Pilihan Ganda    : ${mc}/100 (${correct}/10 benar)
+Essay (Simulasi) : ${essay}/100
+Waktu Pengerjaan : ${waktu}
+───────────────────────────────────
+NILAI AKHIR      : ${total}/200
+PREDIKAT         : ${grade}
+
+Mohon bimbingan dan koreksinya untuk jawaban essay.
+
+Jazakumullahu Khairan Katsiran.
+Wassalamu'alaikum Wr. Wb.
+
+───────────────────────────────────
+Dikirim otomatis dari Sistem Uji Formatif Fikih Kelas 8
+© 2026 MTsN 10 Agam`);
+            
+            window.location.href = `mailto:erma34779@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        // Set tanggal hari ini secara otomatis
+        document.getElementById('tanggal').valueAsDate = new Date();
+    </script>
+</body>
+</html>

@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 4: Praktik & Perbandingan Tiga Sujud | Fikih Kelas 8</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        :root {
+            --bg-dark: #022c22;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-input: rgba(255, 255, 255, 0.05);
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-gold: rgba(212, 175, 55, 0.3);
+            --success: #10b981;
+            --error: #ef4444;
+            --sahwi: #3b82f6;
+            --syukur: #10b981;
+            --tilawah: #a855f7;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            background-image: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: var(--gold-primary); transition: var(--transition); }
+        a:hover { color: var(--gold-light); }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 2rem; }
+
+        /* Navigasi */
+        .top-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 0; border-bottom: 1px solid var(--border-gold); margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;
+        }
+        .nav-link {
+            display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500; font-size: 0.95rem;
+            border: 1px solid var(--border-gold); padding: 0.5rem 1rem; border-radius: 50px;
+        }
+        .nav-link:hover { background: var(--gold-primary); color: var(--bg-dark); }
+
+        /* Header */
+        .materi-header { text-align: center; margin-bottom: 3rem; }
+        .bab-tag { display: inline-block; color: var(--gold-primary); font-family: 'Playfair Display', serif; font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .materi-title {
+            font-size: 2.5rem; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 50%, var(--gold-primary) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .materi-desc { color: var(--text-secondary); font-size: 1.15rem; max-width: 750px; margin: 0 auto 2rem; }
+
+        .author-badge {
+            display: inline-flex; align-items: center; gap: 1rem; background: var(--bg-card);
+            border: 1px solid var(--border-gold); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 3rem;
+        }
+        .author-badge i { color: var(--gold-primary); font-size: 1.5rem; }
+        .author-info { text-align: left; }
+        .author-info strong { display: block; color: var(--text-primary); font-size: 1.1rem; }
+        .author-info span { color: var(--text-secondary); font-size: 0.9rem; }
+
+        /* Konten */
+        .content-section {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 2.5rem; margin-bottom: 2rem;
+        }
+        .section-title {
+            color: var(--gold-primary); font-size: 1.6rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
+        }
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold-primary); padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0;
+        }
+        .highlight-box h4 { color: var(--gold-light); margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; }
+        
+        ul.custom-list { list-style: none; padding-left: 0; }
+        ul.custom-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+        ul.custom-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold-primary); }
+
+        /* Tabel Mewah */
+        .table-wrapper { overflow-x: auto; margin: 1.5rem 0; }
+        .luxury-table {
+            width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.02); border-radius: 8px; overflow: hidden;
+        }
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-primary); padding: 1rem; text-align: left;
+            font-family: 'Playfair Display', serif; font-weight: 600; border-bottom: 2px solid var(--border-gold);
+        }
+        .luxury-table td {
+            padding: 1rem; border-bottom: 1px solid var(--border-gold); color: var(--text-secondary); vertical-align: top;
+        }
+        .luxury-table tr:last-child td { border-bottom: none; }
+        .luxury-table tr:hover td { background: rgba(212, 175, 55, 0.05); color: var(--text-primary); }
+
+        /* Color-coded table */
+        .col-sahwi { border-left: 3px solid var(--sahwi); }
+        .col-syukur { border-left: 3px solid var(--syukur); }
+        .col-tilawah { border-left: 3px solid var(--tilawah); }
+        .badge-sahwi { background: var(--sahwi); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+        .badge-syukur { background: var(--syukur); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+        .badge-tilawah { background: var(--tilawah); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+
+        /* Kutipan */
+        .quran-quote {
+            text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(2, 44, 34, 0.8) 100%);
+            border: 1px solid var(--border-gold); border-radius: 16px; margin: 3rem 0;
+        }
+        .arabic-text { font-family: 'Traditional Arabic', serif; font-size: 1.8rem; color: var(--gold-primary); margin-bottom: 1rem; line-height: 2; }
+        .quote-translation { font-style: italic; color: var(--text-secondary); font-size: 1.05rem; }
+        .quote-source { display: block; margin-top: 1rem; color: var(--gold-light); font-weight: 600; font-size: 0.9rem; }
+
+        /* Kata Kunci */
+        .keywords { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .keyword-tag {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-light); padding: 0.4rem 1rem; border-radius: 20px;
+            font-size: 0.85rem; border: 1px solid var(--border-gold);
+        }
+
+        /* Studi Kasus */
+        .case-study {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+        .case-study::before {
+            content: '📋';
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--bg-dark);
+            padding: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+        .case-study h4 {
+            color: var(--gold-primary);
+            margin-bottom: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+        }
+        .case-study p {
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        .case-answer {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 3px solid var(--gold-primary);
+            padding: 0.75rem 1rem;
+            border-radius: 0 6px 6px 0;
+            margin-top: 1rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        /* Checklist */
+        .checklist {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .checklist-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-gold);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            transition: var(--transition);
+        }
+        .checklist-item:hover {
+            background: rgba(212, 175, 55, 0.05);
+            transform: translateY(-2px);
+        }
+        .checklist-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+        .checklist-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .checklist-text strong { color: var(--text-primary); display: block; margin-bottom: 0.25rem; }
+
+        /* Warning Box */
+        .warning-box {
+            background: rgba(239, 68, 68, 0.05);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-left: 4px solid var(--error);
+            border-radius: 0 8px 8px 0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .warning-box h4 {
+            color: #fecaca;
+            margin-bottom: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .warning-box ul { list-style: none; padding-left: 0; }
+        .warning-box ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .warning-box ul li::before {
+            content: '⚠';
+            position: absolute;
+            left: 0;
+            color: var(--error);
+        }
+
+        /* Quiz Styles */
+        .quiz-container {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 2.5rem; margin-top: 4rem;
+        }
+        .quiz-header { text-align: center; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-gold); }
+        
+        .quiz-meta {
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+            background: rgba(212, 175, 55, 0.08); padding: 1rem 1.5rem; border-radius: 12px; margin-bottom: 2rem;
+        }
+        .timer-display {
+            display: flex; align-items: center; gap: 0.5rem; color: var(--gold-primary); font-weight: 600; font-size: 1.1rem;
+        }
+        .timer-display i { font-size: 1.3rem; }
+        .progress-wrapper { flex: 1; min-width: 200px; margin: 0 1rem; }
+        .progress-label { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.25rem; }
+        .progress-bar {
+            width: 100%; height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%; background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+            width: 0%; transition: width 0.4s ease; border-radius: 4px;
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { display: block; margin-bottom: 0.5rem; color: var(--gold-light); font-weight: 500; font-size: 0.95rem; }
+        .form-input, .form-select, .form-textarea {
+            width: 100%; background: var(--bg-input); border: 1px solid var(--border-gold); border-radius: 8px;
+            padding: 0.85rem 1rem; color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 1rem; transition: var(--transition);
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none; border-color: var(--gold-primary); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        .form-textarea { min-height: 120px; resize: vertical; }
+
+        .question-card { 
+            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.1); 
+            border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; transition: var(--transition);
+        }
+        .question-card.correct { border-color: var(--success); background: rgba(16, 185, 129, 0.05); }
+        .question-card.incorrect { border-color: var(--error); background: rgba(239, 68, 68, 0.05); }
+        
+        .question-text { font-weight: 600; margin-bottom: 1rem; color: var(--text-primary); }
+        .points-badge {
+            display: inline-block; background: var(--gold-primary); color: var(--bg-dark); font-size: 0.75rem;
+            font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+        }
+        .topic-badge {
+            display: inline-block; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); 
+            font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+            border: 1px solid var(--border-gold);
+        }
+        
+        .radio-group { display: flex; flex-direction: column; gap: 0.75rem; }
+        .radio-label {
+            display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; border-radius: 8px;
+            cursor: pointer; transition: var(--transition); border: 1px solid transparent;
+        }
+        .radio-label:hover { background: rgba(212, 175, 55, 0.05); }
+        .radio-label input[type="radio"] { accent-color: var(--gold-primary); width: 18px; height: 18px; }
+        
+        .feedback {
+            margin-top: 1rem; padding: 0.85rem 1rem; border-radius: 8px; font-size: 0.9rem; display: none;
+        }
+        .feedback.show { display: block; animation: fadeIn 0.4s ease; }
+        .feedback.correct { background: rgba(16, 185, 129, 0.1); border-left: 3px solid var(--success); color: #a7f3d0; }
+        .feedback.incorrect { background: rgba(239, 68, 68, 0.1); border-left: 3px solid var(--error); color: #fecaca; }
+        .feedback strong { display: block; margin-bottom: 0.25rem; }
+
+        .result-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(2, 44, 34, 0.9) 100%);
+            border: 2px solid var(--gold-primary); border-radius: 16px; padding: 2rem; margin: 2rem 0; display: none;
+        }
+        .result-box.active { display: block; animation: fadeIn 0.5s ease; }
+        .score-display { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold-primary); margin: 1rem 0; }
+        
+        .score-breakdown {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0;
+        }
+        .score-item {
+            background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px; text-align: center;
+            border: 1px solid var(--border-gold);
+        }
+        .score-item .label { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.25rem; }
+        .score-item .value { font-size: 1.5rem; font-weight: 700; color: var(--gold-primary); }
+        
+        .weakness-analysis {
+            background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;
+        }
+        .weakness-analysis h4 { color: #fecaca; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .weakness-list { list-style: none; }
+        .weakness-list li { 
+            padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+            color: var(--text-secondary); font-size: 0.9rem;
+        }
+        .weakness-list li:last-child { border-bottom: none; }
+        .weakness-list li strong { color: var(--gold-light); }
+
+        .btn-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.5rem;
+            border-radius: 8px; font-weight: 600; cursor: pointer; transition: var(--transition); border: none; font-size: 0.95rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--gold-primary) 0%, #b8941f 100%); color: var(--bg-dark); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4); }
+        .btn-outline { background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-primary); }
+        .btn-outline:hover { background: var(--gold-primary); color: var(--bg-dark); }
+        .btn-secondary { background: rgba(255, 255, 255, 0.1); color: var(--text-primary); border: 1px solid var(--border-gold); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+
+        .footer { text-align: center; padding: 3rem 0; margin-top: 4rem; border-top: 1px solid var(--border-gold); color: var(--text-secondary); font-size: 0.9rem; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .materi-title { font-size: 1.8rem; }
+            .content-section, .quiz-container { padding: 1.5rem; }
+            .btn-group { grid-template-columns: 1fr; }
+            .quiz-meta { flex-direction: column; align-items: stretch; }
+            .checklist { grid-template-columns: 1fr; }
+        }
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .btn-group, .footer, .quiz-meta { display: none !important; }
+            .content-section, .quiz-container, .result-box { border: 1px solid #ccc; background: white; color: black; break-inside: avoid; }
+            .arabic-text, .materi-title, .section-title { color: #000 !important; -webkit-text-fill-color: #000 !important; }
+            .form-input, .form-textarea { border: 1px solid #ccc; color: black; }
+            .feedback { background: #f3f4f6 !important; color: black !important; border-left-color: #333 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="main-content">
+        <!-- Navigasi Atas -->
+        <nav class="top-nav">
+            <a href="index.html" class="nav-link"><i class="fas fa-arrow-left"></i> Daftar Isi</a>
+            <span style="color: var(--text-secondary); font-weight: 500;">Fikih Kelas 8 Semester 1</span>
+            <a href="5.html" class="nav-link">Pertemuan 5 <i class="fas fa-arrow-right"></i></a>
+        </nav>
+
+        <!-- Header Materi -->
+        <header class="materi-header">
+            <div class="bab-tag">🕌 — BAB SATU: SUJUD —</div>
+            <h1 class="materi-title">Pertemuan 4: Praktik & Perbandingan Tiga Sujud</h1>
+            <p class="materi-desc">
+                Membandingkan dan mempraktikkan ketiga jenis sujud (Sahwi, Syukur, dan Tilawah) sebagai implementasi rasa cinta kepada Allah Swt. dalam ibadah. 
+                Pertemuan ini menjadi puncak Bab 1 yang menyatukan seluruh pemahaman dari tiga pertemuan sebelumnya.
+            </p>
+            
+            <div class="author-badge">
+                <i class="fas fa-user-graduate"></i>
+                <div class="author-info">
+                    <strong>Ermawati, S.H.I.</strong>
+                    <span>Guru Fikih, MTsN 10 Agam</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- A. Tujuan Pertemuan -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-bullseye"></i> A. Tujuan Pertemuan Praktik</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Setelah mempelajari ketiga jenis sujud secara terpisah pada Pertemuan 1, 2, dan 3, pada pertemuan ini kita akan:
+            </p>
+            <ul class="custom-list">
+                <li><strong>Membandingkan</strong> ketiga jenis sujud (Sahwi, Syukur, Tilawah) secara komprehensif dari berbagai aspek.</li>
+                <li><strong>Mengidentifikasi</strong> dengan tepat jenis sujud yang harus dilakukan berdasarkan skenario/kasus tertentu.</li>
+                <li><strong>Mempraktikkan</strong> tata cara masing-masing sujud dengan benar dan khusyuk.</li>
+                <li><strong>Mengimplementasikan</strong> rasa cinta kepada Allah Swt. melalui ketiga jenis sujud dalam kehidupan sehari-hari.</li>
+            </ul>
+            <div class="highlight-box">
+                <h4><i class="fas fa-heart"></i> Tema Spiritual: Implementasi Rasa Cinta</h4>
+                <p>Ketiga jenis sujud bukan sekadar gerakan fisik, melainkan <strong>tiga ekspresi cinta</strong> yang berbeda kepada Allah Swt.: 
+                    <strong>Sujud Sahwi</strong> = cinta yang mengakui kekurangan, 
+                    <strong>Sujud Syukur</strong> = cinta yang berterima kasih, 
+                    <strong>Sujud Tilawah</strong> = cinta yang mengagungkan firman-Nya. 
+                    Ketiganya menyatu membentuk <strong>kepribadian muslim yang cinta Allah secara kaffah</strong>.</p>
+            </div>
+        </section>
+
+        <!-- B. Tabel Perbandingan Komprehensif -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-columns"></i> B. Tabel Perbandingan Komprehensif</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Berikut adalah tabel perbandingan lengkap ketiga jenis sujud dari 10 aspek penting:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%;">Aspek</th>
+                            <th style="width: 26.6%;"><span class="badge-sahwi">SUJUD SAHWI</span></th>
+                            <th style="width: 26.6%;"><span class="badge-syukur">SUJUD SYUKUR</span></th>
+                            <th style="width: 26.6%;"><span class="badge-tilawah">SUJUD TILAWAH</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. Penyebab</strong></td>
+                            <td>Lupa/ragu dalam shalat</td>
+                            <td>Mendapat nikmat / terhindar musibah</td>
+                            <td>Membaca/mendengar ayat sajdah</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Posisi Pelaksanaan</strong></td>
+                            <td>Dalam shalat</td>
+                            <td>Di luar shalat</td>
+                            <td>Di luar shalat (atau dalam shalat)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Waktu Pelaksanaan</strong></td>
+                            <td>Sebelum salam (kekurangan) atau setelah salam (kelebihan)</td>
+                            <td>Segera setelah mendapat nikmat/terhindar musibah</td>
+                            <td>Segera setelah membaca/mendengar ayat sajdah</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4. Jumlah Sujud</strong></td>
+                            <td style="color: var(--sahwi); font-weight: 600;">2 kali</td>
+                            <td style="color: var(--syukur); font-weight: 600;">2 kali</td>
+                            <td style="color: var(--tilawah); font-weight: 600;">1 kali</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5. Bacaan Khusus</strong></td>
+                            <td><em>Subhana man laa yanaamu wa laa yashu</em></td>
+                            <td>Dzikir sujud / doa syukur</td>
+                            <td><em>Sajada wajhiya lilladzii khalaqahu...</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>6. Hukum (Syafi'i)</strong></td>
+                            <td>Sunnah Muakkad</td>
+                            <td>Mubah / Dianjurkan</td>
+                            <td>Sunnah Muakkad</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7. Syarat Wudhu</strong></td>
+                            <td>Wajib (karena dalam shalat)</td>
+                            <td>Wajib (menurut Syafi'i)</td>
+                            <td>Wajib</td>
+                        </tr>
+                        <tr>
+                            <td><strong>8. Menghadap Kiblat</strong></td>
+                            <td>Wajib (karena dalam shalat)</td>
+                            <td>Dianjurkan</td>
+                            <td>Wajib</td>
+                        </tr>
+                        <tr>
+                            <td><strong>9. Takbiratul Ihram</strong></td>
+                            <td>Tidak (karena dalam shalat)</td>
+                            <td>Tidak disyariatkan</td>
+                            <td>Dianjurkan (sebagian ulama)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>10. Salam</strong></td>
+                            <td>Tidak (karena dalam shalat)</td>
+                            <td>Dianjurkan</td>
+                            <td>Tidak disyariatkan</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- C. Panduan Praktik -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-praying-hands"></i> C. Panduan Praktik Step-by-Step</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Berikut adalah langkah-langkah praktis untuk melaksanakan masing-masing sujud:</p>
+            
+            <div class="case-study" style="border-left: 4px solid var(--sahwi);">
+                <h4><span class="badge-sahwi">PRAKTIK 1</span> — Sujud Sahwi</h4>
+                <p><strong>Skenario:</strong> Anda sedang shalat Dzuhur, lalu lupa duduk tasyahud awal dan langsung berdiri ke rakaat ketiga.</p>
+                <div class="case-answer">
+                    <strong>Langkah Praktik:</strong>
+                    <ol style="padding-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Lanjutkan shalat sampai selesai (rakaat 3 & 4).</li>
+                        <li>Duduk tasyahud akhir sampai bacaan Attahiyat selesai.</li>
+                        <li>Sebelum salam, ucapkan <em>"Allahu Akbar"</em> dan sujud pertama.</li>
+                        <li>Baca: <em>"Subhana man laa yanaamu wa laa yashu"</em>.</li>
+                        <li>Duduk iftirasy, lalu sujud kedua dengan bacaan yang sama.</li>
+                        <li>Duduk kembali, lalu salam ke kanan dan ke kiri.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="case-study" style="border-left: 4px solid var(--syukur);">
+                <h4><span class="badge-syukur">PRAKTIK 2</span> — Sujud Syukur</h4>
+                <p><strong>Skenario:</strong> Anda baru saja mendapat kabar bahwa ayah sembuh dari sakit keras setelah dirawat di RS.</p>
+                <div class="case-answer">
+                    <strong>Langkah Praktik:</strong>
+                    <ol style="padding-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Pastikan dalam keadaan suci (wudhu) dan menutup aurat.</li>
+                        <li>Menghadap kiblat (dianjurkan).</li>
+                        <li>Bertakbir <em>"Allahu Akbar"</em> (tanpa niat shalat).</li>
+                        <li>Langsung sujud pertama sambil membaca dzikir sujud atau doa syukur.</li>
+                        <li>Duduk iftirasy sejenak.</li>
+                        <li>Sujud kedua dengan bacaan yang sama.</li>
+                        <li>Duduk sejenak, lalu salam (dianjurkan).</li>
+                        <li>Diiringi rasa syukur yang mendalam di dalam hati.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="case-study" style="border-left: 4px solid var(--tilawah);">
+                <h4><span class="badge-tilawah">PRAKTIK 3</span> — Sujud Tilawah</h4>
+                <p><strong>Skenario:</strong> Anda sedang membaca Al-Qur'an dan sampai pada QS. As-Sajdah ayat 15.</p>
+                <div class="case-answer">
+                    <strong>Langkah Praktik:</strong>
+                    <ol style="padding-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Berhenti sejenak dari membaca.</li>
+                        <li>Pastikan dalam keadaan suci (wudhu) dan menutup aurat.</li>
+                        <li>Menghadap kiblat.</li>
+                        <li>Bertakbir <em>"Allahu Akbar"</em> (tanpa niat shalat).</li>
+                        <li>Langsung sujud (hanya 1 kali) sambil membaca: <em>"Sajada wajhiya lilladzii khalaqahu wa syaqqa sam'ahu wa basharahu bi hawlihi wa quwwatihi"</em>.</li>
+                        <li>Bangkit dari sujud (tanpa duduk di antara dua sujud karena hanya 1 kali).</li>
+                        <li>Tidak perlu salam.</li>
+                        <li>Lanjutkan membaca Al-Qur'an atau berhenti sejenak untuk bermuhasabah.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- D. Studi Kasus -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-lightbulb"></i> D. Studi Kasus: Tentukan Jenis Sujud!</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Latih kemampuan Anda membedakan jenis sujud melalui skenario berikut:</p>
+            
+            <div class="case-study">
+                <h4>Kasus 1 — Ahmad di Shalat Subuh</h4>
+                <p>Ahmad sedang melaksanakan shalat Subuh. Di rakaat kedua, setelah sujud terakhir, ia langsung berdiri untuk menambah rakaat ketiga. Setelah menyadari kesalahannya, ia kembali duduk dan menyelesaikan shalat. Sujud apa yang harus dilakukan Ahmad?</p>
+                <div class="case-answer">
+                    <strong>Jawaban:</strong> <span class="badge-sahwi">SUJUD SAHWI</span> setelah salam. Karena Ahmad <strong>menambah rakaat</strong> (kelebihan), maka sujud sahwi dilakukan <strong>setelah salam</strong>.
+                </div>
+            </div>
+
+            <div class="case-study">
+                <h4>Kasus 2 — Fatimah Lulus SNBT</h4>
+                <p>Fatimah menerima pengumuman bahwa ia diterima di universitas impiannya melalui jalur SNBT. Air matunya menetes karena bahagia. Apa yang sebaiknya dilakukan Fatimah sebagai wujud syukur?</p>
+                <div class="case-answer">
+                    <strong>Jawaban:</strong> <span class="badge-syukur">SUJUD SYUKUR</span>. Karena Fatimah mendapat <strong>nikmat besar</strong> (diterima di universitas impian), ia dianjurkan melakukan sujud syukur 2 kali sebagai ekspresi terima kasih kepada Allah.
+                </div>
+            </div>
+
+            <div class="case-study">
+                <h4>Kasus 3 — Umar Mendengar Tilawah</h4>
+                <p>Umar sedang mendengarkan imam shalat Isya membaca QS. An-Najm ayat 62. Umar bukan orang yang sedang shalat (ia mendengar dari luar masjid melalui speaker). Apa yang harus dilakukan Umar?</p>
+                <div class="case-answer">
+                    <strong>Jawaban:</strong> <span class="badge-tilawah">SUJUD TILAWAH</span>. Karena Umar <strong>mendengar ayat sajdah</strong> (QS. An-Najm: 62), ia disunnahkan melakukan sujud tilawah 1 kali, meskipun tidak sedang shalat.
+                </div>
+            </div>
+
+            <div class="case-study">
+                <h4>Kasus 4 — Zainab Ragu di Shalat Maghrib</h4>
+                <p>Zainab sedang shalat Maghrib. Di rakaat terakhir, ia ragu apakah sudah mengerjakan 3 rakaat atau baru 2 rakaat. Ia yakin baru 2 rakaat. Apa yang harus dilakukan?</p>
+                <div class="case-answer">
+                    <strong>Jawaban:</strong> <span class="badge-sahwi">SUJUD SAHWI</span> sebelum salam. Zainab menerapkan kaidah <em>"Al-yaqinu la yuzalu bisy-syak"</em>: ia ambil yang yakin (2 rakaat), tambahkan 1 rakaat, lalu sujud sahwi <strong>sebelum salam</strong> karena ini kasus keraguan.
+                </div>
+            </div>
+
+            <div class="case-study">
+                <h4>Kasus 5 — Keluarga Selamat dari Banjir</h4>
+                <p>Keluarga Pak Rahmat selamat dari banjir bandang yang menerjang desa mereka. Rumah tetangga hancur, tetapi rumah mereka hanya tergenang air dan bisa dibersihkan. Apa yang sebaiknya dilakukan keluarga Pak Rahmat?</p>
+                <div class="case-answer">
+                    <strong>Jawaban:</strong> <span class="badge-syukur">SUJUD SYUKUR</span>. Karena keluarga Pak Rahmat <strong>terhindar dari musibah besar</strong>, mereka dianjurkan melakukan sujud syukur 2 kali sebagai wujud terima kasih kepada Allah atas perlindungan-Nya.
+                </div>
+            </div>
+        </section>
+
+        <!-- E. Checklist Kesiapan Praktik -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-tasks"></i> E. Checklist Kesiapan Praktik</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Sebelum mempraktikkan ketiga jenis sujud, pastikan Anda telah memenuhi checklist berikut:</p>
+            
+            <div class="checklist">
+                <div class="checklist-item">
+                    <div class="checklist-icon">1</div>
+                    <div class="checklist-text">
+                        <strong>Berwudhu dengan benar</strong>
+                        Semua jenis sujud memerlukan kesucian dari hadas kecil.
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-icon">2</div>
+                    <div class="checklist-text">
+                        <strong>Menutup aurat</strong>
+                        Aurat laki-laki: pusar-lutut. Aurat perempuan: seluruh tubuh kecuali wajah & telapak tangan.
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-icon">3</div>
+                    <div class="checklist-text">
+                        <strong>Tempat suci dari najis</strong>
+                        Pastikan tempat sujud, pakaian, dan tubuh bersih dari najis.
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-icon">4</div>
+                    <div class="checklist-text">
+                        <strong>Menghadap kiblat</strong>
+                        Wajib untuk sujud sahwi & tilawah, dianjurkan untuk sujud syukur.
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-icon">5</div>
+                    <div class="checklist-text">
+                        <strong>Menghafal bacaan</strong>
+                        Bacaan khusus masing-masing sujud (sahwi, syukur, tilawah).
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-icon">6</div>
+                    <div class="checklist-text">
+                        <strong>Memahami jumlah sujud</strong>
+                        Sahwi = 2 kali, Syukur = 2 kali, Tilawah = 1 kali.
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-icon">7</div>
+                    <div class="checklist-text">
+                        <strong>Mengetahui posisi sujud</strong>
+                        Sahwi: sebelum/setelah salam. Syukur & Tilawah: di luar shalat.
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-icon">8</div>
+                    <div class="checklist-text">
+                        <strong>Hadirkan hati (khusyuk)</strong>
+                        Niatkan sujud sebagai wujud cinta kepada Allah Swt.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- F. Kesalahan Umum -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> F. Kesalahan Umum yang Harus Dihindari</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Berikut adalah beberapa kesalahan yang sering dilakukan saat mempraktikkan ketiga jenis sujud:</p>
+            
+            <div class="warning-box">
+                <h4><i class="fas fa-exclamation-circle"></i> Kesalahan dalam Sujud Sahwi</h4>
+                <ul>
+                    <li>Salah menentukan posisi sujud (sebelum salam untuk kasus kelebihan, setelah salam untuk kasus kekurangan).</li>
+                    <li>Melakukan sujud sahwi lebih dari 2 kali.</li>
+                    <li>Lupa membaca bacaan khusus sujud sahwi.</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4><i class="fas fa-exclamation-circle"></i> Kesalahan dalam Sujud Syukur</h4>
+                <ul>
+                    <li>Melakukan sujud syukur untuk nikmat-nikmat kecil yang bersifat rutin (seharusnya untuk nikmat/musibah besar).</li>
+                    <li>Melakukan sujud syukur tanpa wudhu (menurut Madzhab Syafi'i).</li>
+                    <li>Menyamakan sujud syukur dengan shalat (padahal bukan shalat, tidak perlu takbiratul ihram seperti shalat).</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4><i class="fas fa-exclamation-circle"></i> Kesalahan dalam Sujud Tilawah</h4>
+                <ul>
+                    <li>Melakukan sujud tilawah 2 kali (seharusnya hanya 1 kali).</li>
+                    <li>Tidak mengenali ayat sajdah dalam Al-Qur'an (perlu hafal 15 ayat sajdah).</li>
+                    <li>Melakukan salam setelah sujud tilawah (tidak disyariatkan).</li>
+                    <li>Membaca bacaan sujud sahwi atau syukur saat sujud tilawah (seharusnya bacaan khusus tilawah).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- G. Refleksi Spiritual -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-heart"></i> G. Refleksi Spiritual: Implementasi Rasa Cinta</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Ketiga jenis sujud adalah manifestasi cinta yang utuh kepada Allah Swt. Mari kita renungkan:</p>
+            
+            <div class="highlight-box">
+                <h4>💙 Sujud Sahwi — Cinta yang Mengakui Kekurangan</h4>
+                <p>Ketika kita lupa dalam shalat, sujud sahwi mengajarkan kita untuk <strong>jujur mengakui kelemahan</strong> dan bersimpuh di hadapan Allah yang Maha Sempurna. Ini adalah cinta yang tidak sombong, yang tahu bahwa dirinya tempatnya salah.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h4>💚 Sujud Syukur — Cinta yang Berterima Kasih</h4>
+                <p>Ketika kita mendapat nikmat, sujud syukur mengajarkan kita untuk <strong>tidak lupa diri</strong>. Kita menyungkurkan dahi ke tanah, mengakui bahwa semua kebahagiaan adalah titipan Allah. Ini adalah cinta yang tidak kufur nikmat.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h4>💜 Sujud Tilawah — Cinta yang Mengagungkan Firman</h4>
+                <p>Ketika kita mendengar ayat Allah, sujud tilawah mengajarkan kita untuk <strong>merespon firman-Nya dengan ketundukan</strong>. Kita tidak hanya membaca Al-Qur'an dengan lisan, tetapi juga dengan seluruh tubuh. Ini adalah cinta yang menghormati setiap kata dari Kekasihnya.</p>
+            </div>
+
+            <div class="quran-quote">
+                <div class="arabic-text">
+                    وَاعْبُدْ رَبَّكَ حَتَّىٰ يَأْتِيَكَ الْيَقِينُ
+                </div>
+                <p class="quote-translation">
+                    "Dan sembahlah Tuhanmu sampai datang kepadamu yang yakin (ajal)."
+                </p>
+                <span class="quote-source">— QS. Al-Hijr [15]: 99</span>
+            </div>
+        </section>
+
+        <!-- H. Tips Menghafal -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-brain"></i> H. Tips & Trik Menghafal Perbedaan</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Gunakan <strong>jembatan keledai</strong> berikut untuk mengingat perbedaan ketiga sujud:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th>Jenis Sujud</th>
+                            <th>Kata Kunci</th>
+                            <th>Jembatan Keledai</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge-sahwi">SAHWI</span></td>
+                            <td><strong>"Sahwi = Sahwat = Lupa"</strong></td>
+                            <td>Sahwi = karena <strong>LUPA</strong> dalam shalat. Jumlahnya <strong>2 kali</strong> (seperti lupa 2 kali: lupa & ingat).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-syukur">SYUKUR</span></td>
+                            <td><strong>"Syukur = Syukuran = Nikmat"</strong></td>
+                            <td>Syukur = karena <strong>Nikmat/Musibah</strong>. Jumlahnya <strong>2 kali</strong> (syukur atas nikmat & syukur atas keselamatan).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-tilawah">TILAWAH</span></td>
+                            <td><strong>"Tilawah = Tilik = Baca"</strong></td>
+                            <td>Tilawah = karena <strong>BACA ayat sajdah</strong>. Jumlahnya <strong>1 kali</strong> (karena hanya 1 respon terhadap 1 ayat).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="highlight-box">
+                <h4>🎯 Rumus Cepat</h4>
+                <ul style="list-style: none; padding-left: 0; margin-top: 0.5rem;">
+                    <li style="padding: 0.5rem 0;"><strong>Lupa dalam shalat</strong> → <span class="badge-sahwi">SAHWI</span> (2x)</li>
+                    <li style="padding: 0.5rem 0;"><strong>Nikmat/Musibah besar</strong> → <span class="badge-syukur">SYUKUR</span> (2x)</li>
+                    <li style="padding: 0.5rem 0;"><strong>Ayat Sajdah</strong> → <span class="badge-tilawah">TILAWAH</span> (1x)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Kata Kunci -->
+        <section style="margin: 3rem 0;">
+            <h3 style="color: var(--gold-primary); margin-bottom: 1rem; font-size: 1.2rem;">◆ Kata Kunci Pertemuan Ini</h3>
+            <div class="keywords">
+                <span class="keyword-tag">Perbandingan Tiga Sujud</span>
+                <span class="keyword-tag">Praktik Sujud</span>
+                <span class="keyword-tag">Studi Kasus</span>
+                <span class="keyword-tag">Implementasi Cinta</span>
+                <span class="keyword-tag">Checklist Kesiapan</span>
+                <span class="keyword-tag">Jembatan Keledai</span>
+                <span class="keyword-tag">Kesalahan Umum</span>
+                <span class="keyword-tag">Refleksi Spiritual</span>
+            </div>
+        </section>
+
+        <!-- Referensi -->
+        <section class="content-section" style="background: rgba(212, 175, 55, 0.05);">
+            <h2 class="section-title"><i class="fas fa-bookmark"></i> I. Referensi Pendukung</h2>
+            <ul class="custom-list" style="font-size: 0.95rem;">
+                <li>Kementerian Agama RI. (2021). <em>Pendidikan Agama Islam dan Budi Pekerti Kelas VIII</em>. Jakarta: Kementerian Agama RI.</li>
+                <li>As-Sayyid Sabiq. (2010). <em>Fiqih Sunnah Jilid 1</em>. (Terjemahan). Bandung: Al-Ma'arif. (Bab Sujud Sahwi, Syukur, & Tilawah)</li>
+                <li>Imam An-Nawawi. <em>Al-Majmu' Syarah Al-Muhadzdzab</em> (Kitab Rujukan Madzhab Syafi'i tentang Tiga Jenis Sujud).</li>
+                <li>Imam Ibnu Qudamah. <em>Al-Mughni</em> (Pembahasan Komparatif Tiga Jenis Sujud).</li>
+                <li>Al-Qur'anul Karim dan Terjemahannya, Kementerian Agama RI.</li>
+            </ul>
+        </section>
+
+        <!-- =========================================
+             UJI FORMATIF (ENHANCED VERSION)
+             ========================================= -->
+        <div class="quiz-container" id="uji-formatif">
+            <div class="quiz-header">
+                <h2 style="color: var(--gold-primary); font-size: 1.8rem; margin-bottom: 0.5rem;">📝 Uji Formatif Pertemuan 4</h2>
+                <p style="color: var(--text-secondary);">Evaluasi Pemahaman Komparasi & Praktik Tiga Jenis Sujud</p>
+                <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--gold-light);">
+                    📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) &nbsp;|&nbsp; ✍️ Bagian B: Essay (5 soal, 20 poin/soal)
+                </div>
+            </div>
+
+            <!-- Timer & Progress -->
+            <div class="quiz-meta">
+                <div class="timer-display">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>Waktu: <span id="timer">00:00</span></span>
+                </div>
+                <div class="progress-wrapper">
+                    <div class="progress-label">Progres Pengerjaan: <span id="progress-text">0/15 soal dijawab</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="quizForm">
+                <!-- Identitas -->
+                <div class="content-section" style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1.5rem; font-size: 1.2rem;">📋 Identitas Siswa</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div class="form-group">
+                            <label class="form-label">Nama Lengkap *</label>
+                            <input type="text" id="nama" class="form-input" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">No. Absen / NIS *</label>
+                            <input type="text" id="nis" class="form-input" placeholder="Contoh: 12345" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tanggal Ujian</label>
+                            <input type="date" id="tanggal" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Kelas</label>
+                            <select id="kelas" class="form-select">
+                                <option value="VIII-A">VIII-A</option>
+                                <option value="VIII-B">VIII-B</option>
+                                <option value="VIII-C">VIII-C</option>
+                                <option value="VIII-D">VIII-D</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <h3 style="color: var(--text-primary); margin: 2rem 0 1.5rem; font-size: 1.3rem;">📋 Bagian A: Pilihan Ganda</h3>
+                
+                <div class="question-card" data-topic="identifikasi">
+                    <p class="question-text">1. Sujud yang dilakukan karena seseorang lupa jumlah rakaat dalam shalat adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Identifikasi</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q1" value="A"> A. Sujud Syukur</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="B"> B. Sujud Tilawah</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="C"> C. Sujud Sahwi</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="D"> D. Sujud Syafaat</label>
+                    </div>
+                    <div class="feedback" id="fb-q1"></div>
+                </div>
+
+                <div class="question-card" data-topic="perbandingan">
+                    <p class="question-text">2. Sujud yang dilakukan di luar shalat ketika mendapat nikmat besar atau terhindar dari musibah adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Perbandingan</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q2" value="A"> A. Sujud Syukur</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="B"> B. Sujud Sahwi</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="C"> C. Sujud Tilawah</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="D"> D. Sujud Syukur dan Sujud Sahwi</label>
+                    </div>
+                    <div class="feedback" id="fb-q2"></div>
+                </div>
+
+                <div class="question-card" data-topic="perbandingan">
+                    <p class="question-text">3. Jenis sujud yang hanya dilakukan 1 kali sujud (bukan 2 kali) adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Perbandingan</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q3" value="A"> A. Sujud Sahwi</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="B"> B. Sujud Tilawah</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="C"> C. Sujud Syukur</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="D"> D. Semua sujud dilakukan 1 kali</label>
+                    </div>
+                    <div class="feedback" id="fb-q3"></div>
+                </div>
+
+                <div class="question-card" data-topic="posisi">
+                    <p class="question-text">4. Jika seseorang lupa tasyahud awal dan langsung berdiri ke rakaat berikutnya, maka sujud sahwi dilakukan... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Posisi Sujud</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q4" value="A"> A. Setelah salam</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="B"> B. Di tengah shalat</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="C"> C. Sebelum salam</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="D"> D. Tidak perlu sujud sahwi</label>
+                    </div>
+                    <div class="feedback" id="fb-q4"></div>
+                </div>
+
+                <div class="question-card" data-topic="identifikasi">
+                    <p class="question-text">5. Seorang siswa mendapat kabar bahwa ibunya sembuh dari sakit keras. Sujud yang sebaiknya dilakukan adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Identifikasi</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q5" value="A"> A. Sujud Sahwi</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="B"> B. Sujud Syukur</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="C"> C. Sujud Tilawah</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="D"> D. Sujud Sahwi dan Sujud Syukur</label>
+                    </div>
+                    <div class="feedback" id="fb-q5"></div>
+                </div>
+
+                <div class="question-card" data-topic="identifikasi">
+                    <p class="question-text">6. Ketika seseorang membaca QS. As-Sajdah ayat 15, maka ia disunnahkan melakukan... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Identifikasi</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q6" value="A"> A. Sujud Tilawah</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="B"> B. Sujud Syukur</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="C"> C. Sujud Sahwi</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="D"> D. Sujud Syukur dan Sujud Tilawah</label>
+                    </div>
+                    <div class="feedback" id="fb-q6"></div>
+                </div>
+
+                <div class="question-card" data-topic="perbandingan">
+                    <p class="question-text">7. Jumlah sujud yang dilakukan dalam sujud sahwi dan sujud syukur adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Perbandingan</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q7" value="A"> A. 1 kali untuk keduanya</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="B"> B. 2 kali untuk keduanya</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="C"> C. Sahwi 1 kali, Syukur 2 kali</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="D"> D. Sahwi 2 kali, Syukur 1 kali</label>
+                    </div>
+                    <div class="feedback" id="fb-q7"></div>
+                </div>
+
+                <div class="question-card" data-topic="bacaan">
+                    <p class="question-text">8. Bacaan "Sajada wajhiya lilladzii khalaqahu..." adalah bacaan khusus untuk... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Bacaan</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q8" value="A"> A. Sujud Sahwi</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="B"> B. Sujud Tilawah</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="C"> C. Sujud Syukur</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="D"> D. Sujud dalam shalat fardhu</label>
+                    </div>
+                    <div class="feedback" id="fb-q8"></div>
+                </div>
+
+                <div class="question-card" data-topic="tata-cara">
+                    <p class="question-text">9. Dalam pelaksanaan sujud syukur, hal yang TIDAK disyariatkan adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Tata Cara</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q9" value="A"> A. Takbiratul ihram seperti shalat</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="B"> B. Wudhu (menurut Syafi'i)</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="C"> C. Menutup aurat</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="D"> D. Menghadap kiblat</label>
+                    </div>
+                    <div class="feedback" id="fb-q9"></div>
+                </div>
+
+                <div class="question-card" data-topic="posisi">
+                    <p class="question-text">10. Jika seseorang lupa dan menambah rakaat shalat (misalnya shalat Dzuhur jadi 5 rakaat), maka sujud sahwi dilakukan... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Posisi Sujud</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q10" value="A"> A. Sebelum salam</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="B"> B. Di tengah shalat</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="C"> C. Setelah salam</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="D"> D. Tidak perlu sujud sahwi</label>
+                    </div>
+                    <div class="feedback" id="fb-q10"></div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <h3 style="color: var(--text-primary); margin: 3rem 0 1.5rem; font-size: 1.3rem;">✍️ Bagian B: Essay</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                    💡 <em>Catatan: Sistem akan memberikan nilai simulasi berdasarkan kelengkapan jawaban (>30 karakter). Penilaian akhir yang sebenarnya tetap berada di wewenang guru.</em>
+                </p>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 1: Buatlah tabel perbandingan antara sujud sahwi, sujud syukur, dan sujud tilawah minimal dari 5 aspek! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay1" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 2: Ahmad sedang shalat Maghrib. Di rakaat kedua, ia ragu apakah sudah mengerjakan 2 rakaat atau baru 1 rakaat. Ia yakin baru 1 rakaat. Jelaskan jenis sujud yang harus dilakukan Ahmad beserta alasannya! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay2" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 3: Fatimah baru saja lulus seleksi beasiswa ke luar negeri. Jelaskan apa yang sebaiknya dilakukan Fatimah sebagai wujud syukur, beserta tata caranya! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay3" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 4: Umar sedang membaca Al-Qur'an dan sampai pada QS. An-Najm ayat 62. Jelaskan apa yang harus dilakukan Umar beserta bacaan yang dianjurkan! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay4" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 5: Jelaskan bagaimana ketiga jenis sujud (sahwi, syukur, tilawah) mengimplementasikan rasa cinta kepada Allah Swt. dalam ibadah! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay5" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <!-- Hasil Uji -->
+                <div id="hasil-uji" class="result-box">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1rem;">📊 Hasil Uji Formatif</h3>
+                    
+                    <div class="score-breakdown">
+                        <div class="score-item">
+                            <div class="label">Pilihan Ganda</div>
+                            <div class="value"><span id="mc-result">0</span>/100</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Essay (Simulasi)</div>
+                            <div class="value"><span id="essay-result">0</span>/100</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Waktu Pengerjaan</div>
+                            <div class="value" id="time-result">00:00</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Benar PG</div>
+                            <div class="value"><span id="correct-count">0</span>/10</div>
+                        </div>
+                    </div>
+                    
+                    <div style="border-top: 1px solid var(--border-gold); padding-top: 1rem; margin-top: 1rem; text-align: center;">
+                        <div style="color: var(--gold-light); font-size: 1rem; margin-bottom: 0.5rem;">Skor Akhir Total</div>
+                        <div class="score-display"><span id="total-result">0</span> <span style="font-size: 1.5rem; color: var(--text-secondary);">/ 200</span></div>
+                        <div id="grade-display" style="font-size: 1.2rem; color: var(--gold-light); margin-top: 0.5rem;"></div>
+                    </div>
+
+                    <!-- Analisis Kelemahan -->
+                    <div class="weakness-analysis" id="weakness-analysis" style="display: none;">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Analisis Kelemahan & Saran Perbaikan</h4>
+                        <ul class="weakness-list" id="weakness-list"></ul>
+                    </div>
+                </div>
+
+                <!-- Tombol Aksi -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary" onclick="calculateScore()">
+                        <i class="fas fa-check-circle"></i> KIRIM JAWABAN & LIHAT HASIL
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="downloadPDF()">
+                        <i class="fas fa-file-pdf"></i> UNDUH PDF LENGKAP
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="downloadTXT()">
+                        <i class="fas fa-file-alt"></i> UNDUH SKOR (TXT)
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="resetQuiz()">
+                        <i class="fas fa-redo"></i> MULAI ULANG
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="sendEmail()">
+                        <i class="fas fa-envelope"></i> KIRIM KE EMAIL GURU
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 1rem; color: var(--gold-primary);">
+                Fikih Kelas 8 Semester 1
+            </p>
+            <p>&copy; 2026 Ermawati, S.H.I. — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p style="margin-top: 0.5rem;">
+                Email: <a href="mailto:erma34779@gmail.com" style="color: var(--gold-primary);">erma34779@gmail.com</a>
+            </p>
+            <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem;">
+                <a href="index.html" class="nav-link" style="font-size: 0.85rem;"><i class="fas fa-book"></i> Daftar Isi</a>
+                <a href="5.html" class="nav-link" style="font-size: 0.85rem;">Pertemuan 5 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- =========================================
+         JAVASCRIPT LOGIC (ENHANCED)
+         ========================================= -->
+    <script>
+        // =========================================
+        // DATA SOAL & KUNCI JAWABAN
+        // =========================================
+        const quizData = {
+            q1: { 
+                correct: 'C', 
+                topic: 'Identifikasi',
+                explanation: 'Sujud SAHWI dilakukan karena LUPA dalam shalat, termasuk lupa jumlah rakaat. Sahwi = Sahwat = Lupa.' 
+            },
+            q2: { 
+                correct: 'A', 
+                topic: 'Perbandingan',
+                explanation: 'Sujud SYUKUR dilakukan di luar shalat ketika mendapat nikmat besar atau terhindar dari musibah. Ini adalah ekspresi terima kasih kepada Allah.' 
+            },
+            q3: { 
+                correct: 'B', 
+                topic: 'Perbandingan',
+                explanation: 'Sujud TILAWAH hanya dilakukan 1 kali sujud. Sedangkan sujud sahwi dan syukur dilakukan 2 kali sujud.' 
+            },
+            q4: { 
+                correct: 'C', 
+                topic: 'Posisi Sujud',
+                explanation: 'Jika lupa tasyahud awal (KEKURANGAN), sujud sahwi dilakukan SEBELUM salam. Rumus: Kekurangan = Sebelum salam, Kelebihan = Setelah salam.' 
+            },
+            q5: { 
+                correct: 'B', 
+                topic: 'Identifikasi',
+                explanation: 'Ibu sembuh dari sakit keras adalah NIKMAT BESAR, sehingga yang dilakukan adalah SUJUD SYUKUR sebagai wujud terima kasih kepada Allah.' 
+            },
+            q6: { 
+                correct: 'A', 
+                topic: 'Identifikasi',
+                explanation: 'QS. As-Sajdah ayat 15 adalah AYAT SAJDAH, sehingga ketika membacanya, disunnahkan melakukan SUJUD TILAWAH.' 
+            },
+            q7: { 
+                correct: 'B', 
+                topic: 'Perbandingan',
+                explanation: 'Sujud SAHWI dan SUJUD SYUKUR sama-sama dilakukan 2 kali sujud. Hanya sujud TILAWAH yang dilakukan 1 kali.' 
+            },
+            q8: { 
+                correct: 'B', 
+                topic: 'Bacaan',
+                explanation: '"Sajada wajhiya lilladzii khalaqahu..." adalah bacaan khusus SUJUD TILAWAH. Artinya: "Wajahku bersujud kepada Dzat yang menciptakannya..."' 
+            },
+            q9: { 
+                correct: 'A', 
+                topic: 'Tata Cara',
+                explanation: 'Sujud syukur BUKAN shalat, sehingga TIDAK disyariatkan takbiratul ihram seperti shalat. Yang disyaratkan: wudhu, menutup aurat, tempat suci, dan dianjurkan menghadap kiblat.' 
+            },
+            q10: { 
+                correct: 'C', 
+                topic: 'Posisi Sujud',
+                explanation: 'Jika lupa dan MENAMBAH rakaat (KELEBIHAN), sujud sahwi dilakukan SETELAH salam. Rumus: Kekurangan = Sebelum salam, Kelebihan = Setelah salam.' 
+            }
+        };
+
+        // =========================================
+        // TIMER & PROGRESS
+        // =========================================
+        let timerInterval;
+        let seconds = 0;
+        let quizStarted = false;
+
+        function startTimer() {
+            if (quizStarted) return;
+            quizStarted = true;
+            timerInterval = setInterval(() => {
+                seconds++;
+                const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+                const secs = (seconds % 60).toString().padStart(2, '0');
+                document.getElementById('timer').innerText = `${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function getFormattedTime() {
+            const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const secs = (seconds % 60).toString().padStart(2, '0');
+            return `${mins}:${secs}`;
+        }
+
+        // Update progress
+        function updateProgress() {
+            let answered = 0;
+            for (let i = 1; i <= 10; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+            }
+            for (let i = 1; i <= 5; i++) {
+                if (document.getElementById(`essay${i}`).value.trim().length > 0) answered++;
+            }
+            const total = 15;
+            const percent = (answered / total) * 100;
+            document.getElementById('progress-fill').style.width = percent + '%';
+            document.getElementById('progress-text').innerText = `${answered}/${total} soal dijawab`;
+        }
+
+        // Event listeners untuk progress & timer
+        document.querySelectorAll('input[type="radio"]').forEach(el => {
+            el.addEventListener('change', () => { startTimer(); updateProgress(); });
+        });
+        document.querySelectorAll('textarea').forEach(el => {
+            el.addEventListener('input', () => { startTimer(); updateProgress(); });
+        });
+
+        // =========================================
+        // HITUNG SKOR (ENHANCED)
+        // =========================================
+        function calculateScore() {
+            const nama = document.getElementById('nama').value.trim();
+            if (!nama) {
+                alert('Mohon isi Nama Lengkap terlebih dahulu!');
+                document.getElementById('nama').focus();
+                return;
+            }
+
+            stopTimer();
+
+            let mcScore = 0;
+            let correctCount = 0;
+            const topicStats = {};
+
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const data = quizData[`q${i}`];
+                const card = document.querySelector(`.question-card[data-topic="${data.topic}"]`);
+                const feedback = document.getElementById(`fb-q${i}`);
+                
+                if (!topicStats[data.topic]) {
+                    topicStats[data.topic] = { correct: 0, total: 0 };
+                }
+                topicStats[data.topic].total++;
+
+                if (selected && selected.value === data.correct) {
+                    mcScore += 10;
+                    correctCount++;
+                    topicStats[data.topic].correct++;
+                    card.classList.add('correct');
+                    card.classList.remove('incorrect');
+                    feedback.className = 'feedback show correct';
+                    feedback.innerHTML = `<strong><i class="fas fa-check-circle"></i> BENAR!</strong> ${data.explanation}`;
+                } else {
+                    card.classList.add('incorrect');
+                    card.classList.remove('correct');
+                    feedback.className = 'feedback show incorrect';
+                    const userAnswer = selected ? selected.value : 'Tidak dijawab';
+                    feedback.innerHTML = `<strong><i class="fas fa-times-circle"></i> KURANG TEPAT</strong> 
+                        Jawaban Anda: ${userAnswer} | Jawaban Benar: <strong>${data.correct}</strong><br>
+                        <em style="margin-top: 0.5rem; display: block;">${data.explanation}</em>`;
+                }
+            }
+
+            let essayScore = 0;
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim();
+                if (answer.length > 30) {
+                    essayScore += 20;
+                } else if (answer.length > 0) {
+                    essayScore += 10;
+                }
+            }
+
+            const totalScore = mcScore + essayScore;
+            
+            document.getElementById('mc-result').innerText = mcScore;
+            document.getElementById('essay-result').innerText = essayScore;
+            document.getElementById('total-result').innerText = totalScore;
+            document.getElementById('correct-count').innerText = correctCount;
+            document.getElementById('time-result').innerText = getFormattedTime();
+            
+            let grade = '';
+            const percentage = (totalScore / 200) * 100;
+            if (percentage >= 90) grade = '🏆 MUMTAZ (Istimewa)';
+            else if (percentage >= 80) grade = '🌟 JAYYID JIDDAN (Sangat Baik)';
+            else if (percentage >= 70) grade = '✨ JAYYID (Baik)';
+            else if (percentage >= 60) grade = '📖 MAQBUL (Cukup)';
+            else grade = '💪 PERLU BIMBINGAN LANJUT';
+            document.getElementById('grade-display').innerText = grade;
+
+            // Analisis Kelemahan
+            const weaknesses = [];
+            for (const [topic, stats] of Object.entries(topicStats)) {
+                if (stats.correct < stats.total) {
+                    const percent = (stats.correct / stats.total) * 100;
+                    let suggestion = '';
+                    switch(topic) {
+                        case 'Identifikasi': suggestion = 'Pelajari kembali ciri-ciri masing-masing sujud: Sahwi (lupa), Syukur (nikmat/musibah), Tilawah (ayat sajdah).'; break;
+                        case 'Perbandingan': suggestion = 'Ulangi tabel perbandingan ketiga sujud dari berbagai aspek (jumlah, posisi, bacaan, dll).'; break;
+                        case 'Posisi Sujud': suggestion = 'Pahami rumus: Kekurangan = Sebelum salam, Kelebihan = Setelah salam.'; break;
+                        case 'Bacaan': suggestion = 'Hafalkan bacaan khusus masing-masing sujud: Sahwi, Syukur, dan Tilawah.'; break;
+                        case 'Tata Cara': suggestion = 'Pelajari syarat dan tata cara masing-masing sujud secara detail.'; break;
+                    }
+                    weaknesses.push({ topic, percent, suggestion });
+                }
+            }
+
+            const weaknessBox = document.getElementById('weakness-analysis');
+            const weaknessList = document.getElementById('weakness-list');
+            if (weaknesses.length > 0) {
+                weaknessList.innerHTML = weaknesses.map(w => 
+                    `<li><strong>📌 ${w.topic.toUpperCase()}</strong> (${w.percent.toFixed(0)}% benar)<br>${w.suggestion}</li>`
+                ).join('');
+                weaknessBox.style.display = 'block';
+            } else {
+                weaknessBox.style.display = 'none';
+            }
+
+            const resultBox = document.getElementById('hasil-uji');
+            resultBox.classList.add('active');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            if (essayScore < 100) {
+                setTimeout(() => {
+                    alert('Catatan: Nilai Essay adalah simulasi otomatis berdasarkan kelengkapan jawaban. Guru akan meninjau jawaban Anda secara manual.');
+                }, 500);
+            }
+        }
+
+        // =========================================
+        // DOWNLOAD PDF
+        // =========================================
+        function downloadPDF() {
+            const element = document.getElementById('main-content');
+            const nama = document.getElementById('nama').value || 'Siswa';
+            
+            const opt = {
+                margin: [0.5, 0.5, 0.5, 0.5],
+                filename: `Uji_Formatif_Pertemuan_4_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, backgroundColor: '#022c22' },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            const btn = event.target.closest('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses PDF...';
+            btn.disabled = true;
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }).catch(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                alert('Gagal membuat PDF. Silakan coba lagi.');
+            });
+        }
+
+        // =========================================
+        // DOWNLOAD TXT (DETAIL LENGKAP)
+        // =========================================
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value;
+            const tanggal = document.getElementById('tanggal').value || new Date().toLocaleDateString('id-ID');
+            const mc = document.getElementById('mc-result').innerText;
+            const essay = document.getElementById('essay-result').innerText;
+            const total = document.getElementById('total-result').innerText;
+            const correct = document.getElementById('correct-count').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText;
+
+            let pgDetail = '';
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const userAns = selected ? selected.value : '-';
+                const correctAns = quizData[`q${i}`].correct;
+                const status = userAns === correctAns ? '✓ BENAR' : '✗ SALAH';
+                pgDetail += `  Soal ${i.toString().padStart(2, ' ')}: Jawaban Anda = ${userAns} | Kunci = ${correctAns} | ${status}\n`;
+            }
+
+            let essayDetail = '';
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim() || '(Tidak dijawab)';
+                const shortAns = answer.length > 100 ? answer.substring(0, 100) + '...' : answer;
+                essayDetail += `  Essay ${i}: ${shortAns}\n\n`;
+            }
+
+            const text = `╔══════════════════════════════════════════════════════════╗
+║          HASIL UJI FORMATIF - FIKIH KELAS 8             ║
+║              MTsN 10 AGAM - SEMESTER 1                  ║
+╚══════════════════════════════════════════════════════════╝
+
+Mata Pelajaran : Fikih Kelas 8 Semester 1
+Materi         : Pertemuan 4 - Praktik & Perbandingan Tiga Sujud
+Bab            : BAB 1 - Sujud (Pertemuan Puncak)
+Sekolah        : MTsN 10 Agam
+Guru Pengampu  : Ermawati, S.H.I. (erma34779@gmail.com)
+Tanggal Ujian  : ${tanggal}
+Waktu Pengerjaan: ${waktu}
+
+═══════════════════════════════════════════════════════════
+                    IDENTITAS SISWA
+═══════════════════════════════════════════════════════════
+Nama Lengkap : ${nama}
+NIS          : ${nis}
+Kelas        : ${kelas}
+
+═══════════════════════════════════════════════════════════
+                  RINGKASAN NILAI
+═══════════════════════════════════════════════════════════
+Nilai Pilihan Ganda   : ${mc} / 100  (${correct}/10 benar)
+Nilai Essay (Simulasi): ${essay} / 100
+───────────────────────────────────────────────────────────
+NILAI AKHIR TOTAL     : ${total} / 200
+PREDIKAT              : ${grade}
+
+═══════════════════════════════════════════════════════════
+                 DETAIL JAWABAN PILIHAN GANDA
+═══════════════════════════════════════════════════════════
+${pgDetail}
+═══════════════════════════════════════════════════════════
+                 DETAIL JAWABAN ESSAY
+═══════════════════════════════════════════════════════════
+${essayDetail}
+═══════════════════════════════════════════════════════════
+CATATAN PENTING
+═══════════════════════════════════════════════════════════
+• Pertemuan 4 adalah pertemuan PUNCAK Bab 1 (Sujud).
+• Nilai Essay di atas adalah SIMULASI OTOMATIS berdasarkan 
+  kelengkapan jawaban (>30 karakter).
+• Penilaian akhir yang sebenarnya berada di wewenang guru 
+  pengampu (Ibu Ermawati, S.H.I.).
+• Silakan hubungi guru untuk koreksi dan bimbingan lebih lanjut.
+
+═══════════════════════════════════════════════════════════
+Dokumen ini digenerate otomatis pada: ${new Date().toLocaleString('id-ID')}
+© 2026 Ermawati, S.H.I. - MTsN 10 Agam
+═══════════════════════════════════════════════════════════`;
+            
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Skor_Detail_Pertemuan4_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // =========================================
+        // RESET QUIZ
+        // =========================================
+        function resetQuiz() {
+            if(!confirm('Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang?')) return;
+            
+            document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+            document.querySelectorAll('textarea').forEach(el => el.value = '');
+            document.getElementById('nama').value = '';
+            document.getElementById('nis').value = '';
+            document.getElementById('tanggal').value = '';
+            
+            document.getElementById('mc-result').innerText = '0';
+            document.getElementById('essay-result').innerText = '0';
+            document.getElementById('total-result').innerText = '0';
+            document.getElementById('correct-count').innerText = '0';
+            document.getElementById('time-result').innerText = '00:00';
+            document.getElementById('grade-display').innerText = '';
+            document.getElementById('hasil-uji').classList.remove('active');
+            document.getElementById('weakness-analysis').style.display = 'none';
+            
+            document.querySelectorAll('.question-card').forEach(el => {
+                el.classList.remove('correct', 'incorrect');
+            });
+            document.querySelectorAll('.feedback').forEach(el => {
+                el.className = 'feedback';
+                el.innerHTML = '';
+            });
+            
+            stopTimer();
+            seconds = 0;
+            quizStarted = false;
+            document.getElementById('timer').innerText = '00:00';
+            document.getElementById('progress-fill').style.width = '0%';
+            document.getElementById('progress-text').innerText = '0/15 soal dijawab';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // =========================================
+        // KIRIM EMAIL
+        // =========================================
+        function sendEmail() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value;
+            const total = document.getElementById('total-result').innerText;
+            const mc = document.getElementById('mc-result').innerText;
+            const essay = document.getElementById('essay-result').innerText;
+            const correct = document.getElementById('correct-count').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText || 'Belum dinilai';
+            
+            if (total === '0' || !document.getElementById('hasil-uji').classList.contains('active')) {
+                alert('Silakan kerjakan uji formatif dan klik "KIRIM JAWABAN & LIHAT HASIL" terlebih dahulu sebelum mengirim email.');
+                return;
+            }
+
+            const subject = encodeURIComponent(`Hasil Uji Formatif Pertemuan 4 (Praktik Tiga Sujud) - ${nama} - ${kelas}`);
+            const body = encodeURIComponent(`Assalamu'alaikum Wr. Wb.
+
+Yth. Ibu Ermawati, S.H.I.,
+
+Berikut adalah hasil uji formatif saya pada Pertemuan 4 (Praktik & Perbandingan Tiga Sujud):
+
+═══════════════════════════════════
+IDENTITAS SISWA
+═══════════════════════════════════
+Nama  : ${nama}
+NIS   : ${nis}
+Kelas : ${kelas}
+
+═══════════════════════════════════
+HASIL PENILAIAN
+═══════════════════════════════════
+Pilihan Ganda    : ${mc}/100 (${correct}/10 benar)
+Essay (Simulasi) : ${essay}/100
+Waktu Pengerjaan : ${waktu}
+───────────────────────────────────
+NILAI AKHIR      : ${total}/200
+PREDIKAT         : ${grade}
+
+Mohon bimbingan dan koreksinya untuk jawaban essay.
+
+Jazakumullahu Khairan Katsiran.
+Wassalamu'alaikum Wr. Wb.
+
+───────────────────────────────────
+Dikirim otomatis dari Sistem Uji Formatif Fikih Kelas 8
+© 2026 MTsN 10 Agam`);
+            
+            window.location.href = `mailto:erma34779@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        // Set tanggal hari ini secara otomatis
+        document.getElementById('tanggal').valueAsDate = new Date();
+    </script>
+</body>
+</html>

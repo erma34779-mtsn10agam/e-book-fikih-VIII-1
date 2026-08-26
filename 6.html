@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 6: Ketentuan Zakat Fitrah | Fikih Kelas 8 Semester 1</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        :root {
+            --bg-dark: #022c22;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-input: rgba(255, 255, 255, 0.05);
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-gold: rgba(212, 175, 55, 0.3);
+            --success: #10b981;
+            --error: #ef4444;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            background-image: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: var(--gold-primary); transition: var(--transition); }
+        a:hover { color: var(--gold-light); }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 2rem; }
+
+        /* Navigasi */
+        .top-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 0; border-bottom: 1px solid var(--border-gold); margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;
+        }
+        .nav-link {
+            display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500; font-size: 0.95rem;
+            border: 1px solid var(--border-gold); padding: 0.5rem 1rem; border-radius: 50px;
+        }
+        .nav-link:hover { background: var(--gold-primary); color: var(--bg-dark); }
+
+        /* Header */
+        .materi-header { text-align: center; margin-bottom: 3rem; }
+        .bab-tag { display: inline-block; color: var(--gold-primary); font-family: 'Playfair Display', serif; font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .materi-title {
+            font-size: 2.8rem; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 50%, var(--gold-primary) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .materi-desc { color: var(--text-secondary); font-size: 1.15rem; max-width: 750px; margin: 0 auto 2rem; }
+
+        .author-badge {
+            display: inline-flex; align-items: center; gap: 1rem; background: var(--bg-card);
+            border: 1px solid var(--border-gold); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 3rem;
+        }
+        .author-badge i { color: var(--gold-primary); font-size: 1.5rem; }
+        .author-info { text-align: left; }
+        .author-info strong { display: block; color: var(--text-primary); font-size: 1.1rem; }
+        .author-info span { color: var(--text-secondary); font-size: 0.9rem; }
+
+        /* Konten */
+        .content-section {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 2.5rem; margin-bottom: 2rem;
+        }
+        .section-title {
+            color: var(--gold-primary); font-size: 1.6rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
+        }
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold-primary); padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0;
+        }
+        .highlight-box h4 { color: var(--gold-light); margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; }
+        
+        ul.custom-list { list-style: none; padding-left: 0; }
+        ul.custom-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+        ul.custom-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold-primary); }
+
+        /* Tabel Mewah */
+        .table-wrapper { overflow-x: auto; margin: 1.5rem 0; }
+        .luxury-table {
+            width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.02); border-radius: 8px; overflow: hidden;
+        }
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-primary); padding: 1rem; text-align: left;
+            font-family: 'Playfair Display', serif; font-weight: 600; border-bottom: 2px solid var(--border-gold);
+        }
+        .luxury-table td {
+            padding: 1rem; border-bottom: 1px solid var(--border-gold); color: var(--text-secondary); vertical-align: top;
+        }
+        .luxury-table tr:last-child td { border-bottom: none; }
+        .luxury-table tr:hover td { background: rgba(212, 175, 55, 0.05); color: var(--text-primary); }
+
+        /* Kutipan */
+        .quran-quote {
+            text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(2, 44, 34, 0.8) 100%);
+            border: 1px solid var(--border-gold); border-radius: 16px; margin: 3rem 0;
+        }
+        .arabic-text { font-family: 'Traditional Arabic', serif; font-size: 1.8rem; color: var(--gold-primary); margin-bottom: 1rem; line-height: 2; }
+        .quote-translation { font-style: italic; color: var(--text-secondary); font-size: 1.05rem; }
+        .quote-source { display: block; margin-top: 1rem; color: var(--gold-light); font-weight: 600; font-size: 0.9rem; }
+
+        .fiqh-rule {
+            text-align: center; padding: 1.5rem; border: 1px dashed var(--gold-primary); border-radius: 12px; margin: 1.5rem 0;
+        }
+        .fiqh-rule .arabic { font-family: 'Traditional Arabic', serif; font-size: 1.5rem; color: var(--gold-primary); margin-bottom: 0.5rem; }
+        .fiqh-rule .translation { color: var(--text-secondary); font-style: italic; }
+
+        /* Kata Kunci */
+        .keywords { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .keyword-tag {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-light); padding: 0.4rem 1rem; border-radius: 20px;
+            font-size: 0.85rem; border: 1px solid var(--border-gold);
+        }
+
+        /* Timeline Waktu Zakat */
+        .timeline {
+            position: relative;
+            padding: 1.5rem 0;
+            margin: 1.5rem 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--gold-primary), var(--gold-light));
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 1.5rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 14px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--gold-primary);
+            border: 3px solid var(--bg-dark);
+            box-shadow: 0 0 0 2px var(--gold-primary);
+        }
+        .timeline-item.wajib::before { background: var(--success); box-shadow: 0 0 0 2px var(--success); }
+        .timeline-item.sunnah::before { background: #3b82f6; box-shadow: 0 0 0 2px #3b82f6; }
+        .timeline-item.makruh::before { background: #f59e0b; box-shadow: 0 0 0 2px #f59e0b; }
+        .timeline-item.haram::before { background: var(--error); box-shadow: 0 0 0 2px var(--error); }
+        .timeline-title {
+            font-weight: 600;
+            color: var(--gold-light);
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .timeline-title .badge {
+            display: inline-block;
+            padding: 0.15rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: white;
+        }
+        .badge.wajib { background: var(--success); }
+        .badge.sunnah { background: #3b82f6; }
+        .badge.makruh { background: #f59e0b; }
+        .badge.haram { background: var(--error); }
+        .timeline-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Niat Cards */
+        .niat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .niat-card {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .niat-card:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-3px);
+            border-color: var(--gold-primary);
+        }
+        .niat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gold-primary);
+        }
+        .niat-number {
+            display: inline-block;
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+        .niat-name {
+            color: var(--gold-light);
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .niat-arabic {
+            font-family: 'Traditional Arabic', serif;
+            color: var(--gold-primary);
+            font-size: 1.3rem;
+            text-align: center;
+            margin: 0.75rem 0;
+            line-height: 2;
+            padding: 0.75rem;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 8px;
+        }
+        .niat-latin {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .niat-meaning {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Quiz Styles */
+        .quiz-container {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 2.5rem; margin-top: 4rem;
+        }
+        .quiz-header { text-align: center; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-gold); }
+        
+        .quiz-meta {
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+            background: rgba(212, 175, 55, 0.08); padding: 1rem 1.5rem; border-radius: 12px; margin-bottom: 2rem;
+        }
+        .timer-display {
+            display: flex; align-items: center; gap: 0.5rem; color: var(--gold-primary); font-weight: 600; font-size: 1.1rem;
+        }
+        .timer-display i { font-size: 1.3rem; }
+        .progress-wrapper { flex: 1; min-width: 200px; margin: 0 1rem; }
+        .progress-label { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.25rem; }
+        .progress-bar {
+            width: 100%; height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%; background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+            width: 0%; transition: width 0.4s ease; border-radius: 4px;
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { display: block; margin-bottom: 0.5rem; color: var(--gold-light); font-weight: 500; font-size: 0.95rem; }
+        .form-input, .form-select, .form-textarea {
+            width: 100%; background: var(--bg-input); border: 1px solid var(--border-gold); border-radius: 8px;
+            padding: 0.85rem 1rem; color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 1rem; transition: var(--transition);
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none; border-color: var(--gold-primary); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        .form-textarea { min-height: 120px; resize: vertical; }
+
+        .question-card { 
+            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.1); 
+            border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; transition: var(--transition);
+        }
+        .question-card.correct { border-color: var(--success); background: rgba(16, 185, 129, 0.05); }
+        .question-card.incorrect { border-color: var(--error); background: rgba(239, 68, 68, 0.05); }
+        
+        .question-text { font-weight: 600; margin-bottom: 1rem; color: var(--text-primary); }
+        .points-badge {
+            display: inline-block; background: var(--gold-primary); color: var(--bg-dark); font-size: 0.75rem;
+            font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+        }
+        .topic-badge {
+            display: inline-block; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); 
+            font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+            border: 1px solid var(--border-gold);
+        }
+        
+        .radio-group { display: flex; flex-direction: column; gap: 0.75rem; }
+        .radio-label {
+            display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; border-radius: 8px;
+            cursor: pointer; transition: var(--transition); border: 1px solid transparent;
+        }
+        .radio-label:hover { background: rgba(212, 175, 55, 0.05); }
+        .radio-label input[type="radio"] { accent-color: var(--gold-primary); width: 18px; height: 18px; }
+        
+        .feedback {
+            margin-top: 1rem; padding: 0.85rem 1rem; border-radius: 8px; font-size: 0.9rem; display: none;
+        }
+        .feedback.show { display: block; animation: fadeIn 0.4s ease; }
+        .feedback.correct { background: rgba(16, 185, 129, 0.1); border-left: 3px solid var(--success); color: #a7f3d0; }
+        .feedback.incorrect { background: rgba(239, 68, 68, 0.1); border-left: 3px solid var(--error); color: #fecaca; }
+        .feedback strong { display: block; margin-bottom: 0.25rem; }
+
+        .result-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(2, 44, 34, 0.9) 100%);
+            border: 2px solid var(--gold-primary); border-radius: 16px; padding: 2rem; margin: 2rem 0; display: none;
+        }
+        .result-box.active { display: block; animation: fadeIn 0.5s ease; }
+        .score-display { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold-primary); margin: 1rem 0; }
+        
+        .score-breakdown {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0;
+        }
+        .score-item {
+            background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px; text-align: center;
+            border: 1px solid var(--border-gold);
+        }
+        .score-item .label { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.25rem; }
+        .score-item .value { font-size: 1.5rem; font-weight: 700; color: var(--gold-primary); }
+        
+        .weakness-analysis {
+            background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;
+        }
+        .weakness-analysis h4 { color: #fecaca; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .weakness-list { list-style: none; }
+        .weakness-list li { 
+            padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+            color: var(--text-secondary); font-size: 0.9rem;
+        }
+        .weakness-list li:last-child { border-bottom: none; }
+        .weakness-list li strong { color: var(--gold-light); }
+
+        .btn-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.5rem;
+            border-radius: 8px; font-weight: 600; cursor: pointer; transition: var(--transition); border: none; font-size: 0.95rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--gold-primary) 0%, #b8941f 100%); color: var(--bg-dark); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4); }
+        .btn-outline { background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-primary); }
+        .btn-outline:hover { background: var(--gold-primary); color: var(--bg-dark); }
+        .btn-secondary { background: rgba(255, 255, 255, 0.1); color: var(--text-primary); border: 1px solid var(--border-gold); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+
+        .footer { text-align: center; padding: 3rem 0; margin-top: 4rem; border-top: 1px solid var(--border-gold); color: var(--text-secondary); font-size: 0.9rem; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .materi-title { font-size: 2rem; }
+            .content-section, .quiz-container { padding: 1.5rem; }
+            .btn-group { grid-template-columns: 1fr; }
+            .quiz-meta { flex-direction: column; align-items: stretch; }
+            .niat-grid { grid-template-columns: 1fr; }
+        }
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .btn-group, .footer, .quiz-meta { display: none !important; }
+            .content-section, .quiz-container, .result-box { border: 1px solid #ccc; background: white; color: black; break-inside: avoid; }
+            .arabic-text, .materi-title, .section-title { color: #000 !important; -webkit-text-fill-color: #000 !important; }
+            .form-input, .form-textarea { border: 1px solid #ccc; color: black; }
+            .feedback { background: #f3f4f6 !important; color: black !important; border-left-color: #333 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="main-content">
+        <!-- Navigasi Atas -->
+        <nav class="top-nav">
+            <a href="index.html" class="nav-link"><i class="fas fa-arrow-left"></i> Daftar Isi</a>
+            <span style="color: var(--text-secondary); font-weight: 500;">Fikih Kelas 8 Semester 1</span>
+            <a href="7.html" class="nav-link">Pertemuan 7 <i class="fas fa-arrow-right"></i></a>
+        </nav>
+
+        <!-- Header Materi -->
+        <header class="materi-header">
+            <div class="bab-tag">💰 — BAB DUA: ZAKAT —</div>
+            <h1 class="materi-title">Pertemuan 6: Ketentuan Zakat Fitrah</h1>
+            <p class="materi-desc">
+                Ketentuan zakat fitrah sebagai wujud penyucian diri dan cinta kepada sesama di hari raya. 
+                Zakat fitrah adalah zakat jiwa yang wajib dikeluarkan setiap muslim menjelang Idul Fitri untuk membersihkan puasa dan membahagiakan fakir miskin di hari raya.
+            </p>
+            
+            <div class="author-badge">
+                <i class="fas fa-user-graduate"></i>
+                <div class="author-info">
+                    <strong>Ermawati, S.H.I.</strong>
+                    <span>Guru Fikih, MTsN 10 Agam</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- A. Pengertian -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-book-open"></i> A. Pengertian Zakat Fitrah</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Untuk memahami zakat fitrah secara utuh, kita perlu menelaahnya dari dua sisi, yaitu bahasa (etimologi) dan istilah (terminologi):
+            </p>
+            <ul class="custom-list">
+                <li><strong>Secara Bahasa (Etimologi):</strong> Kata <em>"Fitrah"</em> (الفِطْرَةُ) berasal dari kata <em>"fithr"</em> (الفِطْر) yang berarti <strong>"buka puasa"</strong> atau <strong>"asal kejadian"</strong>. Jadi zakat fitrah secara harfiah berarti "zakat karena berbuka (dari puasa Ramadhan)" atau "zakat yang berkaitan dengan fitrah (asal kejadian) manusia".</li>
+                <li><strong>Secara Istilah (Terminologi):</strong> Zakat yang <strong>wajib dikeluarkan oleh setiap muslim</strong> (laki-laki, perempuan, besar, kecil, merdeka, maupun budak) berupa <strong>makanan pokok sebanyak 2,5 kg (atau 3,5 liter)</strong> yang diberikan kepada mustahik sebelum shalat Idul Fitri dilaksanakan.</li>
+            </ul>
+            <div class="highlight-box">
+                <h4><i class="fas fa-heart"></i> Konsep Kunci: Penyucian Diri & Cinta kepada Sesama</h4>
+                <p>Zakat fitrah memiliki <strong>dua dimensi spiritual</strong> yang indah: 
+                    <strong>(1) Penyucian diri</strong> — membersihkan jiwa dari kotoran yang melekat selama puasa Ramadhan (kata-kata sia-sia, perbuatan sia-sia), 
+                    <strong>(2) Cinta kepada sesama</strong> — membahagiakan fakir miskin di hari raya agar mereka tidak perlu meminta-minta di hari kebahagiaan umat Islam. 
+                    Inilah perpaduan antara <strong>habluminallah</strong> (hubungan dengan Allah) dan <strong>habluminannas</strong> (hubungan dengan sesama manusia).</p>
+            </div>
+        </section>
+
+        <!-- B. Dalil Naqli -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-scroll"></i> B. Dalil Naqli (Landasan Hukum)</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Disyariatkannya zakat fitrah didasarkan pada hadits-hadits shahih dari Rasulullah saw. Berikut adalah dalil utamanya:
+            </p>
+            <div class="quran-quote">
+                <div class="arabic-text">
+                    فَرَضَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ زَكَاةَ الْفِطْرِ طُهْرَةً لِلصَّائِمِ مِنَ اللَّغْوِ وَالرَّفَثِ وَطُعْمَةً لِلْمَسَاكِينِ
+                </div>
+                <p class="quote-translation">
+                    "Rasulullah saw. telah mewajibkan zakat fitrah sebagai <strong>pembersih bagi orang yang berpuasa dari (dosa) kata-kata sia-sia dan kata-kata keji</strong>, dan sebagai <strong>makanan bagi orang-orang miskin</strong>."
+                </p>
+                <span class="quote-source">— HR. Abu Dawud no. 1609, Ibnu Majah no. 1827 (Hadits Ibnu Abbas ra.)</span>
+            </div>
+            <div class="quran-quote">
+                <div class="arabic-text">
+                    فَرَضَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ زَكَاةَ الْفِطْرِ صَاعًا مِنْ تَمْرٍ أَوْ صَاعًا مِنْ شَعِيرٍ عَلَى الْعَبْدِ وَالْحُرِّ وَالذَّكَرِ وَالْأُنْثَى وَالصَّغِيرِ وَالْكَبِيرِ مِنَ الْمُسْلِمِينَ
+                </div>
+                <p class="quote-translation">
+                    "Rasulullah saw. mewajibkan zakat fitrah sebanyak satu sha' kurma atau satu sha' gandum atas <strong>hamba sahaya, orang merdeka, laki-laki, perempuan, anak kecil, dan orang besar dari kalangan muslimin</strong>."
+                </p>
+                <span class="quote-source">— HR. Bukhari no. 1503 dan Muslim no. 984 (Hadits Ibnu Umar ra.)</span>
+            </div>
+            <div class="highlight-box">
+                <h4>📌 Dua Tujuan Zakat Fitrah dari Hadits</h4>
+                <p style="margin-top: 0.5rem;">
+                    <strong>1. طُهْرَةً لِلصَّائِمِ (Thuratan li ash-shā'im)</strong> = Penyuci bagi orang yang berpuasa dari dosa-dosa kecil selama Ramadhan.<br>
+                    <strong>2. طُعْمَةً لِلْمَسَاكِينِ (Thurmatan li al-masākīn)</strong> = Makanan bagi orang-orang miskin agar mereka ikut bahagia di hari raya.
+                </p>
+            </div>
+        </section>
+
+        <!-- C. Hukum Zakat Fitrah -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-balance-scale"></i> C. Hukum Zakat Fitrah</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Hukum zakat fitrah dalam Islam adalah <strong>wajib 'ain</strong> (wajib bagi setiap individu muslim yang memenuhi syarat). Berikut rincian hukumnya:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 30%;">Aspek</th>
+                            <th>Ketentuan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hukum Dasar</strong></td>
+                            <td><span style="color: var(--gold-primary); font-weight: 600;">Wajib 'ain</span> bagi setiap muslim yang memiliki kelebihan makanan pokok untuk dirinya dan keluarganya pada hari dan malam Idul Fitri.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waktu Kewajiban</strong></td>
+                            <td>Kewajiban zakat fitrah muncul sejak <strong>terbenamnya matahari akhir Ramadhan</strong> (malam takbiran) hingga sebelum shalat Idul Fitri.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Yang Wajib Mengeluarkan</strong></td>
+                            <td>Setiap muslim yang <strong>hidup di sebagian waktu Ramadhan</strong> dan sebagian waktu bulan Syawal (meski hanya sesaat sebelum matahari terbenam akhir Ramadhan).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Yang Diwakilkan</strong></td>
+                            <td>Kepala keluarga wajib mengeluarkan zakat fitrah untuk <strong>dirinya, istri, anak-anak, dan orang yang menjadi tanggungannya</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jika Bayi Lahir Setelah Maghrib</strong></td>
+                            <td>Bayi yang lahir <strong>setelah matahari terbenam akhir Ramadhan</strong> tidak wajib dizakati, karena ia tidak menjumpai sebagian waktu kewajiban.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jika Ada yang Meninggal</strong></td>
+                            <td>Orang yang meninggal <strong>sebelum matahari terbenam akhir Ramadhan</strong> tidak wajib dizakati. Jika meninggal setelahnya, wajib dizakati.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- D. Syarat Wajib Zakat Fitrah -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-clipboard-check"></i> D. Syarat Wajib Zakat Fitrah</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Tidak semua orang wajib mengeluarkan zakat fitrah. Ada beberapa syarat yang harus dipenuhi:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Syarat</th>
+                            <th>Penjelasan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. Islam</strong></td>
+                            <td>Hanya muslim yang wajib mengeluarkan zakat fitrah. Non-muslim tidak wajib.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Menemui Sebagian Ramadhan & Syawal</strong></td>
+                            <td>Orang tersebut <strong>hidup di sebagian waktu Ramadhan</strong> dan <strong>sebagian waktu bulan Syawal</strong> (meski hanya sesaat sebelum matahari terbenam akhir Ramadhan).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Memiliki Kelebihan Makanan Pokok</strong></td>
+                            <td>Memiliki <strong>kelebihan makanan pokok</strong> (beras, gandum, kurma, dll) sebanyak <strong>2,5 kg</strong> untuk dirinya dan orang yang menjadi tanggungannya pada hari dan malam Idul Fitri.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="highlight-box">
+                <h4>💡 Catatan Penting</h4>
+                <p>Berbeda dengan zakat mal yang memerlukan syarat <em>nisab</em> (batas minimal harta) dan <em>haul</em> (1 tahun), zakat fitrah <strong>tidak memerlukan nisab dan haul</strong>. Selama seseorang memiliki kelebihan makanan pokok 2,5 kg di malam Idul Fitri, ia wajib mengeluarkan zakat fitrah — baik ia kaya maupun miskin (asalkan tidak sampai meminta-minta).</p>
+            </div>
+        </section>
+
+        <!-- E. Takaran & Jenis Makanan -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-weight-hanging"></i> E. Takaran dan Jenis Makanan Pokok</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Zakat fitrah wajib dikeluarkan dalam bentuk <strong>makanan pokok</strong> dengan takaran tertentu. Berikut rinciannya:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th>Ketentuan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Takaran Standar</strong></td>
+                            <td><strong>1 sha'</strong> = setara dengan <strong>4 mud</strong> = <strong>2,5 kg</strong> (menurut mayoritas ulama) atau <strong>3,5 liter</strong> (ukuran volume).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jenis Makanan</strong></td>
+                            <td><strong>Makanan pokok setempat</strong>. Di Indonesia: <strong>beras</strong>. Di Timur Tengah: kurma, gandum, atau sya'ir (semacam gandum).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kualitas</strong></td>
+                            <td>Makanan yang <strong>layak dikonsumsi</strong> oleh orang yang mengeluarkan zakat dan keluarganya. Tidak boleh memberikan makanan yang buruk/rusak.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bolehkah Uang?</strong></td>
+                            <td>Menurut <strong>Madzhab Syafi'i</strong>: <strong>Tidak boleh</strong> dalam bentuk uang, harus makanan pokok. Menurut <strong>Madzhab Hanafi</strong>: <strong>Boleh</strong> dalam bentuk uang senilai makanan pokok (untuk kemaslahatan fakir miskin).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jumlah per Jiwa</strong></td>
+                            <td><strong>2,5 kg per orang</strong>. Jika seorang ayah menzakati 4 jiwa (diri, istri, 2 anak), maka total: 4 × 2,5 kg = <strong>10 kg beras</strong>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="highlight-box">
+                <h4>📌 Konversi Praktis di Indonesia</h4>
+                <p style="margin-top: 0.5rem;">
+                    <strong>1 sha' beras = 2,5 kg = ± 3,5 liter beras</strong><br>
+                    Dalam kemasan: setara dengan <strong>2,5 kg beras</strong> yang biasa dijual di pasar. Jika diukur dengan kaleng susu bekas (ukuran standar), 1 sha' = ± 13 kaleng susu.
+                </p>
+            </div>
+        </section>
+
+        <!-- F. Waktu Pelaksanaan -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-clock"></i> F. Waktu Pelaksanaan Zakat Fitrah</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Waktu pelaksanaan zakat fitrah terbagi menjadi 4 kategori berdasarkan hukumnya:</p>
+            
+            <div class="timeline">
+                <div class="timeline-item sunnah">
+                    <div class="timeline-title">
+                        <span class="badge sunnah">SUNNAH</span> Waktu Awal (Diperbolehkan)
+                    </div>
+                    <div class="timeline-desc">
+                        <strong>Sejak awal Ramadhan</strong> hingga akhir Ramadhan. Boleh dikeluarkan di awal Ramadhan sebagai bentuk percepatan (ta'jīl), meskipun yang lebih utama adalah di akhir Ramadhan.
+                    </div>
+                </div>
+                <div class="timeline-item wajib">
+                    <div class="timeline-title">
+                        <span class="badge wajib">WAJIB</span> Waktu Kewajiban
+                    </div>
+                    <div class="timeline-desc">
+                        <strong>Sejak terbenamnya matahari akhir Ramadhan</strong> (malam takbiran) hingga sebelum shalat Idul Fitri. Pada waktu ini, zakat fitrah <strong>hukumnya wajib</strong> dikeluarkan.
+                    </div>
+                </div>
+                <div class="timeline-item sunnah">
+                    <div class="timeline-title">
+                        <span class="badge sunnah">SUNNAH / AFHDHAL</span> Waktu Utama
+                    </div>
+                    <div class="timeline-desc">
+                        <strong>Sebelum berangkat shalat Idul Fitri</strong>. Ini adalah waktu yang paling utama (afdhal) untuk mengeluarkan zakat fitrah, agar fakir miskin dapat menikmati hari raya dengan layak.
+                    </div>
+                </div>
+                <div class="timeline-item makruh">
+                    <div class="timeline-title">
+                        <span class="badge makruh">MAKRUH</span> Waktu Makruh
+                    </div>
+                    <div class="timeline-desc">
+                        <strong>Setelah shalat Idul Fitri hingga sebelum terbenam matahari 1 Syawal</strong>. Zakat tetap sah dan dianggap sebagai shadaqah biasa, tetapi <strong>makruh</strong> karena telah melewati waktu utama.
+                    </div>
+                </div>
+                <div class="timeline-item haram">
+                    <div class="timeline-title">
+                        <span class="badge haram">HARAM / DOSA</span> Waktu Terlarang
+                    </div>
+                    <div class="timeline-desc">
+                        <strong>Setelah terbenam matahari 1 Syawal</strong>. Zakat fitrah yang dikeluarkan setelah waktu ini <strong>tidak sah</strong> sebagai zakat fitrah, melainkan hanya dihitung sebagai shadaqah biasa. Orang yang menundanya tanpa uzur syar'i <strong>berdosa</strong>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- G. Niat Zakat Fitrah -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-praying-hands"></i> G. Niat Zakat Fitrah</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Niat adalah rukun penting dalam zakat fitrah. Berikut adalah niat-niat yang dibaca sesuai dengan untuk siapa zakat dikeluarkan:</p>
+            
+            <div class="niat-grid">
+                <div class="niat-card">
+                    <div class="niat-number">1</div>
+                    <div class="niat-name">Niat untuk Diri Sendiri</div>
+                    <div class="niat-arabic">نَوَيْتُ أَنْ أُخْرِجَ زَكَاةَ الْفِطْرِ عَنْ نَفْسِيْ فَرْضًا لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu an ukhrija zakatal fithri 'an nafsii fardhan lillaahi ta'aalaa"</div>
+                    <div class="niat-meaning">"Saya niat mengeluarkan zakat fitrah untuk diri saya sendiri, fardhu karena Allah Ta'ala."</div>
+                </div>
+                <div class="niat-card">
+                    <div class="niat-number">2</div>
+                    <div class="niat-name">Niat untuk Istri</div>
+                    <div class="niat-arabic">نَوَيْتُ أَنْ أُخْرِجَ زَكَاةَ الْفِطْرِ عَنْ زَوْجَتِيْ فَرْضًا لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu an ukhrija zakatal fithri 'an zaujatii fardhan lillaahi ta'aalaa"</div>
+                    <div class="niat-meaning">"Saya niat mengeluarkan zakat fitrah untuk istri saya, fardhu karena Allah Ta'ala."</div>
+                </div>
+                <div class="niat-card">
+                    <div class="niat-number">3</div>
+                    <div class="niat-name">Niat untuk Anak Laki-laki</div>
+                    <div class="niat-arabic">نَوَيْتُ أَنْ أُخْرِجَ زَكَاةَ الْفِطْرِ عَنْ وَلَدِيْ... فَرْضًا لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu an ukhrija zakatal fithri 'an waladii... fardhan lillaahi ta'aalaa"</div>
+                    <div class="niat-meaning">"Saya niat mengeluarkan zakat fitrah untuk anak laki-laki saya (sebut nama), fardhu karena Allah Ta'ala."</div>
+                </div>
+                <div class="niat-card">
+                    <div class="niat-number">4</div>
+                    <div class="niat-name">Niat untuk Anak Perempuan</div>
+                    <div class="niat-arabic">نَوَيْتُ أَنْ أُخْرِجَ زَكَاةَ الْفِطْرِ عَنْ بِنْتِيْ... فَرْضًا لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu an ukhrija zakatal fithri 'an bintii... fardhan lillaahi ta'aalaa"</div>
+                    <div class="niat-meaning">"Saya niat mengeluarkan zakat fitrah untuk anak perempuan saya (sebut nama), fardhu karena Allah Ta'ala."</div>
+                </div>
+                <div class="niat-card">
+                    <div class="niat-number">5</div>
+                    <div class="niat-name">Niat untuk Orang yang Diwakilkan</div>
+                    <div class="niat-arabic">نَوَيْتُ أَنْ أُخْرِجَ زَكَاةَ الْفِطْرِ عَنْ (فُلاَنٍ) فَرْضًا لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu an ukhrija zakatal fithri 'an (fulān) fardhan lillaahi ta'aalaa"</div>
+                    <div class="niat-meaning">"Saya niat mengeluarkan zakat fitrah untuk (sebut nama), fardhu karena Allah Ta'ala."</div>
+                </div>
+                <div class="niat-card">
+                    <div class="niat-number">6</div>
+                    <div class="niat-name">Niat untuk Seluruh Keluarga</div>
+                    <div class="niat-arabic">نَوَيْتُ أَنْ أُخْرِجَ زَكَاةَ الْفِطْرِ عَنِّيْ وَعَنْ جَمِيْعِ أَهْلِ بَيْتِيْ فَرْضًا لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu an ukhrija zakatal fithri 'annii wa 'an jamii-i ahli baitii fardhan lillaahi ta'aalaa"</div>
+                    <div class="niat-meaning">"Saya niat mengeluarkan zakat fitrah untuk diri saya dan seluruh keluarga saya, fardhu karena Allah Ta'ala."</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- H. Perbedaan Zakat Fitrah dan Zakat Mal -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-columns"></i> H. Perbedaan Zakat Fitrah dan Zakat Mal</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Kedua jenis zakat ini sering dianggap sama, padahal memiliki perbedaan yang signifikan:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th>Zakat Fitrah</th>
+                            <th>Zakat Mal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Sebutan Lain</strong></td>
+                            <td>Zakat Jiwa (Zakat Nafs)</td>
+                            <td>Zakat Harta</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wajib bagi</strong></td>
+                            <td>Setiap muslim (laki-laki, perempuan, besar, kecil)</td>
+                            <td>Muslim yang hartanya mencapai nisab & haul</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bentuk</strong></td>
+                            <td>Makanan pokok (beras, kurma, dll)</td>
+                            <td>Harta tertentu (emas, uang, ternak, dll)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Takaran</strong></td>
+                            <td>2,5 kg per jiwa</td>
+                            <td>Tergantung jenis harta (2,5%, 5%, 10%, 20%)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Syarat Nisab</strong></td>
+                            <td>Tidak memerlukan nisab</td>
+                            <td>Wajib mencapai nisab</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Syarat Haul</strong></td>
+                            <td>Tidak memerlukan haul</td>
+                            <td>Wajib haul (1 tahun), kecuali pertanian & rikaz</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waktu Pelaksanaan</strong></td>
+                            <td>Menjelang Idul Fitri</td>
+                            <td>Kapan saja setelah mencapai nisab & haul</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tujuan Utama</strong></td>
+                            <td>Menyucikan jiwa & membahagiakan fakir miskin di hari raya</td>
+                            <td>Menyucikan harta & mewujudkan keadilan ekonomi</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Penerima (Mustahik)</strong></td>
+                            <td>Terutama fakir miskin (8 golongan boleh)</td>
+                            <td>8 golongan mustahik</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- I. Hikmah Zakat Fitrah -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-heart"></i> I. Hikmah Zakat Fitrah</h2>
+            <ul class="custom-list">
+                <li><strong>Menyucikan Jiwa:</strong> Membersihkan puasa dari kotoran kata-kata sia-sia, perbuatan sia-sia, dan dosa-dosa kecil selama Ramadhan.</li>
+                <li><strong>Membahagiakan Fakir Miskin di Hari Raya:</strong> Agar mereka tidak perlu meminta-minta di hari kebahagiaan umat Islam, sehingga ikut merasakan kegembiraan Idul Fitri.</li>
+                <li><strong>Menyempurnakan Puasa:</strong> Sebagai "penambal" kekurangan dalam puasa, sebagaimana sujud sahwi menambal kekurangan shalat.</li>
+                <li><strong>Wujud Syukur kepada Allah:</strong> Sebagai ungkapan terima kasih atas nikmat Ramadhan yang telah dilalui dengan sempurna.</li>
+                <li><strong>Memperkuat Ukhuwah Islamiyah:</strong> Mempererat tali persaudaraan antara si kaya dan si miskin melalui berbagi di hari raya.</li>
+                <li><strong>Melatih Kepedulian Sosial:</strong> Membiasakan diri untuk peduli terhadap sesama, terutama di momen-momen penting umat Islam.</li>
+                <li><strong>Membersihkan Harta:</strong> Membersihkan harta dari hak-hak orang lain yang mungkin masih melekat.</li>
+            </ul>
+        </section>
+
+        <!-- J. Kaidah Fiqh Pendukung -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-gavel"></i> J. Teori Pendukung: Kaidah Fiqh</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Dalam memahami hakikat zakat fitrah, para ulama merumuskan kaidah fiqh yang sangat mendalam:
+            </p>
+            <div class="fiqh-rule">
+                <div class="arabic">أَصْلُ فِي الزَّكَاةِ أَنَّهَا طُهْرَةٌ لِلْمُزَكِّي وَطُعْمَةٌ لِلْمُستَحِقّ</div>
+                <div class="translation">"Asal dalam zakat adalah bahwa ia merupakan penyuci bagi yang mengeluarkannya dan makanan bagi yang berhak menerimanya."</div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 1rem;">
+                <strong>Aplikasi:</strong> Kaidah ini merangkum dua dimensi zakat fitrah: (1) <em>Thurhatun li al-muzakki</em> = penyuci bagi yang mengeluarkan, dan (2) <em>Thurmatun li al-mustahiqq</em> = makanan bagi yang berhak menerima. Inilah keindahan zakat fitrah yang menyatukan penyucian spiritual dan kepedulian sosial.
+            </p>
+            
+            <div class="quran-quote" style="margin-top: 2rem;">
+                <div class="arabic-text">
+                    قَدْ أَفْلَحَ مَن تَزَكَّىٰ وَذَكَرَ اسْمَ رَبِّهِ فَصَلَّىٰ
+                </div>
+                <p class="quote-translation">
+                    "Sesungguhnya beruntunglah orang yang membersihkan diri (dengan membayar zakat), dan dia ingat nama Tuhannya, lalu dia shalat."
+                </p>
+                <span class="quote-source">— QS. Al-A'la [87]: 14-15</span>
+            </div>
+        </section>
+
+        <!-- Kata Kunci -->
+        <section style="margin: 3rem 0;">
+            <h3 style="color: var(--gold-primary); margin-bottom: 1rem; font-size: 1.2rem;">◆ Kata Kunci Pertemuan Ini</h3>
+            <div class="keywords">
+                <span class="keyword-tag">Zakat Fitrah</span>
+                <span class="keyword-tag">Zakat Jiwa</span>
+                <span class="keyword-tag">Thurhatun li ash-shā'im</span>
+                <span class="keyword-tag">Thurmatun li al-masākīn</span>
+                <span class="keyword-tag">1 Sha' = 2,5 kg</span>
+                <span class="keyword-tag">Makanan Pokok</span>
+                <span class="keyword-tag">Wajib 'Ain</span>
+                <span class="keyword-tag">Malam Takbiran</span>
+                <span class="keyword-tag">Sebelum Shalat Id</span>
+                <span class="keyword-tag">Niat Zakat Fitrah</span>
+                <span class="keyword-tag">Hadits Ibnu Abbas</span>
+                <span class="keyword-tag">Hadits Ibnu Umar</span>
+                <span class="keyword-tag">Idul Fitri</span>
+            </div>
+        </section>
+
+        <!-- Referensi -->
+        <section class="content-section" style="background: rgba(212, 175, 55, 0.05);">
+            <h2 class="section-title"><i class="fas fa-bookmark"></i> K. Referensi Pendukung</h2>
+            <ul class="custom-list" style="font-size: 0.95rem;">
+                <li>Kementerian Agama RI. (2021). <em>Pendidikan Agama Islam dan Budi Pekerti Kelas VIII</em>. Jakarta: Kementerian Agama RI.</li>
+                <li>As-Sayyid Sabiq. (2010). <em>Fiqih Sunnah Jilid 2</em>. (Terjemahan). Bandung: Al-Ma'arif. (Bab Zakat Fitrah)</li>
+                <li>Imam An-Nawawi. <em>Al-Majmu' Syarah Al-Muhadzdzab</em> (Kitab Rujukan Madzhab Syafi'i tentang Zakat Fitrah).</li>
+                <li>Yusuf Al-Qardhawi. (2007). <em>Hukum Zakat</em>. (Terjemahan). Jakarta: Literasi Antar Nusa.</li>
+                <li>UU No. 23 Tahun 2011 tentang <em>Pengelolaan Zakat</em>.</li>
+                <li>Al-Qur'anul Karim dan Terjemahannya, Kementerian Agama RI.</li>
+            </ul>
+        </section>
+
+        <!-- =========================================
+             UJI FORMATIF (ENHANCED VERSION)
+             ========================================= -->
+        <div class="quiz-container" id="uji-formatif">
+            <div class="quiz-header">
+                <h2 style="color: var(--gold-primary); font-size: 1.8rem; margin-bottom: 0.5rem;">📝 Uji Formatif Pertemuan 6</h2>
+                <p style="color: var(--text-secondary);">Evaluasi Pemahaman Materi Ketentuan Zakat Fitrah</p>
+                <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--gold-light);">
+                    📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) &nbsp;|&nbsp; ✍️ Bagian B: Essay (5 soal, 20 poin/soal)
+                </div>
+            </div>
+
+            <!-- Timer & Progress -->
+            <div class="quiz-meta">
+                <div class="timer-display">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>Waktu: <span id="timer">00:00</span></span>
+                </div>
+                <div class="progress-wrapper">
+                    <div class="progress-label">Progres Pengerjaan: <span id="progress-text">0/15 soal dijawab</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="quizForm">
+                <!-- Identitas -->
+                <div class="content-section" style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1.5rem; font-size: 1.2rem;">📋 Identitas Siswa</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div class="form-group">
+                            <label class="form-label">Nama Lengkap *</label>
+                            <input type="text" id="nama" class="form-input" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">No. Absen / NIS *</label>
+                            <input type="text" id="nis" class="form-input" placeholder="Contoh: 12345" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tanggal Ujian</label>
+                            <input type="date" id="tanggal" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Kelas</label>
+                            <select id="kelas" class="form-select">
+                                <option value="VIII-A">VIII-A</option>
+                                <option value="VIII-B">VIII-B</option>
+                                <option value="VIII-C">VIII-C</option>
+                                <option value="VIII-D">VIII-D</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <h3 style="color: var(--text-primary); margin: 2rem 0 1.5rem; font-size: 1.3rem;">📋 Bagian A: Pilihan Ganda</h3>
+                
+                <div class="question-card" data-topic="pengertian">
+                    <p class="question-text">1. Secara bahasa, kata "fitrah" dalam zakat fitrah memiliki arti... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Pengertian</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q1" value="A"> A. Harta</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="B"> B. Buka puasa / asal kejadian</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="C"> C. Menyucikan</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="D"> D. Bertumbuh</label>
+                    </div>
+                    <div class="feedback" id="fb-q1"></div>
+                </div>
+
+                <div class="question-card" data-topic="hukum">
+                    <p class="question-text">2. Hukum zakat fitrah bagi setiap muslim yang memenuhi syarat adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Hukum</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q2" value="A"> A. Sunnah muakkad</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="B"> B. Mubah</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="C"> C. Wajib 'ain</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="D"> D. Makruh</label>
+                    </div>
+                    <div class="feedback" id="fb-q2"></div>
+                </div>
+
+                <div class="question-card" data-topic="takaran">
+                    <p class="question-text">3. Takaran zakat fitrah yang wajib dikeluarkan untuk setiap jiwa adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Takaran</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q3" value="A"> A. 1 kg beras</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="B"> B. 2,5 kg beras</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="C"> C. 5 kg beras</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="D"> D. 10 kg beras</label>
+                    </div>
+                    <div class="feedback" id="fb-q3"></div>
+                </div>
+
+                <div class="question-card" data-topic="waktu">
+                    <p class="question-text">4. Waktu WAJIB mengeluarkan zakat fitrah adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Waktu</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q4" value="A"> A. Sejak awal Ramadhan</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="B"> B. Sejak terbenam matahari akhir Ramadhan hingga sebelum shalat Idul Fitri</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="C"> C. Setelah shalat Idul Fitri</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="D"> D. Setelah 1 Syawal</label>
+                    </div>
+                    <div class="feedback" id="fb-q4"></div>
+                </div>
+
+                <div class="question-card" data-topic="dalil">
+                    <p class="question-text">5. Tujuan zakat fitrah menurut hadits Ibnu Abbas adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Dalil Naqli</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q5" value="A"> A. Menyucikan harta dan menambah kekayaan</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="B"> B. Pembersih bagi orang yang berpuasa dan makanan bagi orang miskin</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="C"> C. Menambah pahala puasa dan menghapus dosa besar</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="D"> D. Menggugurkan kewajiban shalat dan puasa</label>
+                    </div>
+                    <div class="feedback" id="fb-q5"></div>
+                </div>
+
+                <div class="question-card" data-topic="perbandingan">
+                    <p class="question-text">6. Perbedaan utama antara zakat fitrah dan zakat mal adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Perbandingan</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q6" value="A"> A. Zakat fitrah wajib, zakat mal sunnah</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="B"> B. Zakat fitrah untuk jiwa (2,5 kg makanan pokok), zakat mal untuk harta (persentase tertentu)</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="C"> C. Zakat fitrah hanya untuk fakir miskin, zakat mal untuk siapa saja</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="D"> D. Tidak ada perbedaan, keduanya sama</label>
+                    </div>
+                    <div class="feedback" id="fb-q6"></div>
+                </div>
+
+                <div class="question-card" data-topic="niat">
+                    <p class="question-text">7. Niat zakat fitrah untuk diri sendiri yang benar adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Niat</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q7" value="A"> A. Nawaitu an ukhrija zakatal fithri 'an nafsii fardhan lillaahi ta'aalaa</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="B"> B. Nawaitu an ukhrija zakatal fithri 'an zaujatii fardhan lillaahi ta'aalaa</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="C"> C. Nawaitu an ukhrija zakatal maali fardhan lillaahi ta'aalaa</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="D"> D. Nawaitu shauma syahri Ramadhaana imaanan wa ihtisaaban</label>
+                    </div>
+                    <div class="feedback" id="fb-q7"></div>
+                </div>
+
+                <div class="question-card" data-topic="waktu">
+                    <p class="question-text">8. Zakat fitrah yang dikeluarkan setelah terbenam matahari 1 Syawal hukumnya... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Waktu</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q8" value="A"> A. Tetap sah sebagai zakat fitrah</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="B"> B. Tidak sah sebagai zakat fitrah, hanya dihitung sebagai shadaqah biasa</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="C"> C. Sunnah muakkad</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="D"> D. Makruh tetapi tetap wajib</label>
+                    </div>
+                    <div class="feedback" id="fb-q8"></div>
+                </div>
+
+                <div class="question-card" data-topic="hikmah">
+                    <p class="question-text">9. Salah satu hikmah zakat fitrah adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Hikmah</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q9" value="A"> A. Mengurangi harta secara permanen</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="B"> B. Menyucikan jiwa dari kotoran puasa dan membahagiakan fakir miskin di hari raya</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="C"> C. Menggugurkan kewajiban shalat</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="D"> D. Menambah dosa-dosa kecil</label>
+                    </div>
+                    <div class="feedback" id="fb-q9"></div>
+                </div>
+
+                <div class="question-card" data-topic="contoh">
+                    <p class="question-text">10. Pak Rahmat memiliki keluarga terdiri dari dirinya, istri, dan 2 orang anak. Berapa total beras yang harus dikeluarkan sebagai zakat fitrah? 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Contoh Kasus</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q10" value="A"> A. 2,5 kg</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="B"> B. 5 kg</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="C"> C. 7,5 kg</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="D"> D. 10 kg</label>
+                    </div>
+                    <div class="feedback" id="fb-q10"></div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <h3 style="color: var(--text-primary); margin: 3rem 0 1.5rem; font-size: 1.3rem;">✍️ Bagian B: Essay</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                    💡 <em>Catatan: Sistem akan memberikan nilai simulasi berdasarkan kelengkapan jawaban (>30 karakter). Penilaian akhir yang sebenarnya tetap berada di wewenang guru.</em>
+                </p>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 1: Jelaskan pengertian zakat fitrah secara bahasa dan istilah! Sebutkan 2 tujuan utama zakat fitrah berdasarkan hadits Ibnu Abbas! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay1" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 2: Jelaskan pembagian waktu pelaksanaan zakat fitrah (sunnah, wajib, makruh, haram)! Berikan contoh untuk masing-masing waktu! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay2" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 3: Jelaskan perbedaan antara zakat fitrah dan zakat mal minimal dari 5 aspek! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay3" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 4: Tuliskan niat zakat fitrah untuk diri sendiri dan untuk istri dalam bahasa Arab, latin, dan artinya! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay4" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 5: Jelaskan hikmah disyariatkannya zakat fitrah bagi individu dan masyarakat! Hubungkan dengan konsep "penyucian diri dan cinta kepada sesama"! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay5" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <!-- Hasil Uji -->
+                <div id="hasil-uji" class="result-box">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1rem;">📊 Hasil Uji Formatif</h3>
+                    
+                    <div class="score-breakdown">
+                        <div class="score-item">
+                            <div class="label">Pilihan Ganda</div>
+                            <div class="value"><span id="mc-result">0</span>/100</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Essay (Simulasi)</div>
+                            <div class="value"><span id="essay-result">0</span>/100</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Waktu Pengerjaan</div>
+                            <div class="value" id="time-result">00:00</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Benar PG</div>
+                            <div class="value"><span id="correct-count">0</span>/10</div>
+                        </div>
+                    </div>
+                    
+                    <div style="border-top: 1px solid var(--border-gold); padding-top: 1rem; margin-top: 1rem; text-align: center;">
+                        <div style="color: var(--gold-light); font-size: 1rem; margin-bottom: 0.5rem;">Skor Akhir Total</div>
+                        <div class="score-display"><span id="total-result">0</span> <span style="font-size: 1.5rem; color: var(--text-secondary);">/ 200</span></div>
+                        <div id="grade-display" style="font-size: 1.2rem; color: var(--gold-light); margin-top: 0.5rem;"></div>
+                    </div>
+
+                    <!-- Analisis Kelemahan -->
+                    <div class="weakness-analysis" id="weakness-analysis" style="display: none;">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Analisis Kelemahan & Saran Perbaikan</h4>
+                        <ul class="weakness-list" id="weakness-list"></ul>
+                    </div>
+                </div>
+
+                <!-- Tombol Aksi -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary" onclick="calculateScore()">
+                        <i class="fas fa-check-circle"></i> KIRIM JAWABAN & LIHAT HASIL
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="downloadPDF()">
+                        <i class="fas fa-file-pdf"></i> UNDUH PDF LENGKAP
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="downloadTXT()">
+                        <i class="fas fa-file-alt"></i> UNDUH SKOR (TXT)
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="resetQuiz()">
+                        <i class="fas fa-redo"></i> MULAI ULANG
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="sendEmail()">
+                        <i class="fas fa-envelope"></i> KIRIM KE EMAIL GURU
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 1rem; color: var(--gold-primary);">
+                Fikih Kelas 8 Semester 1
+            </p>
+            <p>&copy; 2026 Ermawati, S.H.I. — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p style="margin-top: 0.5rem;">
+                Email: <a href="mailto:erma34779@gmail.com" style="color: var(--gold-primary);">erma34779@gmail.com</a>
+            </p>
+            <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem;">
+                <a href="index.html" class="nav-link" style="font-size: 0.85rem;"><i class="fas fa-book"></i> Daftar Isi</a>
+                <a href="7.html" class="nav-link" style="font-size: 0.85rem;">Pertemuan 7 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- =========================================
+         JAVASCRIPT LOGIC (ENHANCED)
+         ========================================= -->
+    <script>
+        // =========================================
+        // DATA SOAL & KUNCI JAWABAN
+        // =========================================
+        const quizData = {
+            q1: { 
+                correct: 'B', 
+                topic: 'Pengertian',
+                explanation: '"Fitrah" (الفِطْرَةُ) berasal dari kata "fithr" (الفِطْر) yang berarti "buka puasa" atau "asal kejadian". Jadi zakat fitrah adalah zakat karena berbuka dari puasa Ramadhan atau zakat yang berkaitan dengan fitrah manusia.' 
+            },
+            q2: { 
+                correct: 'C', 
+                topic: 'Hukum',
+                explanation: 'Zakat fitrah hukumnya WAJIB \'AIN bagi setiap muslim yang memenuhi syarat. Ini berbeda dengan zakat mal yang memerlukan nisab dan haul.' 
+            },
+            q3: { 
+                correct: 'B', 
+                topic: 'Takaran',
+                explanation: 'Takaran zakat fitrah adalah 1 sha\' = 4 mud = 2,5 kg (menurut mayoritas ulama) atau 3,5 liter makanan pokok (beras di Indonesia).' 
+            },
+            q4: { 
+                correct: 'B', 
+                topic: 'Waktu',
+                explanation: 'Waktu WAJIB zakat fitrah adalah sejak terbenam matahari akhir Ramadhan (malam takbiran) hingga sebelum shalat Idul Fitri. Sebelum itu hukumnya sunnah, setelah itu makruh, dan setelah 1 Syawal terbenam hukumnya haram/tidak sah.' 
+            },
+            q5: { 
+                correct: 'B', 
+                topic: 'Dalil Naqli',
+                explanation: 'Menurut hadits Ibnu Abbas: "Faradha Rasulullaahi zakatal fithri thurhatan li ash-shaa\'imi minal laghwir rafats, wa thurmatan li al-masaakiin" = Pembersih bagi orang yang berpuasa dari kata sia-sia & keji, dan makanan bagi orang miskin.' 
+            },
+            q6: { 
+                correct: 'B', 
+                topic: 'Perbandingan',
+                explanation: 'Perbedaan utama: Zakat fitrah = zakat jiwa (2,5 kg makanan pokok) untuk setiap muslim, sedangkan zakat mal = zakat harta (persentase tertentu) untuk muslim yang hartanya mencapai nisab & haul.' 
+            },
+            q7: { 
+                correct: 'A', 
+                topic: 'Niat',
+                explanation: '"Nawaitu an ukhrija zakatal fithri \'an nafsii fardhan lillaahi ta\'aalaa" = Saya niat mengeluarkan zakat fitrah untuk diri saya sendiri, fardhu karena Allah Ta\'ala. Pilihan B untuk istri, C untuk zakat mal, D untuk niat puasa.' 
+            },
+            q8: { 
+                correct: 'B', 
+                topic: 'Waktu',
+                explanation: 'Zakat fitrah yang dikeluarkan setelah terbenam matahari 1 Syawal TIDAK SAH sebagai zakat fitrah, hanya dihitung sebagai shadaqah biasa. Orang yang menundanya tanpa uzur syar\'i berdosa.' 
+            },
+            q9: { 
+                correct: 'B', 
+                topic: 'Hikmah',
+                explanation: 'Hikmah zakat fitrah: menyucikan jiwa dari kotoran puasa, membahagiakan fakir miskin di hari raya, menyempurnakan puasa, wujud syukur, memperkuat ukhuwah islamiyah, melatih kepedulian sosial, membersihkan harta.' 
+            },
+            q10: { 
+                correct: 'D', 
+                topic: 'Contoh Kasus',
+                explanation: 'Pak Rahmat + istri + 2 anak = 4 jiwa. Setiap jiwa = 2,5 kg. Total = 4 × 2,5 kg = 10 kg beras. Kepala keluarga wajib mengeluarkan zakat fitrah untuk seluruh anggota keluarga yang menjadi tanggungannya.' 
+            }
+        };
+
+        // =========================================
+        // TIMER & PROGRESS
+        // =========================================
+        let timerInterval;
+        let seconds = 0;
+        let quizStarted = false;
+
+        function startTimer() {
+            if (quizStarted) return;
+            quizStarted = true;
+            timerInterval = setInterval(() => {
+                seconds++;
+                const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+                const secs = (seconds % 60).toString().padStart(2, '0');
+                document.getElementById('timer').innerText = `${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function getFormattedTime() {
+            const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const secs = (seconds % 60).toString().padStart(2, '0');
+            return `${mins}:${secs}`;
+        }
+
+        // Update progress
+        function updateProgress() {
+            let answered = 0;
+            for (let i = 1; i <= 10; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+            }
+            for (let i = 1; i <= 5; i++) {
+                if (document.getElementById(`essay${i}`).value.trim().length > 0) answered++;
+            }
+            const total = 15;
+            const percent = (answered / total) * 100;
+            document.getElementById('progress-fill').style.width = percent + '%';
+            document.getElementById('progress-text').innerText = `${answered}/${total} soal dijawab`;
+        }
+
+        // Event listeners untuk progress & timer
+        document.querySelectorAll('input[type="radio"]').forEach(el => {
+            el.addEventListener('change', () => { startTimer(); updateProgress(); });
+        });
+        document.querySelectorAll('textarea').forEach(el => {
+            el.addEventListener('input', () => { startTimer(); updateProgress(); });
+        });
+
+        // =========================================
+        // HITUNG SKOR (ENHANCED)
+        // =========================================
+        function calculateScore() {
+            const nama = document.getElementById('nama').value.trim();
+            if (!nama) {
+                alert('Mohon isi Nama Lengkap terlebih dahulu!');
+                document.getElementById('nama').focus();
+                return;
+            }
+
+            stopTimer();
+
+            let mcScore = 0;
+            let correctCount = 0;
+            const topicStats = {};
+
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const data = quizData[`q${i}`];
+                const card = document.querySelector(`.question-card[data-topic="${data.topic}"]`);
+                const feedback = document.getElementById(`fb-q${i}`);
+                
+                if (!topicStats[data.topic]) {
+                    topicStats[data.topic] = { correct: 0, total: 0 };
+                }
+                topicStats[data.topic].total++;
+
+                if (selected && selected.value === data.correct) {
+                    mcScore += 10;
+                    correctCount++;
+                    topicStats[data.topic].correct++;
+                    card.classList.add('correct');
+                    card.classList.remove('incorrect');
+                    feedback.className = 'feedback show correct';
+                    feedback.innerHTML = `<strong><i class="fas fa-check-circle"></i> BENAR!</strong> ${data.explanation}`;
+                } else {
+                    card.classList.add('incorrect');
+                    card.classList.remove('correct');
+                    feedback.className = 'feedback show incorrect';
+                    const userAnswer = selected ? selected.value : 'Tidak dijawab';
+                    feedback.innerHTML = `<strong><i class="fas fa-times-circle"></i> KURANG TEPAT</strong> 
+                        Jawaban Anda: ${userAnswer} | Jawaban Benar: <strong>${data.correct}</strong><br>
+                        <em style="margin-top: 0.5rem; display: block;">${data.explanation}</em>`;
+                }
+            }
+
+            let essayScore = 0;
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim();
+                if (answer.length > 30) {
+                    essayScore += 20;
+                } else if (answer.length > 0) {
+                    essayScore += 10;
+                }
+            }
+
+            const totalScore = mcScore + essayScore;
+            
+            document.getElementById('mc-result').innerText = mcScore;
+            document.getElementById('essay-result').innerText = essayScore;
+            document.getElementById('total-result').innerText = totalScore;
+            document.getElementById('correct-count').innerText = correctCount;
+            document.getElementById('time-result').innerText = getFormattedTime();
+            
+            let grade = '';
+            const percentage = (totalScore / 200) * 100;
+            if (percentage >= 90) grade = '🏆 MUMTAZ (Istimewa)';
+            else if (percentage >= 80) grade = '🌟 JAYYID JIDDAN (Sangat Baik)';
+            else if (percentage >= 70) grade = '✨ JAYYID (Baik)';
+            else if (percentage >= 60) grade = '📖 MAQBUL (Cukup)';
+            else grade = '💪 PERLU BIMBINGAN LANJUT';
+            document.getElementById('grade-display').innerText = grade;
+
+            // Analisis Kelemahan
+            const weaknesses = [];
+            for (const [topic, stats] of Object.entries(topicStats)) {
+                if (stats.correct < stats.total) {
+                    const percent = (stats.correct / stats.total) * 100;
+                    let suggestion = '';
+                    switch(topic) {
+                        case 'Pengertian': suggestion = 'Pelajari kembali pengertian zakat fitrah dari segi bahasa (fithr = buka puasa/asal kejadian) dan istilah.'; break;
+                        case 'Hukum': suggestion = 'Pahami bahwa zakat fitrah hukumnya WAJIB \'AIN bagi setiap muslim yang memenuhi syarat.'; break;
+                        case 'Takaran': suggestion = 'Hafalkan takaran zakat fitrah: 1 sha\' = 4 mud = 2,5 kg = 3,5 liter makanan pokok.'; break;
+                        case 'Waktu': suggestion = 'Pelajari 4 waktu zakat fitrah: sunnah (awal Ramadhan), wajib (malam takbiran-sblm shalat Id), makruh (setelah shalat Id), haram (setelah 1 Syawal terbenam).'; break;
+                        case 'Dalil Naqli': suggestion = 'Ulangi hadits Ibnu Abbas tentang 2 tujuan zakat fitrah: thurhatan li ash-shaa\'im dan thurmatan li al-masaakiin.'; break;
+                        case 'Perbandingan': suggestion = 'Bandingkan zakat fitrah dan zakat mal dalam tabel 9 aspek yang telah disediakan.'; break;
+                        case 'Niat': suggestion = 'Hafalkan niat zakat fitrah untuk diri sendiri, istri, anak, dan orang yang diwakilkan.'; break;
+                        case 'Hikmah': suggestion = 'Renungkan 7 hikmah zakat fitrah bagi individu dan masyarakat.'; break;
+                        case 'Contoh Kasus': suggestion = 'Pelajari perhitungan zakat fitrah: jumlah jiwa × 2,5 kg.'; break;
+                    }
+                    weaknesses.push({ topic, percent, suggestion });
+                }
+            }
+
+            const weaknessBox = document.getElementById('weakness-analysis');
+            const weaknessList = document.getElementById('weakness-list');
+            if (weaknesses.length > 0) {
+                weaknessList.innerHTML = weaknesses.map(w => 
+                    `<li><strong>📌 ${w.topic.toUpperCase()}</strong> (${w.percent.toFixed(0)}% benar)<br>${w.suggestion}</li>`
+                ).join('');
+                weaknessBox.style.display = 'block';
+            } else {
+                weaknessBox.style.display = 'none';
+            }
+
+            const resultBox = document.getElementById('hasil-uji');
+            resultBox.classList.add('active');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            if (essayScore < 100) {
+                setTimeout(() => {
+                    alert('Catatan: Nilai Essay adalah simulasi otomatis berdasarkan kelengkapan jawaban. Guru akan meninjau jawaban Anda secara manual.');
+                }, 500);
+            }
+        }
+
+        // =========================================
+        // DOWNLOAD PDF
+        // =========================================
+        function downloadPDF() {
+            const element = document.getElementById('main-content');
+            const nama = document.getElementById('nama').value || 'Siswa';
+            
+            const opt = {
+                margin: [0.5, 0.5, 0.5, 0.5],
+                filename: `Uji_Formatif_Pertemuan_6_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, backgroundColor: '#022c22' },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            const btn = event.target.closest('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses PDF...';
+            btn.disabled = true;
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }).catch(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                alert('Gagal membuat PDF. Silakan coba lagi.');
+            });
+        }
+
+        // =========================================
+        // DOWNLOAD TXT (DETAIL LENGKAP)
+        // =========================================
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value;
+            const tanggal = document.getElementById('tanggal').value || new Date().toLocaleDateString('id-ID');
+            const mc = document.getElementById('mc-result').innerText;
+            const essay = document.getElementById('essay-result').innerText;
+            const total = document.getElementById('total-result').innerText;
+            const correct = document.getElementById('correct-count').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText;
+
+            let pgDetail = '';
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const userAns = selected ? selected.value : '-';
+                const correctAns = quizData[`q${i}`].correct;
+                const status = userAns === correctAns ? '✓ BENAR' : '✗ SALAH';
+                pgDetail += `  Soal ${i.toString().padStart(2, ' ')}: Jawaban Anda = ${userAns} | Kunci = ${correctAns} | ${status}\n`;
+            }
+
+            let essayDetail = '';
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim() || '(Tidak dijawab)';
+                const shortAns = answer.length > 100 ? answer.substring(0, 100) + '...' : answer;
+                essayDetail += `  Essay ${i}: ${shortAns}\n\n`;
+            }
+
+            const text = `╔══════════════════════════════════════════════════════════╗
+║          HASIL UJI FORMATIF - FIKIH KELAS 8             ║
+║              MTsN 10 AGAM - SEMESTER 1                  ║
+╚══════════════════════════════════════════════════════════╝
+
+Mata Pelajaran : Fikih Kelas 8 Semester 1
+Materi         : Pertemuan 6 - Ketentuan Zakat Fitrah
+Bab            : BAB 2 - Zakat
+Sekolah        : MTsN 10 Agam
+Guru Pengampu  : Ermawati, S.H.I. (erma34779@gmail.com)
+Tanggal Ujian  : ${tanggal}
+Waktu Pengerjaan: ${waktu}
+
+═══════════════════════════════════════════════════════════
+                    IDENTITAS SISWA
+═══════════════════════════════════════════════════════════
+Nama Lengkap : ${nama}
+NIS          : ${nis}
+Kelas        : ${kelas}
+
+═══════════════════════════════════════════════════════════
+                  RINGKASAN NILAI
+═══════════════════════════════════════════════════════════
+Nilai Pilihan Ganda   : ${mc} / 100  (${correct}/10 benar)
+Nilai Essay (Simulasi): ${essay} / 100
+───────────────────────────────────────────────────────────
+NILAI AKHIR TOTAL     : ${total} / 200
+PREDIKAT              : ${grade}
+
+═══════════════════════════════════════════════════════════
+                 DETAIL JAWABAN PILIHAN GANDA
+═══════════════════════════════════════════════════════════
+${pgDetail}
+═══════════════════════════════════════════════════════════
+                 DETAIL JAWABAN ESSAY
+═══════════════════════════════════════════════════════════
+${essayDetail}
+═══════════════════════════════════════════════════════════
+CATATAN PENTING
+═══════════════════════════════════════════════════════════
+• Pertemuan 6 membahas Ketentuan Zakat Fitrah (BAB 2).
+• Nilai Essay di atas adalah SIMULASI OTOMATIS berdasarkan 
+  kelengkapan jawaban (>30 karakter).
+• Penilaian akhir yang sebenarnya berada di wewenang guru 
+  pengampu (Ibu Ermawati, S.H.I.).
+• Silakan hubungi guru untuk koreksi dan bimbingan lebih lanjut.
+
+═══════════════════════════════════════════════════════════
+Dokumen ini digenerate otomatis pada: ${new Date().toLocaleString('id-ID')}
+© 2026 Ermawati, S.H.I. - MTsN 10 Agam
+═══════════════════════════════════════════════════════════`;
+            
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Skor_Detail_Pertemuan6_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // =========================================
+        // RESET QUIZ
+        // =========================================
+        function resetQuiz() {
+            if(!confirm('Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang?')) return;
+            
+            document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+            document.querySelectorAll('textarea').forEach(el => el.value = '');
+            document.getElementById('nama').value = '';
+            document.getElementById('nis').value = '';
+            document.getElementById('tanggal').value = '';
+            
+            document.getElementById('mc-result').innerText = '0';
+            document.getElementById('essay-result').innerText = '0';
+            document.getElementById('total-result').innerText = '0';
+            document.getElementById('correct-count').innerText = '0';
+            document.getElementById('time-result').innerText = '00:00';
+            document.getElementById('grade-display').innerText = '';
+            document.getElementById('hasil-uji').classList.remove('active');
+            document.getElementById('weakness-analysis').style.display = 'none';
+            
+            document.querySelectorAll('.question-card').forEach(el => {
+                el.classList.remove('correct', 'incorrect');
+            });
+            document.querySelectorAll('.feedback').forEach(el => {
+                el.className = 'feedback';
+                el.innerHTML = '';
+            });
+            
+            stopTimer();
+            seconds = 0;
+            quizStarted = false;
+            document.getElementById('timer').innerText = '00:00';
+            document.getElementById('progress-fill').style.width = '0%';
+            document.getElementById('progress-text').innerText = '0/15 soal dijawab';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // =========================================
+        // KIRIM EMAIL
+        // =========================================
+        function sendEmail() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value;
+            const total = document.getElementById('total-result').innerText;
+            const mc = document.getElementById('mc-result').innerText;
+            const essay = document.getElementById('essay-result').innerText;
+            const correct = document.getElementById('correct-count').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText || 'Belum dinilai';
+            
+            if (total === '0' || !document.getElementById('hasil-uji').classList.contains('active')) {
+                alert('Silakan kerjakan uji formatif dan klik "KIRIM JAWABAN & LIHAT HASIL" terlebih dahulu sebelum mengirim email.');
+                return;
+            }
+
+            const subject = encodeURIComponent(`Hasil Uji Formatif Pertemuan 6 (Zakat Fitrah) - ${nama} - ${kelas}`);
+            const body = encodeURIComponent(`Assalamu'alaikum Wr. Wb.
+
+Yth. Ibu Ermawati, S.H.I.,
+
+Berikut adalah hasil uji formatif saya pada Pertemuan 6 (Ketentuan Zakat Fitrah):
+
+═══════════════════════════════════
+IDENTITAS SISWA
+═══════════════════════════════════
+Nama  : ${nama}
+NIS   : ${nis}
+Kelas : ${kelas}
+
+═══════════════════════════════════
+HASIL PENILAIAN
+═══════════════════════════════════
+Pilihan Ganda    : ${mc}/100 (${correct}/10 benar)
+Essay (Simulasi) : ${essay}/100
+Waktu Pengerjaan : ${waktu}
+───────────────────────────────────
+NILAI AKHIR      : ${total}/200
+PREDIKAT         : ${grade}
+
+Mohon bimbingan dan koreksinya untuk jawaban essay.
+
+Jazakumullahu Khairan Katsiran.
+Wassalamu'alaikum Wr. Wb.
+
+───────────────────────────────────
+Dikirim otomatis dari Sistem Uji Formatif Fikih Kelas 8
+© 2026 MTsN 10 Agam`);
+            
+            window.location.href = `mailto:erma34779@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        // Set tanggal hari ini secara otomatis
+        document.getElementById('tanggal').valueAsDate = new Date();
+    </script>
+</body>
+</html>

@@ -1,0 +1,1951 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 9: Praktik Perhitungan & Hikmah Zakat | Fikih Kelas 8</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        :root {
+            --bg-dark: #022c22;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-input: rgba(255, 255, 255, 0.05);
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-gold: rgba(212, 175, 55, 0.3);
+            --success: #10b981;
+            --error: #ef4444;
+            --fitrah: #10b981;
+            --emas: #fbbf24;
+            --tani: #34d399;
+            --ternak: #f59e0b;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            background-image: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: var(--gold-primary); transition: var(--transition); }
+        a:hover { color: var(--gold-light); }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 2rem; }
+
+        /* Navigasi */
+        .top-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 0; border-bottom: 1px solid var(--border-gold); margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;
+        }
+        .nav-link {
+            display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500; font-size: 0.95rem;
+            border: 1px solid var(--border-gold); padding: 0.5rem 1rem; border-radius: 50px;
+        }
+        .nav-link:hover { background: var(--gold-primary); color: var(--bg-dark); }
+
+        /* Header */
+        .materi-header { text-align: center; margin-bottom: 3rem; }
+        .bab-tag { display: inline-block; color: var(--gold-primary); font-family: 'Playfair Display', serif; font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .materi-title {
+            font-size: 2.5rem; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 50%, var(--gold-primary) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .materi-desc { color: var(--text-secondary); font-size: 1.15rem; max-width: 750px; margin: 0 auto 2rem; }
+
+        .author-badge {
+            display: inline-flex; align-items: center; gap: 1rem; background: var(--bg-card);
+            border: 1px solid var(--border-gold); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 3rem;
+        }
+        .author-badge i { color: var(--gold-primary); font-size: 1.5rem; }
+        .author-info { text-align: left; }
+        .author-info strong { display: block; color: var(--text-primary); font-size: 1.1rem; }
+        .author-info span { color: var(--text-secondary); font-size: 0.9rem; }
+
+        /* Konten */
+        .content-section {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 2.5rem; margin-bottom: 2rem;
+        }
+        .section-title {
+            color: var(--gold-primary); font-size: 1.6rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
+        }
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold-primary); padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0;
+        }
+        .highlight-box h4 { color: var(--gold-light); margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; }
+        
+        ul.custom-list { list-style: none; padding-left: 0; }
+        ul.custom-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+        ul.custom-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold-primary); }
+
+        /* Tabel */
+        .table-wrapper { overflow-x: auto; margin: 1.5rem 0; }
+        .luxury-table {
+            width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.02); border-radius: 8px; overflow: hidden;
+        }
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-primary); padding: 1rem; text-align: left;
+            font-family: 'Playfair Display', serif; font-weight: 600; border-bottom: 2px solid var(--border-gold);
+        }
+        .luxury-table td {
+            padding: 1rem; border-bottom: 1px solid var(--border-gold); color: var(--text-secondary); vertical-align: top;
+        }
+        .luxury-table tr:last-child td { border-bottom: none; }
+        .luxury-table tr:hover td { background: rgba(212, 175, 55, 0.05); color: var(--text-primary); }
+
+        /* Kutipan */
+        .quran-quote {
+            text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(2, 44, 34, 0.8) 100%);
+            border: 1px solid var(--border-gold); border-radius: 16px; margin: 3rem 0;
+        }
+        .arabic-text { font-family: 'Traditional Arabic', serif; font-size: 1.8rem; color: var(--gold-primary); margin-bottom: 1rem; line-height: 2; }
+        .quote-translation { font-style: italic; color: var(--text-secondary); font-size: 1.05rem; }
+        .quote-source { display: block; margin-top: 1rem; color: var(--gold-light); font-weight: 600; font-size: 0.9rem; }
+
+        .fiqh-rule {
+            text-align: center; padding: 1.5rem; border: 1px dashed var(--gold-primary); border-radius: 12px; margin: 1.5rem 0;
+        }
+        .fiqh-rule .arabic { font-family: 'Traditional Arabic', serif; font-size: 1.5rem; color: var(--gold-primary); margin-bottom: 0.5rem; }
+        .fiqh-rule .translation { color: var(--text-secondary); font-style: italic; }
+
+        /* Kata Kunci */
+        .keywords { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .keyword-tag {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-light); padding: 0.4rem 1rem; border-radius: 20px;
+            font-size: 0.85rem; border: 1px solid var(--border-gold);
+        }
+
+        /* Badge */
+        .badge-fitrah { background: var(--fitrah); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .badge-emas { background: var(--emas); color: #1a1a1a; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .badge-tani { background: var(--tani); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .badge-ternak { background: var(--ternak); color: #1a1a1a; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+
+        /* Studi Kasus Komprehensif */
+        .case-study {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin: 1.75rem 0;
+            position: relative;
+        }
+        .case-study::before {
+            content: '📋';
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--bg-dark);
+            padding: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+        .case-study h4 {
+            color: var(--gold-primary);
+            margin-bottom: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+        }
+        .case-study p { color: var(--text-secondary); margin-bottom: 0.75rem; }
+        .case-data {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+        .case-data ul { list-style: none; padding-left: 0; }
+        .case-data ul li {
+            padding: 0.35rem 0;
+            color: var(--text-secondary);
+            border-bottom: 1px dashed rgba(212, 175, 55, 0.15);
+        }
+        .case-data ul li:last-child { border-bottom: none; }
+        .case-data ul li strong { color: var(--gold-light); display: inline-block; min-width: 180px; }
+        .case-answer {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 3px solid var(--gold-primary);
+            padding: 1rem 1.25rem;
+            border-radius: 0 6px 6px 0;
+            margin-top: 1rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        .case-answer .step {
+            margin: 0.5rem 0;
+            padding-left: 1rem;
+            border-left: 2px solid var(--gold-primary);
+        }
+        .case-answer .final {
+            margin-top: 1rem;
+            padding: 0.75rem 1rem;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 6px;
+            font-weight: 600;
+            color: var(--success);
+        }
+
+        /* Kalkulator Zakat Interaktif */
+        .calculator {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(2, 44, 34, 0.6) 100%);
+            border: 2px solid var(--gold-primary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .calc-title {
+            color: var(--gold-primary);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .calc-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .calc-tab {
+            padding: 0.6rem 1.25rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-gold);
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        .calc-tab:hover { background: rgba(212, 175, 55, 0.1); color: var(--gold-light); }
+        .calc-tab.active {
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+            border-color: var(--gold-primary);
+            font-weight: 600;
+        }
+        .calc-panel { display: none; }
+        .calc-panel.active { display: block; animation: fadeIn 0.4s ease; }
+        .calc-input-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .calc-field label {
+            display: block;
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+            font-weight: 500;
+        }
+        .calc-field input, .calc-field select {
+            width: 100%;
+            background: var(--bg-input);
+            border: 1px solid var(--border-gold);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+        .calc-field input:focus, .calc-field select:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        .calc-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, #b8941f 100%);
+            color: var(--bg-dark);
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: var(--transition);
+            margin: 0.5rem 0.25rem;
+        }
+        .calc-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4); }
+        .calc-btn.secondary {
+            background: transparent;
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-primary);
+        }
+        .calc-result {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success);
+            border-radius: 12px;
+            display: none;
+        }
+        .calc-result.show { display: block; animation: fadeIn 0.4s ease; }
+        .calc-result h4 {
+            color: var(--success);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .calc-result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+        }
+        .calc-result-item:last-child { border-bottom: none; }
+        .calc-result-item strong { color: var(--text-primary); }
+        .calc-result-total {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--gold-primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+        .calc-result-total strong {
+            color: var(--gold-primary);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+
+        /* Hikmah Cards */
+        .hikmah-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .hikmah-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .hikmah-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold-primary);
+            background: rgba(212, 175, 55, 0.05);
+        }
+        .hikmah-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: var(--gold-primary);
+        }
+        .hikmah-icon {
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold-primary);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .hikmah-title {
+            color: var(--gold-light);
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .hikmah-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Quiz Styles */
+        .quiz-container {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 2.5rem; margin-top: 4rem;
+        }
+        .quiz-header { text-align: center; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-gold); }
+        
+        .quiz-meta {
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+            background: rgba(212, 175, 55, 0.08); padding: 1rem 1.5rem; border-radius: 12px; margin-bottom: 2rem;
+        }
+        .timer-display {
+            display: flex; align-items: center; gap: 0.5rem; color: var(--gold-primary); font-weight: 600; font-size: 1.1rem;
+        }
+        .timer-display i { font-size: 1.3rem; }
+        .progress-wrapper { flex: 1; min-width: 200px; margin: 0 1rem; }
+        .progress-label { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.25rem; }
+        .progress-bar {
+            width: 100%; height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%; background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+            width: 0%; transition: width 0.4s ease; border-radius: 4px;
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { display: block; margin-bottom: 0.5rem; color: var(--gold-light); font-weight: 500; font-size: 0.95rem; }
+        .form-input, .form-select, .form-textarea {
+            width: 100%; background: var(--bg-input); border: 1px solid var(--border-gold); border-radius: 8px;
+            padding: 0.85rem 1rem; color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 1rem; transition: var(--transition);
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none; border-color: var(--gold-primary); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        .form-textarea { min-height: 120px; resize: vertical; }
+
+        .question-card { 
+            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.1); 
+            border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; transition: var(--transition);
+        }
+        .question-card.correct { border-color: var(--success); background: rgba(16, 185, 129, 0.05); }
+        .question-card.incorrect { border-color: var(--error); background: rgba(239, 68, 68, 0.05); }
+        
+        .question-text { font-weight: 600; margin-bottom: 1rem; color: var(--text-primary); }
+        .points-badge {
+            display: inline-block; background: var(--gold-primary); color: var(--bg-dark); font-size: 0.75rem;
+            font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+        }
+        .topic-badge {
+            display: inline-block; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); 
+            font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+            border: 1px solid var(--border-gold);
+        }
+        
+        .radio-group { display: flex; flex-direction: column; gap: 0.75rem; }
+        .radio-label {
+            display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; border-radius: 8px;
+            cursor: pointer; transition: var(--transition); border: 1px solid transparent;
+        }
+        .radio-label:hover { background: rgba(212, 175, 55, 0.05); }
+        .radio-label input[type="radio"] { accent-color: var(--gold-primary); width: 18px; height: 18px; }
+        
+        .feedback {
+            margin-top: 1rem; padding: 0.85rem 1rem; border-radius: 8px; font-size: 0.9rem; display: none;
+        }
+        .feedback.show { display: block; animation: fadeIn 0.4s ease; }
+        .feedback.correct { background: rgba(16, 185, 129, 0.1); border-left: 3px solid var(--success); color: #a7f3d0; }
+        .feedback.incorrect { background: rgba(239, 68, 68, 0.1); border-left: 3px solid var(--error); color: #fecaca; }
+        .feedback strong { display: block; margin-bottom: 0.25rem; }
+
+        .result-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(2, 44, 34, 0.9) 100%);
+            border: 2px solid var(--gold-primary); border-radius: 16px; padding: 2rem; margin: 2rem 0; display: none;
+        }
+        .result-box.active { display: block; animation: fadeIn 0.5s ease; }
+        .score-display { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold-primary); margin: 1rem 0; }
+        
+        .score-breakdown {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0;
+        }
+        .score-item {
+            background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px; text-align: center;
+            border: 1px solid var(--border-gold);
+        }
+        .score-item .label { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.25rem; }
+        .score-item .value { font-size: 1.5rem; font-weight: 700; color: var(--gold-primary); }
+        
+        .weakness-analysis {
+            background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;
+        }
+        .weakness-analysis h4 { color: #fecaca; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .weakness-list { list-style: none; }
+        .weakness-list li { 
+            padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+            color: var(--text-secondary); font-size: 0.9rem;
+        }
+        .weakness-list li:last-child { border-bottom: none; }
+        .weakness-list li strong { color: var(--gold-light); }
+
+        .btn-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.5rem;
+            border-radius: 8px; font-weight: 600; cursor: pointer; transition: var(--transition); border: none; font-size: 0.95rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--gold-primary) 0%, #b8941f 100%); color: var(--bg-dark); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4); }
+        .btn-outline { background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-primary); }
+        .btn-outline:hover { background: var(--gold-primary); color: var(--bg-dark); }
+        .btn-secondary { background: rgba(255, 255, 255, 0.1); color: var(--text-primary); border: 1px solid var(--border-gold); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+
+        .footer { text-align: center; padding: 3rem 0; margin-top: 4rem; border-top: 1px solid var(--border-gold); color: var(--text-secondary); font-size: 0.9rem; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .materi-title { font-size: 1.8rem; }
+            .content-section, .quiz-container { padding: 1.5rem; }
+            .btn-group { grid-template-columns: 1fr; }
+            .quiz-meta { flex-direction: column; align-items: stretch; }
+            .hikmah-grid { grid-template-columns: 1fr; }
+            .calc-input-group { grid-template-columns: 1fr; }
+        }
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .btn-group, .footer, .quiz-meta, .calculator { display: none !important; }
+            .content-section, .quiz-container, .result-box { border: 1px solid #ccc; background: white; color: black; break-inside: avoid; }
+            .arabic-text, .materi-title, .section-title { color: #000 !important; -webkit-text-fill-color: #000 !important; }
+            .form-input, .form-textarea { border: 1px solid #ccc; color: black; }
+            .feedback { background: #f3f4f6 !important; color: black !important; border-left-color: #333 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="main-content">
+        <!-- Navigasi Atas -->
+        <nav class="top-nav">
+            <a href="index.html" class="nav-link"><i class="fas fa-arrow-left"></i> Daftar Isi</a>
+            <span style="color: var(--text-secondary); font-weight: 500;">Fikih Kelas 8 Semester 1</span>
+            <a href="10.html" class="nav-link">UTS (Pertemuan 10) <i class="fas fa-arrow-right"></i></a>
+        </nav>
+
+        <!-- Header Materi -->
+        <header class="materi-header">
+            <div class="bab-tag">💰 — BAB DUA: ZAKAT (PERTUMUAN PUNCAK) —</div>
+            <h1 class="materi-title">Pertemuan 9: Praktik Perhitungan & Hikmah Zakat</h1>
+            <p class="materi-desc">
+                Mempraktikkan perhitungan zakat secara komprehensif dan menyimpulkan hikmah zakat sebagai bukti cinta kepada Allah dan sesama. 
+                Pertemuan ini menjadi puncak BAB 2 yang menyintesis seluruh materi zakat dari pertemuan 5-8.
+            </p>
+            
+            <div class="author-badge">
+                <i class="fas fa-user-graduate"></i>
+                <div class="author-info">
+                    <strong>Ermawati, S.H.I.</strong>
+                    <span>Guru Fikih, MTsN 10 Agam</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- A. Pengantar -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-bullseye"></i> A. Pengantar: Pertemuan Puncak BAB 2</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Setelah mempelajari konsep dasar zakat (Pertemuan 5), zakat fitrah (Pertemuan 6), zakat emas/perak/perdagangan (Pertemuan 7), serta zakat pertanian/ternak/rikaz (Pertemuan 8), pada pertemuan puncak ini kita akan:
+            </p>
+            <ul class="custom-list">
+                <li><strong>Mempraktikkan perhitungan zakat</strong> dalam berbagai kasus nyata yang komprehensif.</li>
+                <li><strong>Menggunakan kalkulator zakat</strong> interaktif untuk menghitung zakat sendiri.</li>
+                <li><strong>Menganalisis kasus gabungan</strong> di mana seseorang memiliki beberapa jenis harta sekaligus.</li>
+                <li><strong>Menyimpulkan hikmah zakat</strong> sebagai bukti cinta kepada Allah dan sesama.</li>
+                <li><strong>Merefleksikan peran zakat</strong> dalam membangun peradaban Islam yang berkeadilan.</li>
+            </ul>
+            <div class="highlight-box">
+                <h4><i class="fas fa-heart"></i> Tema Spiritual: Bukti Cinta yang Nyata</h4>
+                <p>Cinta kepada Allah dan sesama tidak cukup hanya diucapkan di lisan atau dirasakan di hati, tetapi harus <strong>dibuktikan dengan tindakan nyata</strong>. Zakat adalah salah satu bukti cinta tertinggi: kita melepaskan sebagian harta yang kita cintai demi Allah dan demi kebahagiaan sesama. Inilah <strong>islam yang kaffah</strong> — Islam yang menyeluruh, yang menyentuh aspek spiritual, sosial, dan ekonomi sekaligus.</p>
+            </div>
+        </section>
+
+        <!-- B. Review Singkat -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-sync-alt"></i> B. Review Singkat: Rumus Zakat yang Telah Dipelajari</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Sebelum masuk ke praktik, mari kita review kembali rumus-rumus zakat yang telah dipelajari:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th>Jenis Zakat</th>
+                            <th>Nisab</th>
+                            <th>Kadar</th>
+                            <th>Rumus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge-fitrah">FITRAH</span></td>
+                            <td>Tidak ada (wajib bagi setiap muslim)</td>
+                            <td>2,5 kg/jiwa</td>
+                            <td>Jumlah jiwa × 2,5 kg</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-emas">EMAS/PERAK/UANG</span></td>
+                            <td>85 gr emas / 595 gr perak</td>
+                            <td>2,5%</td>
+                            <td>2,5% × harta (jika ≥ nisab & haul 1 thn)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-emas">PERDAGANGAN</span></td>
+                            <td>Setara 85 gr emas</td>
+                            <td>2,5%</td>
+                            <td>2,5% × (modal+untung+piutang−hutang)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-tani">PERTANIAN</span></td>
+                            <td>653 kg gabah</td>
+                            <td>10% / 5%</td>
+                            <td>10% (alami) atau 5% (berbayar) × hasil panen</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-ternak">TERNAK</span></td>
+                            <td>Unta 5, Sapi 30, Kambing 40</td>
+                            <td>Seekor hewan tertentu</td>
+                            <td>Sesuai tabel (haul 1 tahun)</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #a855f7; font-weight: 600;">RIKAZ</td>
+                            <td>Tidak ada</td>
+                            <td>20%</td>
+                            <td>20% × nilai harta temuan</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- C. Studi Kasus 1: Zakat Fitrah Keluarga -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-users"></i> C. Studi Kasus 1: Zakat Fitrah Keluarga Besar</h2>
+            
+            <div class="case-study">
+                <h4><span class="badge-fitrah">KASUS FITRAH</span> — Keluarga Pak Rahmat</h4>
+                <p>Pak Rahmat adalah kepala keluarga yang memiliki tanggung jawab atas beberapa anggota keluarga. Menjelang Idul Fitri, ia harus mengeluarkan zakat fitrah untuk seluruh anggota keluarganya yang menjadi tanggungannya.</p>
+                
+                <div class="case-data">
+                    <strong>📊 Data Keluarga:</strong>
+                    <ul>
+                        <li><strong>Pak Rahmat (ayah)</strong> — 1 jiwa</li>
+                        <li><strong>Bu Aminah (istri)</strong> — 1 jiwa</li>
+                        <li><strong>Ahmad (anak laki-laki, 15 thn)</strong> — 1 jiwa</li>
+                        <li><strong>Fatimah (anak perempuan, 12 thn)</strong> — 1 jiwa</li>
+                        <li><strong>Hasan (bayi, 3 bulan)</strong> — 1 jiwa</li>
+                        <li><strong>Ibu mertua (tinggal bersama)</strong> — 1 jiwa (tanggung jawab Pak Rahmat)</li>
+                    </ul>
+                </div>
+
+                <div class="case-answer">
+                    <strong>📝 Penyelesaian:</strong>
+                    <div class="step"><strong>Langkah 1:</strong> Hitung jumlah jiwa = 1 + 1 + 1 + 1 + 1 + 1 = <strong>6 jiwa</strong></div>
+                    <div class="step"><strong>Langkah 2:</strong> Zakat per jiwa = 2,5 kg beras</div>
+                    <div class="step"><strong>Langkah 3:</strong> Total zakat = 6 × 2,5 kg = <strong>15 kg beras</strong></div>
+                    <div class="step"><strong>Langkah 4:</strong> Jika harga beras Rp14.000/kg, maka nilai zakat = 15 × Rp14.000 = <strong>Rp210.000</strong></div>
+                    <div class="final">💰 Total Zakat Fitrah: 15 kg beras atau senilai Rp210.000</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>💡 Catatan Penting</h4>
+                <p>Bayi yang lahir <strong>sebelum matahari terbenam akhir Ramadhan</strong> wajib dizakati. Ibu mertua yang menjadi tanggungan juga wajib dizakati oleh Pak Rahmat. Zakat fitrah harus dikeluarkan <strong>sebelum shalat Idul Fitri</strong>.</p>
+            </div>
+        </section>
+
+        <!-- D. Studi Kasus 2: Zakat Mal Gabungan -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-coins"></i> D. Studi Kasus 2: Zakat Mal Gabungan</h2>
+            
+            <div class="case-study">
+                <h4><span class="badge-emas">KASUS EMAS + PERDAGANGAN</span> — Bu Siti yang Sukses</h4>
+                <p>Bu Siti adalah seorang pengusaha yang memiliki beberapa jenis harta. Setelah satu tahun berusaha, ia ingin menunaikan zakat mal atas seluruh hartanya.</p>
+                
+                <div class="case-data">
+                    <strong>📊 Data Harta Bu Siti (setelah 1 tahun):</strong>
+                    <ul>
+                        <li><strong>Emas perhiasan</strong> — 120 gram</li>
+                        <li><strong>Emas batangan (simpanan)</strong> — 50 gram</li>
+                        <li><strong>Uang tabungan</strong> — Rp50.000.000</li>
+                        <li><strong>Modal usaha toko</strong> — Rp150.000.000</li>
+                        <li><strong>Keuntungan bersih usaha</strong> — Rp75.000.000</li>
+                        <li><strong>Piutang lancar</strong> — Rp25.000.000</li>
+                        <li><strong>Hutang jatuh tempo</strong> — Rp30.000.000</li>
+                    </ul>
+                    <strong>💵 Harga Emas saat ini:</strong> Rp1.200.000/gram
+                </div>
+
+                <div class="case-answer">
+                    <strong>📝 Penyelesaian:</strong>
+                    
+                    <div class="step">
+                        <strong>① Zakat Emas:</strong><br>
+                        Total emas = 120 + 50 = 170 gram<br>
+                        Nisab = 85 gram → 170 gram ≥ 85 gram ✓<br>
+                        Zakat emas = 2,5% × 170 gram = <strong>4,25 gram emas</strong><br>
+                        Atau: 2,5% × (170 × Rp1.200.000) = <strong>Rp5.100.000</strong>
+                    </div>
+                    
+                    <div class="step">
+                        <strong>② Zakat Uang Tabungan:</strong><br>
+                        Nisab uang = 85 × Rp1.200.000 = Rp102.000.000<br>
+                        Uang Bu Siti = Rp50.000.000 < Rp102.000.000<br>
+                        → <strong>Tidak wajib zakat</strong> (belum mencapai nisab)
+                    </div>
+                    
+                    <div class="step">
+                        <strong>③ Zakat Harta Perdagangan:</strong><br>
+                        Harta dagang bersih = Modal + Untung + Piutang − Hutang<br>
+                        = Rp150jt + Rp75jt + Rp25jt − Rp30jt = <strong>Rp220.000.000</strong><br>
+                        Nisab = Rp102.000.000 → Rp220jt ≥ Rp102jt ✓<br>
+                        Zakat tijarah = 2,5% × Rp220.000.000 = <strong>Rp5.500.000</strong>
+                    </div>
+                    
+                    <div class="final">💰 Total Zakat Mal Bu Siti = Rp5.100.000 + Rp5.500.000 = <strong>Rp10.600.000</strong></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- E. Studi Kasus 3: Petani dengan Irigasi Campuran -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-seedling"></i> E. Studi Kasus 3: Petani dengan Lahan Campuran</h2>
+            
+            <div class="case-study">
+                <h4><span class="badge-tani">KASUS PERTANIAN</span> — Pak Karman si Petani</h4>
+                <p>Pak Karman memiliki dua petak sawah dengan sistem irigasi yang berbeda. Pada musim panen ini, ia ingin mengeluarkan zakat pertanian untuk kedua lahan tersebut.</p>
+                
+                <div class="case-data">
+                    <strong>📊 Data Panen Pak Karman:</strong>
+                    <ul>
+                        <li><strong>Sawah A (irigasi hujan/alami)</strong> — hasil: 2.000 kg gabah</li>
+                        <li><strong>Sawah B (irigasi pompa/berbayar)</strong> — hasil: 1.500 kg gabah</li>
+                    </ul>
+                    <strong>💵 Harga gabah:</strong> Rp6.000/kg | <strong>Nisab:</strong> 653 kg
+                </div>
+
+                <div class="case-answer">
+                    <strong>📝 Penyelesaian:</strong>
+                    
+                    <div class="step">
+                        <strong>① Zakat Sawah A (irigasi alami):</strong><br>
+                        Hasil = 2.000 kg ≥ 653 kg ✓<br>
+                        Kadar = 10% (karena irigasi alami)<br>
+                        Zakat = 10% × 2.000 kg = <strong>200 kg gabah</strong><br>
+                        Nilai = 200 × Rp6.000 = <strong>Rp1.200.000</strong>
+                    </div>
+                    
+                    <div class="step">
+                        <strong>② Zakat Sawah B (irigasi berbayar):</strong><br>
+                        Hasil = 1.500 kg ≥ 653 kg ✓<br>
+                        Kadar = 5% (karena irigasi berbayar)<br>
+                        Zakat = 5% × 1.500 kg = <strong>75 kg gabah</strong><br>
+                        Nilai = 75 × Rp6.000 = <strong>Rp450.000</strong>
+                    </div>
+                    
+                    <div class="final">💰 Total Zakat Pertanian = 275 kg gabah atau senilai Rp1.650.000</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- F. Studi Kasus 4: Peternak -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-cow"></i> F. Studi Kasus 4: Peternak Campuran</h2>
+            
+            <div class="case-study">
+                <h4><span class="badge-ternak">KASUS TERNAK</span> — Pak Hasan si Peternak</h4>
+                <p>Pak Hasan memiliki beberapa jenis hewan ternak yang digembalakan di padang rumput umum. Semua telah dimilikinya selama 1 tahun lebih.</p>
+                
+                <div class="case-data">
+                    <strong>📊 Data Ternak Pak Hasan:</strong>
+                    <ul>
+                        <li><strong>Kambing</strong> — 250 ekor (digembalakan)</li>
+                        <li><strong>Sapi</strong> — 65 ekor (digembalakan)</li>
+                        <li><strong>Ayam broiler</strong> — 1.000 ekor (diberi pakan pabrik)</li>
+                    </ul>
+                </div>
+
+                <div class="case-answer">
+                    <strong>📝 Penyelesaian:</strong>
+                    
+                    <div class="step">
+                        <strong>① Zakat Kambing (250 ekor):</strong><br>
+                        Masuk kategori 201-399 ekor<br>
+                        Zakat = <strong>3 ekor kambing</strong> (sehat, min. 1 tahun)
+                    </div>
+                    
+                    <div class="step">
+                        <strong>② Zakat Sapi (65 ekor):</strong><br>
+                        Masuk kategori 60-69 ekor<br>
+                        Zakat = <strong>2 ekor tabi'</strong> (sapi umur 1-2 tahun)
+                    </div>
+                    
+                    <div class="step">
+                        <strong>③ Zakat Ayam Broiler:</strong><br>
+                        Ayam broiler <strong>bukan termasuk hewan ternak yang wajib dizakati</strong> menurut jumhur ulama, karena: (1) tidak digembalakan (diberi pakan), (2) bukan hewan ternak tradisional (unta, sapi, kambing).<br>
+                        → <strong>Tidak wajib zakat</strong>
+                    </div>
+                    
+                    <div class="final">💰 Total Zakat Ternak: 3 ekor kambing + 2 ekor tabi' (sapi muda)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- G. Kalkulator Zakat Interaktif -->
+        <section class="content-section" style="padding: 1.5rem;">
+            <div class="calculator" id="kalkulator-zakat">
+                <h3 class="calc-title"><i class="fas fa-calculator"></i> Kalkulator Zakat Interaktif</h3>
+                <p style="text-align: center; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Gunakan kalkulator ini untuk menghitung zakat Anda sendiri. Pilih jenis zakat yang ingin dihitung.
+                </p>
+                
+                <div class="calc-tabs">
+                    <div class="calc-tab active" onclick="switchTab('fitrah')"><i class="fas fa-users"></i> Zakat Fitrah</div>
+                    <div class="calc-tab" onclick="switchTab('emas')"><i class="fas fa-ring"></i> Zakat Emas</div>
+                    <div class="calc-tab" onclick="switchTab('dagang')"><i class="fas fa-store"></i> Zakat Dagang</div>
+                    <div class="calc-tab" onclick="switchTab('tani')"><i class="fas fa-seedling"></i> Zakat Pertanian</div>
+                    <div class="calc-tab" onclick="switchTab('rikaz')"><i class="fas fa-gem"></i> Zakat Rikaz</div>
+                </div>
+
+                <!-- Panel Fitrah -->
+                <div class="calc-panel active" id="panel-fitrah">
+                    <div class="calc-input-group">
+                        <div class="calc-field">
+                            <label><i class="fas fa-users"></i> Jumlah Jiwa yang Dizakati</label>
+                            <input type="number" id="fitrah-jiwa" placeholder="Contoh: 5" min="1">
+                        </div>
+                        <div class="calc-field">
+                            <label><i class="fas fa-weight-hanging"></i> Harga Beras per Kg (Rp)</label>
+                            <input type="number" id="fitrah-harga" placeholder="Contoh: 14000" min="0">
+                        </div>
+                    </div>
+                    <button class="calc-btn" onclick="hitungFitrah()"><i class="fas fa-calculator"></i> Hitung Zakat Fitrah</button>
+                    <button class="calc-btn secondary" onclick="resetCalc('fitrah')"><i class="fas fa-redo"></i> Reset</button>
+                    <div class="calc-result" id="result-fitrah"></div>
+                </div>
+
+                <!-- Panel Emas -->
+                <div class="calc-panel" id="panel-emas">
+                    <div class="calc-input-group">
+                        <div class="calc-field">
+                            <label><i class="fas fa-ring"></i> Berat Emas (gram)</label>
+                            <input type="number" id="emas-berat" placeholder="Contoh: 100" min="0">
+                        </div>
+                        <div class="calc-field">
+                            <label><i class="fas fa-money-bill"></i> Harga Emas per Gram (Rp)</label>
+                            <input type="number" id="emas-harga" placeholder="Contoh: 1200000" min="0">
+                        </div>
+                        <div class="calc-field">
+                            <label><i class="fas fa-clock"></i> Sudah 1 Tahun?</label>
+                            <select id="emas-haul">
+                                <option value="ya">Ya, sudah 1 tahun</option>
+                                <option value="tidak">Belum, kurang dari 1 tahun</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="calc-btn" onclick="hitungEmas()"><i class="fas fa-calculator"></i> Hitung Zakat Emas</button>
+                    <button class="calc-btn secondary" onclick="resetCalc('emas')"><i class="fas fa-redo"></i> Reset</button>
+                    <div class="calc-result" id="result-emas"></div>
+                </div>
+
+                <!-- Panel Dagang -->
+                <div class="calc-panel" id="panel-dagang">
+                    <div class="calc-input-group">
+                        <div class="calc-field">
+                            <label><i class="fas fa-coins"></i> Modal Usaha (Rp)</label>
+                            <input type="number" id="dagang-modal" placeholder="Contoh: 100000000" min="0">
+                        </div>
+                        <div class="calc-field">
+                            <label><i class="fas fa-chart-line"></i> Keuntungan Bersih (Rp)</label>
+                            <input type="number" id="dagang-untung" placeholder="Contoh: 50000000" min="0">
+                        </div>
+                        <div class="calc-field">
+                            <label><i class="fas fa-hand-holding-usd"></i> Piutang Lancar (Rp)</label>
+                            <input type="number" id="dagang-piutang" placeholder="Contoh: 20000000" min="0">
+                        </div>
+                        <div class="calc-field">
+                            <label><i class="fas fa-file-invoice-dollar"></i> Hutang Jatuh Tempo (Rp)</label>
+                            <input type="number" id="dagang-hutang" placeholder="Contoh: 10000000" min="0">
+                        </div>
+                    </div>
+                    <button class="calc-btn" onclick="hitungDagang()"><i class="fas fa-calculator"></i> Hitung Zakat Dagang</button>
+                    <button class="calc-btn secondary" onclick="resetCalc('dagang')"><i class="fas fa-redo"></i> Reset</button>
+                    <div class="calc-result" id="result-dagang"></div>
+                </div>
+
+                <!-- Panel Tani -->
+                <div class="calc-panel" id="panel-tani">
+                    <div class="calc-input-group">
+                        <div class="calc-field">
+                            <label><i class="fas fa-seedling"></i> Hasil Panen (kg gabah)</label>
+                            <input type="number" id="tani-hasil" placeholder="Contoh: 1500" min="0">
+                        </div>
+                        <div class="calc-field">
+                            <label><i class="fas fa-tint"></i> Sistem Irigasi</label>
+                            <select id="tani-irigasi">
+                                <option value="alami">Alami (hujan/sungai) — 10%</option>
+                                <option value="berbayar">Berbayar (pompa) — 5%</option>
+                            </select>
+                        </div>
+                        <div class="calc-field">
+                            <label><i class="fas fa-money-bill"></i> Harga Gabah per Kg (Rp)</label>
+                            <input type="number" id="tani-harga" placeholder="Contoh: 6000" min="0">
+                        </div>
+                    </div>
+                    <button class="calc-btn" onclick="hitungTani()"><i class="fas fa-calculator"></i> Hitung Zakat Pertanian</button>
+                    <button class="calc-btn secondary" onclick="resetCalc('tani')"><i class="fas fa-redo"></i> Reset</button>
+                    <div class="calc-result" id="result-tani"></div>
+                </div>
+
+                <!-- Panel Rikaz -->
+                <div class="calc-panel" id="panel-rikaz">
+                    <div class="calc-input-group">
+                        <div class="calc-field">
+                            <label><i class="fas fa-gem"></i> Nilai Harta Temuan (Rp)</label>
+                            <input type="number" id="rikaz-nilai" placeholder="Contoh: 500000000" min="0">
+                        </div>
+                    </div>
+                    <button class="calc-btn" onclick="hitungRikaz()"><i class="fas fa-calculator"></i> Hitung Zakat Rikaz</button>
+                    <button class="calc-btn secondary" onclick="resetCalc('rikaz')"><i class="fas fa-redo"></i> Reset</button>
+                    <div class="calc-result" id="result-rikaz"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- H. Hikmah Zakat -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-heart"></i> G. Hikmah Zakat: Bukti Cinta kepada Allah dan Sesama</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Zakat bukan sekadar kewajiban hukum, melainkan memiliki hikmah yang sangat mendalam bagi individu, masyarakat, dan peradaban. Berikut adalah 8 hikmah utama zakat:
+            </p>
+
+            <div class="hikmah-grid">
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-hand-sparkles"></i></div>
+                    <div class="hikmah-title">1. Menyucikan Harta & Jiwa</div>
+                    <div class="hikmah-desc">Zakat membersihkan harta dari hak orang lain yang melekat, dan membersihkan jiwa dari sifat kikir, tamak, dan cinta berlebihan pada harta. "Ambillah zakat dari sebagian harta mereka, dengan zakat itu kamu membersihkan dan mensucikan mereka." (QS. At-Taubah: 103)</div>
+                </div>
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-balance-scale"></i></div>
+                    <div class="hikmah-title">2. Mewujudkan Keadilan Sosial</div>
+                    <div class="hikmah-desc">Zakat menjadi mekanisme redistribusi kekayaan yang adil, mengurangi kesenjangan antara si kaya dan si miskin. Harta tidak hanya berputar di kalangan orang kaya saja (QS. Al-Hasyr: 7).</div>
+                </div>
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-hands-helping"></i></div>
+                    <div class="hikmah-title">3. Memperkuat Ukhuwah Islamiyah</div>
+                    <div class="hikmah-desc">Zakat mempererat tali persaudaraan antara si kaya dan si miskin. Ketika si kaya peduli pada si miskin, tumbuh rasa cinta dan saling menghargai yang memperkuat persatuan umat.</div>
+                </div>
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="hikmah-title">4. Menggerakkan Roda Ekonomi</div>
+                    <div class="hikmah-desc">Zakat yang didistribusikan dengan baik meningkatkan daya beli masyarakat, menggerakkan perekonomian umat, dan menciptakan lapangan kerja baru melalui pemberdayaan mustahik.</div>
+                </div>
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-pray"></i></div>
+                    <div class="hikmah-title">5. Bentuk Syukur kepada Allah</div>
+                    <div class="hikmah-desc">Zakat adalah wujud terima kasih atas nikmat harta. Sesuai janji Allah: "Sesungguhnya jika kamu bersyukur, pasti Kami akan menambah nikmat kepadamu." (QS. Ibrahim: 7)</div>
+                </div>
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="hikmah-title">6. Menolong yang Lemah</div>
+                    <div class="hikmah-desc">Zakat memberikan jaring pengaman sosial bagi fakir miskin, gharim (orang berhutang), ibnu sabil (musafir), dan mustahik lainnya agar mereka dapat hidup dengan layak dan bermartabat.</div>
+                </div>
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-bullhorn"></i></div>
+                    <div class="hikmah-title">7. Mendukung Dakwah Islam</div>
+                    <div class="hikmah-desc">Melalui mustahik fisabilillah dan muallaf, zakat menjadi sumber dana dakwah, pendidikan Islam, dan penguatan umat. Ini adalah investasi jangka panjang untuk kejayaan Islam.</div>
+                </div>
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-heart"></i></div>
+                    <div class="hikmah-title">8. Bukti Cinta Tertinggi</div>
+                    <div class="hikmah-desc">Zakat adalah bukti cinta yang nyata kepada Allah dan sesama. Kita melepaskan sebagian harta yang kita cintai demi Allah, dan membahagiakan sesama yang membutuhkan. Inilah Islam yang kaffah.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- I. Kaidah Fiqh Pendukung -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-gavel"></i> H. Teori Pendukung: Kaidah Fiqh & Ayat</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Dalam memahami hakikat zakat secara menyeluruh, para ulama merumuskan kaidah fiqh yang sangat mendalam:
+            </p>
+            <div class="fiqh-rule">
+                <div class="arabic">الزَّكَاةُ قَنْطَرَةُ الْإِسْلَامِ وَحَبْلُ الوَصْلِ بَيْنَ الْغَنِيِّ وَالْفَقِيرِ</div>
+                <div class="translation">"Zakat adalah jembatan Islam dan tali penghubung antara si kaya dan si miskin."</div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 1rem;">
+                <strong>Aplikasi:</strong> Kaidah ini menegaskan bahwa zakat bukan sekadar kewajiban individu, melainkan <strong>institusi sosial</strong> yang menghubungkan seluruh lapisan masyarakat. Zakat adalah <em>qantharah al-Islam</em> (jembatan Islam) yang menghubungkan dunia material dan spiritual, si kaya dan si miskin, individu dan masyarakat.
+            </p>
+            
+            <div class="quran-quote" style="margin-top: 2rem;">
+                <div class="arabic-text">
+                    مَّثَلُ الَّذِينَ يُنفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سَنَابِلَ فِي كُلِّ سُنبُلَةٍ مِّائَةُ حَبَّةٍ
+                </div>
+                <p class="quote-translation">
+                    "Perumpamaan (nafkah yang dikeluarkan oleh) orang-orang yang menafkahkan hartanya di jalan Allah adalah serupa dengan sebutir benih yang menumbuhkan tujuh bulir, pada tiap-tiap bulir seratus biji. Allah melipat gandakan (ganjaran) bagi siapa yang Dia kehendaki."
+                </p>
+                <span class="quote-source">— QS. Al-Baqarah [2]: 261</span>
+            </div>
+        </section>
+
+        <!-- Kata Kunci -->
+        <section style="margin: 3rem 0;">
+            <h3 style="color: var(--gold-primary); margin-bottom: 1rem; font-size: 1.2rem;">◆ Kata Kunci Pertemuan Ini</h3>
+            <div class="keywords">
+                <span class="keyword-tag">Praktik Perhitungan Zakat</span>
+                <span class="keyword-tag">Kasus Gabungan</span>
+                <span class="keyword-tag">Kalkulator Zakat</span>
+                <span class="keyword-tag">Hikmah Zakat</span>
+                <span class="keyword-tag">Bukti Cinta</span>
+                <span class="keyword-tag">Keadilan Sosial</span>
+                <span class="keyword-tag">Ukhuwah Islamiyah</span>
+                <span class="keyword-tag">Qantharah al-Islam</span>
+                <span class="keyword-tag">QS. Al-Baqarah: 261</span>
+                <span class="keyword-tag">Islam Kaffah</span>
+            </div>
+        </section>
+
+        <!-- Referensi -->
+        <section class="content-section" style="background: rgba(212, 175, 55, 0.05);">
+            <h2 class="section-title"><i class="fas fa-bookmark"></i> I. Referensi Pendukung</h2>
+            <ul class="custom-list" style="font-size: 0.95rem;">
+                <li>Kementerian Agama RI. (2021). <em>Pendidikan Agama Islam dan Budi Pekerti Kelas VIII</em>. Jakarta: Kementerian Agama RI.</li>
+                <li>As-Sayyid Sabiq. (2010). <em>Fiqih Sunnah Jilid 2</em>. (Terjemahan). Bandung: Al-Ma'arif. (Bab Zakat Lengkap)</li>
+                <li>Imam An-Nawawi. <em>Al-Majmu' Syarah Al-Muhadzdzab</em> (Kitab Rujukan Madzhab Syafi'i tentang Zakat).</li>
+                <li>Yusuf Al-Qardhawi. (2007). <em>Hukum Zakat</em>. (Terjemahan). Jakarta: Literasi Antar Nusa.</li>
+                <li>UU No. 23 Tahun 2011 tentang <em>Pengelolaan Zakat</em>.</li>
+                <li>Al-Qur'anul Karim dan Terjemahannya, Kementerian Agama RI.</li>
+            </ul>
+        </section>
+
+        <!-- =========================================
+             UJI FORMATIF (ENHANCED VERSION)
+             ========================================= -->
+        <div class="quiz-container" id="uji-formatif">
+            <div class="quiz-header">
+                <h2 style="color: var(--gold-primary); font-size: 1.8rem; margin-bottom: 0.5rem;">📝 Uji Formatif Pertemuan 9</h2>
+                <p style="color: var(--text-secondary);">Evaluasi Pemahaman Praktik Perhitungan & Hikmah Zakat</p>
+                <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--gold-light);">
+                    📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) &nbsp;|&nbsp; ✍️ Bagian B: Essay (5 soal, 20 poin/soal)
+                </div>
+            </div>
+
+            <!-- Timer & Progress -->
+            <div class="quiz-meta">
+                <div class="timer-display">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>Waktu: <span id="timer">00:00</span></span>
+                </div>
+                <div class="progress-wrapper">
+                    <div class="progress-label">Progres Pengerjaan: <span id="progress-text">0/15 soal dijawab</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="quizForm">
+                <!-- Identitas -->
+                <div class="content-section" style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1.5rem; font-size: 1.2rem;">📋 Identitas Siswa</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div class="form-group">
+                            <label class="form-label">Nama Lengkap *</label>
+                            <input type="text" id="nama" class="form-input" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">No. Absen / NIS *</label>
+                            <input type="text" id="nis" class="form-input" placeholder="Contoh: 12345" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tanggal Ujian</label>
+                            <input type="date" id="tanggal" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Kelas</label>
+                            <select id="kelas" class="form-select">
+                                <option value="VIII-A">VIII-A</option>
+                                <option value="VIII-B">VIII-B</option>
+                                <option value="VIII-C">VIII-C</option>
+                                <option value="VIII-D">VIII-D</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <h3 style="color: var(--text-primary); margin: 2rem 0 1.5rem; font-size: 1.3rem;">📋 Bagian A: Pilihan Ganda</h3>
+                
+                <div class="question-card" data-topic="fitrah">
+                    <p class="question-text">1. Pak Ahmad memiliki 5 orang yang menjadi tanggungannya (diri sendiri, istri, 3 anak). Berapa kg beras yang harus dikeluarkan sebagai zakat fitrah? 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Perhitungan Fitrah</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q1" value="A"> A. 10 kg</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="B"> B. 12,5 kg</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="C"> C. 15 kg</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="D"> D. 20 kg</label>
+                    </div>
+                    <div class="feedback" id="fb-q1"></div>
+                </div>
+
+                <div class="question-card" data-topic="emas">
+                    <p class="question-text">2. Bu Fatimah memiliki emas 150 gram yang telah dimiliki 1 tahun. Harga emas Rp1.000.000/gram. Berapa zakat yang harus dikeluarkan? 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Perhitungan Emas</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q2" value="A"> A. Rp1.500.000</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="B"> B. Rp3.750.000</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="C"> C. Rp7.500.000</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="D"> D. Rp37.500.000</label>
+                    </div>
+                    <div class="feedback" id="fb-q2"></div>
+                </div>
+
+                <div class="question-card" data-topic="dagang">
+                    <p class="question-text">3. Pak Hasan memiliki usaha dengan modal Rp200jt, untung Rp100jt, piutang Rp50jt, hutang Rp30jt. Berapa zakat perdagangan? 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Perhitungan Dagang</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q3" value="A"> A. Rp6.000.000</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="B"> B. Rp8.000.000</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="C"> C. Rp10.000.000</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="D"> D. Rp12.000.000</label>
+                    </div>
+                    <div class="feedback" id="fb-q3"></div>
+                </div>
+
+                <div class="question-card" data-topic="tani">
+                    <p class="question-text">4. Pak Karman panen 2.000 kg gabah dengan irigasi alami. Berapa zakat yang harus dikeluarkan? 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Perhitungan Pertanian</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q4" value="A"> A. 100 kg</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="B"> B. 150 kg</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="C"> C. 200 kg</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="D"> D. 400 kg</label>
+                    </div>
+                    <div class="feedback" id="fb-q4"></div>
+                </div>
+
+                <div class="question-card" data-topic="ternak">
+                    <p class="question-text">5. Pak Rahmat memiliki 180 ekor kambing yang digembalakan selama 1 tahun. Berapa zakat yang harus dikeluarkan? 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Perhitungan Ternak</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q5" value="A"> A. 1 ekor kambing</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="B"> B. 2 ekor kambing</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="C"> C. 3 ekor kambing</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="D"> D. 4 ekor kambing</label>
+                    </div>
+                    <div class="feedback" id="fb-q5"></div>
+                </div>
+
+                <div class="question-card" data-topic="hikmah">
+                    <p class="question-text">6. Salah satu hikmah zakat yang berkaitan dengan aspek spiritual adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Hikmah Zakat</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q6" value="A"> A. Menggerakkan roda ekonomi</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="B"> B. Menyucikan harta dan jiwa dari sifat kikir</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="C"> C. Mencegah penumpukan harta</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="D"> D. Meningkatkan daya beli masyarakat</label>
+                    </div>
+                    <div class="feedback" id="fb-q6"></div>
+                </div>
+
+                <div class="question-card" data-topic="dalil">
+                    <p class="question-text">7. Ayat Al-Qur'an yang menggambarkan perumpamaan orang yang menafkahkan hartanya seperti benih yang menumbuhkan 7 bulir adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Dalil Naqli</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q7" value="A"> A. QS. Al-Baqarah: 261</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="B"> B. QS. At-Taubah: 103</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="C"> C. QS. Ibrahim: 7</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="D"> D. QS. Al-Hasyr: 7</label>
+                    </div>
+                    <div class="feedback" id="fb-q7"></div>
+                </div>
+
+                <div class="question-card" data-topic="gabungan">
+                    <p class="question-text">8. Pak Zainal memiliki emas 100 gram (sudah 1 tahun) DAN hasil panen 1.000 kg gabah (irigasi alami). Harga emas Rp1.000.000/gram, gabah Rp6.000/kg. Berapa TOTAL zakat yang harus dikeluarkan? 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Kasus Gabungan</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q8" value="A"> A. Rp2.500.000 + 100 kg gabah</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="B"> B. Rp2.500.000 + 50 kg gabah</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="C"> C. Rp5.000.000 + 100 kg gabah</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="D"> D. Rp5.000.000 + 50 kg gabah</label>
+                    </div>
+                    <div class="feedback" id="fb-q8"></div>
+                </div>
+
+                <div class="question-card" data-topic="konsep">
+                    <p class="question-text">9. Zakat disebut sebagai "qantharah al-Islam" yang artinya... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Konsep Zakat</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q9" value="A"> A. Kewajiban Islam</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="B"> B. Jembatan Islam (penghubung si kaya dan si miskin)</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="C"> C. Rukun Islam</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="D"> D. Pilar Islam</label>
+                    </div>
+                    <div class="feedback" id="fb-q9"></div>
+                </div>
+
+                <div class="question-card" data-topic="hikmah">
+                    <p class="question-text">10. Zakat sebagai "bukti cinta tertinggi" kepada Allah dan sesama mengandung makna... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Hikmah Zakat</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q10" value="A"> A. Kita mengeluarkan harta karena terpaksa</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="B"> B. Kita melepaskan sebagian harta yang dicintai demi Allah dan kebahagiaan sesama</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="C"> C. Kita ingin dipuji orang lain</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="D"> D. Kita ingin mengurangi harta</label>
+                    </div>
+                    <div class="feedback" id="fb-q10"></div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <h3 style="color: var(--text-primary); margin: 3rem 0 1.5rem; font-size: 1.3rem;">✍️ Bagian B: Essay</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                    💡 <em>Catatan: Sistem akan memberikan nilai simulasi berdasarkan kelengkapan jawaban (>30 karakter). Penilaian akhir yang sebenarnya tetap berada di wewenang guru.</em>
+                </p>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 1: Bu Aminah memiliki keluarga terdiri dari 6 jiwa. Ia juga memiliki emas 80 gram (sudah 1 tahun, harga Rp1.200.000/gram) dan hasil panen padi 1.200 kg dengan irigasi berbayar (harga gabah Rp6.000/kg). Hitunglah TOTAL zakat yang harus dikeluarkan Bu Aminah (zakat fitrah + zakat mal)! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay1" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 2: Pak Rahmat memiliki usaha dagang dengan modal Rp300jt, untung Rp150jt, piutang Rp50jt, hutang Rp80jt. Ia juga memiliki sapi 75 ekor yang digembalakan selama 1 tahun. Hitunglah zakat perdagangan dan zakat ternak yang harus dikeluarkan! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay2" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 3: Jelaskan 5 hikmah zakat bagi individu dan 3 hikmah zakat bagi masyarakat! Hubungkan dengan konsep "bukti cinta kepada Allah dan sesama"! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay3" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 4: Tuliskan isi QS. Al-Baqarah ayat 261 dan jelaskan hubungannya dengan hikmah zakat! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay4" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 5: Sebagai siswa MTs, bagaimana cara Anda mengimplementasikan nilai-nilai zakat dalam kehidupan sehari-hari? Berikan minimal 3 contoh konkret! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay5" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <!-- Hasil Uji -->
+                <div id="hasil-uji" class="result-box">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1rem;">📊 Hasil Uji Formatif</h3>
+                    
+                    <div class="score-breakdown">
+                        <div class="score-item">
+                            <div class="label">Pilihan Ganda</div>
+                            <div class="value"><span id="mc-result">0</span>/100</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Essay (Simulasi)</div>
+                            <div class="value"><span id="essay-result">0</span>/100</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Waktu Pengerjaan</div>
+                            <div class="value" id="time-result">00:00</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Benar PG</div>
+                            <div class="value"><span id="correct-count">0</span>/10</div>
+                        </div>
+                    </div>
+                    
+                    <div style="border-top: 1px solid var(--border-gold); padding-top: 1rem; margin-top: 1rem; text-align: center;">
+                        <div style="color: var(--gold-light); font-size: 1rem; margin-bottom: 0.5rem;">Skor Akhir Total</div>
+                        <div class="score-display"><span id="total-result">0</span> <span style="font-size: 1.5rem; color: var(--text-secondary);">/ 200</span></div>
+                        <div id="grade-display" style="font-size: 1.2rem; color: var(--gold-light); margin-top: 0.5rem;"></div>
+                    </div>
+
+                    <!-- Analisis Kelemahan -->
+                    <div class="weakness-analysis" id="weakness-analysis" style="display: none;">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Analisis Kelemahan & Saran Perbaikan</h4>
+                        <ul class="weakness-list" id="weakness-list"></ul>
+                    </div>
+                </div>
+
+                <!-- Tombol Aksi -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary" onclick="calculateScore()">
+                        <i class="fas fa-check-circle"></i> KIRIM JAWABAN & LIHAT HASIL
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="downloadPDF()">
+                        <i class="fas fa-file-pdf"></i> UNDUH PDF LENGKAP
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="downloadTXT()">
+                        <i class="fas fa-file-alt"></i> UNDUH SKOR (TXT)
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="resetQuiz()">
+                        <i class="fas fa-redo"></i> MULAI ULANG
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="sendEmail()">
+                        <i class="fas fa-envelope"></i> KIRIM KE EMAIL GURU
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 1rem; color: var(--gold-primary);">
+                Fikih Kelas 8 Semester 1
+            </p>
+            <p>&copy; 2026 Ermawati, S.H.I. — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p style="margin-top: 0.5rem;">
+                Email: <a href="mailto:erma34779@gmail.com" style="color: var(--gold-primary);">erma34779@gmail.com</a>
+            </p>
+            <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem;">
+                <a href="index.html" class="nav-link" style="font-size: 0.85rem;"><i class="fas fa-book"></i> Daftar Isi</a>
+                <a href="10.html" class="nav-link" style="font-size: 0.85rem;">UTS (Pertemuan 10) <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- =========================================
+         JAVASCRIPT LOGIC (ENHANCED)
+         ========================================= -->
+    <script>
+        // =========================================
+        // KALKULATOR ZAKAT
+        // =========================================
+        function switchTab(tabName) {
+            document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.calc-panel').forEach(p => p.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('panel-' + tabName).classList.add('active');
+        }
+
+        function formatRupiah(angka) {
+            return 'Rp' + angka.toLocaleString('id-ID');
+        }
+
+        function resetCalc(type) {
+            const panel = document.getElementById('panel-' + type);
+            panel.querySelectorAll('input').forEach(i => i.value = '');
+            panel.querySelectorAll('select').forEach(s => s.selectedIndex = 0);
+            document.getElementById('result-' + type).classList.remove('show');
+            document.getElementById('result-' + type).innerHTML = '';
+        }
+
+        function hitungFitrah() {
+            const jiwa = parseFloat(document.getElementById('fitrah-jiwa').value) || 0;
+            const harga = parseFloat(document.getElementById('fitrah-harga').value) || 0;
+            const result = document.getElementById('result-fitrah');
+            
+            if (jiwa <= 0) {
+                result.innerHTML = '<h4><i class="fas fa-exclamation-circle"></i> Error</h4><p style="color: var(--text-secondary);">Masukkan jumlah jiwa yang valid!</p>';
+                result.classList.add('show');
+                return;
+            }
+            
+            const totalKg = jiwa * 2.5;
+            const totalRp = totalKg * harga;
+            
+            result.innerHTML = `
+                <h4><i class="fas fa-check-circle"></i> Hasil Perhitungan Zakat Fitrah</h4>
+                <div class="calc-result-item"><span>Jumlah Jiwa</span><strong>${jiwa} jiwa</strong></div>
+                <div class="calc-result-item"><span>Zakat per Jiwa</span><strong>2,5 kg</strong></div>
+                <div class="calc-result-item"><span>Total Zakat (kg)</span><strong>${totalKg.toFixed(2)} kg beras</strong></div>
+                <div class="calc-result-total">
+                    <span>Nilai Zakat:</span>
+                    <strong>${harga > 0 ? formatRupiah(totalRp) : '(isi harga untuk melihat nilai)'}</strong>
+                </div>
+            `;
+            result.classList.add('show');
+        }
+
+        function hitungEmas() {
+            const berat = parseFloat(document.getElementById('emas-berat').value) || 0;
+            const harga = parseFloat(document.getElementById('emas-harga').value) || 0;
+            const haul = document.getElementById('emas-haul').value;
+            const result = document.getElementById('result-emas');
+            
+            const nisab = 85;
+            let html = '<h4><i class="fas fa-check-circle"></i> Hasil Perhitungan Zakat Emas</h4>';
+            
+            if (berat < nisab) {
+                html += `<p style="color: var(--error);"><strong>⚠️ Belum mencapai nisab!</strong></p>
+                         <div class="calc-result-item"><span>Berat Emas</span><strong>${berat} gram</strong></div>
+                         <div class="calc-result-item"><span>Nisab</span><strong>85 gram</strong></div>
+                         <div class="calc-result-total"><span>Status:</span><strong style="color: var(--error);">TIDAK WAJIB ZAKAT</strong></div>`;
+            } else if (haul === 'tidak') {
+                html += `<p style="color: var(--error);"><strong>⚠️ Belum mencapai haul!</strong></p>
+                         <div class="calc-result-item"><span>Berat Emas</span><strong>${berat} gram (≥ 85 gram ✓)</strong></div>
+                         <div class="calc-result-item"><span>Haul</span><strong>Kurang dari 1 tahun ✗</strong></div>
+                         <div class="calc-result-total"><span>Status:</span><strong style="color: var(--error);">TIDAK WAJIB ZAKAT</strong></div>`;
+            } else {
+                const zakatGram = berat * 0.025;
+                const zakatRp = zakatGram * harga;
+                html += `
+                    <div class="calc-result-item"><span>Berat Emas</span><strong>${berat} gram</strong></div>
+                    <div class="calc-result-item"><span>Nisab</span><strong>85 gram ✓</strong></div>
+                    <div class="calc-result-item"><span>Haul</span><strong>1 tahun ✓</strong></div>
+                    <div class="calc-result-item"><span>Kadar Zakat</span><strong>2,5%</strong></div>
+                    <div class="calc-result-item"><span>Zakat (gram)</span><strong>${zakatGram.toFixed(2)} gram emas</strong></div>
+                    <div class="calc-result-total">
+                        <span>Nilai Zakat:</span>
+                        <strong>${harga > 0 ? formatRupiah(zakatRp) : '(isi harga untuk melihat nilai)'}</strong>
+                    </div>
+                `;
+            }
+            
+            result.innerHTML = html;
+            result.classList.add('show');
+        }
+
+        function hitungDagang() {
+            const modal = parseFloat(document.getElementById('dagang-modal').value) || 0;
+            const untung = parseFloat(document.getElementById('dagang-untung').value) || 0;
+            const piutang = parseFloat(document.getElementById('dagang-piutang').value) || 0;
+            const hutang = parseFloat(document.getElementById('dagang-hutang').value) || 0;
+            const result = document.getElementById('result-dagang');
+            
+            const bersih = modal + untung + piutang - hutang;
+            const nisab = 85 * 1200000; // Rp102.000.000
+            let html = '<h4><i class="fas fa-check-circle"></i> Hasil Perhitungan Zakat Perdagangan</h4>';
+            
+            html += `
+                <div class="calc-result-item"><span>Modal Usaha</span><strong>${formatRupiah(modal)}</strong></div>
+                <div class="calc-result-item"><span>+ Keuntungan</span><strong>${formatRupiah(untung)}</strong></div>
+                <div class="calc-result-item"><span>+ Piutang Lancar</span><strong>${formatRupiah(piutang)}</strong></div>
+                <div class="calc-result-item"><span>− Hutang Jatuh Tempo</span><strong>${formatRupiah(hutang)}</strong></div>
+                <div class="calc-result-item"><span><strong>Harta Bersih</strong></span><strong>${formatRupiah(bersih)}</strong></div>
+            `;
+            
+            if (bersih < nisab) {
+                html += `<div class="calc-result-total"><span>Status:</span><strong style="color: var(--error);">TIDAK WAJIB ZAKAT (di bawah nisab)</strong></div>`;
+            } else {
+                const zakat = bersih * 0.025;
+                html += `<div class="calc-result-total"><span>Zakat (2,5%):</span><strong>${formatRupiah(zakat)}</strong></div>`;
+            }
+            
+            result.innerHTML = html;
+            result.classList.add('show');
+        }
+
+        function hitungTani() {
+            const hasil = parseFloat(document.getElementById('tani-hasil').value) || 0;
+            const irigasi = document.getElementById('tani-irigasi').value;
+            const harga = parseFloat(document.getElementById('tani-harga').value) || 0;
+            const result = document.getElementById('result-tani');
+            
+            const nisab = 653;
+            const kadar = irigasi === 'alami' ? 0.10 : 0.05;
+            let html = '<h4><i class="fas fa-check-circle"></i> Hasil Perhitungan Zakat Pertanian</h4>';
+            
+            if (hasil < nisab) {
+                html += `<p style="color: var(--error);"><strong>⚠️ Belum mencapai nisab!</strong></p>
+                         <div class="calc-result-item"><span>Hasil Panen</span><strong>${hasil} kg</strong></div>
+                         <div class="calc-result-item"><span>Nisab</span><strong>653 kg</strong></div>
+                         <div class="calc-result-total"><span>Status:</span><strong style="color: var(--error);">TIDAK WAJIB ZAKAT</strong></div>`;
+            } else {
+                const zakatKg = hasil * kadar;
+                const zakatRp = zakatKg * harga;
+                html += `
+                    <div class="calc-result-item"><span>Hasil Panen</span><strong>${hasil} kg</strong></div>
+                    <div class="calc-result-item"><span>Nisab</span><strong>653 kg ✓</strong></div>
+                    <div class="calc-result-item"><span>Sistem Irigasi</span><strong>${irigasi === 'alami' ? 'Alami (10%)' : 'Berbayar (5%)'}</strong></div>
+                    <div class="calc-result-item"><span>Zakat (kg)</span><strong>${zakatKg.toFixed(2)} kg gabah</strong></div>
+                    <div class="calc-result-total">
+                        <span>Nilai Zakat:</span>
+                        <strong>${harga > 0 ? formatRupiah(zakatRp) : '(isi harga untuk melihat nilai)'}</strong>
+                    </div>
+                `;
+            }
+            
+            result.innerHTML = html;
+            result.classList.add('show');
+        }
+
+        function hitungRikaz() {
+            const nilai = parseFloat(document.getElementById('rikaz-nilai').value) || 0;
+            const result = document.getElementById('result-rikaz');
+            
+            const zakat = nilai * 0.20;
+            result.innerHTML = `
+                <h4><i class="fas fa-check-circle"></i> Hasil Perhitungan Zakat Rikaz</h4>
+                <div class="calc-result-item"><span>Nilai Harta Temuan</span><strong>${formatRupiah(nilai)}</strong></div>
+                <div class="calc-result-item"><span>Nisab</span><strong>Tidak ada (wajib zakat berapapun)</strong></div>
+                <div class="calc-result-item"><span>Haul</span><strong>Tidak ada (langsung dizakati)</strong></div>
+                <div class="calc-result-item"><span>Kadar Zakat</span><strong>20% (1/5)</strong></div>
+                <div class="calc-result-total">
+                    <span>Zakat Rikaz:</span>
+                    <strong>${formatRupiah(zakat)}</strong>
+                </div>
+            `;
+            result.classList.add('show');
+        }
+
+        // =========================================
+        // DATA SOAL & KUNCI JAWABAN
+        // =========================================
+        const quizData = {
+            q1: { 
+                correct: 'B', 
+                topic: 'Perhitungan Fitrah',
+                explanation: '5 jiwa × 2,5 kg/jiwa = 12,5 kg beras. Ingat: setiap jiwa wajib dizakati 2,5 kg makanan pokok.' 
+            },
+            q2: { 
+                correct: 'B', 
+                topic: 'Perhitungan Emas',
+                explanation: 'Emas 150 gram ≥ 85 gram nisab, haul 1 tahun ✓. Zakat = 2,5% × 150 × Rp1.000.000 = 2,5% × Rp150.000.000 = Rp3.750.000.' 
+            },
+            q3: { 
+                correct: 'B', 
+                topic: 'Perhitungan Dagang',
+                explanation: 'Harta bersih = Rp200jt + Rp100jt + Rp50jt − Rp30jt = Rp320jt. Zakat = 2,5% × Rp320jt = Rp8.000.000.' 
+            },
+            q4: { 
+                correct: 'C', 
+                topic: 'Perhitungan Pertanian',
+                explanation: 'Hasil 2.000 kg ≥ 653 kg nisab. Irigasi ALAMI → kadar 10%. Zakat = 10% × 2.000 kg = 200 kg gabah.' 
+            },
+            q5: { 
+                correct: 'C', 
+                topic: 'Perhitungan Ternak',
+                explanation: '180 ekor kambing masuk kategori 121-200 ekor → zakat = 2 ekor kambing. TUNGGU! Mari cek tabel: 121-200 = 2 ekor. Jadi jawaban B. Mari kita perbaiki.' 
+            },
+            q6: { 
+                correct: 'B', 
+                topic: 'Hikmah Zakat',
+                explanation: 'Hikmah spiritual zakat: menyucikan harta dan jiwa dari sifat kikir, tamak, dan cinta berlebihan pada harta. Pilihan A, C, D adalah hikmah sosial/ekonomi.' 
+            },
+            q7: { 
+                correct: 'A', 
+                topic: 'Dalil Naqli',
+                explanation: 'QS. Al-Baqarah ayat 261: "Matsalulladzina yunfiquuna amwaalahum fii sabiilillaahi kamatsali habbatin ambatat sab\'a sanaabil..." (Perumpamaan orang yang menafkahkan hartanya di jalan Allah seperti benih yang menumbuhkan 7 bulir).' 
+            },
+            q8: { 
+                correct: 'A', 
+                topic: 'Kasus Gabungan',
+                explanation: 'Zakat emas: 2,5% × 100 × Rp1.000.000 = Rp2.500.000. Zakat pertanian (irigasi alami): 10% × 1.000 kg = 100 kg gabah. Total = Rp2.500.000 + 100 kg gabah.' 
+            },
+            q9: { 
+                correct: 'B', 
+                topic: 'Konsep Zakat',
+                explanation: '"Qantharah al-Islam" = Jembatan Islam. Zakat adalah jembatan yang menghubungkan si kaya dan si miskin, dunia material dan spiritual, individu dan masyarakat.' 
+            },
+            q10: { 
+                correct: 'B', 
+                topic: 'Hikmah Zakat',
+                explanation: 'Zakat sebagai bukti cinta tertinggi: kita melepaskan sebagian harta yang kita cintai demi Allah dan kebahagiaan sesama. Ini adalah perpaduan habluminallah dan habluminannas yang sempurna.' 
+            }
+        };
+
+        // Koreksi q5 - jawaban yang benar adalah B
+        quizData.q5.correct = 'B';
+        quizData.q5.explanation = '180 ekor kambing masuk kategori 121-200 ekor → zakat = 2 ekor kambing.';
+
+        // =========================================
+        // TIMER & PROGRESS
+        // =========================================
+        let timerInterval;
+        let seconds = 0;
+        let quizStarted = false;
+
+        function startTimer() {
+            if (quizStarted) return;
+            quizStarted = true;
+            timerInterval = setInterval(() => {
+                seconds++;
+                const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+                const secs = (seconds % 60).toString().padStart(2, '0');
+                document.getElementById('timer').innerText = `${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function getFormattedTime() {
+            const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const secs = (seconds % 60).toString().padStart(2, '0');
+            return `${mins}:${secs}`;
+        }
+
+        function updateProgress() {
+            let answered = 0;
+            for (let i = 1; i <= 10; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+            }
+            for (let i = 1; i <= 5; i++) {
+                if (document.getElementById(`essay${i}`).value.trim().length > 0) answered++;
+            }
+            const total = 15;
+            const percent = (answered / total) * 100;
+            document.getElementById('progress-fill').style.width = percent + '%';
+            document.getElementById('progress-text').innerText = `${answered}/${total} soal dijawab`;
+        }
+
+        document.querySelectorAll('input[type="radio"]').forEach(el => {
+            el.addEventListener('change', () => { startTimer(); updateProgress(); });
+        });
+        document.querySelectorAll('textarea').forEach(el => {
+            el.addEventListener('input', () => { startTimer(); updateProgress(); });
+        });
+
+        // =========================================
+        // HITUNG SKOR
+        // =========================================
+        function calculateScore() {
+            const nama = document.getElementById('nama').value.trim();
+            if (!nama) {
+                alert('Mohon isi Nama Lengkap terlebih dahulu!');
+                document.getElementById('nama').focus();
+                return;
+            }
+
+            stopTimer();
+
+            let mcScore = 0;
+            let correctCount = 0;
+            const topicStats = {};
+
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const data = quizData[`q${i}`];
+                const card = document.querySelector(`.question-card[data-topic="${data.topic}"]`);
+                const feedback = document.getElementById(`fb-q${i}`);
+                
+                if (!topicStats[data.topic]) {
+                    topicStats[data.topic] = { correct: 0, total: 0 };
+                }
+                topicStats[data.topic].total++;
+
+                if (selected && selected.value === data.correct) {
+                    mcScore += 10;
+                    correctCount++;
+                    topicStats[data.topic].correct++;
+                    card.classList.add('correct');
+                    card.classList.remove('incorrect');
+                    feedback.className = 'feedback show correct';
+                    feedback.innerHTML = `<strong><i class="fas fa-check-circle"></i> BENAR!</strong> ${data.explanation}`;
+                } else {
+                    card.classList.add('incorrect');
+                    card.classList.remove('correct');
+                    feedback.className = 'feedback show incorrect';
+                    const userAnswer = selected ? selected.value : 'Tidak dijawab';
+                    feedback.innerHTML = `<strong><i class="fas fa-times-circle"></i> KURANG TEPAT</strong> 
+                        Jawaban Anda: ${userAnswer} | Jawaban Benar: <strong>${data.correct}</strong><br>
+                        <em style="margin-top: 0.5rem; display: block;">${data.explanation}</em>`;
+                }
+            }
+
+            let essayScore = 0;
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim();
+                if (answer.length > 30) {
+                    essayScore += 20;
+                } else if (answer.length > 0) {
+                    essayScore += 10;
+                }
+            }
+
+            const totalScore = mcScore + essayScore;
+            
+            document.getElementById('mc-result').innerText = mcScore;
+            document.getElementById('essay-result').innerText = essayScore;
+            document.getElementById('total-result').innerText = totalScore;
+            document.getElementById('correct-count').innerText = correctCount;
+            document.getElementById('time-result').innerText = getFormattedTime();
+            
+            let grade = '';
+            const percentage = (totalScore / 200) * 100;
+            if (percentage >= 90) grade = '🏆 MUMTAZ (Istimewa)';
+            else if (percentage >= 80) grade = '🌟 JAYYID JIDDAN (Sangat Baik)';
+            else if (percentage >= 70) grade = '✨ JAYYID (Baik)';
+            else if (percentage >= 60) grade = '📖 MAQBUL (Cukup)';
+            else grade = '💪 PERLU BIMBINGAN LANJUT';
+            document.getElementById('grade-display').innerText = grade;
+
+            const weaknesses = [];
+            for (const [topic, stats] of Object.entries(topicStats)) {
+                if (stats.correct < stats.total) {
+                    const percent = (stats.correct / stats.total) * 100;
+                    let suggestion = '';
+                    switch(topic) {
+                        case 'Perhitungan Fitrah': suggestion = 'Rumus: Jumlah jiwa × 2,5 kg. Latih perhitungan dengan berbagai jumlah jiwa.'; break;
+                        case 'Perhitungan Emas': suggestion = 'Rumus: 2,5% × berat emas × harga/gram (jika ≥ 85 gram & haul 1 tahun).'; break;
+                        case 'Perhitungan Dagang': suggestion = 'Rumus: 2,5% × (Modal + Untung + Piutang − Hutang). Pastikan semua komponen dihitung.'; break;
+                        case 'Perhitungan Pertanian': suggestion = 'Rumus: 10% (alami) atau 5% (berbayar) × hasil panen (jika ≥ 653 kg).'; break;
+                        case 'Perhitungan Ternak': suggestion = 'Pelajari tabel zakat ternak: kambing (40/120/200/300/400), sapi (30/40/60/70/80), unta (5/10/15/20/25/35/45/60/75).'; break;
+                        case 'Hikmah Zakat': suggestion = 'Pelajari 8 hikmah zakat: menyucikan, keadilan sosial, ukhuwah, ekonomi, syukur, menolong, dakwah, bukti cinta.'; break;
+                        case 'Dalil Naqli': suggestion = 'Hafalkan QS. Al-Baqarah: 261 (perumpamaan 7 bulir), QS. At-Taubah: 103 (menyucikan), QS. Ibrahim: 7 (syukur).'; break;
+                        case 'Kasus Gabungan': suggestion = 'Latih kasus gabungan: hitung zakat untuk beberapa jenis harta sekaligus, lalu jumlahkan.'; break;
+                        case 'Konsep Zakat': suggestion = 'Pahami konsep "qantharah al-Islam" = jembatan Islam yang menghubungkan si kaya dan si miskin.'; break;
+                    }
+                    weaknesses.push({ topic, percent, suggestion });
+                }
+            }
+
+            const weaknessBox = document.getElementById('weakness-analysis');
+            const weaknessList = document.getElementById('weakness-list');
+            if (weaknesses.length > 0) {
+                weaknessList.innerHTML = weaknesses.map(w => 
+                    `<li><strong>📌 ${w.topic.toUpperCase()}</strong> (${w.percent.toFixed(0)}% benar)<br>${w.suggestion}</li>`
+                ).join('');
+                weaknessBox.style.display = 'block';
+            } else {
+                weaknessBox.style.display = 'none';
+            }
+
+            const resultBox = document.getElementById('hasil-uji');
+            resultBox.classList.add('active');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            if (essayScore < 100) {
+                setTimeout(() => {
+                    alert('Catatan: Nilai Essay adalah simulasi otomatis berdasarkan kelengkapan jawaban. Guru akan meninjau jawaban Anda secara manual.');
+                }, 500);
+            }
+        }
+
+        // =========================================
+        // DOWNLOAD PDF
+        // =========================================
+        function downloadPDF() {
+            const element = document.getElementById('main-content');
+            const nama = document.getElementById('nama').value || 'Siswa';
+            
+            const opt = {
+                margin: [0.5, 0.5, 0.5, 0.5],
+                filename: `Uji_Formatif_Pertemuan_9_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, backgroundColor: '#022c22' },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            const btn = event.target.closest('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses PDF...';
+            btn.disabled = true;
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }).catch(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                alert('Gagal membuat PDF. Silakan coba lagi.');
+            });
+        }
+
+        // =========================================
+        // DOWNLOAD TXT
+        // =========================================
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value;
+            const tanggal = document.getElementById('tanggal').value || new Date().toLocaleDateString('id-ID');
+            const mc = document.getElementById('mc-result').innerText;
+            const essay = document.getElementById('essay-result').innerText;
+            const total = document.getElementById('total-result').innerText;
+            const correct = document.getElementById('correct-count').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText;
+
+            let pgDetail = '';
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const userAns = selected ? selected.value : '-';
+                const correctAns = quizData[`q${i}`].correct;
+                const status = userAns === correctAns ? '✓ BENAR' : '✗ SALAH';
+                pgDetail += `  Soal ${i.toString().padStart(2, ' ')}: Jawaban Anda = ${userAns} | Kunci = ${correctAns} | ${status}\n`;
+            }
+
+            let essayDetail = '';
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim() || '(Tidak dijawab)';
+                const shortAns = answer.length > 100 ? answer.substring(0, 100) + '...' : answer;
+                essayDetail += `  Essay ${i}: ${shortAns}\n\n`;
+            }
+
+            const text = `╔══════════════════════════════════════════════════════════╗
+║          HASIL UJI FORMATIF - FIKIH KELAS 8             ║
+║              MTsN 10 AGAM - SEMESTER 1                  ║
+╚══════════════════════════════════════════════════════════╝
+
+Mata Pelajaran : Fikih Kelas 8 Semester 1
+Materi         : Pertemuan 9 - Praktik Perhitungan & Hikmah Zakat
+Bab            : BAB 2 - Zakat (Pertemuan Puncak)
+Sekolah        : MTsN 10 Agam
+Guru Pengampu  : Ermawati, S.H.I. (erma34779@gmail.com)
+Tanggal Ujian  : ${tanggal}
+Waktu Pengerjaan: ${waktu}
+
+═══════════════════════════════════════════════════════════
+                    IDENTITAS SISWA
+═══════════════════════════════════════════════════════════
+Nama Lengkap : ${nama}
+NIS          : ${nis}
+Kelas        : ${kelas}
+
+═══════════════════════════════════════════════════════════
+                  RINGKASAN NILAI
+═══════════════════════════════════════════════════════════
+Nilai Pilihan Ganda   : ${mc} / 100  (${correct}/10 benar)
+Nilai Essay (Simulasi): ${essay} / 100
+───────────────────────────────────────────────────────────
+NILAI AKHIR TOTAL     : ${total} / 200
+PREDIKAT              : ${grade}
+
+═══════════════════════════════════════════════════════════
+                 DETAIL JAWABAN PILIHAN GANDA
+═══════════════════════════════════════════════════════════
+${pgDetail}
+═══════════════════════════════════════════════════════════
+                 DETAIL JAWABAN ESSAY
+═══════════════════════════════════════════════════════════
+${essayDetail}
+═══════════════════════════════════════════════════════════
+CATATAN PENTING
+═══════════════════════════════════════════════════════════
+• Pertemuan 9 adalah PERTUMUAN PUNCAK BAB 2 (Zakat).
+• Setelah ini, siswa akan menghadapi UTS (Pertemuan 10).
+• Nilai Essay di atas adalah SIMULASI OTOMATIS berdasarkan 
+  kelengkapan jawaban (>30 karakter).
+• Penilaian akhir yang sebenarnya berada di wewenang guru 
+  pengampu (Ibu Ermawati, S.H.I.).
+
+═══════════════════════════════════════════════════════════
+Dokumen ini digenerate otomatis pada: ${new Date().toLocaleString('id-ID')}
+© 2026 Ermawati, S.H.I. - MTsN 10 Agam
+═══════════════════════════════════════════════════════════`;
+            
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Skor_Detail_Pertemuan9_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // =========================================
+        // RESET QUIZ
+        // =========================================
+        function resetQuiz() {
+            if(!confirm('Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang?')) return;
+            
+            document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+            document.querySelectorAll('textarea').forEach(el => el.value = '');
+            document.getElementById('nama').value = '';
+            document.getElementById('nis').value = '';
+            document.getElementById('tanggal').value = '';
+            
+            document.getElementById('mc-result').innerText = '0';
+            document.getElementById('essay-result').innerText = '0';
+            document.getElementById('total-result').innerText = '0';
+            document.getElementById('correct-count').innerText = '0';
+            document.getElementById('time-result').innerText = '00:00';
+            document.getElementById('grade-display').innerText = '';
+            document.getElementById('hasil-uji').classList.remove('active');
+            document.getElementById('weakness-analysis').style.display = 'none';
+            
+            document.querySelectorAll('.question-card').forEach(el => {
+                el.classList.remove('correct', 'incorrect');
+            });
+            document.querySelectorAll('.feedback').forEach(el => {
+                el.className = 'feedback';
+                el.innerHTML = '';
+            });
+            
+            stopTimer();
+            seconds = 0;
+            quizStarted = false;
+            document.getElementById('timer').innerText = '00:00';
+            document.getElementById('progress-fill').style.width = '0%';
+            document.getElementById('progress-text').innerText = '0/15 soal dijawab';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // =========================================
+        // KIRIM EMAIL
+        // =========================================
+        function sendEmail() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value;
+            const total = document.getElementById('total-result').innerText;
+            const mc = document.getElementById('mc-result').innerText;
+            const essay = document.getElementById('essay-result').innerText;
+            const correct = document.getElementById('correct-count').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText || 'Belum dinilai';
+            
+            if (total === '0' || !document.getElementById('hasil-uji').classList.contains('active')) {
+                alert('Silakan kerjakan uji formatif dan klik "KIRIM JAWABAN & LIHAT HASIL" terlebih dahulu sebelum mengirim email.');
+                return;
+            }
+
+            const subject = encodeURIComponent(`Hasil Uji Formatif Pertemuan 9 (Praktik & Hikmah Zakat) - ${nama} - ${kelas}`);
+            const body = encodeURIComponent(`Assalamu'alaikum Wr. Wb.
+
+Yth. Ibu Ermawati, S.H.I.,
+
+Berikut adalah hasil uji formatif saya pada Pertemuan 9 (Pertemuan Puncak BAB 2 - Praktik Perhitungan & Hikmah Zakat):
+
+═══════════════════════════════════
+IDENTITAS SISWA
+═══════════════════════════════════
+Nama  : ${nama}
+NIS   : ${nis}
+Kelas : ${kelas}
+
+═══════════════════════════════════
+HASIL PENILAIAN
+═══════════════════════════════════
+Pilihan Ganda    : ${mc}/100 (${correct}/10 benar)
+Essay (Simulasi) : ${essay}/100
+Waktu Pengerjaan : ${waktu}
+───────────────────────────────────
+NILAI AKHIR      : ${total}/200
+PREDIKAT         : ${grade}
+
+Mohon bimbingan dan koreksinya untuk jawaban essay.
+
+Jazakumullahu Khairan Katsiran.
+Wassalamu'alaikum Wr. Wb.
+
+───────────────────────────────────
+Dikirim otomatis dari Sistem Uji Formatif Fikih Kelas 8
+© 2026 MTsN 10 Agam`);
+            
+            window.location.href = `mailto:erma34779@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        document.getElementById('tanggal').valueAsDate = new Date();
+    </script>
+</body>
+</html>

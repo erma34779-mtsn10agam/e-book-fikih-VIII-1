@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 7: Zakat Mal (Emas, Perak, Perdagangan) | Fikih Kelas 8</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        :root {
+            --bg-dark: #022c22;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-input: rgba(255, 255, 255, 0.05);
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-gold: rgba(212, 175, 55, 0.3);
+            --success: #10b981;
+            --error: #ef4444;
+            --emas: #fbbf24;
+            --perak: #cbd5e1;
+            --dagang: #3b82f6;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            background-image: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: var(--gold-primary); transition: var(--transition); }
+        a:hover { color: var(--gold-light); }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 2rem; }
+
+        /* Navigasi */
+        .top-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 0; border-bottom: 1px solid var(--border-gold); margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;
+        }
+        .nav-link {
+            display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500; font-size: 0.95rem;
+            border: 1px solid var(--border-gold); padding: 0.5rem 1rem; border-radius: 50px;
+        }
+        .nav-link:hover { background: var(--gold-primary); color: var(--bg-dark); }
+
+        /* Header */
+        .materi-header { text-align: center; margin-bottom: 3rem; }
+        .bab-tag { display: inline-block; color: var(--gold-primary); font-family: 'Playfair Display', serif; font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .materi-title {
+            font-size: 2.8rem; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 50%, var(--gold-primary) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .materi-desc { color: var(--text-secondary); font-size: 1.15rem; max-width: 750px; margin: 0 auto 2rem; }
+
+        .author-badge {
+            display: inline-flex; align-items: center; gap: 1rem; background: var(--bg-card);
+            border: 1px solid var(--border-gold); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 3rem;
+        }
+        .author-badge i { color: var(--gold-primary); font-size: 1.5rem; }
+        .author-info { text-align: left; }
+        .author-info strong { display: block; color: var(--text-primary); font-size: 1.1rem; }
+        .author-info span { color: var(--text-secondary); font-size: 0.9rem; }
+
+        /* Konten */
+        .content-section {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 2.5rem; margin-bottom: 2rem;
+        }
+        .section-title {
+            color: var(--gold-primary); font-size: 1.6rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
+        }
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold-primary); padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0;
+        }
+        .highlight-box h4 { color: var(--gold-light); margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; }
+        
+        ul.custom-list { list-style: none; padding-left: 0; }
+        ul.custom-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+        ul.custom-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold-primary); }
+
+        /* Tabel Mewah */
+        .table-wrapper { overflow-x: auto; margin: 1.5rem 0; }
+        .luxury-table {
+            width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.02); border-radius: 8px; overflow: hidden;
+        }
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-primary); padding: 1rem; text-align: left;
+            font-family: 'Playfair Display', serif; font-weight: 600; border-bottom: 2px solid var(--border-gold);
+        }
+        .luxury-table td {
+            padding: 1rem; border-bottom: 1px solid var(--border-gold); color: var(--text-secondary); vertical-align: top;
+        }
+        .luxury-table tr:last-child td { border-bottom: none; }
+        .luxury-table tr:hover td { background: rgba(212, 175, 55, 0.05); color: var(--text-primary); }
+
+        /* Badge Jenis Zakat */
+        .badge-emas { background: var(--emas); color: #1a1a1a; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .badge-perak { background: var(--perak); color: #1a1a1a; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .badge-dagang { background: var(--dagang); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+
+        /* Kutipan */
+        .quran-quote {
+            text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(2, 44, 34, 0.8) 100%);
+            border: 1px solid var(--border-gold); border-radius: 16px; margin: 3rem 0;
+        }
+        .arabic-text { font-family: 'Traditional Arabic', serif; font-size: 1.8rem; color: var(--gold-primary); margin-bottom: 1rem; line-height: 2; }
+        .quote-translation { font-style: italic; color: var(--text-secondary); font-size: 1.05rem; }
+        .quote-source { display: block; margin-top: 1rem; color: var(--gold-light); font-weight: 600; font-size: 0.9rem; }
+
+        .fiqh-rule {
+            text-align: center; padding: 1.5rem; border: 1px dashed var(--gold-primary); border-radius: 12px; margin: 1.5rem 0;
+        }
+        .fiqh-rule .arabic { font-family: 'Traditional Arabic', serif; font-size: 1.5rem; color: var(--gold-primary); margin-bottom: 0.5rem; }
+        .fiqh-rule .translation { color: var(--text-secondary); font-style: italic; }
+
+        /* Kata Kunci */
+        .keywords { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .keyword-tag {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-light); padding: 0.4rem 1rem; border-radius: 20px;
+            font-size: 0.85rem; border: 1px solid var(--border-gold);
+        }
+
+        /* Kartu Jenis Zakat Mal */
+        .zakat-mal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin: 1.5rem 0;
+        }
+        .zakat-mal-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .zakat-mal-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold-primary);
+            background: rgba(212, 175, 55, 0.05);
+        }
+        .zakat-mal-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+        }
+        .zakat-mal-card.emas::before { background: var(--emas); }
+        .zakat-mal-card.perak::before { background: var(--perak); }
+        .zakat-mal-card.dagang::before { background: var(--dagang); }
+        
+        .zakat-icon {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 1rem;
+        }
+        .zakat-mal-card.emas .zakat-icon { background: rgba(251, 191, 36, 0.2); color: var(--emas); }
+        .zakat-mal-card.perak .zakat-icon { background: rgba(203, 213, 225, 0.2); color: var(--perak); }
+        .zakat-mal-card.dagang .zakat-icon { background: rgba(59, 130, 246, 0.2); color: var(--dagang); }
+        
+        .zakat-mal-name {
+            color: var(--gold-light);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .zakat-mal-detail {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .zakat-mal-detail strong { color: var(--text-primary); }
+
+        /* Rumus Box */
+        .rumus-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(2, 44, 34, 0.6) 100%);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        .rumus-box .label {
+            color: var(--gold-light);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
+        }
+        .rumus-box .formula {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--gold-primary);
+            font-weight: 600;
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            margin: 0.5rem 0;
+        }
+
+        /* Contoh Kasus */
+        .case-study {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+        .case-study::before {
+            content: '📋';
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--bg-dark);
+            padding: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+        .case-study h4 {
+            color: var(--gold-primary);
+            margin-bottom: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+        }
+        .case-study p { color: var(--text-secondary); margin-bottom: 0.75rem; }
+        .case-answer {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 3px solid var(--gold-primary);
+            padding: 0.75rem 1rem;
+            border-radius: 0 6px 6px 0;
+            margin-top: 1rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        /* Quiz Styles */
+        .quiz-container {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 2.5rem; margin-top: 4rem;
+        }
+        .quiz-header { text-align: center; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-gold); }
+        
+        .quiz-meta {
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+            background: rgba(212, 175, 55, 0.08); padding: 1rem 1.5rem; border-radius: 12px; margin-bottom: 2rem;
+        }
+        .timer-display {
+            display: flex; align-items: center; gap: 0.5rem; color: var(--gold-primary); font-weight: 600; font-size: 1.1rem;
+        }
+        .timer-display i { font-size: 1.3rem; }
+        .progress-wrapper { flex: 1; min-width: 200px; margin: 0 1rem; }
+        .progress-label { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.25rem; }
+        .progress-bar {
+            width: 100%; height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%; background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+            width: 0%; transition: width 0.4s ease; border-radius: 4px;
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { display: block; margin-bottom: 0.5rem; color: var(--gold-light); font-weight: 500; font-size: 0.95rem; }
+        .form-input, .form-select, .form-textarea {
+            width: 100%; background: var(--bg-input); border: 1px solid var(--border-gold); border-radius: 8px;
+            padding: 0.85rem 1rem; color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 1rem; transition: var(--transition);
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none; border-color: var(--gold-primary); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        .form-textarea { min-height: 120px; resize: vertical; }
+
+        .question-card { 
+            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.1); 
+            border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; transition: var(--transition);
+        }
+        .question-card.correct { border-color: var(--success); background: rgba(16, 185, 129, 0.05); }
+        .question-card.incorrect { border-color: var(--error); background: rgba(239, 68, 68, 0.05); }
+        
+        .question-text { font-weight: 600; margin-bottom: 1rem; color: var(--text-primary); }
+        .points-badge {
+            display: inline-block; background: var(--gold-primary); color: var(--bg-dark); font-size: 0.75rem;
+            font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+        }
+        .topic-badge {
+            display: inline-block; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); 
+            font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+            border: 1px solid var(--border-gold);
+        }
+        
+        .radio-group { display: flex; flex-direction: column; gap: 0.75rem; }
+        .radio-label {
+            display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; border-radius: 8px;
+            cursor: pointer; transition: var(--transition); border: 1px solid transparent;
+        }
+        .radio-label:hover { background: rgba(212, 175, 55, 0.05); }
+        .radio-label input[type="radio"] { accent-color: var(--gold-primary); width: 18px; height: 18px; }
+        
+        .feedback {
+            margin-top: 1rem; padding: 0.85rem 1rem; border-radius: 8px; font-size: 0.9rem; display: none;
+        }
+        .feedback.show { display: block; animation: fadeIn 0.4s ease; }
+        .feedback.correct { background: rgba(16, 185, 129, 0.1); border-left: 3px solid var(--success); color: #a7f3d0; }
+        .feedback.incorrect { background: rgba(239, 68, 68, 0.1); border-left: 3px solid var(--error); color: #fecaca; }
+        .feedback strong { display: block; margin-bottom: 0.25rem; }
+
+        .result-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(2, 44, 34, 0.9) 100%);
+            border: 2px solid var(--gold-primary); border-radius: 16px; padding: 2rem; margin: 2rem 0; display: none;
+        }
+        .result-box.active { display: block; animation: fadeIn 0.5s ease; }
+        .score-display { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold-primary); margin: 1rem 0; }
+        
+        .score-breakdown {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0;
+        }
+        .score-item {
+            background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px; text-align: center;
+            border: 1px solid var(--border-gold);
+        }
+        .score-item .label { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.25rem; }
+        .score-item .value { font-size: 1.5rem; font-weight: 700; color: var(--gold-primary); }
+        
+        .weakness-analysis {
+            background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;
+        }
+        .weakness-analysis h4 { color: #fecaca; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .weakness-list { list-style: none; }
+        .weakness-list li { 
+            padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+            color: var(--text-secondary); font-size: 0.9rem;
+        }
+        .weakness-list li:last-child { border-bottom: none; }
+        .weakness-list li strong { color: var(--gold-light); }
+
+        .btn-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.5rem;
+            border-radius: 8px; font-weight: 600; cursor: pointer; transition: var(--transition); border: none; font-size: 0.95rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--gold-primary) 0%, #b8941f 100%); color: var(--bg-dark); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4); }
+        .btn-outline { background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-primary); }
+        .btn-outline:hover { background: var(--gold-primary); color: var(--bg-dark); }
+        .btn-secondary { background: rgba(255, 255, 255, 0.1); color: var(--text-primary); border: 1px solid var(--border-gold); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+
+        .footer { text-align: center; padding: 3rem 0; margin-top: 4rem; border-top: 1px solid var(--border-gold); color: var(--text-secondary); font-size: 0.9rem; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .materi-title { font-size: 2rem; }
+            .content-section, .quiz-container { padding: 1.5rem; }
+            .btn-group { grid-template-columns: 1fr; }
+            .quiz-meta { flex-direction: column; align-items: stretch; }
+            .zakat-mal-grid { grid-template-columns: 1fr; }
+        }
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .btn-group, .footer, .quiz-meta { display: none !important; }
+            .content-section, .quiz-container, .result-box { border: 1px solid #ccc; background: white; color: black; break-inside: avoid; }
+            .arabic-text, .materi-title, .section-title { color: #000 !important; -webkit-text-fill-color: #000 !important; }
+            .form-input, .form-textarea { border: 1px solid #ccc; color: black; }
+            .feedback { background: #f3f4f6 !important; color: black !important; border-left-color: #333 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="main-content">
+        <!-- Navigasi Atas -->
+        <nav class="top-nav">
+            <a href="index.html" class="nav-link"><i class="fas fa-arrow-left"></i> Daftar Isi</a>
+            <span style="color: var(--text-secondary); font-weight: 500;">Fikih Kelas 8 Semester 1</span>
+            <a href="8.html" class="nav-link">Pertemuan 8 <i class="fas fa-arrow-right"></i></a>
+        </nav>
+
+        <!-- Header Materi -->
+        <header class="materi-header">
+            <div class="bab-tag">💰 — BAB DUA: ZAKAT —</div>
+            <h1 class="materi-title">Pertemuan 7: Zakat Mal (Emas, Perak, Perdagangan)</h1>
+            <p class="materi-desc">
+                Menganalisis ketentuan zakat mal untuk emas, perak, dan harta perdagangan. 
+                Materi ini mengajak kita memahami bagaimana Islam mengatur zakat atas harta benda yang dimiliki sebagai wujud cinta kepada Allah dan kepedulian terhadap sesama.
+            </p>
+            
+            <div class="author-badge">
+                <i class="fas fa-user-graduate"></i>
+                <div class="author-info">
+                    <strong>Ermawati, S.H.I.</strong>
+                    <span>Guru Fikih, MTsN 10 Agam</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- A. Pengertian Zakat Mal -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-book-open"></i> A. Pengertian Zakat Mal (Harta)</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Zakat mal adalah zakat yang dikenakan atas harta benda (mal) yang dimiliki oleh seorang muslim, setelah mencapai nisab dan haul tertentu. Berbeda dengan zakat fitrah yang dikenakan atas jiwa, zakat mal dikenakan atas harta.
+            </p>
+            <ul class="custom-list">
+                <li><strong>Secara Bahasa:</strong> <em>"Mal"</em> (المَالُ) berarti harta atau segala sesuatu yang dapat dimiliki, dikuasai, dan memiliki nilai ekonomis.</li>
+                <li><strong>Secara Istilah:</strong> Mengeluarkan sebagian harta tertentu (sesuai nisab dan haul) kepada golongan tertentu (mustahik) dengan niat ibadah karena Allah Swt., setelah harta tersebut dimiliki selama satu tahun hijriah penuh.</li>
+            </ul>
+            <div class="highlight-box">
+                <h4><i class="fas fa-heart"></i> Konsep Kunci: Harta sebagai Amanah</h4>
+                <p>Dalam Islam, harta bukanlah milik mutlak manusia, melainkan <strong>amanah dari Allah</strong>. Zakat mal adalah wujud pengakuan bahwa sebagian harta kita adalah hak orang lain (fakir miskin). Dengan mengeluarkan zakat, kita tidak "kehilangan" harta, justru <strong>menyucikan dan memberkahinya</strong>. Inilah perpaduan antara cinta kepada Allah (habluminallah) dan cinta kepada sesama (habluminannas).</p>
+            </div>
+        </section>
+
+        <!-- B. Dalil Naqli -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-scroll"></i> B. Dalil Naqli (Landasan Hukum)</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Perintah zakat mal didasarkan pada Al-Qur'an dan Sunnah. Berikut dalil-dalil utamanya:
+            </p>
+            <div class="quran-quote">
+                <div class="arabic-text">
+                    يَا أَيُّهَا الَّذِينَ آمَنُوا أَنفِقُوا مِن طَيِّبَاتِ مَا كَسَبْتُمْ وَمِمَّا أَخْرَجْنَا لَكُم مِّنَ الْأَرْضِ
+                </div>
+                <p class="quote-translation">
+                    "Wahai orang-orang yang beriman! Infakkanlah sebagian dari hasil usahamu yang baik-baik dan sebagian dari apa yang Kami keluarkan dari bumi untuk kamu."
+                </p>
+                <span class="quote-source">— QS. Al-Baqarah [2]: 267</span>
+            </div>
+            <div class="quran-quote">
+                <div class="arabic-text">
+                    وَالَّذِينَ يَكْنِزُونَ الذَّهَبَ وَالْفِضَّةَ وَلَا يُنفِقُونَهَا فِي سَبِيلِ اللَّهِ فَبَشِّرْهُم بِعَذَابٍ أَلِيمٍ
+                </div>
+                <p class="quote-translation">
+                    "Dan orang-orang yang menyimpan emas dan perak dan tidak menafkahkannya pada jalan Allah, maka beritahukanlah kepada mereka (bahwa mereka akan mendapat) siksa yang pedih."
+                </p>
+                <span class="quote-source">— QS. At-Taubah [9]: 34</span>
+            </div>
+            <div class="highlight-box">
+                <h4>📌 Hadits tentang Zakat Emas dan Perak</h4>
+                <p style="font-family: 'Traditional Arabic', serif; font-size: 1.2rem; text-align: center; margin: 1rem 0; color: var(--gold-primary);">
+                    وَمَا مِنْ صَاحِبِ ذَهَبٍ وَلَا فِضَّةٍ لَا يُؤَدِّي مِنْهَا حَقَّهَا إِلَّا إِذَا كَانَ يَوْمُ الْقِيَامَةِ صُفِّحَتْ لَهُ صَفَائِحُ مِنْ نَارٍ
+                </p>
+                <p style="text-align: center; font-style: italic; color: var(--text-primary);">"Tidaklah seorang pemilik emas dan perak yang tidak menunaikan haknya (zakatnya), melainkan pada hari kiamat akan dipanaskan lembaran-lembaran (emas dan perak) itu di neraka Jahanam..."</p>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">— HR. Muslim no. 987</p>
+            </div>
+        </section>
+
+        <!-- C. Hukum Zakat Mal -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-balance-scale"></i> C. Hukum Zakat Mal</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Hukum zakat mal adalah <strong>wajib 'ain</strong> bagi setiap muslim yang hartanya telah mencapai nisab dan haul. Berikut rincian hukumnya:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 30%;">Aspek</th>
+                            <th>Ketentuan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hukum Dasar</strong></td>
+                            <td><span style="color: var(--gold-primary); font-weight: 600;">Wajib 'ain</span> bagi muslim yang hartanya mencapai nisab & haul.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mengingkari Kewajiban</strong></td>
+                            <td>Orang yang <strong>mengingkari kewajiban zakat</strong> dianggap murtad (keluar dari Islam).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tidak Membayar karena Kikir</strong></td>
+                            <td>Tetap muslim, tetapi <strong>berdosa besar</strong> dan akan diazab di akhirat (sesuai QS. At-Taubah: 34).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sanksi Dunia</strong></td>
+                            <td>Negara berhak <strong>memaksa dan mengambil</strong> harta orang yang enggan membayar zakat, ditambah setengah hartanya sebagai sanksi.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kadar Zakat</strong></td>
+                            <td>Umumnya <strong>2,5%</strong> (untuk emas, perak, uang, harta perdagangan). Untuk pertanian: 5% atau 10%. Untuk rikaz: 20%.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- D. Syarat Wajib Zakat Mal -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-clipboard-check"></i> D. Syarat Wajib Zakat Mal</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Tidak semua harta wajib dizakati. Ada beberapa syarat yang harus dipenuhi:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Syarat</th>
+                            <th>Penjelasan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. Islam</strong></td>
+                            <td>Hanya muslim yang wajib membayar zakat mal.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Merdeka</strong></td>
+                            <td>Berstatus merdeka, bukan budak.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Milik Penuh (Milkiyyah Tammah)</strong></td>
+                            <td>Harta tersebut adalah milik penuh dan dapat dikuasai sepenuhnya.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4. Mencapai Nisab</strong></td>
+                            <td>Harta telah mencapai <strong>batas minimal</strong> yang ditentukan syariat.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5. Haul</strong></td>
+                            <td>Harta telah dimiliki selama <strong>1 tahun hijriah penuh</strong> (kecuali pertanian & rikaz).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6. Lebih dari Kebutuhan Pokok</strong></td>
+                            <td>Harta tersebut adalah <strong>kelebihan dari kebutuhan pokok</strong> (rumah, kendaraan, pakaian, dll).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7. Bebas dari Hutang Mendesak</strong></td>
+                            <td>Tidak terbebani hutang yang harus segera dibayar.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- E. Tiga Jenis Zakat Mal -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-coins"></i> E. Tiga Jenis Zakat Mal yang Dibahas</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Pada pertemuan ini, kita akan membahas tiga jenis zakat mal secara mendalam:</p>
+            
+            <div class="zakat-mal-grid">
+                <div class="zakat-mal-card emas">
+                    <div class="zakat-icon"><i class="fas fa-ring"></i></div>
+                    <div class="zakat-mal-name">Zakat Emas</div>
+                    <div class="zakat-mal-detail"><strong>Nisab:</strong> 85 gram (20 dinar)</div>
+                    <div class="zakat-mal-detail"><strong>Kadar:</strong> 2,5%</div>
+                    <div class="zakat-mal-detail"><strong>Haul:</strong> 1 tahun hijriah</div>
+                    <div class="zakat-mal-detail"><strong>Contoh:</strong> Perhiasan emas, emas batangan, dinar</div>
+                </div>
+                <div class="zakat-mal-card perak">
+                    <div class="zakat-icon"><i class="fas fa-gem"></i></div>
+                    <div class="zakat-mal-name">Zakat Perak</div>
+                    <div class="zakat-mal-detail"><strong>Nisab:</strong> 595 gram (200 dirham)</div>
+                    <div class="zakat-mal-detail"><strong>Kadar:</strong> 2,5%</div>
+                    <div class="zakat-mal-detail"><strong>Haul:</strong> 1 tahun hijriah</div>
+                    <div class="zakat-mal-detail"><strong>Contoh:</strong> Perhiasan perak, perak batangan, dirham</div>
+                </div>
+                <div class="zakat-mal-card dagang">
+                    <div class="zakat-icon"><i class="fas fa-store"></i></div>
+                    <div class="zakat-mal-name">Zakat Harta Perdagangan</div>
+                    <div class="zakat-mal-detail"><strong>Nisab:</strong> Setara 85 gram emas</div>
+                    <div class="zakat-mal-detail"><strong>Kadar:</strong> 2,5%</div>
+                    <div class="zakat-mal-detail"><strong>Haul:</strong> 1 tahun hijriah</div>
+                    <div class="zakat-mal-detail"><strong>Contoh:</strong> Barang dagangan, toko, usaha</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- F. Zakat Emas -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-ring"></i> F. Zakat Emas</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Emas adalah salah satu harta yang paling utama untuk dizakati. Berikut ketentuan lengkapnya:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th>Ketentuan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nisab</strong></td>
+                            <td><strong>20 dinar</strong> = setara dengan <strong>85 gram emas murni</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kadar Zakat</strong></td>
+                            <td><strong>2,5%</strong> (1/40) dari total emas yang dimiliki.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Haul</strong></td>
+                            <td><strong>1 tahun hijriah</strong> (354 hari).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Yang Dizakati</strong></td>
+                            <td>Emas batangan, dinar, perhiasan emas (menurut mayoritas ulama), emas simpanan.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Yang TIDAK Dizakati</strong></td>
+                            <td>Emas yang digunakan untuk keperluan mubah (seperti gigi emas untuk pengobatan, menurut sebagian ulama).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="rumus-box">
+                <div class="label">Rumus Zakat Emas</div>
+                <div class="formula">Zakat Emas = 2,5% × Jumlah Emas (jika ≥ 85 gram & haul 1 tahun)</div>
+            </div>
+
+            <div class="case-study">
+                <h4><span class="badge-emas">CONTOH KASUS 1</span> — Zakat Emas Bu Aminah</h4>
+                <p>Bu Aminah memiliki perhiasan emas seberat 100 gram yang telah dimilikinya selama 1 tahun. Harga emas saat ini Rp1.000.000 per gram. Berapa zakat yang harus dikeluarkan?</p>
+                <div class="case-answer">
+                    <strong>Penyelesaian:</strong><br>
+                    • Nisab emas = 85 gram<br>
+                    • Emas Bu Aminah = 100 gram (≥ 85 gram, maka wajib zakat)<br>
+                    • Haul = 1 tahun (terpenuhi)<br>
+                    • <strong>Zakat = 2,5% × 100 gram = 2,5 gram emas</strong><br>
+                    • Atau dalam rupiah: 2,5% × (100 × Rp1.000.000) = <strong>Rp2.500.000</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- G. Zakat Perak -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-gem"></i> G. Zakat Perak</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Perak juga merupakan harta yang wajib dizakati dengan ketentuan yang mirip dengan emas:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th>Ketentuan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nisab</strong></td>
+                            <td><strong>200 dirham</strong> = setara dengan <strong>595 gram perak murni</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kadar Zakat</strong></td>
+                            <td><strong>2,5%</strong> (1/40) dari total perak yang dimiliki.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Haul</strong></td>
+                            <td><strong>1 tahun hijriah</strong> (354 hari).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Yang Dizakati</strong></td>
+                            <td>Perak batangan, dirham, perhiasan perak, perak simpanan.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="rumus-box">
+                <div class="label">Rumus Zakat Perak</div>
+                <div class="formula">Zakat Perak = 2,5% × Jumlah Perak (jika ≥ 595 gram & haul 1 tahun)</div>
+            </div>
+
+            <div class="case-study">
+                <h4><span class="badge-perak">CONTOH KASUS 2</span> — Zakat Perak Pak Budi</h4>
+                <p>Pak Budi memiliki perak batangan seberat 700 gram yang telah dimilikinya selama 1 tahun. Harga perak saat ini Rp15.000 per gram. Berapa zakat yang harus dikeluarkan?</p>
+                <div class="case-answer">
+                    <strong>Penyelesaian:</strong><br>
+                    • Nisab perak = 595 gram<br>
+                    • Perak Pak Budi = 700 gram (≥ 595 gram, maka wajib zakat)<br>
+                    • Haul = 1 tahun (terpenuhi)<br>
+                    • <strong>Zakat = 2,5% × 700 gram = 17,5 gram perak</strong><br>
+                    • Atau dalam rupiah: 2,5% × (700 × Rp15.000) = <strong>Rp262.500</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- H. Zakat Harta Perdagangan -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-store"></i> H. Zakat Harta Perdagangan (Tijarah)</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Harta perdagangan adalah harta yang dimiliki dengan niat untuk diperdagangkan (dijual-belikan) guna memperoleh keuntungan. Ini termasuk barang dagangan, toko, dan usaha dagang.</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th>Ketentuan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nisab</strong></td>
+                            <td>Setara dengan <strong>85 gram emas</strong> (dikonversi ke nilai uang saat ini).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kadar Zakat</strong></td>
+                            <td><strong>2,5%</strong> dari total harta perdagangan bersih.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Haul</strong></td>
+                            <td><strong>1 tahun hijriah</strong> sejak modal awal.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cara Perhitungan</strong></td>
+                            <td>(Modal + Keuntungan + Piutang Lancar − Hutang Jatuh Tempo) × 2,5%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Yang Termasuk</strong></td>
+                            <td>Barang dagangan, toko, kios, kendaraan niaga, uang kas usaha, piutang yang diharapkan cair.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Yang TIDAK Termasuk</strong></td>
+                            <td>Aset tetap (gedung toko, kendaraan operasional), peralatan usaha, hutang jangka panjang.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="rumus-box">
+                <div class="label">Rumus Zakat Harta Perdagangan</div>
+                <div class="formula">Zakat Tijarah = 2,5% × (Modal + Untung + Piutang Lancar − Hutang)</div>
+            </div>
+
+            <div class="case-study">
+                <h4><span class="badge-dagang">CONTOH KASUS 3</span> — Zakat Harta Perdagangan Toko Pak Hasan</h4>
+                <p>Pak Hasan memiliki toko kelontong. Setelah 1 tahun usaha, berikut kondisi keuangannya:<br>
+                • Modal awal: Rp100.000.000<br>
+                • Keuntungan bersih: Rp50.000.000<br>
+                • Piutang lancar: Rp20.000.000<br>
+                • Hutang jatuh tempo: Rp10.000.000<br>
+                Berapa zakat yang harus dikeluarkan?</p>
+                <div class="case-answer">
+                    <strong>Penyelesaian:</strong><br>
+                    • Harta perdagangan bersih = Modal + Untung + Piutang − Hutang<br>
+                    • = Rp100.000.000 + Rp50.000.000 + Rp20.000.000 − Rp10.000.000<br>
+                    • = <strong>Rp160.000.000</strong><br>
+                    • Nisab = 85 gram emas × Rp1.000.000 = Rp85.000.000<br>
+                    • Harta Pak Hasan (Rp160.000.000) ≥ Nisab (Rp85.000.000) → <strong>WAJIB ZAKAT</strong><br>
+                    • <strong>Zakat = 2,5% × Rp160.000.000 = Rp4.000.000</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- I. Perbandingan Tiga Jenis Zakat Mal -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-columns"></i> I. Perbandingan Emas, Perak, dan Harta Perdagangan</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Berikut tabel perbandingan ketiga jenis zakat mal yang telah dibahas:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th><span class="badge-emas">EMAS</span></th>
+                            <th><span class="badge-perak">PERAK</span></th>
+                            <th><span class="badge-dagang">PERDAGANGAN</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nisab</strong></td>
+                            <td>85 gram (20 dinar)</td>
+                            <td>595 gram (200 dirham)</td>
+                            <td>Setara 85 gram emas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kadar Zakat</strong></td>
+                            <td>2,5%</td>
+                            <td>2,5%</td>
+                            <td>2,5%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Haul</strong></td>
+                            <td>1 tahun hijriah</td>
+                            <td>1 tahun hijriah</td>
+                            <td>1 tahun hijriah</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bentuk Harta</strong></td>
+                            <td>Emas batangan, dinar, perhiasan</td>
+                            <td>Perak batangan, dirham, perhiasan</td>
+                            <td>Barang dagangan, uang, piutang</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cara Hitung</strong></td>
+                            <td>2,5% × berat emas</td>
+                            <td>2,5% × berat perak</td>
+                            <td>2,5% × (modal+untung+piutang−hutang)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dalil Khusus</strong></td>
+                            <td>QS. At-Taubah: 34</td>
+                            <td>QS. At-Taubah: 34</td>
+                            <td>QS. Al-Baqarah: 267</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- J. Hikmah Zakat Mal -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-heart"></i> J. Hikmah Zakat Mal</h2>
+            <ul class="custom-list">
+                <li><strong>Menyucikan Harta:</strong> Membersihkan harta dari hak orang lain yang melekat padanya, sehingga harta menjadi berkah.</li>
+                <li><strong>Mencegah Penumpukan Harta:</strong> Zakat mal mencegah harta hanya berputar di kalangan orang kaya (QS. Al-Hasyr: 7).</li>
+                <li><strong>Mewujudkan Keadilan Ekonomi:</strong> Redistribusi kekayaan dari si kaya kepada si miskin, mengurangi kesenjangan sosial.</li>
+                <li><strong>Memperkuat Ukhuwah Islamiyah:</strong> Mempererat tali persaudaraan antara pemilik harta dan penerima zakat.</li>
+                <li><strong>Menggerakkan Roda Ekonomi:</strong> Zakat yang didistribusikan meningkatkan daya beli masyarakat dan menggerakkan perekonomian.</li>
+                <li><strong>Bentuk Syukur kepada Allah:</strong> Wujud terima kasih atas nikmat harta, sehingga harta tersebut akan bertambah berkah.</li>
+                <li><strong>Melatih Kepedulian Sosial:</strong> Membiasakan diri untuk peduli terhadap sesama, terutama fakir miskin dan mustahik lainnya.</li>
+            </ul>
+        </section>
+
+        <!-- K. Kaidah Fiqh Pendukung -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-gavel"></i> K. Teori Pendukung: Kaidah Fiqh</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Dalam memahami hakikat zakat mal, para ulama merumuskan kaidah fiqh yang sangat mendalam:
+            </p>
+            <div class="fiqh-rule">
+                <div class="arabic">كُلُّ مَالٍ بَلَغَ النِّصَابَ وَحَالَ عَلَيْهِ الْحَوْلُ وَجَبَتْ فِيهِ الزَّكَاةُ</div>
+                <div class="translation">"Setiap harta yang mencapai nisab dan telah dimiliki selama satu tahun (haul), maka wajib dikeluarkan zakatnya."</div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 1rem;">
+                <strong>Aplikasi:</strong> Kaidah ini menjadi prinsip dasar zakat mal. Dua syarat utama: (1) <em>Nisab</em> = batas minimal harta, dan (2) <em>Haul</em> = waktu kepemilikan 1 tahun. Jika keduanya terpenuhi, maka zakat wajib dikeluarkan sebesar 2,5% (untuk emas, perak, dan harta perdagangan).
+            </p>
+            
+            <div class="quran-quote" style="margin-top: 2rem;">
+                <div class="arabic-text">
+                    خُذْ مِنْ أَمْوَالِهِمْ صَدَقَةً تُطَهِّرُهُمْ وَتُزَكِّيهِم بِهَا
+                </div>
+                <p class="quote-translation">
+                    "Ambillah zakat dari sebagian harta mereka, dengan zakat itu kamu membersihkan dan mensucikan mereka."
+                </p>
+                <span class="quote-source">— QS. At-Taubah [9]: 103</span>
+            </div>
+        </section>
+
+        <!-- Kata Kunci -->
+        <section style="margin: 3rem 0;">
+            <h3 style="color: var(--gold-primary); margin-bottom: 1rem; font-size: 1.2rem;">◆ Kata Kunci Pertemuan Ini</h3>
+            <div class="keywords">
+                <span class="keyword-tag">Zakat Mal</span>
+                <span class="keyword-tag">Zakat Emas</span>
+                <span class="keyword-tag">Zakat Perak</span>
+                <span class="keyword-tag">Zakat Perdagangan</span>
+                <span class="keyword-tag">Nisab</span>
+                <span class="keyword-tag">Haul</span>
+                <span class="keyword-tag">85 gram Emas</span>
+                <span class="keyword-tag">595 gram Perak</span>
+                <span class="keyword-tag">20 Dinar</span>
+                <span class="keyword-tag">200 Dirham</span>
+                <span class="keyword-tag">2,5%</span>
+                <span class="keyword-tag">Tijarah</span>
+                <span class="keyword-tag">QS. At-Taubah: 34</span>
+                <span class="keyword-tag">QS. Al-Baqarah: 267</span>
+            </div>
+        </section>
+
+        <!-- Referensi -->
+        <section class="content-section" style="background: rgba(212, 175, 55, 0.05);">
+            <h2 class="section-title"><i class="fas fa-bookmark"></i> L. Referensi Pendukung</h2>
+            <ul class="custom-list" style="font-size: 0.95rem;">
+                <li>Kementerian Agama RI. (2021). <em>Pendidikan Agama Islam dan Budi Pekerti Kelas VIII</em>. Jakarta: Kementerian Agama RI.</li>
+                <li>As-Sayyid Sabiq. (2010). <em>Fiqih Sunnah Jilid 2</em>. (Terjemahan). Bandung: Al-Ma'arif. (Bab Zakat Emas, Perak, dan Tijarah)</li>
+                <li>Imam An-Nawawi. <em>Al-Majmu' Syarah Al-Muhadzdzab</em> (Kitab Rujukan Madzhab Syafi'i tentang Zakat Mal).</li>
+                <li>Yusuf Al-Qardhawi. (2007). <em>Hukum Zakat</em>. (Terjemahan). Jakarta: Literasi Antar Nusa.</li>
+                <li>UU No. 23 Tahun 2011 tentang <em>Pengelolaan Zakat</em>.</li>
+                <li>Al-Qur'anul Karim dan Terjemahannya, Kementerian Agama RI.</li>
+            </ul>
+        </section>
+
+        <!-- =========================================
+             UJI FORMATIF (ENHANCED VERSION)
+             ========================================= -->
+        <div class="quiz-container" id="uji-formatif">
+            <div class="quiz-header">
+                <h2 style="color: var(--gold-primary); font-size: 1.8rem; margin-bottom: 0.5rem;">📝 Uji Formatif Pertemuan 7</h2>
+                <p style="color: var(--text-secondary);">Evaluasi Pemahaman Materi Zakat Mal (Emas, Perak, Perdagangan)</p>
+                <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--gold-light);">
+                    📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) &nbsp;|&nbsp; ✍️ Bagian B: Essay (5 soal, 20 poin/soal)
+                </div>
+            </div>
+
+            <!-- Timer & Progress -->
+            <div class="quiz-meta">
+                <div class="timer-display">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>Waktu: <span id="timer">00:00</span></span>
+                </div>
+                <div class="progress-wrapper">
+                    <div class="progress-label">Progres Pengerjaan: <span id="progress-text">0/15 soal dijawab</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="quizForm">
+                <!-- Identitas -->
+                <div class="content-section" style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1.5rem; font-size: 1.2rem;">📋 Identitas Siswa</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div class="form-group">
+                            <label class="form-label">Nama Lengkap *</label>
+                            <input type="text" id="nama" class="form-input" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">No. Absen / NIS *</label>
+                            <input type="text" id="nis" class="form-input" placeholder="Contoh: 12345" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tanggal Ujian</label>
+                            <input type="date" id="tanggal" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Kelas</label>
+                            <select id="kelas" class="form-select">
+                                <option value="VIII-A">VIII-A</option>
+                                <option value="VIII-B">VIII-B</option>
+                                <option value="VIII-C">VIII-C</option>
+                                <option value="VIII-D">VIII-D</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <h3 style="color: var(--text-primary); margin: 2rem 0 1.5rem; font-size: 1.3rem;">📋 Bagian A: Pilihan Ganda</h3>
+                
+                <div class="question-card" data-topic="pengertian">
+                    <p class="question-text">1. Zakat mal adalah zakat yang dikenakan atas... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Pengertian</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q1" value="A"> A. Jiwa setiap muslim</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="B"> B. Harta benda yang dimiliki</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="C"> C. Hasil pertanian saja</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="D"> D. Barang temuan saja</label>
+                    </div>
+                    <div class="feedback" id="fb-q1"></div>
+                </div>
+
+                <div class="question-card" data-topic="nisab">
+                    <p class="question-text">2. Nisab zakat emas adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Nisab</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q2" value="A"> A. 20 dinar = 85 gram</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="B"> B. 200 dirham = 595 gram</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="C"> C. 10 dinar = 42,5 gram</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="D"> D. 100 dinar = 425 gram</label>
+                    </div>
+                    <div class="feedback" id="fb-q2"></div>
+                </div>
+
+                <div class="question-card" data-topic="nisab">
+                    <p class="question-text">3. Nisab zakat perak adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Nisab</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q3" value="A"> A. 20 dinar = 85 gram</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="B"> B. 200 dirham = 595 gram</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="C"> C. 100 dirham = 297,5 gram</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="D"> D. 500 dirham = 1487,5 gram</label>
+                    </div>
+                    <div class="feedback" id="fb-q3"></div>
+                </div>
+
+                <div class="question-card" data-topic="kadar">
+                    <p class="question-text">4. Kadar zakat yang harus dikeluarkan untuk emas, perak, dan harta perdagangan adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Kadar Zakat</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q4" value="A"> A. 5%</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="B"> B. 10%</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="C"> C. 2,5%</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="D"> D. 20%</label>
+                    </div>
+                    <div class="feedback" id="fb-q4"></div>
+                </div>
+
+                <div class="question-card" data-topic="haul">
+                    <p class="question-text">5. Haul dalam zakat mal artinya... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Haul</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q5" value="A"> A. Batas minimal harta</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="B"> B. Waktu kepemilikan harta selama 1 tahun hijriah</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="C"> C. Jumlah harta yang dizakati</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="D"> D. Golongan penerima zakat</label>
+                    </div>
+                    <div class="feedback" id="fb-q5"></div>
+                </div>
+
+                <div class="question-card" data-topic="perhitungan">
+                    <p class="question-text">6. Bu Fatimah memiliki emas seberat 90 gram yang telah dimilikinya selama 1 tahun. Berapa zakat yang harus dikeluarkan? 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Perhitungan Emas</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q6" value="A"> A. 1 gram</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="B"> B. 2,25 gram</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="C"> C. 2,5 gram</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="D"> D. 4,5 gram</label>
+                    </div>
+                    <div class="feedback" id="fb-q6"></div>
+                </div>
+
+                <div class="question-card" data-topic="perhitungan">
+                    <p class="question-text">7. Pak Ahmad memiliki perak seberat 800 gram yang telah dimilikinya selama 1 tahun. Berapa zakat yang harus dikeluarkan? 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Perhitungan Perak</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q7" value="A"> A. 10 gram</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="B"> B. 20 gram</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="C"> C. 40 gram</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="D"> D. 80 gram</label>
+                    </div>
+                    <div class="feedback" id="fb-q7"></div>
+                </div>
+
+                <div class="question-card" data-topic="perhitungan">
+                    <p class="question-text">8. Pak Zainal memiliki usaha dagang dengan modal Rp200.000.000, keuntungan Rp50.000.000, piutang Rp30.000.000, dan hutang jatuh tempo Rp20.000.000. Berapa zakat yang harus dikeluarkan? 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Perhitungan Tijarah</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q8" value="A"> A. Rp5.000.000</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="B"> B. Rp6.500.000</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="C"> C. Rp7.000.000</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="D"> D. Rp7.500.000</label>
+                    </div>
+                    <div class="feedback" id="fb-q8"></div>
+                </div>
+
+                <div class="question-card" data-topic="dalil">
+                    <p class="question-text">9. Ayat Al-Qur'an yang secara khusus menyebutkan ancaman bagi orang yang menyimpan emas dan perak tanpa menzakatkannya adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Dalil Naqli</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q9" value="A"> A. QS. Al-Baqarah: 267</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="B"> B. QS. At-Taubah: 34</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="C"> C. QS. At-Taubah: 60</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="D"> D. QS. Al-Ma'arij: 24-25</label>
+                    </div>
+                    <div class="feedback" id="fb-q9"></div>
+                </div>
+
+                <div class="question-card" data-topic="hikmah">
+                    <p class="question-text">10. Salah satu hikmah zakat mal adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Hikmah</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q10" value="A"> A. Menambah sifat kikir dan tamak</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="B"> B. Mencegah penumpukan harta dan mewujudkan keadilan ekonomi</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="C"> C. Mengurangi harta secara permanen</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="D"> D. Membuat si miskin semakin bergantung</label>
+                    </div>
+                    <div class="feedback" id="fb-q10"></div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <h3 style="color: var(--text-primary); margin: 3rem 0 1.5rem; font-size: 1.3rem;">✍️ Bagian B: Essay</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                    💡 <em>Catatan: Sistem akan memberikan nilai simulasi berdasarkan kelengkapan jawaban (>30 karakter). Penilaian akhir yang sebenarnya tetap berada di wewenang guru.</em>
+                </p>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 1: Jelaskan pengertian zakat mal dan sebutkan 3 jenis zakat mal yang dibahas pada pertemuan ini! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay1" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 2: Sebutkan dan jelaskan syarat-syarat wajib zakat mal! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay2" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 3: Bu Sari memiliki emas seberat 120 gram yang telah dimilikinya selama 1 tahun. Harga emas saat ini Rp1.200.000 per gram. Hitunglah zakat yang harus dikeluarkan Bu Sari dalam bentuk gram dan rupiah! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay3" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 4: Pak Rahmat memiliki usaha dagang dengan kondisi: modal Rp150.000.000, keuntungan Rp75.000.000, piutang lancar Rp25.000.000, dan hutang jatuh tempo Rp30.000.000. Hitunglah zakat harta perdagangan yang harus dikeluarkan Pak Rahmat! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay4" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 5: Jelaskan hikmah disyariatkannya zakat mal bagi individu dan masyarakat! Hubungkan dengan konsep "cinta kepada Allah dan sesama"! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay5" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <!-- Hasil Uji -->
+                <div id="hasil-uji" class="result-box">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1rem;">📊 Hasil Uji Formatif</h3>
+                    
+                    <div class="score-breakdown">
+                        <div class="score-item">
+                            <div class="label">Pilihan Ganda</div>
+                            <div class="value"><span id="mc-result">0</span>/100</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Essay (Simulasi)</div>
+                            <div class="value"><span id="essay-result">0</span>/100</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Waktu Pengerjaan</div>
+                            <div class="value" id="time-result">00:00</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Benar PG</div>
+                            <div class="value"><span id="correct-count">0</span>/10</div>
+                        </div>
+                    </div>
+                    
+                    <div style="border-top: 1px solid var(--border-gold); padding-top: 1rem; margin-top: 1rem; text-align: center;">
+                        <div style="color: var(--gold-light); font-size: 1rem; margin-bottom: 0.5rem;">Skor Akhir Total</div>
+                        <div class="score-display"><span id="total-result">0</span> <span style="font-size: 1.5rem; color: var(--text-secondary);">/ 200</span></div>
+                        <div id="grade-display" style="font-size: 1.2rem; color: var(--gold-light); margin-top: 0.5rem;"></div>
+                    </div>
+
+                    <!-- Analisis Kelemahan -->
+                    <div class="weakness-analysis" id="weakness-analysis" style="display: none;">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Analisis Kelemahan & Saran Perbaikan</h4>
+                        <ul class="weakness-list" id="weakness-list"></ul>
+                    </div>
+                </div>
+
+                <!-- Tombol Aksi -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary" onclick="calculateScore()">
+                        <i class="fas fa-check-circle"></i> KIRIM JAWABAN & LIHAT HASIL
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="downloadPDF()">
+                        <i class="fas fa-file-pdf"></i> UNDUH PDF LENGKAP
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="downloadTXT()">
+                        <i class="fas fa-file-alt"></i> UNDUH SKOR (TXT)
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="resetQuiz()">
+                        <i class="fas fa-redo"></i> MULAI ULANG
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="sendEmail()">
+                        <i class="fas fa-envelope"></i> KIRIM KE EMAIL GURU
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 1rem; color: var(--gold-primary);">
+                Fikih Kelas 8 Semester 1
+            </p>
+            <p>&copy; 2026 Ermawati, S.H.I. — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p style="margin-top: 0.5rem;">
+                Email: <a href="mailto:erma34779@gmail.com" style="color: var(--gold-primary);">erma34779@gmail.com</a>
+            </p>
+            <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem;">
+                <a href="index.html" class="nav-link" style="font-size: 0.85rem;"><i class="fas fa-book"></i> Daftar Isi</a>
+                <a href="8.html" class="nav-link" style="font-size: 0.85rem;">Pertemuan 8 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- =========================================
+         JAVASCRIPT LOGIC (ENHANCED)
+         ========================================= -->
+    <script>
+        // =========================================
+        // DATA SOAL & KUNCI JAWABAN
+        // =========================================
+        const quizData = {
+            q1: { 
+                correct: 'B', 
+                topic: 'Pengertian',
+                explanation: 'Zakat MAL adalah zakat yang dikenakan atas HARTA BENDA (mal) yang dimiliki. Berbeda dengan zakat fitrah yang dikenakan atas jiwa.' 
+            },
+            q2: { 
+                correct: 'A', 
+                topic: 'Nisab',
+                explanation: 'Nisab zakat EMAS adalah 20 dinar = 85 gram emas murni. Sedangkan 200 dirham = 595 gram adalah nisab perak.' 
+            },
+            q3: { 
+                correct: 'B', 
+                topic: 'Nisab',
+                explanation: 'Nisab zakat PERAK adalah 200 dirham = 595 gram perak murni. Ingat: Emas = 85 gram, Perak = 595 gram.' 
+            },
+            q4: { 
+                correct: 'C', 
+                topic: 'Kadar Zakat',
+                explanation: 'Kadar zakat untuk emas, perak, dan harta perdagangan adalah 2,5% (1/40). Untuk pertanian: 5% atau 10%. Untuk rikaz: 20%.' 
+            },
+            q5: { 
+                correct: 'B', 
+                topic: 'Haul',
+                explanation: 'HAUL artinya waktu kepemilikan harta selama 1 tahun hijriah (354 hari). Nisab = batas minimal harta, Haul = waktu kepemilikan.' 
+            },
+            q6: { 
+                correct: 'B', 
+                topic: 'Perhitungan Emas',
+                explanation: 'Emas Bu Fatimah = 90 gram (≥ 85 gram nisab). Zakat = 2,5% × 90 gram = 2,25 gram. Catatan: 90 × 0,025 = 2,25.' 
+            },
+            q7: { 
+                correct: 'B', 
+                topic: 'Perhitungan Perak',
+                explanation: 'Perak Pak Ahmad = 800 gram (≥ 595 gram nisab). Zakat = 2,5% × 800 gram = 20 gram. Catatan: 800 × 0,025 = 20.' 
+            },
+            q8: { 
+                correct: 'D', 
+                topic: 'Perhitungan Tijarah',
+                explanation: 'Harta perdagangan bersih = Modal + Untung + Piutang − Hutang = Rp200jt + Rp50jt + Rp30jt − Rp20jt = Rp260jt. Zakat = 2,5% × Rp260jt = Rp6,5jt. TUNGGU! Mari cek ulang: 200+50+30-20 = 260. 2,5% × 260jt = 6,5jt. Jadi jawaban yang benar adalah B (Rp6.500.000). Namun dalam soal ini kunci adalah D. Mari kita hitung ulang dengan benar: (200+50+30-20) = 260jt. 2,5% × 260jt = 6,5jt. Jawaban BENAR: B.' 
+            },
+            q9: { 
+                correct: 'B', 
+                topic: 'Dalil Naqli',
+                explanation: 'QS. At-Taubah ayat 34 secara khusus menyebutkan ancaman bagi orang yang menyimpan emas dan perak tanpa menzakatkannya: "Dan orang-orang yang menyimpan emas dan perak dan tidak menafkahkannya pada jalan Allah, maka beritahukanlah kepada mereka siksa yang pedih."' 
+            },
+            q10: { 
+                correct: 'B', 
+                topic: 'Hikmah',
+                explanation: 'Hikmah zakat mal: menyucikan harta, mencegah penumpukan harta, mewujudkan keadilan ekonomi, memperkuat ukhuwah islamiyah, menggerakkan roda ekonomi, bentuk syukur, melatih kepedulian sosial.' 
+            }
+        };
+
+        // Koreksi q8 - jawaban yang benar adalah B
+        quizData.q8.correct = 'B';
+        quizData.q8.explanation = 'Harta perdagangan bersih = Modal + Untung + Piutang − Hutang = Rp200jt + Rp50jt + Rp30jt − Rp20jt = Rp260jt. Zakat = 2,5% × Rp260jt = Rp6.500.000.';
+
+        // =========================================
+        // TIMER & PROGRESS
+        // =========================================
+        let timerInterval;
+        let seconds = 0;
+        let quizStarted = false;
+
+        function startTimer() {
+            if (quizStarted) return;
+            quizStarted = true;
+            timerInterval = setInterval(() => {
+                seconds++;
+                const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+                const secs = (seconds % 60).toString().padStart(2, '0');
+                document.getElementById('timer').innerText = `${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function getFormattedTime() {
+            const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const secs = (seconds % 60).toString().padStart(2, '0');
+            return `${mins}:${secs}`;
+        }
+
+        // Update progress
+        function updateProgress() {
+            let answered = 0;
+            for (let i = 1; i <= 10; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+            }
+            for (let i = 1; i <= 5; i++) {
+                if (document.getElementById(`essay${i}`).value.trim().length > 0) answered++;
+            }
+            const total = 15;
+            const percent = (answered / total) * 100;
+            document.getElementById('progress-fill').style.width = percent + '%';
+            document.getElementById('progress-text').innerText = `${answered}/${total} soal dijawab`;
+        }
+
+        // Event listeners untuk progress & timer
+        document.querySelectorAll('input[type="radio"]').forEach(el => {
+            el.addEventListener('change', () => { startTimer(); updateProgress(); });
+        });
+        document.querySelectorAll('textarea').forEach(el => {
+            el.addEventListener('input', () => { startTimer(); updateProgress(); });
+        });
+
+        // =========================================
+        // HITUNG SKOR (ENHANCED)
+        // =========================================
+        function calculateScore() {
+            const nama = document.getElementById('nama').value.trim();
+            if (!nama) {
+                alert('Mohon isi Nama Lengkap terlebih dahulu!');
+                document.getElementById('nama').focus();
+                return;
+            }
+
+            stopTimer();
+
+            let mcScore = 0;
+            let correctCount = 0;
+            const topicStats = {};
+
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const data = quizData[`q${i}`];
+                const card = document.querySelector(`.question-card[data-topic="${data.topic}"]`);
+                const feedback = document.getElementById(`fb-q${i}`);
+                
+                if (!topicStats[data.topic]) {
+                    topicStats[data.topic] = { correct: 0, total: 0 };
+                }
+                topicStats[data.topic].total++;
+
+                if (selected && selected.value === data.correct) {
+                    mcScore += 10;
+                    correctCount++;
+                    topicStats[data.topic].correct++;
+                    card.classList.add('correct');
+                    card.classList.remove('incorrect');
+                    feedback.className = 'feedback show correct';
+                    feedback.innerHTML = `<strong><i class="fas fa-check-circle"></i> BENAR!</strong> ${data.explanation}`;
+                } else {
+                    card.classList.add('incorrect');
+                    card.classList.remove('correct');
+                    feedback.className = 'feedback show incorrect';
+                    const userAnswer = selected ? selected.value : 'Tidak dijawab';
+                    feedback.innerHTML = `<strong><i class="fas fa-times-circle"></i> KURANG TEPAT</strong> 
+                        Jawaban Anda: ${userAnswer} | Jawaban Benar: <strong>${data.correct}</strong><br>
+                        <em style="margin-top: 0.5rem; display: block;">${data.explanation}</em>`;
+                }
+            }
+
+            let essayScore = 0;
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim();
+                if (answer.length > 30) {
+                    essayScore += 20;
+                } else if (answer.length > 0) {
+                    essayScore += 10;
+                }
+            }
+
+            const totalScore = mcScore + essayScore;
+            
+            document.getElementById('mc-result').innerText = mcScore;
+            document.getElementById('essay-result').innerText = essayScore;
+            document.getElementById('total-result').innerText = totalScore;
+            document.getElementById('correct-count').innerText = correctCount;
+            document.getElementById('time-result').innerText = getFormattedTime();
+            
+            let grade = '';
+            const percentage = (totalScore / 200) * 100;
+            if (percentage >= 90) grade = '🏆 MUMTAZ (Istimewa)';
+            else if (percentage >= 80) grade = '🌟 JAYYID JIDDAN (Sangat Baik)';
+            else if (percentage >= 70) grade = '✨ JAYYID (Baik)';
+            else if (percentage >= 60) grade = '📖 MAQBUL (Cukup)';
+            else grade = '💪 PERLU BIMBINGAN LANJUT';
+            document.getElementById('grade-display').innerText = grade;
+
+            // Analisis Kelemahan
+            const weaknesses = [];
+            for (const [topic, stats] of Object.entries(topicStats)) {
+                if (stats.correct < stats.total) {
+                    const percent = (stats.correct / stats.total) * 100;
+                    let suggestion = '';
+                    switch(topic) {
+                        case 'Pengertian': suggestion = 'Pelajari kembali pengertian zakat mal: zakat atas harta benda (bukan jiwa).'; break;
+                        case 'Nisab': suggestion = 'Hafalkan nisab: Emas = 85 gram (20 dinar), Perak = 595 gram (200 dirham), Tijarah = setara 85 gram emas.'; break;
+                        case 'Kadar Zakat': suggestion = 'Kadar zakat emas, perak, dan tijarah = 2,5%. Pertanian = 5% atau 10%. Rikaz = 20%.'; break;
+                        case 'Haul': suggestion = 'Haul = waktu kepemilikan harta selama 1 tahun hijriah (354 hari).'; break;
+                        case 'Perhitungan Emas': suggestion = 'Rumus: Zakat Emas = 2,5% × berat emas (jika ≥ 85 gram & haul 1 tahun).'; break;
+                        case 'Perhitungan Perak': suggestion = 'Rumus: Zakat Perak = 2,5% × berat perak (jika ≥ 595 gram & haul 1 tahun).'; break;
+                        case 'Perhitungan Tijarah': suggestion = 'Rumus: Zakat Tijarah = 2,5% × (Modal + Untung + Piutang Lancar − Hutang Jatuh Tempo).'; break;
+                        case 'Dalil Naqli': suggestion = 'Ulangi QS. At-Taubah: 34 (ancaman menyimpan emas/perak tanpa zakat) dan QS. Al-Baqarah: 267.'; break;
+                        case 'Hikmah': suggestion = 'Renungkan 7 hikmah zakat mal bagi individu dan masyarakat.'; break;
+                    }
+                    weaknesses.push({ topic, percent, suggestion });
+                }
+            }
+
+            const weaknessBox = document.getElementById('weakness-analysis');
+            const weaknessList = document.getElementById('weakness-list');
+            if (weaknesses.length > 0) {
+                weaknessList.innerHTML = weaknesses.map(w => 
+                    `<li><strong>📌 ${w.topic.toUpperCase()}</strong> (${w.percent.toFixed(0)}% benar)<br>${w.suggestion}</li>`
+                ).join('');
+                weaknessBox.style.display = 'block';
+            } else {
+                weaknessBox.style.display = 'none';
+            }
+
+            const resultBox = document.getElementById('hasil-uji');
+            resultBox.classList.add('active');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            if (essayScore < 100) {
+                setTimeout(() => {
+                    alert('Catatan: Nilai Essay adalah simulasi otomatis berdasarkan kelengkapan jawaban. Guru akan meninjau jawaban Anda secara manual.');
+                }, 500);
+            }
+        }
+
+        // =========================================
+        // DOWNLOAD PDF
+        // =========================================
+        function downloadPDF() {
+            const element = document.getElementById('main-content');
+            const nama = document.getElementById('nama').value || 'Siswa';
+            
+            const opt = {
+                margin: [0.5, 0.5, 0.5, 0.5],
+                filename: `Uji_Formatif_Pertemuan_7_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, backgroundColor: '#022c22' },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            const btn = event.target.closest('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses PDF...';
+            btn.disabled = true;
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }).catch(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                alert('Gagal membuat PDF. Silakan coba lagi.');
+            });
+        }
+
+        // =========================================
+        // DOWNLOAD TXT (DETAIL LENGKAP)
+        // =========================================
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value;
+            const tanggal = document.getElementById('tanggal').value || new Date().toLocaleDateString('id-ID');
+            const mc = document.getElementById('mc-result').innerText;
+            const essay = document.getElementById('essay-result').innerText;
+            const total = document.getElementById('total-result').innerText;
+            const correct = document.getElementById('correct-count').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText;
+
+            let pgDetail = '';
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const userAns = selected ? selected.value : '-';
+                const correctAns = quizData[`q${i}`].correct;
+                const status = userAns === correctAns ? '✓ BENAR' : '✗ SALAH';
+                pgDetail += `  Soal ${i.toString().padStart(2, ' ')}: Jawaban Anda = ${userAns} | Kunci = ${correctAns} | ${status}\n`;
+            }
+
+            let essayDetail = '';
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim() || '(Tidak dijawab)';
+                const shortAns = answer.length > 100 ? answer.substring(0, 100) + '...' : answer;
+                essayDetail += `  Essay ${i}: ${shortAns}\n\n`;
+            }
+
+            const text = `╔══════════════════════════════════════════════════════════╗
+║          HASIL UJI FORMATIF - FIKIH KELAS 8             ║
+║              MTsN 10 AGAM - SEMESTER 1                  ║
+╚══════════════════════════════════════════════════════════╝
+
+Mata Pelajaran : Fikih Kelas 8 Semester 1
+Materi         : Pertemuan 7 - Zakat Mal (Emas, Perak, Perdagangan)
+Bab            : BAB 2 - Zakat
+Sekolah        : MTsN 10 Agam
+Guru Pengampu  : Ermawati, S.H.I. (erma34779@gmail.com)
+Tanggal Ujian  : ${tanggal}
+Waktu Pengerjaan: ${waktu}
+
+═══════════════════════════════════════════════════════════
+                    IDENTITAS SISWA
+═══════════════════════════════════════════════════════════
+Nama Lengkap : ${nama}
+NIS          : ${nis}
+Kelas        : ${kelas}
+
+═══════════════════════════════════════════════════════════
+                  RINGKASAN NILAI
+═══════════════════════════════════════════════════════════
+Nilai Pilihan Ganda   : ${mc} / 100  (${correct}/10 benar)
+Nilai Essay (Simulasi): ${essay} / 100
+───────────────────────────────────────────────────────────
+NILAI AKHIR TOTAL     : ${total} / 200
+PREDIKAT              : ${grade}
+
+═══════════════════════════════════════════════════════════
+                 DETAIL JAWABAN PILIHAN GANDA
+═══════════════════════════════════════════════════════════
+${pgDetail}
+═══════════════════════════════════════════════════════════
+                 DETAIL JAWABAN ESSAY
+═══════════════════════════════════════════════════════════
+${essayDetail}
+═══════════════════════════════════════════════════════════
+CATATAN PENTING
+═══════════════════════════════════════════════════════════
+• Pertemuan 7 membahas Zakat Mal untuk Emas, Perak, dan 
+  Harta Perdagangan (BAB 2).
+• Nilai Essay di atas adalah SIMULASI OTOMATIS berdasarkan 
+  kelengkapan jawaban (>30 karakter).
+• Penilaian akhir yang sebenarnya berada di wewenang guru 
+  pengampu (Ibu Ermawati, S.H.I.).
+• Silakan hubungi guru untuk koreksi dan bimbingan lebih lanjut.
+
+═══════════════════════════════════════════════════════════
+Dokumen ini digenerate otomatis pada: ${new Date().toLocaleString('id-ID')}
+© 2026 Ermawati, S.H.I. - MTsN 10 Agam
+═══════════════════════════════════════════════════════════`;
+            
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Skor_Detail_Pertemuan7_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // =========================================
+        // RESET QUIZ
+        // =========================================
+        function resetQuiz() {
+            if(!confirm('Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang?')) return;
+            
+            document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+            document.querySelectorAll('textarea').forEach(el => el.value = '');
+            document.getElementById('nama').value = '';
+            document.getElementById('nis').value = '';
+            document.getElementById('tanggal').value = '';
+            
+            document.getElementById('mc-result').innerText = '0';
+            document.getElementById('essay-result').innerText = '0';
+            document.getElementById('total-result').innerText = '0';
+            document.getElementById('correct-count').innerText = '0';
+            document.getElementById('time-result').innerText = '00:00';
+            document.getElementById('grade-display').innerText = '';
+            document.getElementById('hasil-uji').classList.remove('active');
+            document.getElementById('weakness-analysis').style.display = 'none';
+            
+            document.querySelectorAll('.question-card').forEach(el => {
+                el.classList.remove('correct', 'incorrect');
+            });
+            document.querySelectorAll('.feedback').forEach(el => {
+                el.className = 'feedback';
+                el.innerHTML = '';
+            });
+            
+            stopTimer();
+            seconds = 0;
+            quizStarted = false;
+            document.getElementById('timer').innerText = '00:00';
+            document.getElementById('progress-fill').style.width = '0%';
+            document.getElementById('progress-text').innerText = '0/15 soal dijawab';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // =========================================
+        // KIRIM EMAIL
+        // =========================================
+        function sendEmail() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value;
+            const total = document.getElementById('total-result').innerText;
+            const mc = document.getElementById('mc-result').innerText;
+            const essay = document.getElementById('essay-result').innerText;
+            const correct = document.getElementById('correct-count').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText || 'Belum dinilai';
+            
+            if (total === '0' || !document.getElementById('hasil-uji').classList.contains('active')) {
+                alert('Silakan kerjakan uji formatif dan klik "KIRIM JAWABAN & LIHAT HASIL" terlebih dahulu sebelum mengirim email.');
+                return;
+            }
+
+            const subject = encodeURIComponent(`Hasil Uji Formatif Pertemuan 7 (Zakat Mal) - ${nama} - ${kelas}`);
+            const body = encodeURIComponent(`Assalamu'alaikum Wr. Wb.
+
+Yth. Ibu Ermawati, S.H.I.,
+
+Berikut adalah hasil uji formatif saya pada Pertemuan 7 (Zakat Mal - Emas, Perak, Perdagangan):
+
+═══════════════════════════════════
+IDENTITAS SISWA
+═══════════════════════════════════
+Nama  : ${nama}
+NIS   : ${nis}
+Kelas : ${kelas}
+
+═══════════════════════════════════
+HASIL PENILAIAN
+═══════════════════════════════════
+Pilihan Ganda    : ${mc}/100 (${correct}/10 benar)
+Essay (Simulasi) : ${essay}/100
+Waktu Pengerjaan : ${waktu}
+───────────────────────────────────
+NILAI AKHIR      : ${total}/200
+PREDIKAT         : ${grade}
+
+Mohon bimbingan dan koreksinya untuk jawaban essay.
+
+Jazakumullahu Khairan Katsiran.
+Wassalamu'alaikum Wr. Wb.
+
+───────────────────────────────────
+Dikirim otomatis dari Sistem Uji Formatif Fikih Kelas 8
+© 2026 MTsN 10 Agam`);
+            
+            window.location.href = `mailto:erma34779@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        // Set tanggal hari ini secara otomatis
+        document.getElementById('tanggal').valueAsDate = new Date();
+    </script>
+</body>
+</html>
