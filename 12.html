@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 12: Puasa Wajib (Ramadhan, Nazar, Kafarat) | Fikih Kelas 8</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        :root {
+            --bg-dark: #022c22;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-input: rgba(255, 255, 255, 0.05);
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-gold: rgba(212, 175, 55, 0.3);
+            --success: #10b981;
+            --error: #ef4444;
+            --ramadhan: #10b981;
+            --nazar: #3b82f6;
+            --kafarat: #a855f7;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            background-image: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: var(--gold-primary); transition: var(--transition); }
+        a:hover { color: var(--gold-light); }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 2rem; }
+
+        /* Navigasi */
+        .top-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 0; border-bottom: 1px solid var(--border-gold); margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;
+        }
+        .nav-link {
+            display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500; font-size: 0.95rem;
+            border: 1px solid var(--border-gold); padding: 0.5rem 1rem; border-radius: 50px;
+        }
+        .nav-link:hover { background: var(--gold-primary); color: var(--bg-dark); }
+
+        /* Header */
+        .materi-header { text-align: center; margin-bottom: 3rem; }
+        .bab-tag { display: inline-block; color: var(--gold-primary); font-family: 'Playfair Display', serif; font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .materi-title {
+            font-size: 2.5rem; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 50%, var(--gold-primary) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .materi-desc { color: var(--text-secondary); font-size: 1.15rem; max-width: 750px; margin: 0 auto 2rem; }
+
+        .author-badge {
+            display: inline-flex; align-items: center; gap: 1rem; background: var(--bg-card);
+            border: 1px solid var(--border-gold); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 3rem;
+        }
+        .author-badge i { color: var(--gold-primary); font-size: 1.5rem; }
+        .author-info { text-align: left; }
+        .author-info strong { display: block; color: var(--text-primary); font-size: 1.1rem; }
+        .author-info span { color: var(--text-secondary); font-size: 0.9rem; }
+
+        /* Konten */
+        .content-section {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 2.5rem; margin-bottom: 2rem;
+        }
+        .section-title {
+            color: var(--gold-primary); font-size: 1.6rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
+        }
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold-primary); padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0;
+        }
+        .highlight-box h4 { color: var(--gold-light); margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; }
+        
+        ul.custom-list { list-style: none; padding-left: 0; }
+        ul.custom-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+        ul.custom-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold-primary); }
+
+        /* Tabel Mewah */
+        .table-wrapper { overflow-x: auto; margin: 1.5rem 0; }
+        .luxury-table {
+            width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.02); border-radius: 8px; overflow: hidden;
+        }
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-primary); padding: 1rem; text-align: left;
+            font-family: 'Playfair Display', serif; font-weight: 600; border-bottom: 2px solid var(--border-gold);
+        }
+        .luxury-table td {
+            padding: 1rem; border-bottom: 1px solid var(--border-gold); color: var(--text-secondary); vertical-align: top;
+        }
+        .luxury-table tr:last-child td { border-bottom: none; }
+        .luxury-table tr:hover td { background: rgba(212, 175, 55, 0.05); color: var(--text-primary); }
+
+        /* Badge */
+        .badge-ramadhan { background: var(--ramadhan); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .badge-nazar { background: var(--nazar); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .badge-kafarat { background: var(--kafarat); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+
+        /* Kutipan */
+        .quran-quote {
+            text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(2, 44, 34, 0.8) 100%);
+            border: 1px solid var(--border-gold); border-radius: 16px; margin: 3rem 0;
+        }
+        .arabic-text { font-family: 'Traditional Arabic', serif; font-size: 1.8rem; color: var(--gold-primary); margin-bottom: 1rem; line-height: 2; }
+        .quote-translation { font-style: italic; color: var(--text-secondary); font-size: 1.05rem; }
+        .quote-source { display: block; margin-top: 1rem; color: var(--gold-light); font-weight: 600; font-size: 0.9rem; }
+
+        .fiqh-rule {
+            text-align: center; padding: 1.5rem; border: 1px dashed var(--gold-primary); border-radius: 12px; margin: 1.5rem 0;
+        }
+        .fiqh-rule .arabic { font-family: 'Traditional Arabic', serif; font-size: 1.5rem; color: var(--gold-primary); margin-bottom: 0.5rem; }
+        .fiqh-rule .translation { color: var(--text-secondary); font-style: italic; }
+
+        /* Kata Kunci */
+        .keywords { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .keyword-tag {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-light); padding: 0.4rem 1rem; border-radius: 20px;
+            font-size: 0.85rem; border: 1px solid var(--border-gold);
+        }
+
+        /* Kartu Niat */
+        .niat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .niat-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .niat-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold-primary);
+            background: rgba(212, 175, 55, 0.05);
+        }
+        .niat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+        }
+        .niat-card.ramadhan::before { background: var(--ramadhan); }
+        .niat-card.nazar::before { background: var(--nazar); }
+        .niat-card.kafarat::before { background: var(--kafarat); }
+        
+        .niat-title {
+            color: var(--gold-light);
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .niat-arabic {
+            font-family: 'Traditional Arabic', serif;
+            color: var(--gold-primary);
+            font-size: 1.3rem;
+            text-align: center;
+            margin: 0.75rem 0;
+            line-height: 2;
+            padding: 0.75rem;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 8px;
+        }
+        .niat-latin {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .niat-meaning {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: rgba(239, 68, 68, 0.05);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-left: 4px solid var(--error);
+            border-radius: 0 8px 8px 0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .warning-box h4 {
+            color: #fecaca;
+            margin-bottom: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .warning-box ul { list-style: none; padding-left: 0; }
+        .warning-box ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .warning-box ul li::before {
+            content: '⚠';
+            position: absolute;
+            left: 0;
+            color: var(--error);
+        }
+
+        /* Kafarat Cards */
+        .kafarat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .kafarat-card {
+            background: rgba(168, 85, 247, 0.05);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .kafarat-card:hover {
+            background: rgba(168, 85, 247, 0.08);
+            transform: translateY(-3px);
+        }
+        .kafarat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: var(--kafarat);
+        }
+        .kafarat-number {
+            display: inline-block;
+            background: var(--kafarat);
+            color: white;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+        .kafarat-title {
+            color: #e9d5ff;
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .kafarat-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Quiz Styles */
+        .quiz-container {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 2.5rem; margin-top: 4rem;
+        }
+        .quiz-header { text-align: center; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-gold); }
+        
+        .quiz-meta {
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+            background: rgba(212, 175, 55, 0.08); padding: 1rem 1.5rem; border-radius: 12px; margin-bottom: 2rem;
+        }
+        .timer-display {
+            display: flex; align-items: center; gap: 0.5rem; color: var(--gold-primary); font-weight: 600; font-size: 1.1rem;
+        }
+        .timer-display i { font-size: 1.3rem; }
+        .progress-wrapper { flex: 1; min-width: 200px; margin: 0 1rem; }
+        .progress-label { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.25rem; }
+        .progress-bar {
+            width: 100%; height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%; background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+            width: 0%; transition: width 0.4s ease; border-radius: 4px;
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { display: block; margin-bottom: 0.5rem; color: var(--gold-light); font-weight: 500; font-size: 0.95rem; }
+        .form-input, .form-select, .form-textarea {
+            width: 100%; background: var(--bg-input); border: 1px solid var(--border-gold); border-radius: 8px;
+            padding: 0.85rem 1rem; color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 1rem; transition: var(--transition);
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none; border-color: var(--gold-primary); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        .form-textarea { min-height: 120px; resize: vertical; }
+
+        .question-card { 
+            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.1); 
+            border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; transition: var(--transition);
+        }
+        .question-card.correct { border-color: var(--success); background: rgba(16, 185, 129, 0.05); }
+        .question-card.incorrect { border-color: var(--error); background: rgba(239, 68, 68, 0.05); }
+        
+        .question-text { font-weight: 600; margin-bottom: 1rem; color: var(--text-primary); }
+        .points-badge {
+            display: inline-block; background: var(--gold-primary); color: var(--bg-dark); font-size: 0.75rem;
+            font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+        }
+        .topic-badge {
+            display: inline-block; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); 
+            font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+            border: 1px solid var(--border-gold);
+        }
+        
+        .radio-group { display: flex; flex-direction: column; gap: 0.75rem; }
+        .radio-label {
+            display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; border-radius: 8px;
+            cursor: pointer; transition: var(--transition); border: 1px solid transparent;
+        }
+        .radio-label:hover { background: rgba(212, 175, 55, 0.05); }
+        .radio-label input[type="radio"] { accent-color: var(--gold-primary); width: 18px; height: 18px; }
+        
+        .feedback {
+            margin-top: 1rem; padding: 0.85rem 1rem; border-radius: 8px; font-size: 0.9rem; display: none;
+        }
+        .feedback.show { display: block; animation: fadeIn 0.4s ease; }
+        .feedback.correct { background: rgba(16, 185, 129, 0.1); border-left: 3px solid var(--success); color: #a7f3d0; }
+        .feedback.incorrect { background: rgba(239, 68, 68, 0.1); border-left: 3px solid var(--error); color: #fecaca; }
+        .feedback strong { display: block; margin-bottom: 0.25rem; }
+
+        .result-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(2, 44, 34, 0.9) 100%);
+            border: 2px solid var(--gold-primary); border-radius: 16px; padding: 2rem; margin: 2rem 0; display: none;
+        }
+        .result-box.active { display: block; animation: fadeIn 0.5s ease; }
+        .score-display { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold-primary); margin: 1rem 0; }
+        
+        .score-breakdown {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0;
+        }
+        .score-item {
+            background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px; text-align: center;
+            border: 1px solid var(--border-gold);
+        }
+        .score-item .label { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.25rem; }
+        .score-item .value { font-size: 1.5rem; font-weight: 700; color: var(--gold-primary); }
+        
+        .weakness-analysis {
+            background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;
+        }
+        .weakness-analysis h4 { color: #fecaca; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .weakness-list { list-style: none; }
+        .weakness-list li { 
+            padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+            color: var(--text-secondary); font-size: 0.9rem;
+        }
+        .weakness-list li:last-child { border-bottom: none; }
+        .weakness-list li strong { color: var(--gold-light); }
+
+        .btn-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.5rem;
+            border-radius: 8px; font-weight: 600; cursor: pointer; transition: var(--transition); border: none; font-size: 0.95rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--gold-primary) 0%, #b8941f 100%); color: var(--bg-dark); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4); }
+        .btn-outline { background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-primary); }
+        .btn-outline:hover { background: var(--gold-primary); color: var(--bg-dark); }
+        .btn-secondary { background: rgba(255, 255, 255, 0.1); color: var(--text-primary); border: 1px solid var(--border-gold); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+
+        .footer { text-align: center; padding: 3rem 0; margin-top: 4rem; border-top: 1px solid var(--border-gold); color: var(--text-secondary); font-size: 0.9rem; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .materi-title { font-size: 1.8rem; }
+            .content-section, .quiz-container { padding: 1.5rem; }
+            .btn-group { grid-template-columns: 1fr; }
+            .quiz-meta { flex-direction: column; align-items: stretch; }
+            .niat-grid, .kafarat-grid { grid-template-columns: 1fr; }
+        }
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .btn-group, .footer, .quiz-meta { display: none !important; }
+            .content-section, .quiz-container, .result-box { border: 1px solid #ccc; background: white; color: black; break-inside: avoid; }
+            .arabic-text, .materi-title, .section-title { color: #000 !important; -webkit-text-fill-color: #000 !important; }
+            .form-input, .form-textarea { border: 1px solid #ccc; color: black; }
+            .feedback { background: #f3f4f6 !important; color: black !important; border-left-color: #333 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="main-content">
+        <!-- Navigasi Atas -->
+        <nav class="top-nav">
+            <a href="11.html" class="nav-link"><i class="fas fa-arrow-left"></i> Pertemuan 11</a>
+            <span style="color: var(--text-secondary); font-weight: 500;">Fikih Kelas 8 Semester 1</span>
+            <a href="13.html" class="nav-link">Pertemuan 13 <i class="fas fa-arrow-right"></i></a>
+        </nav>
+
+        <!-- Header Materi -->
+        <header class="materi-header">
+            <div class="bab-tag">🌙 — BAB TIGA: PUASA —</div>
+            <h1 class="materi-title">Pertemuan 12: Puasa Wajib (Ramadhan, Nazar, Kafarat)</h1>
+            <p class="materi-desc">
+                Ketentuan puasa wajib (Ramadhan, Nazar, dan Kafarat) sebagai puncak ekspresi cinta dan ketaatan tahunan. 
+                Materi ini mengajak kita memahami tiga jenis puasa wajib yang mengikat seorang muslim dalam komitmen spiritual kepada Allah Swt.
+            </p>
+            
+            <div class="author-badge">
+                <i class="fas fa-user-graduate"></i>
+                <div class="author-info">
+                    <strong>Ermawati, S.H.I.</strong>
+                    <span>Guru Fikih, MTsN 10 Agam</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- A. Pengantar -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-book-open"></i> A. Pengantar: Tiga Jenis Puasa Wajib</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Setelah mempelajari ketentuan umum puasa pada Pertemuan 11, pada pertemuan ini kita akan mendalami tiga jenis puasa wajib yang harus ditunaikan oleh seorang muslim:
+            </p>
+            <ul class="custom-list">
+                <li><span class="badge-ramadhan">RAMADHAN</span> Puasa selama satu bulan penuh di bulan Ramadhan — rukun Islam ke-4 yang menjadi puncak ketaatan tahunan.</li>
+                <li><span class="badge-nazar">NAZAR</span> Puasa karena janji yang diucapkan kepada Allah — wujud komitmen spiritual yang mengikat.</li>
+                <li><span class="badge-kafarat">KAFARAT</span> Puasa sebagai denda atas pelanggaran tertentu — bentuk taubat dan penebusan dosa.</li>
+            </ul>
+            <div class="highlight-box">
+                <h4><i class="fas fa-heart"></i> Tema Spiritual: Puncak Ekspresi Cinta dan Ketaatan</h4>
+                <p>Ketiga jenis puasa wajib ini merupakan <strong>ekspresi cinta tertinggi</strong> seorang hamba kepada Allah Swt. Puasa Ramadhan adalah <strong>cinta yang dirayakan setiap tahun</strong>, puasa Nazar adalah <strong>cinta yang dijanjikan</strong>, dan puasa Kafarat adalah <strong>cinta yang memperbaiki</strong>. Ketiganya membentuk kepribadian muslim yang konsisten dalam ketaatan.</p>
+            </div>
+        </section>
+
+        <!-- B. Dalil Naqli -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-scroll"></i> B. Dalil Naqli (Landasan Hukum)</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Kewajiban ketiga jenis puasa ini didasarkan pada Al-Qur'an dan Sunnah:
+            </p>
+            <div class="quran-quote">
+                <div class="arabic-text">
+                    شَهْرُ رَمَضَانَ الَّذِي أُنزِلَ فِيهِ الْقُرْآنُ هُدًى لِّلنَّاسِ وَبَيِّنَاتٍ مِّنَ الْهُدَىٰ وَالْفُرْقَانِ ۚ فَمَن شَهِدَ مِنكُمُ الشَّهْرَ فَلْيَصُمْهُ
+                </div>
+                <p class="quote-translation">
+                    "Bulan Ramadhan adalah bulan yang di dalamnya diturunkan Al-Qur'an sebagai petunjuk bagi manusia... Karena itu, barangsiapa di antara kamu hadir di bulan itu, maka hendaklah ia berpuasa."
+                </p>
+                <span class="quote-source">— QS. Al-Baqarah [2]: 185 (Dalil Puasa Ramadhan)</span>
+            </div>
+            <div class="quran-quote">
+                <div class="arabic-text">
+                    يُوفُونَ بِالنَّذْرِ وَيَخَافُونَ يَوْمًا كَانَ شَرُّهُ مُسْتَطِيرًا
+                </div>
+                <p class="quote-translation">
+                    "Mereka menunaikan nazar dan takut akan suatu hari yang azabnya merata di mana-mana."
+                </p>
+                <span class="quote-source">— QS. Al-Insan [76]: 7 (Dalil Puasa Nazar)</span>
+            </div>
+            <div class="quran-quote">
+                <div class="arabic-text">
+                    وَمَن كَانَ مِنكُم مَّرِيضًا أَوْ عَلَىٰ سَفَرٍ فَعِدَّةٌ مِّنْ أَيَّامٍ أُخَرَ ۚ وَعَلَى الَّذِينَ يُطِيقُونَهُ فِدْيَةٌ طَعَامُ مِسْكِينٍ
+                </div>
+                <p class="quote-translation">
+                    "Maka (wajib baginya) berpuasa beberapa hari yang lain. Dan wajib bagi orang-orang yang berat menjalankannya (jika mereka tidak berpuasa) membayar fidyah..."
+                </p>
+                <span class="quote-source">— QS. Al-Baqarah [2]: 184 (Dalil Qadha, Fidyah, dan Kafarat)</span>
+            </div>
+        </section>
+
+        <!-- C. Puasa Ramadhan -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-moon"></i> C. Puasa Ramadhan</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Puasa Ramadhan adalah puasa yang paling utama dan menjadi rukun Islam ke-4. Berikut ketentuan lengkapnya:
+            </p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 30%;">Aspek</th>
+                            <th>Ketentuan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hukum</strong></td>
+                            <td><span style="color: var(--ramadhan); font-weight: 600;">Wajib 'ain</span> bagi setiap muslim yang memenuhi syarat.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waktu</strong></td>
+                            <td>Selama <strong>bulan Ramadhan</strong> (29 atau 30 hari) berdasarkan rukyat hilal atau istikmal.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Durasi Harian</strong></td>
+                            <td>Sejak <strong>terbit fajar shadiq (subuh)</strong> hingga <strong>terbenam matahari (maghrib)</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Niat</strong></td>
+                            <td>Wajib niat <strong>setiap malam</strong> (sebelum fajar) untuk setiap hari puasa.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Keutamaan</strong></td>
+                            <td>• Pahala dilipatgandakan<br>• Pintu surga Ar-Rayyan khusus untuk orang berpuasa<br>• Lailatul Qadr di 10 malam terakhir<br>• Ampunan dosa yang telah lalu</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Yang Diperbolehkan</strong></td>
+                            <td>Tayamum, berkumur, istinsyaq (asal tidak berlebihan), mencicipi makanan (asal tidak ditelan), suntikan non-nutrisi.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sunnah Khusus</strong></td>
+                            <td>Sahur, menyegerakan berbuka, berbuka dengan kurma, memperbanyak ibadah, i'tikaf 10 malam terakhir, tadarus Al-Qur'an.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📌 Niat Puasa Ramadhan</h4>
+                <p style="font-family: 'Traditional Arabic', serif; font-size: 1.4rem; text-align: center; margin: 1rem 0; color: var(--gold-primary);">
+                    نَوَيْتُ صَوْمَ غَدٍ عَنْ أَدَاءِ فَرْضِ شَهْرِ رَمَضَانَ هٰذِهِ السَّنَةِ لِلَّهِ تَعَالَى
+                </p>
+                <p style="text-align: center; font-style: italic; color: var(--text-primary);">"Nawaitu shauma ghadin 'an adā'i fardhi syahri Ramadhāna hāżihis-sanati lillāhi ta'ālā"</p>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">"Saya niat berpuasa besok untuk menunaikan fardhu bulan Ramadhan tahun ini karena Allah Ta'ala."</p>
+            </div>
+        </section>
+
+        <!-- D. Puasa Nazar -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-handshake"></i> D. Puasa Nazar</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Nazar adalah janji yang diucapkan seseorang kepada Allah untuk melakukan suatu ibadah (termasuk puasa) jika suatu keinginan terpenuhi, atau sebagai bentuk taqarrub (pendekatan diri) kepada Allah.
+            </p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 30%;">Aspek</th>
+                            <th>Ketentuan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Pengertian</strong></td>
+                            <td>Janji seorang muslim untuk melakukan ibadah tertentu (termasuk puasa) sebagai wujud syukur atau taqarrub kepada Allah.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hukum</strong></td>
+                            <td><span style="color: var(--nazar); font-weight: 600;">Wajib ditunaikan</span> setelah nazar diucapkan. Asal hukum bernazar adalah <em>makruh</em>, tetapi jika sudah diucapkan maka <em>wajib</em> ditunaikan.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Syarat Nazar Sah</strong></td>
+                            <td>1. Orang yang bernazar <strong>mukallaf</strong> (baligh & berakal)<br>2. Nazar untuk <strong>ibadah yang diperbolehkan</strong> (bukan maksiat)<br>3. Nazar untuk sesuatu yang <strong>mungkin dilakukan</strong><br>4. Tidak terikat syarat yang bertentangan dengan syariat</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jenis Nazar</strong></td>
+                            <td>• <strong>Nazar Muthlaq</strong>: Nazar tanpa syarat waktu (misal: "Saya bernazar puasa karena Allah")<br>• <strong>Nazar Muqayyad</strong>: Nazar dengan syarat (misal: "Jika sembuh, saya akan puasa 3 hari")</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waktu Penunaian</strong></td>
+                            <td>• Nazar Muthlaq: <strong>Segera</strong> (tidak boleh ditunda)<br>• Nazar Muqayyad: Setelah syarat terpenuhi</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jika Tidak Mampu</strong></td>
+                            <td>Jika tidak mampu menunaikan nazar (sakit, meninggal), maka <strong>wajib qadha</strong> atau <strong>fidyah</strong> (tergantung jenis nazar).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="warning-box">
+                <h4><i class="fas fa-exclamation-triangle"></i> Peringatan tentang Nazar</h4>
+                <ul>
+                    <li>Rasulullah saw. <strong>melarang bernazar</strong> karena nazar tidak mengubah takdir, hanya mengeluarkan harta dari orang kikir. (HR. Bukhari & Muslim)</li>
+                    <li>Nazar untuk <strong>maksiat</strong> (misal: "Jika lulus, saya akan puasa setiap Senin selamanya") adalah <strong>batal</strong> dan tidak boleh ditunaikan.</li>
+                    <li>Nazar untuk sesuatu yang <strong>tidak mungkin</strong> (misal: "Saya akan puasa seumur hidup") adalah <strong>batal</strong>.</li>
+                    <li>Sebaiknya <strong>tidak bernazar</strong>, tetapi jika sudah terucap, wajib ditunaikan.</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📌 Niat Puasa Nazar</h4>
+                <p style="font-family: 'Traditional Arabic', serif; font-size: 1.4rem; text-align: center; margin: 1rem 0; color: var(--gold-primary);">
+                    نَوَيْتُ صَوْمَ النَّذْرِ لِلَّهِ تَعَالَى
+                </p>
+                <p style="text-align: center; font-style: italic; color: var(--text-primary);">"Nawaitu shauman-nadzri lillāhi ta'ālā"</p>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">"Saya niat puasa nazar karena Allah Ta'ala."</p>
+            </div>
+        </section>
+
+        <!-- E. Puasa Kafarat -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-gavel"></i> E. Puasa Kafarat (Denda)</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Kafarat adalah denda yang wajib ditunaikan karena melakukan pelanggaran tertentu. Puasa kafarat menjadi salah satu alternatif jika tidak mampu membayar denda lainnya.
+            </p>
+            
+            <div class="kafarat-grid">
+                <div class="kafarat-card">
+                    <div class="kafarat-number">1</div>
+                    <div class="kafarat-title">Kafarat Jima' di Siang Ramadhan</div>
+                    <div class="kafarat-desc">Berhubungan suami-istri dengan sengaja pada siang hari Ramadhan. <strong>Urutan kafarat:</strong> (1) Memerdekakan budak, (2) Puasa 2 bulan berturut-turut, (3) Memberi makan 60 orang miskin. Berlaku bagi suami dan istri jika sama-sama ridha.</div>
+                </div>
+                <div class="kafarat-card">
+                    <div class="kafarat-number">2</div>
+                    <div class="kafarat-title">Kafarat Zhihar</div>
+                    <div class="kafarat-desc">Suami yang menyamakan punggung istrinya dengan punggung ibunya (misal: "Punggungmu seperti punggung ibuku"). <strong>Kafarat:</strong> (1) Memerdekakan budak, (2) Puasa 2 bulan berturut-turut, (3) Memberi makan 60 orang miskin. (QS. Al-Mujadilah: 3-4)</div>
+                </div>
+                <div class="kafarat-card">
+                    <div class="kafarat-number">3</div>
+                    <div class="kafarat-title">Kafarat Sumpah (Yamin)</div>
+                    <div class="kafarat-desc">Seseorang yang bersumpah lalu melanggarnya. <strong>Kafarat:</strong> (1) Memberi makan 10 orang miskin, atau (2) Memberi pakaian, atau (3) Memerdekakan budak. Jika tidak mampu, <strong>puasa 3 hari</strong>. (QS. Al-Maidah: 89)</div>
+                </div>
+                <div class="kafarat-card">
+                    <div class="kafarat-number">4</div>
+                    <div class="kafarat-title">Kafarat Pembunuhan Tidak Sengaja</div>
+                    <div class="kafarat-desc">Membunuh orang muslim tanpa sengaja. <strong>Kafarat:</strong> (1) Memerdekakan budak muslim, (2) Jika tidak mampu, <strong>puasa 2 bulan berturut-turut</strong> sebagai taubat kepada Allah. (QS. An-Nisa: 92)</div>
+                </div>
+                <div class="kafarat-card">
+                    <div class="kafarat-number">5</div>
+                    <div class="kafarat-title">Kafarat Ihram (Haji/Umrah)</div>
+                    <div class="kafarat-desc">Melanggar larangan ihram (memburu hewan, memotong pohon, dll). <strong>Kafarat:</strong> (1) Menyembelih hewan, (2) Puasa (jumlah hari sesuai pelanggaran), atau (3) Memberi makan miskin. (QS. Al-Maidah: 95)</div>
+                </div>
+                <div class="kafarat-card">
+                    <div class="kafarat-number">6</div>
+                    <div class="kafarat-title">Kafarat Jima' di Haji</div>
+                    <div class="kafarat-desc">Berhubungan suami-istri saat sedang ihram haji/umrah. <strong>Kafarat:</strong> (1) Menyembelih unta/sapi, (2) Puasa sesuai jumlah hari ihram, atau (3) Memberi makan miskin sesuai kadar.</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📌 Niat Puasa Kafarat</h4>
+                <p style="font-family: 'Traditional Arabic', serif; font-size: 1.4rem; text-align: center; margin: 1rem 0; color: var(--gold-primary);">
+                    نَوَيْتُ صَوْمَ الْكَفَّارَةِ لِلَّهِ تَعَالَى
+                </p>
+                <p style="text-align: center; font-style: italic; color: var(--text-primary);">"Nawaitu shaumal-kaffārati lillāhi ta'ālā"</p>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">"Saya niat puasa kafarat karena Allah Ta'ala."</p>
+            </div>
+        </section>
+
+        <!-- F. Perbandingan Tiga Puasa Wajib -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-columns"></i> F. Perbandingan Ramadhan, Nazar, dan Kafarat</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Berikut tabel perbandingan ketiga jenis puasa wajib:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th><span class="badge-ramadhan">RAMADHAN</span></th>
+                            <th><span class="badge-nazar">NAZAR</span></th>
+                            <th><span class="badge-kafarat">KAFARAT</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Sebab</strong></td>
+                            <td>Perintah Allah (bulan Ramadhan)</td>
+                            <td>Janji kepada Allah</td>
+                            <td>Pelanggaran tertentu</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Durasi</strong></td>
+                            <td>29-30 hari (1 bulan)</td>
+                            <td>Sesuai nazar (bisa 1 hari, 3 hari, dll)</td>
+                            <td>3 hari atau 2 bulan berturut-turut</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waktu</strong></td>
+                            <td>Bulan Ramadhan setiap tahun</td>
+                            <td>Kapan saja (segera untuk muthlaq)</td>
+                            <td>Kapan saja (segera)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Boleh di hari Haram</strong></td>
+                            <td>Tidak (karena sudah ditentukan)</td>
+                            <td>Tidak (tidak boleh di hari raya)</td>
+                            <td>Boleh (kecuali hari raya)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Harus Berturut-turut</strong></td>
+                            <td>Ya (selama Ramadhan)</td>
+                            <td>Tergantung nazar</td>
+                            <td>Ya (untuk 2 bulan)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jika Batal Sengaja</strong></td>
+                            <td>Qadha + mungkin kafarat</td>
+                            <td>Qadha di hari lain</td>
+                            <td>Ulangi dari awal (jika 2 bulan)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dalil Khusus</strong></td>
+                            <td>QS. Al-Baqarah: 183-185</td>
+                            <td>QS. Al-Insan: 7</td>
+                            <td>QS. Al-Maidah: 89, An-Nisa: 92</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dimensi Spiritual</strong></td>
+                            <td>Cinta yang dirayakan setiap tahun</td>
+                            <td>Cinta yang dijanjikan</td>
+                            <td>Cinta yang memperbaiki</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- G. Niat-niat Puasa Wajib -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-praying-hands"></i> G. Niat-niat Puasa Wajib</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Berikut adalah niat-niat untuk ketiga jenis puasa wajib:</p>
+            
+            <div class="niat-grid">
+                <div class="niat-card ramadhan">
+                    <div class="niat-title"><span class="badge-ramadhan">RAMADHAN</span> Puasa Ramadhan</div>
+                    <div class="niat-arabic">نَوَيْتُ صَوْمَ غَدٍ عَنْ أَدَاءِ فَرْضِ شَهْرِ رَمَضَانَ لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu shauma ghadin 'an adā'i fardhi syahri Ramadhāna lillāhi ta'ālā"</div>
+                    <div class="niat-meaning">"Saya niat berpuasa besok untuk menunaikan fardhu bulan Ramadhan karena Allah Ta'ala."</div>
+                </div>
+                <div class="niat-card nazar">
+                    <div class="niat-title"><span class="badge-nazar">NAZAR</span> Puasa Nazar</div>
+                    <div class="niat-arabic">نَوَيْتُ صَوْمَ النَّذْرِ لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu shauman-nadzri lillāhi ta'ālā"</div>
+                    <div class="niat-meaning">"Saya niat puasa nazar karena Allah Ta'ala."</div>
+                </div>
+                <div class="niat-card kafarat">
+                    <div class="niat-title"><span class="badge-kafarat">KAFARAT</span> Puasa Kafarat</div>
+                    <div class="niat-arabic">نَوَيْتُ صَوْمَ الْكَفَّارَةِ لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu shaumal-kaffārati lillāhi ta'ālā"</div>
+                    <div class="niat-meaning">"Saya niat puasa kafarat karena Allah Ta'ala."</div>
+                </div>
+                <div class="niat-card ramadhan">
+                    <div class="niat-title"><span class="badge-ramadhan">QADHA</span> Qadha Ramadhan</div>
+                    <div class="niat-arabic">نَوَيْتُ صَوْمَ قَضَاءِ رَمَضَانَ لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu shauma qadhā'i Ramadhāna lillāhi ta'ālā"</div>
+                    <div class="niat-meaning">"Saya niat puasa qadha Ramadhan karena Allah Ta'ala."</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- H. Hikmah Puasa Wajib -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-heart"></i> H. Hikmah Puasa Wajib</h2>
+            <ul class="custom-list">
+                <li><strong>Memperkuat Ketaatan Tahunan:</strong> Puasa Ramadhan melatih konsistensi ibadah selama satu bulan penuh, membentuk karakter muslim yang disiplin.</li>
+                <li><strong>Menunaikan Janji kepada Allah:</strong> Puasa Nazar mengajarkan kita untuk menepati janji dan berkomitmen pada ucapan yang telah diucapkan.</li>
+                <li><strong>Membersihkan Dosa:</strong> Puasa Kafarat menjadi sarana taubat dan penebusan dosa, membersihkan jiwa dari noda pelanggaran.</li>
+                <li><strong>Membentuk Kepribadian Mulia:</strong> Kombinasi ketiga puasa wajib membentuk muslim yang taat, jujur, dan bertanggung jawab.</li>
+                <li><strong>Meningkatkan Rasa Syukur:</strong> Dengan merasakan lapar, kita lebih bersyukur atas nikmat Allah yang sering dilupakan.</li>
+                <li><strong>Mempererat Ukhuwah:</strong> Puasa Ramadhan menciptakan kebersamaan umat Islam di seluruh dunia.</li>
+                <li><strong>Mendidik Jiwa:</strong> Puasa melatih kesabaran, pengendalian diri, dan keikhlasan dalam beribadah.</li>
+                <li><strong>Bukti Cinta Tertinggi:</strong> Ketiga puasa wajib adalah wujud cinta yang nyata kepada Allah — cinta yang dirayakan, dijanjikan, dan diperbaiki.</li>
+            </ul>
+        </section>
+
+        <!-- I. Kaidah Fiqh Pendukung -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-gavel"></i> I. Teori Pendukung: Kaidah Fiqh</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Dalam memahami ketentuan puasa wajib, para ulama merumuskan kaidah fiqh yang sangat mendalam:
+            </p>
+            <div class="fiqh-rule">
+                <div class="arabic">مَنْ نَذَرَ أَنْ يُطِيعَ اللَّهَ فَلْيُطِعْهُ، وَمَنْ نَذَرَ أَنْ يَعْصِيَهُ فَلَا يَعْصِهِ</div>
+                <div class="translation">"Barangsiapa bernazar untuk taat kepada Allah, maka hendaklah ia taat. Dan barangsiapa bernazar untuk bermaksiat kepada-Nya, maka janganlah bermaksiat."</div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 1rem;">
+                <strong>Aplikasi:</strong> Kaidah ini menjadi prinsip utama dalam puasa Nazar. Nazar untuk ibadah (seperti puasa) <strong>wajib ditunaikan</strong>, sedangkan nazar untuk maksiat <strong>batal dan tidak boleh ditunaikan</strong>.
+            </p>
+
+            <div class="fiqh-rule" style="margin-top: 1.5rem;">
+                <div class="arabic">الْكَفَّارَةُ تُرْفَعُ بِالتَّرْتِيبِ فَإِنْ عَجَزَ قَدَّمَ مَا يَقْدِرُ عَلَيْهِ</div>
+                <div class="translation">"Kafarat dilakukan secara berurutan. Jika tidak mampu, maka lakukan yang dimampu."</div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 1rem;">
+                <strong>Aplikasi:</strong> Untuk kafarat jima', zhihar, dan pembunuhan tidak sengaja, urutannya: (1) Memerdekakan budak → (2) Puasa 2 bulan → (3) Memberi makan 60 miskin. Jika tidak mampu yang pertama, lanjut ke yang kedua, dst.
+            </p>
+            
+            <div class="quran-quote" style="margin-top: 2rem;">
+                <div class="arabic-text">
+                    لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا
+                </div>
+                <p class="quote-translation">
+                    "Allah tidak membebani seseorang melainkan sesuai dengan kesanggupannya."
+                </p>
+                <span class="quote-source">— QS. Al-Baqarah [2]: 286</span>
+            </div>
+        </section>
+
+        <!-- Kata Kunci -->
+        <section style="margin: 3rem 0;">
+            <h3 style="color: var(--gold-primary); margin-bottom: 1rem; font-size: 1.2rem;">◆ Kata Kunci Pertemuan Ini</h3>
+            <div class="keywords">
+                <span class="keyword-tag">Puasa Wajib</span>
+                <span class="keyword-tag">Puasa Ramadhan</span>
+                <span class="keyword-tag">Puasa Nazar</span>
+                <span class="keyword-tag">Puasa Kafarat</span>
+                <span class="keyword-tag">Rukun Islam ke-4</span>
+                <span class="keyword-tag">Nazar Muthlaq</span>
+                <span class="keyword-tag">Nazar Muqayyad</span>
+                <span class="keyword-tag">Kafarat Jima'</span>
+                <span class="keyword-tag">Kafarat Zhihar</span>
+                <span class="keyword-tag">Kafarat Sumpah</span>
+                <span class="keyword-tag">2 Bulan Berturut-turut</span>
+                <span class="keyword-tag">QS. Al-Baqarah: 185</span>
+                <span class="keyword-tag">QS. Al-Insan: 7</span>
+                <span class="keyword-tag">QS. Al-Maidah: 89</span>
+            </div>
+        </section>
+
+        <!-- Referensi -->
+        <section class="content-section" style="background: rgba(212, 175, 55, 0.05);">
+            <h2 class="section-title"><i class="fas fa-bookmark"></i> J. Referensi Pendukung</h2>
+            <ul class="custom-list" style="font-size: 0.95rem;">
+                <li>Kementerian Agama RI. (2021). <em>Pendidikan Agama Islam dan Budi Pekerti Kelas VIII</em>. Jakarta: Kementerian Agama RI.</li>
+                <li>As-Sayyid Sabiq. (2010). <em>Fiqih Sunnah Jilid 1</em>. (Terjemahan). Bandung: Al-Ma'arif. (Bab Puasa)</li>
+                <li>Imam An-Nawawi. <em>Al-Majmu' Syarah Al-Muhadzdzab</em> (Kitab Rujukan Madzhab Syafi'i tentang Puasa Wajib).</li>
+                <li>Imam Ibnu Qudamah. <em>Al-Mughni</em> (Pembahasan Puasa Nazar dan Kafarat).</li>
+                <li>Wahbah Az-Zuhaili. (2010). <em>Fiqih Islam wa Adillatuhu</em>. (Terjemahan). Jakarta: Gema Insani.</li>
+                <li>Al-Qur'anul Karim dan Terjemahannya, Kementerian Agama RI.</li>
+            </ul>
+        </section>
+
+        <!-- =========================================
+             UJI FORMATIF (ENHANCED VERSION)
+             ========================================= -->
+        <div class="quiz-container" id="uji-formatif">
+            <div class="quiz-header">
+                <h2 style="color: var(--gold-primary); font-size: 1.8rem; margin-bottom: 0.5rem;">📝 Uji Formatif Pertemuan 12</h2>
+                <p style="color: var(--text-secondary);">Evaluasi Pemahaman Materi Puasa Wajib (Ramadhan, Nazar, Kafarat)</p>
+                <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--gold-light);">
+                    📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) &nbsp;|&nbsp; ✍️ Bagian B: Essay (5 soal, 20 poin/soal)
+                </div>
+            </div>
+
+            <!-- Timer & Progress -->
+            <div class="quiz-meta">
+                <div class="timer-display">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>Waktu: <span id="timer">00:00</span></span>
+                </div>
+                <div class="progress-wrapper">
+                    <div class="progress-label">Progres Pengerjaan: <span id="progress-text">0/15 soal dijawab</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="quizForm">
+                <!-- Identitas -->
+                <div class="content-section" style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1.5rem; font-size: 1.2rem;">📋 Identitas Siswa</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div class="form-group">
+                            <label class="form-label">Nama Lengkap *</label>
+                            <input type="text" id="nama" class="form-input" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">No. Absen / NIS *</label>
+                            <input type="text" id="nis" class="form-input" placeholder="Contoh: 12345" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tanggal Ujian</label>
+                            <input type="date" id="tanggal" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Kelas</label>
+                            <select id="kelas" class="form-select">
+                                <option value="VIII-A">VIII-A</option>
+                                <option value="VIII-B">VIII-B</option>
+                                <option value="VIII-C">VIII-C</option>
+                                <option value="VIII-D">VIII-D</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <h3 style="color: var(--text-primary); margin: 2rem 0 1.5rem; font-size: 1.3rem;">📋 Bagian A: Pilihan Ganda</h3>
+                
+                <div class="question-card" data-topic="ramadhan">
+                    <p class="question-text">1. Puasa Ramadhan merupakan rukun Islam yang ke... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Ramadhan</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q1" value="A"> A. Pertama</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="B"> B. Kedua</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="C"> C. Ketiga</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="D"> D. Keempat</label>
+                    </div>
+                    <div class="feedback" id="fb-q1"></div>
+                </div>
+
+                <div class="question-card" data-topic="ramadhan">
+                    <p class="question-text">2. Waktu niat puasa Ramadhan adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Ramadhan</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q2" value="A"> A. Pagi hari sebelum dzuhur</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="B"> B. Malam hari sebelum terbit fajar</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="C"> C. Saat berbuka puasa</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="D"> D. Kapan saja selama Ramadhan</label>
+                    </div>
+                    <div class="feedback" id="fb-q2"></div>
+                </div>
+
+                <div class="question-card" data-topic="nazar">
+                    <p class="question-text">3. Hukum menunaikan nazar setelah diucapkan adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Nazar</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q3" value="A"> A. Sunnah</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="B"> B. Mubah</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="C"> C. Wajib</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="D"> D. Makruh</label>
+                    </div>
+                    <div class="feedback" id="fb-q3"></div>
+                </div>
+
+                <div class="question-card" data-topic="nazar">
+                    <p class="question-text">4. Nazar yang diucapkan tanpa syarat waktu tertentu disebut... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Nazar</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q4" value="A"> A. Nazar Muqayyad</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="B"> B. Nazar Muthlaq</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="C"> C. Nazar Kafarat</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="D"> D. Nazar Sunnah</label>
+                    </div>
+                    <div class="feedback" id="fb-q4"></div>
+                </div>
+
+                <div class="question-card" data-topic="kafarat">
+                    <p class="question-text">5. Kafarat bagi suami-istri yang berhubungan badan di siang hari Ramadhan adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Kafarat</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q5" value="A"> A. Puasa 3 hari</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="B"> B. Puasa 1 bulan</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="C"> C. Puasa 2 bulan berturut-turut</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="D"> D. Memberi makan 10 orang miskin</label>
+                    </div>
+                    <div class="feedback" id="fb-q5"></div>
+                </div>
+
+                <div class="question-card" data-topic="kafarat">
+                    <p class="question-text">6. Kafarat bagi orang yang melanggar sumpah (jika tidak mampu memberi makan 10 miskin) adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Kafarat</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q6" value="A"> A. Puasa 1 hari</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="B"> B. Puasa 3 hari</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="C"> C. Puasa 7 hari</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="D"> D. Puasa 1 bulan</label>
+                    </div>
+                    <div class="feedback" id="fb-q6"></div>
+                </div>
+
+                <div class="question-card" data-topic="perbandingan">
+                    <p class="question-text">7. Perbedaan utama antara puasa Nazar dan Kafarat adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Perbandingan</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q7" value="A"> A. Nazar karena janji, Kafarat karena pelanggaran</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="B"> B. Nazar karena pelanggaran, Kafarat karena janji</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="C"> C. Keduanya karena janji</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="D"> D. Keduanya karena pelanggaran</label>
+                    </div>
+                    <div class="feedback" id="fb-q7"></div>
+                </div>
+
+                <div class="question-card" data-topic="dalil">
+                    <p class="question-text">8. Ayat Al-Qur'an yang menjadi landasan kewajiban menunaikan nazar adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Dalil Naqli</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q8" value="A"> A. QS. Al-Baqarah: 183</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="B"> B. QS. Al-Insan: 7</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="C"> C. QS. Al-Maidah: 1</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="D"> D. QS. An-Nisa: 92</label>
+                    </div>
+                    <div class="feedback" id="fb-q8"></div>
+                </div>
+
+                <div class="question-card" data-topic="hikmah">
+                    <p class="question-text">9. Salah satu hikmah puasa wajib (Ramadhan, Nazar, Kafarat) adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Hikmah</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q9" value="A"> A. Membuat tubuh menjadi lemah</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="B"> B. Memperkuat ketaatan, menunaikan janji, dan membersihkan dosa</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="C"> C. Menggugurkan kewajiban shalat</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="D"> D. Menambah sifat malas</label>
+                    </div>
+                    <div class="feedback" id="fb-q9"></div>
+                </div>
+
+                <div class="question-card" data-topic="contoh">
+                    <p class="question-text">10. Pak Ahmad bersumpah: "Jika saya lulus ujian, saya akan puasa 3 hari." Ternyata ia lulus. Apa yang harus dilakukan Pak Ahmad? 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Contoh Kasus</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q10" value="A"> A. Tidak perlu puasa karena hanya sumpah biasa</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="B"> B. Wajib puasa 3 hari sebagai nazar muqayyad</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="C"> C. Wajib membayar fidyah</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="D"> D. Wajib puasa 2 bulan berturut-turut</label>
+                    </div>
+                    <div class="feedback" id="fb-q10"></div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <h3 style="color: var(--text-primary); margin: 3rem 0 1.5rem; font-size: 1.3rem;">✍️ Bagian B: Essay</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                    💡 <em>Catatan: Sistem akan memberikan nilai simulasi berdasarkan kelengkapan jawaban (>30 karakter). Penilaian akhir yang sebenarnya tetap berada di wewenang guru.</em>
+                </p>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 1: Jelaskan pengertian dan ketentuan puasa Ramadhan! Sebutkan dalil utamanya! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay1" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 2: Jelaskan pengertian puasa Nazar, syarat-syarat nazar yang sah, dan jenis-jenis nazar! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay2" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 3: Sebutkan minimal 4 jenis kafarat yang memerlukan puasa! Jelaskan masing-masing beserta kadar puasanya! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay3" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 4: Jelaskan perbedaan antara puasa Ramadhan, Nazar, dan Kafarat minimal dari 5 aspek! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay4" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 5: Jelaskan hikmah disyariatkannya ketiga puasa wajib! Hubungkan dengan konsep "puncak ekspresi cinta dan ketaatan"! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay5" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <!-- Hasil Uji -->
+                <div id="hasil-uji" class="result-box">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1rem;">📊 Hasil Uji Formatif</h3>
+                    
+                    <div class="score-breakdown">
+                        <div class="score-item">
+                            <div class="label">Pilihan Ganda</div>
+                            <div class="value"><span id="mc-result">0</span>/100</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Essay (Simulasi)</div>
+                            <div class="value"><span id="essay-result">0</span>/100</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Waktu Pengerjaan</div>
+                            <div class="value" id="time-result">00:00</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Benar PG</div>
+                            <div class="value"><span id="correct-count">0</span>/10</div>
+                        </div>
+                    </div>
+                    
+                    <div style="border-top: 1px solid var(--border-gold); padding-top: 1rem; margin-top: 1rem; text-align: center;">
+                        <div style="color: var(--gold-light); font-size: 1rem; margin-bottom: 0.5rem;">Skor Akhir Total</div>
+                        <div class="score-display"><span id="total-result">0</span> <span style="font-size: 1.5rem; color: var(--text-secondary);">/ 200</span></div>
+                        <div id="grade-display" style="font-size: 1.2rem; color: var(--gold-light); margin-top: 0.5rem;"></div>
+                    </div>
+
+                    <!-- Analisis Kelemahan -->
+                    <div class="weakness-analysis" id="weakness-analysis" style="display: none;">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Analisis Kelemahan & Saran Perbaikan</h4>
+                        <ul class="weakness-list" id="weakness-list"></ul>
+                    </div>
+                </div>
+
+                <!-- Tombol Aksi -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary" onclick="calculateScore()">
+                        <i class="fas fa-check-circle"></i> KIRIM JAWABAN & LIHAT HASIL
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="downloadPDF()">
+                        <i class="fas fa-file-pdf"></i> UNDUH PDF LENGKAP
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="downloadTXT()">
+                        <i class="fas fa-file-alt"></i> UNDUH SKOR (TXT)
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="resetQuiz()">
+                        <i class="fas fa-redo"></i> MULAI ULANG
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="sendEmail()">
+                        <i class="fas fa-envelope"></i> KIRIM KE EMAIL GURU
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 1rem; color: var(--gold-primary);">
+                Fikih Kelas 8 Semester 1
+            </p>
+            <p>&copy; 2026 Ermawati, S.H.I. — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p style="margin-top: 0.5rem;">
+                Email: <a href="mailto:erma34779@gmail.com" style="color: var(--gold-primary);">erma34779@gmail.com</a>
+            </p>
+            <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem;">
+                <a href="11.html" class="nav-link" style="font-size: 0.85rem;"><i class="fas fa-arrow-left"></i> Pertemuan 11</a>
+                <a href="13.html" class="nav-link" style="font-size: 0.85rem;">Pertemuan 13 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- =========================================
+         JAVASCRIPT LOGIC (ENHANCED)
+         ========================================= -->
+    <script>
+        // =========================================
+        // DATA SOAL & KUNCI JAWABAN
+        // =========================================
+        const quizData = {
+            q1: { 
+                correct: 'D', 
+                topic: 'Ramadhan',
+                explanation: 'Puasa Ramadhan adalah RUKUN ISLAM KE-4 setelah Syahadat (1), Shalat (2), dan Zakat (3). Urutan: Syahadat → Shalat → Zakat → Puasa Ramadhan → Haji.' 
+            },
+            q2: { 
+                correct: 'B', 
+                topic: 'Ramadhan',
+                explanation: 'Niat puasa Ramadhan WAJIB dilakukan pada MALAM HARI sebelum terbit fajar (subuh). Jika lupa niat malam, puasa tidak sah dan wajib diqadha. Berbeda dengan puasa sunnah yang boleh niat siang hari sebelum dzuhur.' 
+            },
+            q3: { 
+                correct: 'C', 
+                topic: 'Nazar',
+                explanation: 'Setelah nazar diucapkan, hukum menunaikannya adalah WAJIB. Asal hukum bernazar sendiri adalah MAKRUH (tidak dianjurkan), tetapi jika sudah terucap maka wajib ditunaikan. "Mereka menunaikan nazar..." (QS. Al-Insan: 7).' 
+            },
+            q4: { 
+                correct: 'B', 
+                topic: 'Nazar',
+                explanation: 'Nazar MUTHLAQ adalah nazar tanpa syarat waktu (misal: "Saya bernazar puasa karena Allah"). Nazar MUQAYYAD adalah nazar dengan syarat (misal: "Jika sembuh, saya akan puasa 3 hari"). Muthlaq wajib segera ditunaikan.' 
+            },
+            q5: { 
+                correct: 'C', 
+                topic: 'Kafarat',
+                explanation: 'Kafarat jima\' di siang Ramadhan: (1) Memerdekakan budak, (2) PUASA 2 BULAN BERTURUT-TURUT, (3) Memberi makan 60 orang miskin. Jika tidak mampu yang pertama, lanjut ke yang kedua. Berlaku bagi suami dan istri.' 
+            },
+            q6: { 
+                correct: 'B', 
+                topic: 'Kafarat',
+                explanation: 'Kafarat sumpah (QS. Al-Maidah: 89): (1) Memberi makan 10 miskin, atau (2) Memberi pakaian, atau (3) Memerdekakan budak. Jika TIDAK MAMPU, maka PUASA 3 HARI. Bukan 1 hari, bukan 7 hari, tapi 3 hari.' 
+            },
+            q7: { 
+                correct: 'A', 
+                topic: 'Perbandingan',
+                explanation: 'Perbedaan utama: NAZAR karena JANJI yang diucapkan kepada Allah (sukarela), KAFARAT karena PELANGGARAN tertentu (denda). Ramadhan karena PERINTAH Allah (rutin tahunan).' 
+            },
+            q8: { 
+                correct: 'B', 
+                topic: 'Dalil Naqli',
+                explanation: 'QS. Al-Insan ayat 7: "Yūfūna bin-nadzri wa yakhāfūna yawman kāna syarruhū mustathīrā" (Mereka menunaikan nazar dan takut akan suatu hari yang azabnya merata di mana-mana). Ini adalah dalil utama kewajiban menunaikan nazar.' 
+            },
+            q9: { 
+                correct: 'B', 
+                topic: 'Hikmah',
+                explanation: 'Hikmah puasa wajib: (1) Ramadhan = memperkuat ketaatan tahunan, (2) Nazar = menunaikan janji kepada Allah, (3) Kafarat = membersihkan dosa. Ketiganya membentuk kepribadian muslim yang taat, jujur, dan bertanggung jawab.' 
+            },
+            q10: { 
+                correct: 'B', 
+                topic: 'Contoh Kasus',
+                explanation: 'Pak Ahmad mengucapkan sumpah yang mengandung nazar MUQAYYAD (dengan syarat: "jika lulus"). Setelah syarat terpenuhi (lulus), ia WAJIB menunaikan nazar dengan puasa 3 hari. Ini berbeda dengan kafarat yang karena pelanggaran.' 
+            }
+        };
+
+        // =========================================
+        // TIMER & PROGRESS
+        // =========================================
+        let timerInterval;
+        let seconds = 0;
+        let quizStarted = false;
+
+        function startTimer() {
+            if (quizStarted) return;
+            quizStarted = true;
+            timerInterval = setInterval(() => {
+                seconds++;
+                const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+                const secs = (seconds % 60).toString().padStart(2, '0');
+                document.getElementById('timer').innerText = `${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function getFormattedTime() {
+            const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const secs = (seconds % 60).toString().padStart(2, '0');
+            return `${mins}:${secs}`;
+        }
+
+        function updateProgress() {
+            let answered = 0;
+            for (let i = 1; i <= 10; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+            }
+            for (let i = 1; i <= 5; i++) {
+                if (document.getElementById(`essay${i}`).value.trim().length > 0) answered++;
+            }
+            const total = 15;
+            const percent = (answered / total) * 100;
+            document.getElementById('progress-fill').style.width = percent + '%';
+            document.getElementById('progress-text').innerText = `${answered}/${total} soal dijawab`;
+        }
+
+        document.querySelectorAll('input[type="radio"]').forEach(el => {
+            el.addEventListener('change', () => { startTimer(); updateProgress(); });
+        });
+        document.querySelectorAll('textarea').forEach(el => {
+            el.addEventListener('input', () => { startTimer(); updateProgress(); });
+        });
+
+        // =========================================
+        // HITUNG SKOR
+        // =========================================
+        function calculateScore() {
+            const nama = document.getElementById('nama').value.trim();
+            if (!nama) {
+                alert('Mohon isi Nama Lengkap terlebih dahulu!');
+                document.getElementById('nama').focus();
+                return;
+            }
+
+            stopTimer();
+
+            let mcScore = 0;
+            let correctCount = 0;
+            const topicStats = {};
+
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const data = quizData[`q${i}`];
+                const card = document.querySelector(`.question-card[data-topic="${data.topic}"]`);
+                const feedback = document.getElementById(`fb-q${i}`);
+                
+                if (!topicStats[data.topic]) {
+                    topicStats[data.topic] = { correct: 0, total: 0 };
+                }
+                topicStats[data.topic].total++;
+
+                if (selected && selected.value === data.correct) {
+                    mcScore += 10;
+                    correctCount++;
+                    topicStats[data.topic].correct++;
+                    card.classList.add('correct');
+                    card.classList.remove('incorrect');
+                    feedback.className = 'feedback show correct';
+                    feedback.innerHTML = `<strong><i class="fas fa-check-circle"></i> BENAR!</strong> ${data.explanation}`;
+                } else {
+                    card.classList.add('incorrect');
+                    card.classList.remove('correct');
+                    feedback.className = 'feedback show incorrect';
+                    const userAnswer = selected ? selected.value : 'Tidak dijawab';
+                    feedback.innerHTML = `<strong><i class="fas fa-times-circle"></i> KURANG TEPAT</strong> 
+                        Jawaban Anda: ${userAnswer} | Jawaban Benar: <strong>${data.correct}</strong><br>
+                        <em style="margin-top: 0.5rem; display: block;">${data.explanation}</em>`;
+                }
+            }
+
+            let essayScore = 0;
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim();
+                if (answer.length > 30) {
+                    essayScore += 20;
+                } else if (answer.length > 0) {
+                    essayScore += 10;
+                }
+            }
+
+            const totalScore = mcScore + essayScore;
+            
+            document.getElementById('mc-result').innerText = mcScore;
+            document.getElementById('essay-result').innerText = essayScore;
+            document.getElementById('total-result').innerText = totalScore;
+            document.getElementById('correct-count').innerText = correctCount;
+            document.getElementById('time-result').innerText = getFormattedTime();
+            
+            let grade = '';
+            const percentage = (totalScore / 200) * 100;
+            if (percentage >= 90) grade = '🏆 MUMTAZ (Istimewa)';
+            else if (percentage >= 80) grade = '🌟 JAYYID JIDDAN (Sangat Baik)';
+            else if (percentage >= 70) grade = '✨ JAYYID (Baik)';
+            else if (percentage >= 60) grade = '📖 MAQBUL (Cukup)';
+            else grade = '💪 PERLU BIMBINGAN LANJUT';
+            document.getElementById('grade-display').innerText = grade;
+
+            const weaknesses = [];
+            for (const [topic, stats] of Object.entries(topicStats)) {
+                if (stats.correct < stats.total) {
+                    const percent = (stats.correct / stats.total) * 100;
+                    let suggestion = '';
+                    switch(topic) {
+                        case 'Ramadhan': suggestion = 'Pelajari ketentuan puasa Ramadhan: rukun Islam ke-4, niat malam hari, 29-30 hari, QS. Al-Baqarah: 185.'; break;
+                        case 'Nazar': suggestion = 'Pahami: nazar muthlaq (tanpa syarat, wajib segera) vs muqayyad (dengan syarat). Hukum menunaikan nazar = WAJIB.'; break;
+                        case 'Kafarat': suggestion = 'Hafalkan urutan kafarat: (1) Memerdekakan budak → (2) Puasa 2 bulan → (3) Memberi makan 60 miskin. Kafarat sumpah: puasa 3 hari.'; break;
+                        case 'Perbandingan': suggestion = 'Bandingkan: Ramadhan (perintah Allah), Nazar (janji), Kafarat (pelanggaran). Pelajari tabel perbandingan 8 aspek.'; break;
+                        case 'Dalil Naqli': suggestion = 'Hafalkan: QS. Al-Baqarah: 185 (Ramadhan), QS. Al-Insan: 7 (Nazar), QS. Al-Maidah: 89 (Kafarat Sumpah).'; break;
+                        case 'Hikmah': suggestion = 'Renungkan: Ramadhan = ketaatan tahunan, Nazar = menunaikan janji, Kafarat = membersihkan dosa.'; break;
+                        case 'Contoh Kasus': suggestion = 'Latihan kasus: sumpah yang mengandung nazar muqayyad → wajib ditunaikan setelah syarat terpenuhi.'; break;
+                    }
+                    weaknesses.push({ topic, percent, suggestion });
+                }
+            }
+
+            const weaknessBox = document.getElementById('weakness-analysis');
+            const weaknessList = document.getElementById('weakness-list');
+            if (weaknesses.length > 0) {
+                weaknessList.innerHTML = weaknesses.map(w => 
+                    `<li><strong>📌 ${w.topic.toUpperCase()}</strong> (${w.percent.toFixed(0)}% benar)<br>${w.suggestion}</li>`
+                ).join('');
+                weaknessBox.style.display = 'block';
+            } else {
+                weaknessBox.style.display = 'none';
+            }
+
+            const resultBox = document.getElementById('hasil-uji');
+            resultBox.classList.add('active');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            if (essayScore < 100) {
+                setTimeout(() => {
+                    alert('Catatan: Nilai Essay adalah simulasi otomatis berdasarkan kelengkapan jawaban. Guru akan meninjau jawaban Anda secara manual.');
+                }, 500);
+            }
+        }
+
+        // =========================================
+        // DOWNLOAD PDF
+        // =========================================
+        function downloadPDF() {
+            const element = document.getElementById('main-content');
+            const nama = document.getElementById('nama').value || 'Siswa';
+            
+            const opt = {
+                margin: [0.5, 0.5, 0.5, 0.5],
+                filename: `Uji_Formatif_Pertemuan_12_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, backgroundColor: '#022c22' },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            const btn = event.target.closest('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses PDF...';
+            btn.disabled = true;
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }).catch(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                alert('Gagal membuat PDF. Silakan coba lagi.');
+            });
+        }
+
+        // =========================================
+        // DOWNLOAD TXT
+        // =========================================
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value;
+            const tanggal = document.getElementById('tanggal').value || new Date().toLocaleDateString('id-ID');
+            const mc = document.getElementById('mc-result').innerText;
+            const essay = document.getElementById('essay-result').innerText;
+            const total = document.getElementById('total-result').innerText;
+            const correct = document.getElementById('correct-count').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText;
+
+            let pgDetail = '';
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const userAns = selected ? selected.value : '-';
+                const correctAns = quizData[`q${i}`].correct;
+                const status = userAns === correctAns ? '✓ BENAR' : '✗ SALAH';
+                pgDetail += `  Soal ${i.toString().padStart(2, ' ')}: Jawaban Anda = ${userAns} | Kunci = ${correctAns} | ${status}\n`;
+            }
+
+            let essayDetail = '';
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim() || '(Tidak dijawab)';
+                const shortAns = answer.length > 100 ? answer.substring(0, 100) + '...' : answer;
+                essayDetail += `  Essay ${i}: ${shortAns}\n\n`;
+            }
+
+            const text = `╔══════════════════════════════════════════════════════════╗
+║          HASIL UJI FORMATIF - FIKIH KELAS 8             ║
+║              MTsN 10 AGAM
