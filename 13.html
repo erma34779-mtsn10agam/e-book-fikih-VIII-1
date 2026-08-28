@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 13: Puasa Sunnah | Fikih Kelas 8 Semester 1</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        :root {
+            --bg-dark: #022c22;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-input: rgba(255, 255, 255, 0.05);
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-gold: rgba(212, 175, 55, 0.3);
+            --success: #10b981;
+            --error: #ef4444;
+            --senin-kamis: #f59e0b;
+            --ayyam: #3b82f6;
+            --daud: #a855f7;
+            --arafah: #10b981;
+            --asyura: #ef4444;
+            --syawal: #ec4899;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            background-image: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: var(--gold-primary); transition: var(--transition); }
+        a:hover { color: var(--gold-light); }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 2rem; }
+
+        /* Navigasi */
+        .top-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 0; border-bottom: 1px solid var(--border-gold); margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;
+        }
+        .nav-link {
+            display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500; font-size: 0.95rem;
+            border: 1px solid var(--border-gold); padding: 0.5rem 1rem; border-radius: 50px;
+        }
+        .nav-link:hover { background: var(--gold-primary); color: var(--bg-dark); }
+
+        /* Header */
+        .materi-header { text-align: center; margin-bottom: 3rem; }
+        .bab-tag { display: inline-block; color: var(--gold-primary); font-family: 'Playfair Display', serif; font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .materi-title {
+            font-size: 2.5rem; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 50%, var(--gold-primary) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .materi-desc { color: var(--text-secondary); font-size: 1.15rem; max-width: 750px; margin: 0 auto 2rem; }
+
+        .author-badge {
+            display: inline-flex; align-items: center; gap: 1rem; background: var(--bg-card);
+            border: 1px solid var(--border-gold); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 3rem;
+        }
+        .author-badge i { color: var(--gold-primary); font-size: 1.5rem; }
+        .author-info { text-align: left; }
+        .author-info strong { display: block; color: var(--text-primary); font-size: 1.1rem; }
+        .author-info span { color: var(--text-secondary); font-size: 0.9rem; }
+
+        /* Konten */
+        .content-section {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 2.5rem; margin-bottom: 2rem;
+        }
+        .section-title {
+            color: var(--gold-primary); font-size: 1.6rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
+        }
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold-primary); padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0;
+        }
+        .highlight-box h4 { color: var(--gold-light); margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; }
+        
+        ul.custom-list { list-style: none; padding-left: 0; }
+        ul.custom-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+        ul.custom-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold-primary); }
+
+        /* Tabel Mewah */
+        .table-wrapper { overflow-x: auto; margin: 1.5rem 0; }
+        .luxury-table {
+            width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.02); border-radius: 8px; overflow: hidden;
+        }
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-primary); padding: 1rem; text-align: left;
+            font-family: 'Playfair Display', serif; font-weight: 600; border-bottom: 2px solid var(--border-gold);
+        }
+        .luxury-table td {
+            padding: 1rem; border-bottom: 1px solid var(--border-gold); color: var(--text-secondary); vertical-align: top;
+        }
+        .luxury-table tr:last-child td { border-bottom: none; }
+        .luxury-table tr:hover td { background: rgba(212, 175, 55, 0.05); color: var(--text-primary); }
+
+        /* Badge */
+        .badge-sunnah { background: var(--gold-primary); color: var(--bg-dark); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .badge-senin-kamis { background: var(--senin-kamis); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .badge-ayyam { background: var(--ayyam); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .badge-daud { background: var(--daud); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .badge-arafah { background: var(--arafah); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .badge-asyura { background: var(--asyura); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .badge-syawal { background: var(--syawal); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+
+        /* Kutipan */
+        .quran-quote {
+            text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(2, 44, 34, 0.8) 100%);
+            border: 1px solid var(--border-gold); border-radius: 16px; margin: 3rem 0;
+        }
+        .arabic-text { font-family: 'Traditional Arabic', serif; font-size: 1.8rem; color: var(--gold-primary); margin-bottom: 1rem; line-height: 2; }
+        .quote-translation { font-style: italic; color: var(--text-secondary); font-size: 1.05rem; }
+        .quote-source { display: block; margin-top: 1rem; color: var(--gold-light); font-weight: 600; font-size: 0.9rem; }
+
+        .fiqh-rule {
+            text-align: center; padding: 1.5rem; border: 1px dashed var(--gold-primary); border-radius: 12px; margin: 1.5rem 0;
+        }
+        .fiqh-rule .arabic { font-family: 'Traditional Arabic', serif; font-size: 1.5rem; color: var(--gold-primary); margin-bottom: 0.5rem; }
+        .fiqh-rule .translation { color: var(--text-secondary); font-style: italic; }
+
+        /* Kata Kunci */
+        .keywords { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .keyword-tag {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-light); padding: 0.4rem 1rem; border-radius: 20px;
+            font-size: 0.85rem; border: 1px solid var(--border-gold);
+        }
+
+        /* Kartu Puasa Sunnah */
+        .puasa-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.25rem;
+            margin: 1.5rem 0;
+        }
+        .puasa-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .puasa-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold-primary);
+            background: rgba(212, 175, 55, 0.05);
+        }
+        .puasa-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+        }
+        .puasa-card.senin-kamis::before { background: var(--senin-kamis); }
+        .puasa-card.ayyam::before { background: var(--ayyam); }
+        .puasa-card.daud::before { background: var(--daud); }
+        .puasa-card.arafah::before { background: var(--arafah); }
+        .puasa-card.asyura::before { background: var(--asyura); }
+        .puasa-card.syawal::before { background: var(--syawal); }
+        .puasa-card.tasu-a::before { background: #f97316; }
+        .puasa-card.sya-ban::before { background: #14b8a6; }
+        .puasa-card.muharram::before { background: #8b5cf6; }
+        
+        .puasa-icon {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 1rem;
+        }
+        .puasa-card.senin-kamis .puasa-icon { background: rgba(245, 158, 11, 0.2); color: var(--senin-kamis); }
+        .puasa-card.ayyam .puasa-icon { background: rgba(59, 130, 246, 0.2); color: var(--ayyam); }
+        .puasa-card.daud .puasa-icon { background: rgba(168, 85, 247, 0.2); color: var(--daud); }
+        .puasa-card.arafah .puasa-icon { background: rgba(16, 185, 129, 0.2); color: var(--arafah); }
+        .puasa-card.asyura .puasa-icon { background: rgba(239, 68, 68, 0.2); color: var(--asyura); }
+        .puasa-card.syawal .puasa-icon { background: rgba(236, 72, 153, 0.2); color: var(--syawal); }
+        .puasa-card.tasu-a .puasa-icon { background: rgba(249, 115, 22, 0.2); color: #f97316; }
+        .puasa-card.sya-ban .puasa-icon { background: rgba(20, 184, 166, 0.2); color: #14b8a6; }
+        .puasa-card.muharram .puasa-icon { background: rgba(139, 92, 246, 0.2); color: #8b5cf6; }
+        
+        .puasa-name {
+            color: var(--gold-light);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .puasa-detail {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .puasa-detail strong { color: var(--text-primary); }
+        .puasa-hadits {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            border-left: 3px solid var(--gold-primary);
+        }
+
+        /* Niat Cards */
+        .niat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .niat-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .niat-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold-primary);
+            background: rgba(212, 175, 55, 0.05);
+        }
+        .niat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: var(--gold-primary);
+        }
+        .niat-title {
+            color: var(--gold-light);
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .niat-arabic {
+            font-family: 'Traditional Arabic', serif;
+            color: var(--gold-primary);
+            font-size: 1.3rem;
+            text-align: center;
+            margin: 0.75rem 0;
+            line-height: 2;
+            padding: 0.75rem;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 8px;
+        }
+        .niat-latin {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .niat-meaning {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Quiz Styles */
+        .quiz-container {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 2.5rem; margin-top: 4rem;
+        }
+        .quiz-header { text-align: center; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-gold); }
+        
+        .quiz-meta {
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+            background: rgba(212, 175, 55, 0.08); padding: 1rem 1.5rem; border-radius: 12px; margin-bottom: 2rem;
+        }
+        .timer-display {
+            display: flex; align-items: center; gap: 0.5rem; color: var(--gold-primary); font-weight: 600; font-size: 1.1rem;
+        }
+        .timer-display i { font-size: 1.3rem; }
+        .progress-wrapper { flex: 1; min-width: 200px; margin: 0 1rem; }
+        .progress-label { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.25rem; }
+        .progress-bar {
+            width: 100%; height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%; background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+            width: 0%; transition: width 0.4s ease; border-radius: 4px;
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { display: block; margin-bottom: 0.5rem; color: var(--gold-light); font-weight: 500; font-size: 0.95rem; }
+        .form-input, .form-select, .form-textarea {
+            width: 100%; background: var(--bg-input); border: 1px solid var(--border-gold); border-radius: 8px;
+            padding: 0.85rem 1rem; color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 1rem; transition: var(--transition);
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none; border-color: var(--gold-primary); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        .form-textarea { min-height: 120px; resize: vertical; }
+
+        .question-card { 
+            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.1); 
+            border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; transition: var(--transition);
+        }
+        .question-card.correct { border-color: var(--success); background: rgba(16, 185, 129, 0.05); }
+        .question-card.incorrect { border-color: var(--error); background: rgba(239, 68, 68, 0.05); }
+        
+        .question-text { font-weight: 600; margin-bottom: 1rem; color: var(--text-primary); }
+        .points-badge {
+            display: inline-block; background: var(--gold-primary); color: var(--bg-dark); font-size: 0.75rem;
+            font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+        }
+        .topic-badge {
+            display: inline-block; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); 
+            font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+            border: 1px solid var(--border-gold);
+        }
+        
+        .radio-group { display: flex; flex-direction: column; gap: 0.75rem; }
+        .radio-label {
+            display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; border-radius: 8px;
+            cursor: pointer; transition: var(--transition); border: 1px solid transparent;
+        }
+        .radio-label:hover { background: rgba(212, 175, 55, 0.05); }
+        .radio-label input[type="radio"] { accent-color: var(--gold-primary); width: 18px; height: 18px; }
+        
+        .feedback {
+            margin-top: 1rem; padding: 0.85rem 1rem; border-radius: 8px; font-size: 0.9rem; display: none;
+        }
+        .feedback.show { display: block; animation: fadeIn 0.4s ease; }
+        .feedback.correct { background: rgba(16, 185, 129, 0.1); border-left: 3px solid var(--success); color: #a7f3d0; }
+        .feedback.incorrect { background: rgba(239, 68, 68, 0.1); border-left: 3px solid var(--error); color: #fecaca; }
+        .feedback strong { display: block; margin-bottom: 0.25rem; }
+
+        .result-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(2, 44, 34, 0.9) 100%);
+            border: 2px solid var(--gold-primary); border-radius: 16px; padding: 2rem; margin: 2rem 0; display: none;
+        }
+        .result-box.active { display: block; animation: fadeIn 0.5s ease; }
+        .score-display { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold-primary); margin: 1rem 0; }
+        
+        .score-breakdown {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0;
+        }
+        .score-item {
+            background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px; text-align: center;
+            border: 1px solid var(--border-gold);
+        }
+        .score-item .label { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.25rem; }
+        .score-item .value { font-size: 1.5rem; font-weight: 700; color: var(--gold-primary); }
+        
+        .weakness-analysis {
+            background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;
+        }
+        .weakness-analysis h4 { color: #fecaca; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .weakness-list { list-style: none; }
+        .weakness-list li { 
+            padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+            color: var(--text-secondary); font-size: 0.9rem;
+        }
+        .weakness-list li:last-child { border-bottom: none; }
+        .weakness-list li strong { color: var(--gold-light); }
+
+        .btn-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.5rem;
+            border-radius: 8px; font-weight: 600; cursor: pointer; transition: var(--transition); border: none; font-size: 0.95rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--gold-primary) 0%, #b8941f 100%); color: var(--bg-dark); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4); }
+        .btn-outline { background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-primary); }
+        .btn-outline:hover { background: var(--gold-primary); color: var(--bg-dark); }
+        .btn-secondary { background: rgba(255, 255, 255, 0.1); color: var(--text-primary); border: 1px solid var(--border-gold); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+
+        .footer { text-align: center; padding: 3rem 0; margin-top: 4rem; border-top: 1px solid var(--border-gold); color: var(--text-secondary); font-size: 0.9rem; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .materi-title { font-size: 1.8rem; }
+            .content-section, .quiz-container { padding: 1.5rem; }
+            .btn-group { grid-template-columns: 1fr; }
+            .quiz-meta { flex-direction: column; align-items: stretch; }
+            .puasa-grid, .niat-grid { grid-template-columns: 1fr; }
+        }
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .btn-group, .footer, .quiz-meta { display: none !important; }
+            .content-section, .quiz-container, .result-box { border: 1px solid #ccc; background: white; color: black; break-inside: avoid; }
+            .arabic-text, .materi-title, .section-title { color: #000 !important; -webkit-text-fill-color: #000 !important; }
+            .form-input, .form-textarea { border: 1px solid #ccc; color: black; }
+            .feedback { background: #f3f4f6 !important; color: black !important; border-left-color: #333 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="main-content">
+        <!-- Navigasi Atas -->
+        <nav class="top-nav">
+            <a href="12.html" class="nav-link"><i class="fas fa-arrow-left"></i> Pertemuan 12</a>
+            <span style="color: var(--text-secondary); font-weight: 500;">Fikih Kelas 8 Semester 1</span>
+            <a href="14.html" class="nav-link">Pertemuan 14 <i class="fas fa-arrow-right"></i></a>
+        </nav>
+
+        <!-- Header Materi -->
+        <header class="materi-header">
+            <div class="bab-tag">🌙 — BAB TIGA: PUASA —</div>
+            <h1 class="materi-title">Pertemuan 13: Puasa Sunnah</h1>
+            <p class="materi-desc">
+                Mengidentifikasi berbagai macam puasa sunnah sebagai amalan tambahan untuk meningkatkan derajat cinta kepada Allah. 
+                Materi ini mengajak kita mengenal puasa-puasa yang dianjurkan Rasulullah saw. sebagai sarana mendekatkan diri kepada Allah Swt.
+            </p>
+            
+            <div class="author-badge">
+                <i class="fas fa-user-graduate"></i>
+                <div class="author-info">
+                    <strong>Ermawati, S.H.I.</strong>
+                    <span>Guru Fikih, MTsN 10 Agam</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- A. Pengantar -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-book-open"></i> A. Pengertian Puasa Sunnah</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Setelah mempelajari puasa wajib pada Pertemuan 12, pada pertemuan ini kita akan mempelajari puasa sunnah — amalan tambahan yang sangat dicintai Allah dan Rasul-Nya.
+            </p>
+            <ul class="custom-list">
+                <li><strong>Pengertian:</strong> Puasa sunnah adalah puasa yang dianjurkan oleh syariat Islam tetapi tidak diwajibkan. Jika dikerjakan mendapat pahala, jika ditinggalkan tidak berdosa.</li>
+                <li><strong>Tujuan:</strong> Sebagai amalan tambahan untuk meningkatkan derajat cinta kepada Allah, menyempurnakan ibadah wajib, dan meneladani Rasulullah saw.</li>
+                <li><strong>Kedudukan:</strong> Puasa sunnah menjadi pelengkap ibadah wajib. Di hari kiamat, amal sunnah akan menyempurnakan kekurangan amal wajib.</li>
+            </ul>
+            <div class="highlight-box">
+                <h4><i class="fas fa-heart"></i> Tema Spiritual: Amalan Tambahan untuk Meningkatkan Derajat Cinta</h4>
+                <p>Puasa sunnah adalah <strong>bahasa cinta</strong> seorang hamba kepada Tuhannya. Ketika kewajiban telah ditunaikan, seorang pecinta sejati tidak puas hanya dengan itu — ia ingin <strong>menambah amalan</strong> sebagai bukti kerinduannya kepada Sang Kekasih. Rasulullah saw. bersabda dalam hadits qudsi: <em>"Hamba-Ku senantiasa mendekatkan diri kepada-Ku dengan amalan-amalan sunnah hingga Aku mencintainya."</em> (HR. Bukhari)</p>
+            </div>
+        </section>
+
+        <!-- B. Dalil Naqli -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-scroll"></i> B. Dalil Naqli (Landasan Hukum)</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Anjuran memperbanyak puasa sunnah didasarkan pada Al-Qur'an dan Sunnah:
+            </p>
+            <div class="quran-quote">
+                <div class="arabic-text">
+                    وَأَن تَصُومُوا خَيْرٌ لَّكُمْ ۖ إِن كُنتُمْ تَعْلَمُونَ
+                </div>
+                <p class="quote-translation">
+                    "...dan bahwa kamu berpuasa itu lebih baik bagimu, jika kamu mengetahui."
+                </p>
+                <span class="quote-source">— QS. Al-Baqarah [2]: 184</span>
+            </div>
+            <div class="quran-quote">
+                <div class="arabic-text">
+                    كُلُّ عَمَلِ ابْنِ آدَمَ يُضَاعَفُ الْحَسَنَةُ عَشْرُ أَمْثَالِهَا إِلَى سَبْعِمِائَةِ ضِعْفٍ قَالَ اللَّهُ عَزَّ وَجَلَّ إِلَّا الصَّوْمَ فَإِنَّهُ لِي وَأَنَا أَجْزِي بِهِ
+                </div>
+                <p class="quote-translation">
+                    "Setiap amal anak Adam akan dilipatgandakan, satu kebaikan dibalas dengan sepuluh hingga tujuh ratus kali lipat. Allah Azza wa Jalla berfirman: 'Kecuali puasa, karena puasa itu untuk-Ku dan Aku sendiri yang akan membalasnya.'"
+                </p>
+                <span class="quote-source">— HR. Muslim no. 1151</span>
+            </div>
+            <div class="quran-quote">
+                <div class="arabic-text">
+                    فِي الْجَنَّةِ بَابٌٌ يُقَالُ لَهُ الرَّيَّانُ يَدْخُلُ مِنْهُ الصَّائِمُونَ يَوْمَ الْقِيَامَةِ لَا يَدْخُلُ مِنْهُ أَحَدٌ غَيْرُهُمْ
+                </div>
+                <p class="quote-translation">
+                    "Di surga ada sebuah pintu yang disebut Ar-Rayyan. Orang-orang yang berpuasa akan masuk melaluinya pada hari kiamat. Tidak ada yang masuk melaluinya selain mereka."
+                </p>
+                <span class="quote-source">— HR. Bukhari no. 1896 dan Muslim no. 1152</span>
+            </div>
+        </section>
+
+        <!-- C. Macam-macam Puasa Sunnah -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-calendar-alt"></i> C. Macam-macam Puasa Sunnah</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Berikut adalah puasa-puasa sunnah yang dianjurkan dalam Islam:
+            </p>
+            
+            <div class="puasa-grid">
+                <div class="puasa-card senin-kamis">
+                    <div class="puasa-icon"><i class="fas fa-calendar-week"></i></div>
+                    <div class="puasa-name">Puasa Senin-Kamis</div>
+                    <div class="puasa-detail"><strong>Waktu:</strong> Setiap hari Senin dan Kamis</div>
+                    <div class="puasa-detail"><strong>Keutamaan:</strong> Hari diangkatnya amal-amal</div>
+                    <div class="puasa-hadits">"Amal-amal manusia diangkat pada hari Senin dan Kamis, maka aku senang amalanku diangkat sedangkan aku sedang berpuasa." (HR. Tirmidzi)</div>
+                </div>
+
+                <div class="puasa-card ayyam">
+                    <div class="puasa-icon"><i class="fas fa-moon"></i></div>
+                    <div class="puasa-name">Puasa Ayyamul Bidh</div>
+                    <div class="puasa-detail"><strong>Waktu:</strong> Tanggal 13, 14, 15 setiap bulan Hijriyah</div>
+                    <div class="puasa-detail"><strong>Keutamaan:</strong> Seperti puasa sepanjang tahun</div>
+                    <div class="puasa-hadits">"Puasa tiga hari setiap bulan adalah seperti puasa sepanjang tahun." (HR. Bukhari & Muslim)</div>
+                </div>
+
+                <div class="puasa-card daud">
+                    <div class="puasa-icon"><i class="fas fa-sync-alt"></i></div>
+                    <div class="puasa-name">Puasa Daud</div>
+                    <div class="puasa-detail"><strong>Waktu:</strong> Selang-seling (sehari puasa, sehari tidak)</div>
+                    <div class="puasa-detail"><strong>Keutamaan:</strong> Puasa yang paling disukai Allah</div>
+                    <div class="puasa-hadits">"Puasa yang paling disukai Allah adalah puasa Daud." (HR. Bukhari & Muslim)</div>
+                </div>
+
+                <div class="puasa-card arafah">
+                    <div class="puasa-icon"><i class="fas fa-mountain"></i></div>
+                    <div class="puasa-name">Puasa Arafah</div>
+                    <div class="puasa-detail"><strong>Waktu:</strong> 9 Dzulhijjah (bagi yang tidak haji)</div>
+                    <div class="puasa-detail"><strong>Keutamaan:</strong> Menghapus dosa 2 tahun</div>
+                    <div class="puasa-hadits">"Puasa hari Arafah menghapus dosa tahun lalu dan tahun yang akan datang." (HR. Muslim)</div>
+                </div>
+
+                <div class="puasa-card tasu-a">
+                    <div class="puasa-icon"><i class="fas fa-calendar-day"></i></div>
+                    <div class="puasa-name">Puasa Tasu'a</div>
+                    <div class="puasa-detail"><strong>Waktu:</strong> 9 Muharram (sebelum Asyura)</div>
+                    <div class="puasa-detail"><strong>Keutamaan:</strong> Berbeda dengan Yahudi</div>
+                    <div class="puasa-hadits">"Jika tahun depan kita masih hidup, kita akan berpuasa pada hari kesembilan." (HR. Muslim)</div>
+                </div>
+
+                <div class="puasa-card asyura">
+                    <div class="puasa-icon"><i class="fas fa-star"></i></div>
+                    <div class="puasa-name">Puasa Asyura</div>
+                    <div class="puasa-detail"><strong>Waktu:</strong> 10 Muharram</div>
+                    <div class="puasa-detail"><strong>Keutamaan:</strong> Menghapus dosa 1 tahun</div>
+                    <div class="puasa-hadits">"Puasa hari Asyura, aku berharap kepada Allah akan menghapus dosa setahun yang lalu." (HR. Muslim)</div>
+                </div>
+
+                <div class="puasa-card syawal">
+                    <div class="puasa-icon"><i class="fas fa-calendar-check"></i></div>
+                    <div class="puasa-name">Puasa 6 Hari di Bulan Syawal</div>
+                    <div class="puasa-detail"><strong>Waktu:</strong> 6 hari di bulan Syawal (boleh berturut-turut atau terpisah)</div>
+                    <div class="puasa-detail"><strong>Keutamaan:</strong> Seperti puasa setahun penuh</div>
+                    <div class="puasa-hadits">"Barangsiapa berpuasa Ramadhan kemudian mengikutinya dengan puasa enam hari di bulan Syawal, maka ia seperti puasa setahun." (HR. Muslim)</div>
+                </div>
+
+                <div class="puasa-card sya-ban">
+                    <div class="puasa-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="puasa-name">Puasa Sya'ban</div>
+                    <div class="puasa-detail"><strong>Waktu:</strong> Sepanjang bulan Sya'ban</div>
+                    <div class="puasa-detail"><strong>Keutamaan:</strong> Bulan diangkatnya amal</div>
+                    <div class="puasa-hadits">"Itu adalah bulan yang manusia lalai darannya... bulan yang diangkat padanya amal-amal kepada Rabb semesta alam, maka aku suka amalanku diangkat sedangkan aku berpuasa." (HR. An-Nasa'i)</div>
+                </div>
+
+                <div class="puasa-card muharram">
+                    <div class="puasa-icon"><i class="fas fa-calendar"></i></div>
+                    <div class="puasa-name">Puasa di Bulan Muharram</div>
+                    <div class="puasa-detail"><strong>Waktu:</strong> Sepanjang bulan Muharram (terutama 10 pertama)</div>
+                    <div class="puasa-detail"><strong>Keutamaan:</strong> Puasa paling utama setelah Ramadhan</div>
+                    <div class="puasa-hadits">"Puasa yang paling utama setelah Ramadhan adalah puasa di bulan Allah (Muharram)." (HR. Muslim)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- D. Tabel Perbandingan Puasa Sunnah -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-columns"></i> D. Perbandingan Puasa Sunnah</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Berikut tabel perbandingan puasa-puasa sunnah yang telah dibahas:</p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th>Jenis Puasa</th>
+                            <th>Waktu</th>
+                            <th>Keutamaan</th>
+                            <th>Dalil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge-senin-kamis">SENIN-KAMIS</span></td>
+                            <td>Setiap Senin & Kamis</td>
+                            <td>Hari diangkatnya amal</td>
+                            <td>HR. Tirmidzi</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-ayyam">AYYAMUL BIDH</span></td>
+                            <td>13, 14, 15 Hijriyah</td>
+                            <td>Seperti puasa setahun</td>
+                            <td>HR. Bukhari & Muslim</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-daud">DAUD</span></td>
+                            <td>Selang-seling (1 hari puasa, 1 hari tidak)</td>
+                            <td>Puasa paling disukai Allah</td>
+                            <td>HR. Bukhari & Muslim</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-arafah">ARAFAR</span></td>
+                            <td>9 Dzulhijjah</td>
+                            <td>Menghapus dosa 2 tahun</td>
+                            <td>HR. Muslim</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-sunnah">TASU'A</span></td>
+                            <td>9 Muharram</td>
+                            <td>Berbeda dengan Yahudi</td>
+                            <td>HR. Muslim</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-asyura">ASYURA</span></td>
+                            <td>10 Muharram</td>
+                            <td>Menghapus dosa 1 tahun</td>
+                            <td>HR. Muslim</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-syawal">6 HARI SYAWAL</span></td>
+                            <td>6 hari di bulan Syawal</td>
+                            <td>Seperti puasa setahun</td>
+                            <td>HR. Muslim</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-sunnah">SYA'BAN</span></td>
+                            <td>Sepanjang Sya'ban</td>
+                            <td>Bulan diangkatnya amal</td>
+                            <td>HR. An-Nasa'i</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-sunnah">MUHARRAM</span></td>
+                            <td>Sepanjang Muharram</td>
+                            <td>Puasa terbaik setelah Ramadhan</td>
+                            <td>HR. Muslim</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- E. Niat-niat Puasa Sunnah -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-praying-hands"></i> E. Niat-niat Puasa Sunnah</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Berikut adalah niat-niat untuk puasa sunnah:</p>
+            
+            <div class="niat-grid">
+                <div class="niat-card">
+                    <div class="niat-title"><span class="badge-senin-kamis">SENIN</span></div>
+                    <div class="niat-arabic">نَوَيْتُ صَوْمَ يَوْمَ الْإِثْنَيْنِ سُنَّةً لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu shauma yaumal-itsnaini sunnatan lillāhi ta'ālā"</div>
+                    <div class="niat-meaning">"Saya niat puasa hari Senin, sunnah karena Allah Ta'ala."</div>
+                </div>
+                <div class="niat-card">
+                    <div class="niat-title"><span class="badge-senin-kamis">KAMIS</span></div>
+                    <div class="niat-arabic">نَوَيْتُ صَوْمَ يَوْمَ الْخَمِيْسِ سُنَّةً لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu shauma yaumal-khamīsi sunnatan lillāhi ta'ālā"</div>
+                    <div class="niat-meaning">"Saya niat puasa hari Kamis, sunnah karena Allah Ta'ala."</div>
+                </div>
+                <div class="niat-card">
+                    <div class="niat-title"><span class="badge-ayyam">AYYAMUL BIDH</span></div>
+                    <div class="niat-arabic">نَوَيْتُ صَوْمَ أَيَّامَ الْبِيْضِ سُنَّةً لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu shauma ayyāmil-bīdhi sunnatan lillāhi ta'ālā"</div>
+                    <div class="niat-meaning">"Saya niat puasa Ayyamul Bidh, sunnah karena Allah Ta'ala."</div>
+                </div>
+                <div class="niat-card">
+                    <div class="niat-title"><span class="badge-daud">DAUD</span></div>
+                    <div class="niat-arabic">نَوَيْتُ صَوْمَ دَاوُدَ سُنَّةً لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu shauma Dāwūda sunnatan lillāhi ta'ālā"</div>
+                    <div class="niat-meaning">"Saya niat puasa Daud, sunnah karena Allah Ta'ala."</div>
+                </div>
+                <div class="niat-card">
+                    <div class="niat-title"><span class="badge-arafah">ARAFAR</span></div>
+                    <div class="niat-arabic">نَوَيْتُ صَوْمَ عَرَفَةَ سُنَّةً لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu shauma 'arafata sunnatan lillāhi ta'ālā"</div>
+                    <div class="niat-meaning">"Saya niat puasa Arafah, sunnah karena Allah Ta'ala."</div>
+                </div>
+                <div class="niat-card">
+                    <div class="niat-title"><span class="badge-asyura">ASYURA</span></div>
+                    <div class="niat-arabic">نَوَيْتُ صَوْمَ عَاشُوْرَاءَ سُنَّةً لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu shauma 'āsyūrā'a sunnatan lillāhi ta'ālā"</div>
+                    <div class="niat-meaning">"Saya niat puasa Asyura, sunnah karena Allah Ta'ala."</div>
+                </div>
+                <div class="niat-card">
+                    <div class="niat-title"><span class="badge-syawal">6 HARI SYAWAL</span></div>
+                    <div class="niat-arabic">نَوَيْتُ صَوْمَ سِتَّةِ أَيَّامٍ مِنْ شَوَّالٍ سُنَّةً لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu shauma sittati ayyāmin min syawwālin sunnatan lillāhi ta'ālā"</div>
+                    <div class="niat-meaning">"Saya niat puasa enam hari di bulan Syawal, sunnah karena Allah Ta'ala."</div>
+                </div>
+                <div class="niat-card">
+                    <div class="niat-title"><span class="badge-sunnah">SUNNAH UMUM</span></div>
+                    <div class="niat-arabic">نَوَيْتُ صَوْمَ السُّنَّةِ سُنَّةً لِلَّهِ تَعَالَى</div>
+                    <div class="niat-latin">"Nawaitu shaumas-sunnati sunnatan lillāhi ta'ālā"</div>
+                    <div class="niat-meaning">"Saya niat puasa sunnah, sunnah karena Allah Ta'ala."</div>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <h4>💡 Catatan tentang Niat Puasa Sunnah</h4>
+                <p>Berbeda dengan puasa wajib yang niatnya harus dilakukan pada <strong>malam hari</strong>, niat puasa sunnah boleh dilakukan pada <strong>siang hari</strong> sebelum waktu dzuhur, asalkan sejak subuh belum melakukan hal yang membatalkan puasa. Ini adalah kemudahan yang diberikan syariat Islam.</p>
+            </div>
+        </section>
+
+        <!-- F. Hikmah Puasa Sunnah -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-heart"></i> F. Hikmah Puasa Sunnah</h2>
+            <ul class="custom-list">
+                <li><strong>Menyempurnakan Ibadah Wajib:</strong> Puasa sunnah menjadi pelengkap kekurangan dalam puasa wajib. Di hari kiamat, amal sunnah akan menyempurnakan amal wajib yang kurang sempurna.</li>
+                <li><strong>Meningkatkan Derajat Cinta kepada Allah:</strong> Setiap amalan sunnah yang dikerjakan dengan ikhlas akan mendekatkan hamba kepada Allah, hingga Allah mencintainya.</li>
+                <li><strong>Meneladani Rasulullah saw.:</strong> Rasulullah saw. senantiasa memperbanyak puasa sunnah. Mengikutinya adalah bukti cinta kepada beliau.</li>
+                <li><strong>Melatih Konsistensi Ibadah (Istiqamah):</strong> Puasa sunnah yang rutin (seperti Senin-Kamis, Ayyamul Bidh) melatih jiwa untuk istiqamah dalam ibadah.</li>
+                <li><strong>Membersihkan Jiwa (Tazkiyatun Nafs):</strong> Puasa sunnah membersihkan jiwa dari kotoran dosa dan sifat-sifat tercela.</li>
+                <li><strong>Mendapatkan Pahala Besar:</strong> Setiap amal sunnah dilipatgandakan pahalanya, terutama puasa yang pahalanya langsung ditentukan Allah.</li>
+                <li><strong>Membentuk Karakter Mulia:</strong> Puasa sunnah membentuk karakter muslim yang disiplin, sabar, dan istiqamah.</li>
+                <li><strong>Mendekatkan Diri kepada Allah (Taqarrub):</strong> Puasa sunnah adalah sarana taqarrub yang paling dicintai Allah.</li>
+            </ul>
+        </section>
+
+        <!-- G. Kaidah Fiqh Pendukung -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-gavel"></i> G. Teori Pendukung: Kaidah Fiqh</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Dalam memahami kedudukan puasa sunnah, para ulama merumuskan kaidah fiqh yang sangat mendalam:
+            </p>
+            <div class="fiqh-rule">
+                <div class="arabic">السُّنَّةُ تُتِمُّ الْفَرِيضَةَ يَوْمَ الْقِيَامَةِ</div>
+                <div class="translation">"Amalan sunnah akan menyempurnakan amalan wajib di hari kiamat."</div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 1rem;">
+                <strong>Aplikasi:</strong> Jika amal wajib kita kurang sempurna (karena kurang khusyuk, ada yang salah, dll), maka amal sunnah akan menjadi pelengkapnya. Inilah mengapa Rasulullah saw. sangat menganjurkan memperbanyak amal sunnah, termasuk puasa sunnah.
+            </p>
+
+            <div class="fiqh-rule" style="margin-top: 1.5rem;">
+                <div class="arabic">مَنْ صَامَ يَوْمًا فِي سَبِيلِ اللَّهِ بَعَّدَ اللَّهُ وَجْهَهُ عَنِ النَّارِ سَبْعِينَ خَرِيفًا</div>
+                <div class="translation">"Barangsiapa berpuasa satu hari di jalan Allah, maka Allah akan menjauhkan wajahnya dari neraka sejauh 70 tahun perjalanan."</div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 1rem;">
+                <strong>Aplikasi:</strong> Setiap puasa sunnah yang dikerjakan dengan ikhlas akan menjadi penghalang dari api neraka. Bayangkan jika kita rutin berpuasa Senin-Kamis (8 kali sebulan) + Ayyamul Bidh (3 kali sebulan) = 11 hari sebulan, maka pahala yang diperoleh sangat besar.
+            </p>
+            
+            <div class="quran-quote" style="margin-top: 2rem;">
+                <div class="arabic-text">
+                    إِنَّ الصَّفَا وَالْمَرْوَةَ مِن شَعَائِرِ اللَّهِ
+                </div>
+                <p class="quote-translation">
+                    "Sesungguhnya Safa dan Marwah adalah sebagian dari syiar Allah."
+                </p>
+                <span class="quote-source">— QS. Al-Baqarah [2]: 158 (Prinsip: setiap syiar Allah harus diagungkan)</span>
+            </div>
+        </section>
+
+        <!-- Kata Kunci -->
+        <section style="margin: 3rem 0;">
+            <h3 style="color: var(--gold-primary); margin-bottom: 1rem; font-size: 1.2rem;">◆ Kata Kunci Pertemuan Ini</h3>
+            <div class="keywords">
+                <span class="keyword-tag">Puasa Sunnah</span>
+                <span class="keyword-tag">Puasa Senin-Kamis</span>
+                <span class="keyword-tag">Ayyamul Bidh</span>
+                <span class="keyword-tag">Puasa Daud</span>
+                <span class="keyword-tag">Puasa Arafah</span>
+                <span class="keyword-tag">Puasa Tasu'a</span>
+                <span class="keyword-tag">Puasa Asyura</span>
+                <span class="keyword-tag">Puasa 6 Hari Syawal</span>
+                <span class="keyword-tag">Puasa Sya'ban</span>
+                <span class="keyword-tag">Puasa Muharram</span>
+                <span class="keyword-tag">Pintu Ar-Rayyan</span>
+                <span class="keyword-tag">Tazkiyatun Nafs</span>
+                <span class="keyword-tag">Taqarrub</span>
+                <span class="keyword-tag">Istiqamah</span>
+            </div>
+        </section>
+
+        <!-- Referensi -->
+        <section class="content-section" style="background: rgba(212, 175, 55, 0.05);">
+            <h2 class="section-title"><i class="fas fa-bookmark"></i> H. Referensi Pendukung</h2>
+            <ul class="custom-list" style="font-size: 0.95rem;">
+                <li>Kementerian Agama RI. (2021). <em>Pendidikan Agama Islam dan Budi Pekerti Kelas VIII</em>. Jakarta: Kementerian Agama RI.</li>
+                <li>As-Sayyid Sabiq. (2010). <em>Fiqih Sunnah Jilid 1</em>. (Terjemahan). Bandung: Al-Ma'arif. (Bab Puasa Sunnah)</li>
+                <li>Imam An-Nawawi. <em>Al-Majmu' Syarah Al-Muhadzdzab</em> (Kitab Rujukan Madzhab Syafi'i tentang Puasa Sunnah).</li>
+                <li>Imam Ibnu Qudamah. <em>Al-Mughni</em> (Pembahasan Puasa Sunnah dari Perspektif Hanbali).</li>
+                <li>Wahbah Az-Zuhaili. (2010). <em>Fiqih Islam wa Adillatuhu</em>. (Terjemahan). Jakarta: Gema Insani.</li>
+                <li>Al-Qur'anul Karim dan Terjemahannya, Kementerian Agama RI.</li>
+            </ul>
+        </section>
+
+        <!-- =========================================
+             UJI FORMATIF (ENHANCED VERSION)
+             ========================================= -->
+        <div class="quiz-container" id="uji-formatif">
+            <div class="quiz-header">
+                <h2 style="color: var(--gold-primary); font-size: 1.8rem; margin-bottom: 0.5rem;">📝 Uji Formatif Pertemuan 13</h2>
+                <p style="color: var(--text-secondary);">Evaluasi Pemahaman Materi Puasa Sunnah</p>
+                <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--gold-light);">
+                    📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) &nbsp;|&nbsp; ✍️ Bagian B: Essay (5 soal, 20 poin/soal)
+                </div>
+            </div>
+
+            <!-- Timer & Progress -->
+            <div class="quiz-meta">
+                <div class="timer-display">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>Waktu: <span id="timer">00:00</span></span>
+                </div>
+                <div class="progress-wrapper">
+                    <div class="progress-label">Progres Pengerjaan: <span id="progress-text">0/15 soal dijawab</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="quizForm">
+                <!-- Identitas -->
+                <div class="content-section" style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1.5rem; font-size: 1.2rem;">📋 Identitas Siswa</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div class="form-group">
+                            <label class="form-label">Nama Lengkap *</label>
+                            <input type="text" id="nama" class="form-input" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">No. Absen / NIS *</label>
+                            <input type="text" id="nis" class="form-input" placeholder="Contoh: 12345" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tanggal Ujian</label>
+                            <input type="date" id="tanggal" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Kelas</label>
+                            <select id="kelas" class="form-select">
+                                <option value="VIII-A">VIII-A</option>
+                                <option value="VIII-B">VIII-B</option>
+                                <option value="VIII-C">VIII-C</option>
+                                <option value="VIII-D">VIII-D</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <h3 style="color: var(--text-primary); margin: 2rem 0 1.5rem; font-size: 1.3rem;">📋 Bagian A: Pilihan Ganda</h3>
+                
+                <div class="question-card" data-topic="pengertian">
+                    <p class="question-text">1. Puasa sunnah adalah puasa yang... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Pengertian</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q1" value="A"> A. Dilarang oleh syariat</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="B"> B. Dianjurkan, jika dikerjakan mendapat pahala, jika ditinggalkan tidak berdosa</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="C"> C. Wajib ditunaikan setiap tahun</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="D"> D. Hanya boleh dilakukan di bulan Ramadhan</label>
+                    </div>
+                    <div class="feedback" id="fb-q1"></div>
+                </div>
+
+                <div class="question-card" data-topic="senin-kamis">
+                    <p class="question-text">2. Puasa sunnah yang dilakukan setiap hari Senin dan Kamis disebut... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Senin-Kamis</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q2" value="A"> A. Puasa Ayyamul Bidh</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="B"> B. Puasa Daud</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="C"> C. Puasa Senin-Kamis</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="D"> D. Puasa Arafah</label>
+                    </div>
+                    <div class="feedback" id="fb-q2"></div>
+                </div>
+
+                <div class="question-card" data-topic="ayyam">
+                    <p class="question-text">3. Puasa Ayyamul Bidh dilakukan pada tanggal... setiap bulan Hijriyah. 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Ayyamul Bidh</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q3" value="A"> A. 1, 2, 3</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="B"> B. 10, 11, 12</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="C"> C. 13, 14, 15</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="D"> D. 27, 28, 29</label>
+                    </div>
+                    <div class="feedback" id="fb-q3"></div>
+                </div>
+
+                <div class="question-card" data-topic="daud">
+                    <p class="question-text">4. Puasa Daud adalah puasa yang dilakukan dengan cara... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Daud</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q4" value="A"> A. Setiap hari sepanjang tahun</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="B"> B. Selang-seling (sehari puasa, sehari tidak)</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="C"> C. Hanya di bulan Ramadhan</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="D"> D. Hanya di hari Jumat</label>
+                    </div>
+                    <div class="feedback" id="fb-q4"></div>
+                </div>
+
+                <div class="question-card" data-topic="arafah">
+                    <p class="question-text">5. Puasa Arafah dilakukan pada tanggal... dan keutamaannya adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Arafah</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q5" value="A"> A. 9 Dzulhijjah, menghapus dosa 2 tahun</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="B"> B. 10 Muharram, menghapus dosa 1 tahun</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="C"> C. 13-15 Hijriyah, seperti puasa setahun</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="D"> D. 6 hari Syawal, seperti puasa setahun</label>
+                    </div>
+                    <div class="feedback" id="fb-q5"></div>
+                </div>
+
+                <div class="question-card" data-topic="asyura">
+                    <p class="question-text">6. Puasa Asyura dilakukan pada tanggal... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Asyura</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q6" value="A"> A. 9 Muharram</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="B"> B. 10 Muharram</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="C"> C. 11 Muharram</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="D"> D. 12 Muharram</label>
+                    </div>
+                    <div class="feedback" id="fb-q6"></div>
+                </div>
+
+                <div class="question-card" data-topic="syawal">
+                    <p class="question-text">7. Puasa 6 hari di bulan Syawal keutamaannya adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Syawal</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q7" value="A"> A. Menghapus dosa 1 tahun</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="B"> B. Seperti puasa setahun penuh</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="C"> C. Puasa paling disukai Allah</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="D"> D. Menghapus dosa 2 tahun</label>
+                    </div>
+                    <div class="feedback" id="fb-q7"></div>
+                </div>
+
+                <div class="question-card" data-topic="perbandingan">
+                    <p class="question-text">8. Perbedaan utama antara puasa wajib dan puasa sunnah adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Perbandingan</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q8" value="A"> A. Puasa wajib dilarang, puasa sunnah dianjurkan</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="B"> B. Puasa wajib wajib ditunaikan (berdosa jika ditinggalkan), puasa sunnah dianjurkan (tidak berdosa jika ditinggalkan)</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="C"> C. Puasa wajib hanya di bulan Ramadhan, puasa sunnah di bulan lain</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="D"> D. Tidak ada perbedaan, keduanya sama</label>
+                    </div>
+                    <div class="feedback" id="fb-q8"></div>
+                </div>
+
+                <div class="question-card" data-topic="hikmah">
+                    <p class="question-text">9. Salah satu hikmah puasa sunnah adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Hikmah</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q9" value="A"> A. Membuat tubuh menjadi lemah</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="B"> B. Menyempurnakan ibadah wajib dan meningkatkan derajat cinta kepada Allah</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="C"> C. Menggugurkan kewajiban shalat</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="D"> D. Menambah sifat malas</label>
+                    </div>
+                    <div class="feedback" id="fb-q9"></div>
+                </div>
+
+                <div class="question-card" data-topic="contoh">
+                    <p class="question-text">10. Ahmad ingin berpuasa yang pahalanya seperti puasa setahun penuh. Puasa sunnah yang sebaiknya dilakukan Ahmad adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Contoh Kasus</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q10" value="A"> A. Puasa Senin-Kamis</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="B"> B. Puasa Arafah</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="C"> C. Puasa Ramadhan + 6 hari Syawal</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="D"> D. Puasa Asyura</label>
+                    </div>
+                    <div class="feedback" id="fb-q10"></div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <h3 style="color: var(--text-primary); margin: 3rem 0 1.5rem; font-size: 1.3rem;">✍️ Bagian B: Essay</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                    💡 <em>Catatan: Sistem akan memberikan nilai simulasi berdasarkan kelengkapan jawaban (>30 karakter). Penilaian akhir yang sebenarnya tetap berada di wewenang guru.</em>
+                </p>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 1: Jelaskan pengertian puasa sunnah dan sebutkan minimal 5 macam puasa sunnah beserta waktunya! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay1" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 2: Jelaskan keutamaan puasa Arafah, puasa Asyura, dan puasa 6 hari Syawal! Sebutkan dalilnya! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay2" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 3: Tuliskan niat puasa Senin, puasa Kamis, dan puasa Ayyamul Bidh dalam bahasa Arab, latin, dan artinya! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay3" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 4: Jelaskan perbedaan antara puasa wajib dan puasa sunnah minimal dari 5 aspek! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay4" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 5: Jelaskan hikmah disyariatkannya puasa sunnah! Hubungkan dengan konsep "amalan tambahan untuk meningkatkan derajat cinta kepada Allah"! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay5" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <!-- Hasil Uji -->
+                <div id="hasil-uji" class="result-box">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1rem;">📊 Hasil Uji Formatif</h3>
+                    
+                    <div class="score-breakdown">
+                        <div class="score-item">
+                            <div class="label">Pilihan Ganda</div>
+                            <div class="value"><span id="mc-result">0</span>/100</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Essay (Simulasi)</div>
+                            <div class="value"><span id="essay-result">0</span>/100</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Waktu Pengerjaan</div>
+                            <div class="value" id="time-result">00:00</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Benar PG</div>
+                            <div class="value"><span id="correct-count">0</span>/10</div>
+                        </div>
+                    </div>
+                    
+                    <div style="border-top: 1px solid var(--border-gold); padding-top: 1rem; margin-top: 1rem; text-align: center;">
+                        <div style="color: var(--gold-light); font-size: 1rem; margin-bottom: 0.5rem;">Skor Akhir Total</div>
+                        <div class="score-display"><span id="total-result">0</span> <span style="font-size: 1.5rem; color: var(--text-secondary);">/ 200</span></div>
+                        <div id="grade-display" style="font-size: 1.2rem; color: var(--gold-light); margin-top: 0.5rem;"></div>
+                    </div>
+
+                    <!-- Analisis Kelemahan -->
+                    <div class="weakness-analysis" id="weakness-analysis" style="display: none;">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Analisis Kelemahan & Saran Perbaikan</h4>
+                        <ul class="weakness-list" id="weakness-list"></ul>
+                    </div>
+                </div>
+
+                <!-- Tombol Aksi -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary" onclick="calculateScore()">
+                        <i class="fas fa-check-circle"></i> KIRIM JAWABAN & LIHAT HASIL
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="downloadPDF()">
+                        <i class="fas fa-file-pdf"></i> UNDUH PDF LENGKAP
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="downloadTXT()">
+                        <i class="fas fa-file-alt"></i> UNDUH SKOR (TXT)
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="resetQuiz()">
+                        <i class="fas fa-redo"></i> MULAI ULANG
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="sendEmail()">
+                        <i class="fas fa-envelope"></i> KIRIM KE EMAIL GURU
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 1rem; color: var(--gold-primary);">
+                Fikih Kelas 8 Semester 1
+            </p>
+            <p>&copy; 2026 Ermawati, S.H.I. — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p style="margin-top: 0.5rem;">
+                Email: <a href="mailto:erma34779@gmail.com" style="color: var(--gold-primary);">erma34779@gmail.com</a>
+            </p>
+            <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem;">
+                <a href="12.html" class="nav-link" style="font-size: 0.85rem;"><i class="fas fa-arrow-left"></i> Pertemuan 12</a>
+                <a href="14.html" class="nav-link" style="font-size: 0.85rem;">Pertemuan 14 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- =========================================
+         JAVASCRIPT LOGIC (ENHANCED)
+         ========================================= -->
+    <script>
+        // =========================================
+        // DATA SOAL & KUNCI JAWABAN
+        // =========================================
+        const quizData = {
+            q1: { 
+                correct: 'B', 
+                topic: 'Pengertian',
+                explanation: 'Puasa SUNNAH adalah puasa yang DIANJURKAN oleh syariat. Jika dikerjakan MENDAPAT PAHALA, jika ditinggalkan TIDAK BERDOSA. Berbeda dengan puasa wajib yang jika ditinggalkan berdosa.' 
+            },
+            q2: { 
+                correct: 'C', 
+                topic: 'Senin-Kamis',
+                explanation: 'Puasa SENIN-KAMIS dilakukan setiap hari Senin dan Kamis. Keutamaannya: hari diangkatnya amal-amal. Rasulullah saw. senang amalnya diangkat saat sedang berpuasa.' 
+            },
+            q3: { 
+                correct: 'C', 
+                topic: 'Ayyamul Bidh',
+                explanation: 'Puasa AYYAMUL BIDH (hari-hari putih/terang bulan) dilakukan pada tanggal 13, 14, 15 setiap bulan HIJRIYAH. Keutamaannya: seperti puasa sepanjang tahun.' 
+            },
+            q4: { 
+                correct: 'B', 
+                topic: 'Daud',
+                explanation: 'Puasa DAUD dilakukan dengan cara SELANG-SELING: sehari puasa, sehari tidak. Ini adalah PUASA YANG PALING DISUKAI ALLAH menurut hadits Rasulullah saw.' 
+            },
+            q5: { 
+                correct: 'A', 
+                topic: 'Arafah',
+                explanation: 'Puasa ARAFAH dilakukan pada 9 DZULHIJJAH (bagi yang tidak haji). Keutamaannya: MENGHAPUS DOSA 2 TAHUN (tahun lalu dan tahun yang akan datang).' 
+            },
+            q6: { 
+                correct: 'B', 
+                topic: 'Asyura',
+                explanation: 'Puasa ASYURA dilakukan pada 10 MUHARRAM. Keutamaannya: menghapus dosa 1 tahun yang lalu. Disunnahkan juga puasa Tasu\'a (9 Muharram) untuk berbeda dengan Yahudi.' 
+            },
+            q7: { 
+                correct: 'B', 
+                topic: 'Syawal',
+                explanation: 'Puasa 6 HARI SYAWAL keutamaannya: SEPERTI PUASA SETAHUN PENUH. Ini karena 1 kebaikan dilipatgandakan 10x, sehingga 30 hari Ramadhan + 6 hari Syawal × 10 = 360 hari = 1 tahun.' 
+            },
+            q8: { 
+                correct: 'B', 
+                topic: 'Perbandingan',
+                explanation: 'Perbedaan utama: PUASA WAJIB = wajib ditunaikan, jika ditinggalkan BERDOSA. PUASA SUNNAH = dianjurkan, jika ditinggalkan TIDAK BERDOSA. Keduanya tetap mendapat pahala jika dikerjakan.' 
+            },
+            q9: { 
+                correct: 'B', 
+                topic: 'Hikmah',
+                explanation: 'Hikmah puasa sunnah: menyempurnakan ibadah wajib, meningkatkan derajat cinta kepada Allah, meneladani Rasulullah, melatih istiqamah, membersihkan jiwa, mendapatkan pahala besar, membentuk karakter mulia, taqarrub.' 
+            },
+            q10: { 
+                correct: 'C', 
+                topic: 'Contoh Kasus',
+                explanation: 'Puasa RAMADHAN + 6 HARI SYAWAL keutamaannya seperti puasa SETAHUN PENUH. Ini karena perhitungan: 30 hari × 10 = 300 + 6 hari × 10 = 60, total 360 hari = 1 tahun Hijriyah.' 
+            }
+        };
+
+        // =========================================
+        // TIMER & PROGRESS
+        // =========================================
+        let timerInterval;
+        let seconds = 0;
+        let quizStarted = false;
+
+        function startTimer() {
+            if (quizStarted) return;
+            quizStarted = true;
+            timerInterval = setInterval(() => {
+                seconds++;
+                const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+                const secs = (seconds % 60).toString().padStart(2, '0');
+                document.getElementById('timer').innerText = `${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function getFormattedTime() {
+            const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const secs = (seconds % 60).toString().padStart(2, '0');
+            return `${mins}:${secs}`;
+        }
+
+        function updateProgress() {
+            let answered = 0;
+            for (let i = 1; i <= 10; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+            }
+            for (let i = 1; i <= 5; i++) {
+                if (document.getElementById(`essay${i}`).value.trim().length > 0) answered++;
+            }
+            const total = 15;
+            const percent = (answered / total) * 100;
+            document.getElementById('progress-fill').style.width = percent + '%';
+            document.getElementById('progress-text').innerText = `${answered}/${total} soal dijawab`;
+        }
+
+        document.querySelectorAll('input[type="radio"]').forEach(el => {
+            el.addEventListener('change', () => { startTimer(); updateProgress(); });
+        });
+        document.querySelectorAll('textarea').forEach(el => {
+            el.addEventListener('input', () => { startTimer(); updateProgress(); });
+        });
+
+        // =========================================
+        // HITUNG SKOR
+        // =========================================
+        function calculateScore() {
+            const nama = document.getElementById('nama').value.trim();
+            if (!nama) {
+                alert('Mohon isi Nama Lengkap terlebih dahulu!');
+                document.getElementById('nama').focus();
+                return;
+            }
+
+            stopTimer();
+
+            let mcScore = 0;
+            let correctCount = 0;
+            const topicStats = {};
+
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const data = quizData[`q${i}`];
+                const card = document.querySelector(`.question-card[data-topic="${data.topic}"]`);
+                const feedback = document.getElementById(`fb-q${i}`);
+                
+                if (!topicStats[data.topic]) {
+                    topicStats[data.topic] = { correct: 0, total: 0 };
+                }
+                topicStats[data.topic].total++;
+
+                if (selected && selected.value === data.correct) {
+                    mcScore += 10;
+                    correctCount++;
+                    topicStats[data.topic].correct++;
+                    card.classList.add('correct');
+                    card.classList.remove('incorrect');
+                    feedback.className = 'feedback show correct';
+                    feedback.innerHTML = `<strong><i class="fas fa-check-circle"></i> BENAR!</strong> ${data.explanation}`;
+                } else {
+                    card.classList.add('incorrect');
+                    card.classList.remove('correct');
+                    feedback.className = 'feedback show incorrect';
+                    const userAnswer = selected ? selected.value : 'Tidak dijawab';
+                    feedback.innerHTML = `<strong><i class="fas fa-times-circle"></i> KURANG TEPAT</strong> 
+                        Jawaban Anda: ${userAnswer} | Jawaban Benar: <strong>${data.correct}</strong><br>
+                        <em style="margin-top: 0.5rem; display: block;">${data.explanation}</em>`;
+                }
+            }
+
+            let essayScore = 0;
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim();
+                if (answer.length > 30) {
+                    essayScore += 20;
+                } else if (answer.length > 0) {
+                    essayScore += 10;
+                }
+            }
+
+            const totalScore = mcScore + essayScore;
+            
+            document.getElementById('mc-result').innerText = mcScore;
+            document.getElementById('essay-result').innerText = essayScore;
+            document.getElementById('total-result').innerText = totalScore;
+            document.getElementById('correct-count').innerText = correctCount;
+            document.getElementById('time-result').innerText = getFormattedTime();
+            
+            let grade = '';
+            const percentage = (totalScore / 200) * 100;
+            if (percentage >= 90) grade = '🏆 MUMTAZ (Istimewa)';
+            else if (percentage >= 80) grade = '🌟 JAYYID JIDDAN (Sangat Baik)';
+            else if (percentage >= 70) grade = '✨ JAYYID (Baik)';
+            else if (percentage >= 60) grade = '📖 MAQBUL (Cukup)';
+            else grade = '💪 PERLU BIMBINGAN LANJUT';
+            document.getElementById('grade-display').innerText = grade;
+
+            const weaknesses = [];
+            for (const [topic, stats] of Object.entries(topicStats)) {
+                if (stats.correct < stats.total) {
+                    const percent = (stats.correct / stats.total) * 100;
+                    let suggestion = '';
+                    switch(topic) {
+                        case 'Pengertian': suggestion = 'Pelajari kembali pengertian puasa sunnah: dianjurkan, mendapat pahala, tidak berdosa jika ditinggalkan.'; break;
+                        case 'Senin-Kamis': suggestion = 'Puasa Senin-Kamis dilakukan setiap hari Senin dan Kamis. Keutamaan: hari diangkatnya amal.'; break;
+                        case 'Ayyamul Bidh': suggestion = 'Puasa Ayyamul Bidh: tanggal 13, 14, 15 Hijriyah. Keutamaan: seperti puasa setahun.'; break;
+                        case 'Daud': suggestion = 'Puasa Daud: selang-seling (sehari puasa, sehari tidak). Keutamaan: puasa paling disukai Allah.'; break;
+                        case 'Arafah': suggestion = 'Puasa Arafah: 9 Dzulhijjah. Keutamaan: menghapus dosa 2 tahun.'; break;
+                        case 'Asyura': suggestion = 'Puasa Asyura: 10 Muharram. Keutamaan: menghapus dosa 1 tahun.'; break;
+                        case 'Syawal': suggestion = 'Puasa 6 hari Syawal: keutamaan seperti puasa setahun penuh (Ramadhan + 6 hari × 10 = 360 hari).'; break;
+                        case 'Perbandingan': suggestion = 'Pelajari perbedaan puasa wajib (wajib, berdosa jika ditinggalkan) dan sunnah (dianjurkan, tidak berdosa).'; break;
+                        case 'Hikmah': suggestion = 'Renungkan 8 hikmah puasa sunnah bagi individu dan masyarakat.'; break;
+                        case 'Contoh Kasus': suggestion = 'Latihan kasus: Ramadhan + 6 Syawal = puasa setahun penuh.'; break;
+                    }
+                    weaknesses.push({ topic, percent, suggestion });
+                }
+            }
+
+            const weaknessBox = document.getElementById('weakness-analysis');
+            const weaknessList = document.getElementById('weakness-list');
+            if (weaknesses.length > 0) {
+                weaknessList.innerHTML = weaknesses.map(w => 
+                    `<li><strong>📌 ${w.topic.toUpperCase()}</strong> (${w.percent.toFixed(0)}% benar)<br>${w.suggestion}</li>`
+                ).join('');
+                weaknessBox.style.display = 'block';
+            } else {
+                weaknessBox.style.display = 'none';
+            }
+
+            const resultBox = document.getElementById('hasil-uji');
+            resultBox.classList.add('active');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            if (essayScore < 100) {
+                setTimeout(() => {
+                    alert('Catatan: Nilai Essay adalah simulasi otomatis berdasarkan kelengkapan jawaban. Guru akan meninjau jawaban Anda secara manual.');
+                }, 500);
+            }
+        }
+
+        // =========================================
+        // DOWNLOAD PDF
+        // =========================================
+        function downloadPDF() {
+            const element = document.getElementById('main-content');
+            const nama = document.getElementById('nama').value || 'Siswa';
+            
+            const opt = {
+                margin: [0.5, 0.5, 0.5, 0.5],
+                filename: `Uji_Formatif_Pertemuan_13_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, backgroundColor: '#022c22' },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            const btn = event.target.closest('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses PDF...';
+            btn.disabled = true;
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }).catch(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                alert('Gagal membuat PDF. Silakan coba lagi.');
+            });
+        }
+
+        // =========================================
+        // DOWNLOAD TXT
+        // =========================================
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value;
+            const tanggal = document.getElementById('tanggal').value || new Date().toLocaleDateString('id-ID');
+            const mc = document.getElementById('mc-result').innerText;
+            const essay = document.getElementById('essay-result').innerText;
+            const total = document.getElementById('total-result').innerText;
+            const correct = document.getElementById('correct-count').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText;
+
+            let pgDetail = '';
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const userAns = selected ? selected.value : '-';
+                const correctAns = quizData[`q${i}`].correct;
+                const status = userAns === correctAns ? '✓ BENAR' : '✗ SALAH';
+                pgDetail += `  Soal ${i.toString().padStart(2, ' ')}: Jawaban Anda = ${userAns} | Kunci = ${correctAns} | ${status}\n`;
+            }
+
+            let essayDetail = '';
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim() || '(Tidak dijawab)';
+                const shortAns = answer.length > 100 ? answer.substring(0, 100) + '...' : answer;
+                essayDetail += `  Essay ${i}: ${shortAns}\n\n`;
+            }
+
+            const text = `╔══════════════════════════════════════════════════════════╗
+║          HASIL UJI FORMATIF - FIKIH KELAS 8             ║
+║              MTsN 10 AGAM - SEMESTER 1                  ║
+╚══════════════════════════════════════════════════════════╝
+
+Mata Pelajaran : Fikih Kelas 8 Semester 1
+Materi         : Pertemuan 13 - Puasa Sunnah
+Bab            : BAB 3 - Puasa
+Sekolah        : MTsN 10 Agam
+Guru Pengampu  : Ermawati, S.H.I. (erma34779@gmail.com)
+Tanggal Ujian  : ${tanggal}
+Waktu Pengerjaan: ${waktu}
+
+═══════════════════════════════════════════════════════════
+                    IDENTITAS SISWA
+═══════════════════════════════════════════════════════════
+Nama Lengkap : ${nama}
+NIS          : ${nis}
+Kelas        : ${kelas}
+
+═══════════════════════════════════════════════════════════
+                  RINGKASAN NILAI
+═══════════════════════════════════════════════════════════
+Nilai Pilihan Ganda   : ${mc} / 100  (${correct}/10 benar)
+Nilai Essay (Simulasi): ${essay} / 100
+───────────────────────────────────────────────────────────
+NILAI AKHIR TOTAL     : ${total} / 200
+PREDIKAT              : ${grade}
+
+═══════════════════════════════════════════════════════════
+                 DETAIL JAWABAN PILIHAN GANDA
+═══════════════════════════════════════════════════════════
+${pgDetail}
+═══════════════════════════════════════════════════════════
+                 DETAIL JAWABAN ESSAY
+═══════════════════════════════════════════════════════════
+${essayDetail}
+═══════════════════════════════════════════════════════════
+CATATAN PENTING
+═══════════════════════════════════════════════════════════
+• Pertemuan 13 membahas Puasa Sunnah (BAB 3).
+• Nilai Essay di atas adalah SIMULASI OTOMATIS berdasarkan 
+  kelengkapan jawaban (>30 karakter).
+• Penilaian akhir yang sebenarnya berada di wewenang guru 
+  pengampu (Ibu Ermawati, S.H.I.).
+
+═══════════════════════════════════════════════════════════
+Dokumen ini digenerate otomatis pada: ${new Date().toLocaleString('id-ID')}
+© 2026 Ermawati, S.H.I. - MTsN 10 Agam
+═══════════════════════════════════════════════════════════`;
+            
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Skor_Detail_Pertemuan13_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // =========================================
+        // RESET QUIZ
+        // =========================================
+        function resetQuiz() {
+            if(!confirm('Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang?')) return;
+            
+            document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+            document.querySelectorAll('textarea').forEach(el => el.value = '');
+            document.getElementById('nama').value = '';
+            document.getElementById('nis').value = '';
+            document.getElementById('tanggal').value = '';
+            
+            document.getElementById('mc-result').innerText = '0';
+            document.getElementById('essay-result').innerText = '0';
+            document.getElementById('total-result').innerText = '0';
+            document.getElementById('correct-count').innerText = '0';
+            document.getElementById('time-result').innerText = '00:00';
+            document.getElementById('grade-display').innerText = '';
+            document.getElementById('hasil-uji').classList.remove('active');
+            document.getElementById('weakness-analysis').style.display = 'none';
+            
+            document.querySelectorAll('.question-card').forEach(el => {
+                el.classList.remove('correct', 'incorrect');
+            });
+            document.querySelectorAll('.feedback').forEach(el => {
+                el.className = 'feedback';
+                el.innerHTML = '';
+            });
+            
+            stopTimer();
+            seconds = 0;
+            quizStarted = false;
+            document.getElementById('timer').innerText = '00:00';
+            document.getElementById('progress-fill').style.width = '0%';
+            document.getElementById('progress-text').innerText = '0/15 soal dijawab';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // =========================================
+        // KIRIM EMAIL
+        // =========================================
+        function sendEmail() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value;
+            const total = document.getElementById('total-result').innerText;
+            const mc = document.getElementById('mc-result').innerText;
+            const essay = document.getElementById('essay-result').innerText;
+            const correct = document.getElementById('correct-count').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText || 'Belum dinilai';
+            
+            if (total === '0' || !document.getElementById('hasil-uji').classList.contains('active')) {
+                alert('Silakan kerjakan uji formatif dan klik "KIRIM JAWABAN & LIHAT HASIL" terlebih dahulu sebelum mengirim email.');
+                return;
+            }
+
+            const subject = encodeURIComponent(`Hasil Uji Formatif Pertemuan 13 (Puasa Sunnah) - ${nama} - ${kelas}`);
+            const body = encodeURIComponent(`Assalamu'alaikum Wr. Wb.
+
+Yth. Ibu Ermawati, S.H.I.,
+
+Berikut adalah hasil uji formatif saya pada Pertemuan 13 (Puasa Sunnah):
+
+═══════════════════════════════════
+IDENTITAS SISWA
+═══════════════════════════════════
+Nama  : ${nama}
+NIS   : ${nis}
+Kelas : ${kelas}
+
+═══════════════════════════════════
+HASIL PENILAIAN
+═══════════════════════════════════
+Pilihan Ganda    : ${mc}/100 (${correct}/10 benar)
+Essay (Simulasi) : ${essay}/100
+Waktu Pengerjaan : ${waktu}
+───────────────────────────────────
+NILAI AKHIR      : ${total}/200
+PREDIKAT         : ${grade}
+
+Mohon bimbingan dan koreksinya untuk jawaban essay.
+
+Jazakumullahu Khairan Katsiran.
+Wassalamu'alaikum Wr. Wb.
+
+───────────────────────────────────
+Dikirim otomatis dari Sistem Uji Formatif Fikih Kelas 8
+© 2026 MTsN 10 Agam`);
+            
+            window.location.href = `mailto:erma34779@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        document.getElementById('tanggal').valueAsDate = new Date();
+    </script>
+</body>
+</html>
