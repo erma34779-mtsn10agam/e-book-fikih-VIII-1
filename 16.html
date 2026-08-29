@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 16: Hikmah I'tikaf & Adab-adabnya | Fikih Kelas 8</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        :root {
+            --bg-dark: #022c22;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-input: rgba(255, 255, 255, 0.05);
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-gold: rgba(212, 175, 55, 0.3);
+            --success: #10b981;
+            --error: #ef4444;
+            --itikaf: #6366f1;
+            --itikaf-light: #a5b4fc;
+            --lailatul: #ec4899;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            background-image: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: var(--gold-primary); transition: var(--transition); }
+        a:hover { color: var(--gold-light); }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 2rem; }
+
+        .top-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 0; border-bottom: 1px solid var(--border-gold); margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;
+        }
+        .nav-link {
+            display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500; font-size: 0.95rem;
+            border: 1px solid var(--border-gold); padding: 0.5rem 1rem; border-radius: 50px;
+        }
+        .nav-link:hover { background: var(--gold-primary); color: var(--bg-dark); }
+
+        .materi-header { text-align: center; margin-bottom: 3rem; }
+        .bab-tag { display: inline-block; color: var(--gold-primary); font-family: 'Playfair Display', serif; font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .materi-title {
+            font-size: 2.5rem; margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 50%, var(--gold-primary) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .materi-desc { color: var(--text-secondary); font-size: 1.15rem; max-width: 750px; margin: 0 auto 2rem; }
+
+        .author-badge {
+            display: inline-flex; align-items: center; gap: 1rem; background: var(--bg-card);
+            border: 1px solid var(--border-gold); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 3rem;
+        }
+        .author-badge i { color: var(--gold-primary); font-size: 1.5rem; }
+        .author-info { text-align: left; }
+        .author-info strong { display: block; color: var(--text-primary); font-size: 1.1rem; }
+        .author-info span { color: var(--text-secondary); font-size: 0.9rem; }
+
+        .content-section {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 2.5rem; margin-bottom: 2rem;
+        }
+        .section-title {
+            color: var(--gold-primary); font-size: 1.6rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
+        }
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold-primary); padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0;
+        }
+        .highlight-box h4 { color: var(--gold-light); margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; }
+        
+        ul.custom-list { list-style: none; padding-left: 0; }
+        ul.custom-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+        ul.custom-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold-primary); }
+
+        .table-wrapper { overflow-x: auto; margin: 1.5rem 0; }
+        .luxury-table {
+            width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.02); border-radius: 8px; overflow: hidden;
+        }
+        .luxury-table th {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-primary); padding: 1rem; text-align: left;
+            font-family: 'Playfair Display', serif; font-weight: 600; border-bottom: 2px solid var(--border-gold);
+        }
+        .luxury-table td {
+            padding: 1rem; border-bottom: 1px solid var(--border-gold); color: var(--text-secondary); vertical-align: top;
+        }
+        .luxury-table tr:last-child td { border-bottom: none; }
+        .luxury-table tr:hover td { background: rgba(212, 175, 55, 0.05); color: var(--text-primary); }
+
+        .badge-itikaf { background: var(--itikaf); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .badge-lailatul { background: var(--lailatul); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .badge-adab { background: var(--success); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+
+        .quran-quote {
+            text-align: center; padding: 2.5rem; background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(2, 44, 34, 0.8) 100%);
+            border: 1px solid var(--border-gold); border-radius: 16px; margin: 3rem 0;
+        }
+        .arabic-text { font-family: 'Traditional Arabic', serif; font-size: 1.8rem; color: var(--gold-primary); margin-bottom: 1rem; line-height: 2; }
+        .quote-translation { font-style: italic; color: var(--text-secondary); font-size: 1.05rem; }
+        .quote-source { display: block; margin-top: 1rem; color: var(--gold-light); font-weight: 600; font-size: 0.9rem; }
+
+        .fiqh-rule {
+            text-align: center; padding: 1.5rem; border: 1px dashed var(--gold-primary); border-radius: 12px; margin: 1.5rem 0;
+        }
+        .fiqh-rule .arabic { font-family: 'Traditional Arabic', serif; font-size: 1.5rem; color: var(--gold-primary); margin-bottom: 0.5rem; }
+        .fiqh-rule .translation { color: var(--text-secondary); font-style: italic; }
+
+        .keywords { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .keyword-tag {
+            background: rgba(212, 175, 55, 0.15); color: var(--gold-light); padding: 0.4rem 1rem; border-radius: 20px;
+            font-size: 0.85rem; border: 1px solid var(--border-gold);
+        }
+
+        /* Hikmah Cards */
+        .hikmah-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .hikmah-card {
+            background: rgba(99, 102, 241, 0.05);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .hikmah-card:hover {
+            background: rgba(99, 102, 241, 0.08);
+            transform: translateY(-3px);
+            border-color: var(--itikaf);
+        }
+        .hikmah-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: var(--itikaf);
+        }
+        .hikmah-icon {
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            background: rgba(99, 102, 241, 0.2);
+            color: var(--itikaf-light);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .hikmah-title {
+            color: var(--itikaf-light);
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .hikmah-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Adab Cards */
+        .adab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .adab-card {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .adab-card:hover {
+            background: rgba(16, 185, 129, 0.08);
+            transform: translateY(-3px);
+            border-color: var(--success);
+        }
+        .adab-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: var(--success);
+        }
+        .adab-number {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+        .adab-title {
+            color: #a7f3d0;
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .adab-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Lailatul Qadr Special Card */
+        .lailatul-card {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+            border: 2px solid var(--lailatul);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .lailatul-card::before {
+            content: '🌙';
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 3rem;
+            opacity: 0.3;
+        }
+        .lailatul-title {
+            color: var(--lailatul);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 1.5rem 0;
+            margin: 1.5rem 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--itikaf), var(--gold-primary));
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 1.5rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 14px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--itikaf);
+            border: 3px solid var(--bg-dark);
+            box-shadow: 0 0 0 2px var(--itikaf);
+        }
+        .timeline-title {
+            color: var(--itikaf-light);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .timeline-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: rgba(239, 68, 68, 0.05);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-left: 4px solid var(--error);
+            border-radius: 0 8px 8px 0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .warning-box h4 {
+            color: #fecaca;
+            margin-bottom: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .warning-box ul { list-style: none; padding-left: 0; }
+        .warning-box ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .warning-box ul li::before {
+            content: '⚠';
+            position: absolute;
+            left: 0;
+            color: var(--error);
+        }
+
+        /* Quiz Styles */
+        .quiz-container {
+            background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 16px; padding: 2.5rem; margin-top: 4rem;
+        }
+        .quiz-header { text-align: center; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-gold); }
+        
+        .quiz-meta {
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+            background: rgba(212, 175, 55, 0.08); padding: 1rem 1.5rem; border-radius: 12px; margin-bottom: 2rem;
+        }
+        .timer-display {
+            display: flex; align-items: center; gap: 0.5rem; color: var(--gold-primary); font-weight: 600; font-size: 1.1rem;
+        }
+        .timer-display i { font-size: 1.3rem; }
+        .progress-wrapper { flex: 1; min-width: 200px; margin: 0 1rem; }
+        .progress-label { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.25rem; }
+        .progress-bar {
+            width: 100%; height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%; background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+            width: 0%; transition: width 0.4s ease; border-radius: 4px;
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { display: block; margin-bottom: 0.5rem; color: var(--gold-light); font-weight: 500; font-size: 0.95rem; }
+        .form-input, .form-select, .form-textarea {
+            width: 100%; background: var(--bg-input); border: 1px solid var(--border-gold); border-radius: 8px;
+            padding: 0.85rem 1rem; color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 1rem; transition: var(--transition);
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none; border-color: var(--gold-primary); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        .form-textarea { min-height: 120px; resize: vertical; }
+
+        .question-card { 
+            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.1); 
+            border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; transition: var(--transition);
+        }
+        .question-card.correct { border-color: var(--success); background: rgba(16, 185, 129, 0.05); }
+        .question-card.incorrect { border-color: var(--error); background: rgba(239, 68, 68, 0.05); }
+        
+        .question-text { font-weight: 600; margin-bottom: 1rem; color: var(--text-primary); }
+        .points-badge {
+            display: inline-block; background: var(--gold-primary); color: var(--bg-dark); font-size: 0.75rem;
+            font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+        }
+        .topic-badge {
+            display: inline-block; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); 
+            font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+            border: 1px solid var(--border-gold);
+        }
+        
+        .radio-group { display: flex; flex-direction: column; gap: 0.75rem; }
+        .radio-label {
+            display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; border-radius: 8px;
+            cursor: pointer; transition: var(--transition); border: 1px solid transparent;
+        }
+        .radio-label:hover { background: rgba(212, 175, 55, 0.05); }
+        .radio-label input[type="radio"] { accent-color: var(--gold-primary); width: 18px; height: 18px; }
+        
+        .feedback {
+            margin-top: 1rem; padding: 0.85rem 1rem; border-radius: 8px; font-size: 0.9rem; display: none;
+        }
+        .feedback.show { display: block; animation: fadeIn 0.4s ease; }
+        .feedback.correct { background: rgba(16, 185, 129, 0.1); border-left: 3px solid var(--success); color: #a7f3d0; }
+        .feedback.incorrect { background: rgba(239, 68, 68, 0.1); border-left: 3px solid var(--error); color: #fecaca; }
+        .feedback strong { display: block; margin-bottom: 0.25rem; }
+
+        .result-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(2, 44, 34, 0.9) 100%);
+            border: 2px solid var(--gold-primary); border-radius: 16px; padding: 2rem; margin: 2rem 0; display: none;
+        }
+        .result-box.active { display: block; animation: fadeIn 0.5s ease; }
+        .score-display { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold-primary); margin: 1rem 0; }
+        
+        .score-breakdown {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0;
+        }
+        .score-item {
+            background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px; text-align: center;
+            border: 1px solid var(--border-gold);
+        }
+        .score-item .label { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.25rem; }
+        .score-item .value { font-size: 1.5rem; font-weight: 700; color: var(--gold-primary); }
+        
+        .weakness-analysis {
+            background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;
+        }
+        .weakness-analysis h4 { color: #fecaca; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .weakness-list { list-style: none; }
+        .weakness-list li { 
+            padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+            color: var(--text-secondary); font-size: 0.9rem;
+        }
+        .weakness-list li:last-child { border-bottom: none; }
+        .weakness-list li strong { color: var(--gold-light); }
+
+        .btn-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.5rem;
+            border-radius: 8px; font-weight: 600; cursor: pointer; transition: var(--transition); border: none; font-size: 0.95rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--gold-primary) 0%, #b8941f 100%); color: var(--bg-dark); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4); }
+        .btn-outline { background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-primary); }
+        .btn-outline:hover { background: var(--gold-primary); color: var(--bg-dark); }
+        .btn-secondary { background: rgba(255, 255, 255, 0.1); color: var(--text-primary); border: 1px solid var(--border-gold); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+
+        .footer { text-align: center; padding: 3rem 0; margin-top: 4rem; border-top: 1px solid var(--border-gold); color: var(--text-secondary); font-size: 0.9rem; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .materi-title { font-size: 1.8rem; }
+            .content-section, .quiz-container { padding: 1.5rem; }
+            .btn-group { grid-template-columns: 1fr; }
+            .quiz-meta { flex-direction: column; align-items: stretch; }
+            .hikmah-grid, .adab-grid { grid-template-columns: 1fr; }
+        }
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .btn-group, .footer, .quiz-meta { display: none !important; }
+            .content-section, .quiz-container, .result-box { border: 1px solid #ccc; background: white; color: black; break-inside: avoid; }
+            .arabic-text, .materi-title, .section-title { color: #000 !important; -webkit-text-fill-color: #000 !important; }
+            .form-input, .form-textarea { border: 1px solid #ccc; color: black; }
+            .feedback { background: #f3f4f6 !important; color: black !important; border-left-color: #333 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="main-content">
+        <!-- Navigasi Atas -->
+        <nav class="top-nav">
+            <a href="15.html" class="nav-link"><i class="fas fa-arrow-left"></i> Pertemuan 15</a>
+            <span style="color: var(--text-secondary); font-weight: 500;">Fikih Kelas 8 Semester 1</span>
+            <a href="17.html" class="nav-link">UAS (Pertemuan 17) <i class="fas fa-arrow-right"></i></a>
+        </nav>
+
+        <!-- Header Materi -->
+        <header class="materi-header">
+            <div class="bab-tag">🕌 — BAB EMPAT: I'TIKAF (PERTUMUAN PUNCAK) —</div>
+            <h1 class="materi-title">Pertemuan 16: Hikmah I'tikaf & Adab-adabnya</h1>
+            <p class="materi-desc">
+                Menyimpulkan hikmah i'tikaf dan mempraktikkan adab-adabnya sebagai wujud cinta pada kesucian ibadah dan masjid. 
+                Pertemuan ini menjadi puncak BAB 4 yang menyintesis seluruh materi i'tikaf dari pertemuan 15, sekaligus menjadi bekal spiritual untuk meraih Lailatul Qadr.
+            </p>
+            
+            <div class="author-badge">
+                <i class="fas fa-user-graduate"></i>
+                <div class="author-info">
+                    <strong>Ermawati, S.H.I.</strong>
+                    <span>Guru Fikih, MTsN 10 Agam</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- A. Pengantar -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-bullseye"></i> A. Pengantar: Pertemuan Puncak BAB 4</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Setelah mempelajari ketentuan i'tikaf pada Pertemuan 15, pada pertemuan puncak ini kita akan:
+            </p>
+            <ul class="custom-list">
+                <li><span class="badge-itikaf">HIKMAH</span> Menyimpulkan hikmah i'tikaf secara mendalam dari berbagai dimensi (spiritual, psikologis, sosial).</li>
+                <li><span class="badge-adab">ADAB</span> Memahami dan mempraktikkan adab-adab i'tikaf yang dianjurkan oleh syariat.</li>
+                <li><span class="badge-lailatul">LAILATUL QADR</span> Mengenal malam Lailatul Qadr sebagai tujuan utama i'tikaf 10 hari terakhir Ramadhan.</li>
+                <li><strong>Praktik I'tikaf:</strong> Memahami langkah-langkah praktis i'tikaf agar dapat diterapkan dalam kehidupan sehari-hari.</li>
+            </ul>
+            <div class="highlight-box">
+                <h4><i class="fas fa-heart"></i> Tema Spiritual: Wujud Cinta pada Kesucian Ibadah dan Masjid</h4>
+                <p>I'tikaf adalah <strong>puncak ekspresi cinta</strong> seorang hamba kepada Allah dan rumah-Nya. Ketika seorang mu'takif (orang yang i'tikaf) berdiam diri di masjid, ia sedang menyatakan: <em>"Ya Allah, aku meninggalkan dunia dan kesibukanku demi-Mu. Aku memilih rumah-Mu sebagai tempat tinggalku, dan aku mencari wajah-Mu di setiap detik waktu."</em> Inilah cinta yang paling murni — cinta yang tidak mengharap imbalan dunia, melainkan hanya ridha Allah dan surga-Nya.</p>
+            </div>
+        </section>
+
+        <!-- B. Hikmah I'tikaf -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-heart"></i> B. Hikmah I'tikaf: Dimensi Spiritual, Psikologis & Sosial</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                I'tikaf memiliki hikmah yang sangat mendalam. Berikut adalah 9 hikmah i'tikaf yang dibagi ke dalam 3 dimensi:
+            </p>
+
+            <h3 style="color: var(--gold-light); margin: 1.5rem 0 1rem; font-size: 1.2rem;"><i class="fas fa-pray" style="color: var(--itikaf);"></i> Dimensi Spiritual</h3>
+            <div class="hikmah-grid">
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-heart"></i></div>
+                    <div class="hikmah-title">1. Menumbuhkan Cinta kepada Allah</div>
+                    <div class="hikmah-desc">Dengan berdiam diri di rumah Allah, hati semakin terpaut kepada-Nya. Mu'takif sedang "berkhalwat" (berduaan) dengan Sang Kekasih, meninggalkan segala selain-Nya.</div>
+                </div>
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-hand-sparkles"></i></div>
+                    <div class="hikmah-title">2. Membersihkan Jiwa (Tazkiyatun Nafs)</div>
+                    <div class="hikmah-desc">I'tikaf menjadi sarana penyucian jiwa dari kotoran dosa, kesibukan duniawi, dan sifat-sifat tercela. Hati menjadi jernih dan siap menerima cahaya ilahi.</div>
+                </div>
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-moon"></i></div>
+                    <div class="hikmah-title">3. Meraih Lailatul Qadr</div>
+                    <div class="hikmah-desc">I'tikaf 10 hari terakhir Ramadhan adalah sarana utama untuk meraih malam yang lebih baik dari 1000 bulan. Ini adalah kesempatan emas yang tidak boleh dilewatkan.</div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--gold-light); margin: 2rem 0 1rem; font-size: 1.2rem;"><i class="fas fa-brain" style="color: var(--itikaf);"></i> Dimensi Psikologis</h3>
+            <div class="hikmah-grid">
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-hourglass-half"></i></div>
+                    <div class="hikmah-title">4. Melatih Kesabaran dan Kedisiplinan</div>
+                    <div class="hikmah-desc">Meninggalkan kesibukan duniawi selama berhari-hari melatih kesabaran dan kedisiplinan spiritual. Karakter ini sangat berguna dalam menghadapi tantangan hidup.</div>
+                </div>
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-sync-alt"></i></div>
+                    <div class="hikmah-title">5. Detoksifikasi Mental dan Spiritual</div>
+                    <div class="hikmah-desc">I'tikaf menjadi "retret spiritual" yang membersihkan pikiran dari stres, kecemasan, dan gangguan duniawi. Jiwa menjadi tenang dan damai di dekat Allah.</div>
+                </div>
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-bullseye"></i></div>
+                    <div class="hikmah-title">6. Memperkuat Fokus dan Khusyuk</div>
+                    <div class="hikmah-desc">Dengan menjauh dari gangguan dunia, mu'takif dapat berkonsentrasi penuh dalam ibadah. Shalat, dzikir, dan bacaan Al-Qur'an menjadi lebih khusyuk.</div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--gold-light); margin: 2rem 0 1rem; font-size: 1.2rem;"><i class="fas fa-users" style="color: var(--itikaf);"></i> Dimensi Sosial</h3>
+            <div class="hikmah-grid">
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-mosque"></i></div>
+                    <div class="hikmah-title">7. Memakmurkan Masjid</div>
+                    <div class="hikmah-desc">I'tikaf menghidupkan masjid sebagai pusat peradaban Islam. Masjid bukan hanya tempat shalat, tetapi juga pusat pendidikan, dakwah, dan pembinaan umat.</div>
+                </div>
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <div class="hikmah-title">8. Menjadi Teladan bagi Umat</div>
+                    <div class="hikmah-desc">Orang yang i'tikaf menjadi inspirasi bagi keluarga dan masyarakat untuk lebih mencintai masjid dan memperbanyak ibadah. Ini adalah dakwah bil-hal (dakwah dengan perbuatan).</div>
+                </div>
+                <div class="hikmah-card">
+                    <div class="hikmah-icon"><i class="fas fa-balance-scale"></i></div>
+                    <div class="hikmah-title">9. Menyeimbangkan Dunia dan Akhirat</div>
+                    <div class="hikmah-desc">I'tikaf mengingatkan kita bahwa hidup bukan hanya untuk dunia, tetapi juga untuk akhirat. Ini adalah momen "reset" spiritual agar hidup lebih seimbang dan bermakna.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- C. Lailatul Qadr -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-moon"></i> C. Lailatul Qadr: Tujuan Utama I'tikaf 10 Hari Terakhir</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Salah satu hikmah terbesar i'tikaf 10 hari terakhir Ramadhan adalah <strong>meraih Lailatul Qadr</strong> — malam yang lebih baik dari 1000 bulan.
+            </p>
+
+            <div class="lailatul-card">
+                <h3 class="lailatul-title"><i class="fas fa-star"></i> Keistimewaan Lailatul Qadr</h3>
+                <div class="quran-quote" style="margin: 1rem 0; padding: 1.5rem;">
+                    <div class="arabic-text" style="font-size: 1.5rem;">
+                        إِنَّا أَنزَلْنَاهُ فِي لَيْلَةِ الْقَدْرِ ۝ وَمَا أَدْرَاكَ مَا لَيْلَةُ الْقَدْرِ ۝ لَيْلَةُ الْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ
+                    </div>
+                    <p class="quote-translation">
+                        "Sesungguhnya Kami telah menurunkannya (Al-Qur'an) pada malam kemuliaan. Dan tahukah kamu apakah malam kemuliaan itu? Malam kemuliaan itu lebih baik dari seribu bulan."
+                    </p>
+                    <span class="quote-source">— QS. Al-Qadr [97]: 1-3</span>
+                </div>
+                <ul class="custom-list" style="margin-top: 1rem;">
+                    <li><strong>1000 bulan = 83 tahun 4 bulan</strong> — Beribadah satu malam di Lailatul Qadr lebih baik dari beribadah selama 83 tahun!</li>
+                    <li><strong>Malam turunnya Al-Qur'an</strong> secara utuh dari Lauhul Mahfuzh ke langit dunia.</li>
+                    <li><strong>Malam turunnya para malaikat</strong> dan ruh (Jibril) dengan izin Allah untuk membawa rahmat.</li>
+                    <li><strong>Malam penuh kedamaian</strong> hingga terbit fajar (QS. Al-Qadr: 5).</li>
+                    <li><strong>Terjadi pada 10 malam ganjil terakhir Ramadhan</strong> (21, 23, 25, 27, 29) menurut hadits paling kuat.</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📌 Doa yang Dianjurkan di Lailatul Qadr</h4>
+                <p style="font-family: 'Traditional Arabic', serif; font-size: 1.4rem; text-align: center; margin: 1rem 0; color: var(--gold-primary);">
+                    اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي
+                </p>
+                <p style="text-align: center; font-style: italic; color: var(--text-primary);">"Allāhumma innaka 'afuwwun tuhibbul-'afwa fa'fu 'annī"</p>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">"Ya Allah, sesungguhnya Engkau Maha Pemaaf, Engkau mencintai maaf, maka maafkanlah aku." (HR. Tirmidzi, diajarkan Rasulullah saw. kepada Aisyah ra.)</p>
+            </div>
+        </section>
+
+        <!-- D. Adab-adab I'tikaf -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-star-and-crescent"></i> D. Adab-adab I'tikaf yang Dianjurkan</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Agar i'tikaf kita sempurna dan diterima Allah, berikut adab-adab yang dianjurkan:
+            </p>
+            
+            <div class="adab-grid">
+                <div class="adab-card">
+                    <div class="adab-number">1</div>
+                    <div class="adab-title">Memperbanyak Dzikir dan Doa</div>
+                    <div class="adab-desc">Perbanyak dzikir pagi-petang, istighfar, tasbih, tahmid, tahlil, dan doa-doa ma'tsur (yang diajarkan Rasulullah saw.). Ini adalah amalan utama selama i'tikaf.</div>
+                </div>
+                <div class="adab-card">
+                    <div class="adab-number">2</div>
+                    <div class="adab-title">Membaca Al-Qur'an (Tadarus)</div>
+                    <div class="adab-desc">Perbanyak membaca Al-Qur'an dengan tadabbur (perenungan). Targetkan khatam Al-Qur'an selama i'tikaf 10 hari terakhir Ramadhan.</div>
+                </div>
+                <div class="adab-card">
+                    <div class="adab-number">3</div>
+                    <div class="adab-title">Shalat Sunnah dan Qiyamul Lail</div>
+                    <div class="adab-desc">Perbanyak shalat sunnah rawatib, dhuha, tahiyatul masjid, dan terutama qiyamul lail (tahajjud) di sepertiga malam terakhir.</div>
+                </div>
+                <div class="adab-card">
+                    <div class="adab-number">4</div>
+                    <div class="adab-title">Bertaubat dan Beristighfar</div>
+                    <div class="adab-desc">I'tikaf adalah momen emas untuk bertaubat dari segala dosa, baik yang disadari maupun tidak. Perbanyak istighfar dengan penuh penyesalan.</div>
+                </div>
+                <div class="adab-card">
+                    <div class="adab-number">5</div>
+                    <div class="adab-title">Menjaga Lisan dan Perilaku</div>
+                    <div class="adab-desc">Jauhkan diri dari perkataan sia-sia, ghibah, namimah, dan perdebatan. Jaga pandangan, pendengaran, dan seluruh anggota tubuh dari maksiat.</div>
+                </div>
+                <div class="adab-card">
+                    <div class="adab-number">6</div>
+                    <div class="adab-title">Bersedekah dan Berbuat Kebaikan</div>
+                    <div class="adab-desc">Perbanyak sedekah, terutama di 10 hari terakhir Ramadhan. Rasulullah saw. adalah orang yang paling dermawan, terutama di bulan Ramadhan.</div>
+                </div>
+                <div class="adab-card">
+                    <div class="adab-number">7</div>
+                    <div class="adab-title">Mempelajari Ilmu Agama</div>
+                    <div class="adab-desc">Luangkan waktu untuk membaca buku-buku islami, mendengarkan kajian, dan mendalami ilmu agama. Ini adalah investasi akhirat yang berharga.</div>
+                </div>
+                <div class="adab-card">
+                    <div class="adab-number">8</div>
+                    <div class="adab-title">Menjaga Kebersihan Masjid</div>
+                    <div class="adab-desc">Sebagai "tamu Allah", jagalah kebersihan masjid. Jangan meninggalkan sampah, dan bantu kebersihan masjid semampu kita.</div>
+                </div>
+                <div class="adab-card">
+                    <div class="adab-number">9</div>
+                    <div class="adab-title">Mengurangi Tidur dan Percakapan</div>
+                    <div class="adab-desc">Kurangi tidur yang tidak perlu dan percakapan yang tidak bermanfaat. Maksimalkan waktu untuk ibadah dan bermunajat kepada Allah.</div>
+                </div>
+                <div class="adab-card">
+                    <div class="adab-number">10</div>
+                    <div class="adab-title">Mendoakan Umat Islam</div>
+                    <div class="adab-desc">Gunakan momen i'tikaf untuk mendoakan diri, keluarga, umat Islam, dan seluruh makhluk Allah. Doa mu'takif sangat mustajab.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- E. Hal yang Sebaiknya Dihindari -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-ban"></i> E. Hal yang Sebaiknya Dihindari Selama I'tikaf</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Selain hal-hal yang membatalkan i'tikaf, ada beberapa hal yang sebaiknya dihindari agar i'tikaf kita lebih sempurna:
+            </p>
+            
+            <div class="warning-box">
+                <h4><i class="fas fa-exclamation-triangle"></i> Hal-hal yang Sebaiknya Dihindari</h4>
+                <ul>
+                    <li><strong>Berbicara hal yang tidak bermanfaat</strong> — meskipun tidak membatalkan, mengurangi pahala i'tikaf.</li>
+                    <li><strong>Menggunakan gadget berlebihan</strong> — media sosial, game, dan hiburan yang mengganggu kekhusyukan.</li>
+                    <li><strong>Menerima tamu yang tidak perlu</strong> — kecuali untuk kepentingan yang bermanfaat.</li>
+                    <li><strong>Memasak di masjid</strong> — kecuali jika benar-benar darurat dan tidak mengganggu jamaah lain.</li>
+                    <li><strong>Berdagang atau membicarakan urusan dunia</strong> — i'tikaf adalah momen untuk "putus hubungan" dengan dunia.</li>
+                    <li><strong>Marah, bertengkar, atau berbuat keji</strong> — sangat bertentangan dengan ruh i'tikaf.</li>
+                    <li><strong>Tidur berlebihan</strong> — habiskan waktu untuk ibadah, bukan tidur yang tidak perlu.</li>
+                    <li><strong>Makan makanan yang berlebihan</strong> — makanlah secukupnya agar tubuh ringan untuk beribadah.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- F. Panduan Praktik I'tikaf -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-clipboard-list"></i> F. Panduan Praktik I'tikaf (Step-by-Step)</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Berikut langkah-langkah praktis untuk melaksanakan i'tikaf:
+            </p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-title"><i class="fas fa-1" style="color: var(--itikaf);"></i> Persiapan Sebelum I'tikaf</div>
+                    <div class="timeline-desc">
+                        • Mandi junub (jika berhadats besar)<br>
+                        • Berwudhu dengan sempurna<br>
+                        • Memakai pakaian bersih dan wangi (bagi laki-laki)<br>
+                        • Membawa perlengkapan: Al-Qur'an, sajadah, baju ganti, makanan ringan<br>
+                        • Meminta izin suami (bagi wanita) atau keluarga
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title"><i class="fas fa-2" style="color: var(--itikaf);"></i> Masuk Masjid & Niat</div>
+                    <div class="timeline-desc">
+                        • Shalat tahiyatul masjid 2 rakaat<br>
+                        • Berniat i'tikaf dalam hati: <em>"Nawaitul-i'tikāfa fī hāżal-masjidi lillāhi ta'ālā"</em><br>
+                        • Mulai i'tikaf setelah shalat Maghrib (untuk 10 hari terakhir Ramadhan)
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title"><i class="fas fa-3" style="color: var(--itikaf);"></i> Amalan Selama I'tikaf</div>
+                    <div class="timeline-desc">
+                        • Perbanyak shalat sunnah dan qiyamul lail<br>
+                        • Membaca Al-Qur'an dengan tadabbur<br>
+                        • Berdzikir, beristighfar, dan berdoa<br>
+                        • Mempelajari ilmu agama<br>
+                        • Bersedekah dan berbuat kebaikan
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title"><i class="fas fa-4" style="color: var(--itikaf);"></i> Keluar Masjid (Jika Diperlukan)</div>
+                    <div class="timeline-desc">
+                        • Keluar hanya untuk hajat yang diperbolehkan (buang air, mandi junub, mengambil makanan jika tidak ada yang mengantar)<br>
+                        • Segera kembali ke masjid setelah hajat terpenuhi<br>
+                        • Tetap berniat i'tikaf saat keluar
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title"><i class="fas fa-5" style="color: var(--itikaf);"></i> Mengakhiri I'tikaf</div>
+                    <div class="timeline-desc">
+                        • I'tikaf 10 hari terakhir berakhir ketika matahari terbenam akhir Ramadhan (malam takbiran)<br>
+                        • Berdoa dan memohon ampunan Allah<br>
+                        • Keluar masjid dengan niat baik untuk melanjutkan amal saleh
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- G. Jadwal Harian Mu'takif -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-calendar-day"></i> G. Contoh Jadwal Harian Mu'takif</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Berikut contoh jadwal harian yang bisa diterapkan selama i'tikaf:
+            </p>
+            
+            <div class="table-wrapper">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Waktu</th>
+                            <th>Amalan yang Dianjurkan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Sepertiga Malam Terakhir</strong><br>(02.00 - 04.00)</td>
+                            <td>Qiyamul lail (tahajjud), shalat witir, membaca Al-Qur'an, beristighfar, dan berdoa. Ini adalah waktu paling mustajab untuk berdoa.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sahur</strong><br>(04.00 - 04.30)</td>
+                            <td>Makan sahur (meskipun tidak puasa), berdzikir, dan menunggu waktu subuh.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Shalat Subuh - Dzuhur</strong><br>(04.30 - 12.00)</td>
+                            <td>Shalat subuh berjamaah, dzikir pagi, membaca Al-Qur'an, tidur sejenak (jika perlu), mempelajari ilmu agama.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dzuhur - Ashar</strong><br>(12.00 - 15.30)</td>
+                            <td>Shalat dzuhur berjamaah, shalat sunnah rawatib, membaca Al-Qur'an, berdzikir.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ashar - Maghrib</strong><br>(15.30 - 18.00)</td>
+                            <td>Shalat ashar berjamaah, berdzikir petang, membaca Al-Qur'an, berdoa (waktu mustajab menjelang maghrib).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Maghrib - Isya</strong><br>(18.00 - 19.30)</td>
+                            <td>Shalat maghrib berjamaah, membaca Al-Qur'an, berbuka (jika puasa), makan malam ringan.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Isya - Tengah Malam</strong><br>(19.30 - 02.00)</td>
+                            <td>Shalat isya berjamaah, shalat tarawih (jika Ramadhan), membaca Al-Qur'an, istirahat sejenak, kemudian bangun untuk qiyamul lail.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- H. Kaidah Fiqh Pendukung -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-gavel"></i> H. Teori Pendukung: Kaidah Fiqh</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Dalam memahami hikmah dan adab i'tikaf, para ulama merumuskan kaidah fiqh yang sangat mendalam:
+            </p>
+            <div class="fiqh-rule">
+                <div class="arabic">الِاعْتِكَافُ مَدْرَسَةُ التَّرْبِيَةِ الرُّوحِيَّةِ</div>
+                <div class="translation">"I'tikaf adalah madrasah pendidikan spiritual."</div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 1rem;">
+                <strong>Aplikasi:</strong> I'tikaf bukan sekadar ibadah ritual, melainkan <strong>madrasah</strong> (sekolah) yang mendidik jiwa. Setelah keluar dari i'tikaf, seorang mu'takif seharusnya menjadi pribadi yang lebih baik — lebih sabar, lebih khusyuk, lebih cinta masjid, dan lebih dekat kepada Allah.
+            </p>
+
+            <div class="fiqh-rule" style="margin-top: 1.5rem;">
+                <div class="arabic">مَنْ دَخَلَ الْمَسْجِدَ كَانَ ضَيْفَ اللَّهِ، وَمَنْ أَكْرَمَ الضَّيْفَ أَكْرَمَهُ اللَّهُ</div>
+                <div class="translation">"Barangsiapa masuk masjid, ia adalah tamu Allah. Dan barangsiapa memuliakan tamu, Allah akan memuliakannya."</div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 1rem;">
+                <strong>Aplikasi:</strong> Sebagai tamu Allah, mu'takif harus menjaga adab sebagaimana tamu yang dihormati tuan rumah. Jangan berbuat yang tidak pantas di rumah-Nya, jangan berbicara yang tidak bermanfaat, dan perbanyak ibadah sebagai bentuk penghormatan kepada Sang Tuan Rumah.
+            </p>
+            
+            <div class="quran-quote" style="margin-top: 2rem;">
+                <div class="arabic-text">
+                    فَاسْتَجَابَ لَهُمْ رَبُّهُمْ أَنِّي لَا أُضِيعُ عَمَلَ عَامِلٍ مِّنكُم مِّن ذَكَرٍ أَوْ أُنثَىٰ
+                </div>
+                <p class="quote-translation">
+                    "Maka Tuhan mereka memperkenankan permohonannya (dengan berfirman): 'Sesungguhnya Aku tidak menyia-nyiakan amal orang-orang yang beramal di antara kamu, baik laki-laki maupun perempuan.'"
+                </p>
+                <span class="quote-source">— QS. Ali Imran [3]: 195</span>
+            </div>
+        </section>
+
+        <!-- Kata Kunci -->
+        <section style="margin: 3rem 0;">
+            <h3 style="color: var(--gold-primary); margin-bottom: 1rem; font-size: 1.2rem;">◆ Kata Kunci Pertemuan Ini</h3>
+            <div class="keywords">
+                <span class="keyword-tag">Hikmah I'tikaf</span>
+                <span class="keyword-tag">Adab I'tikaf</span>
+                <span class="keyword-tag">Lailatul Qadr</span>
+                <span class="keyword-tag">Mu'takif</span>
+                <span class="keyword-tag">Tamu Allah</span>
+                <span class="keyword-tag">Tazkiyatun Nafs</span>
+                <span class="keyword-tag">Qiyamul Lail</span>
+                <span class="keyword-tag">Tadarus Al-Qur'an</span>
+                <span class="keyword-tag">10 Hari Terakhir Ramadhan</span>
+                <span class="keyword-tag">Malam Ganjil</span>
+                <span class="keyword-tag">Doa Lailatul Qadr</span>
+                <span class="keyword-tag">Madrasah Spiritual</span>
+                <span class="keyword-tag">QS. Al-Qadr: 1-3</span>
+            </div>
+        </section>
+
+        <!-- Referensi -->
+        <section class="content-section" style="background: rgba(212, 175, 55, 0.05);">
+            <h2 class="section-title"><i class="fas fa-bookmark"></i> I. Referensi Pendukung</h2>
+            <ul class="custom-list" style="font-size: 0.95rem;">
+                <li>Kementerian Agama RI. (2021). <em>Pendidikan Agama Islam dan Budi Pekerti Kelas VIII</em>. Jakarta: Kementerian Agama RI.</li>
+                <li>As-Sayyid Sabiq. (2010). <em>Fiqih Sunnah Jilid 1</em>. (Terjemahan). Bandung: Al-Ma'arif. (Bab I'tikaf)</li>
+                <li>Imam An-Nawawi. <em>Al-Majmu' Syarah Al-Muhadzdzab</em> (Kitab Rujukan Madzhab Syafi'i tentang I'tikaf).</li>
+                <li>Imam Ibnu Qudamah. <em>Al-Mughni</em> (Pembahasan I'tikaf dari Perspektif Hanbali).</li>
+                <li>Imam Al-Ghazali. <em>Ihya' 'Ulumuddin</em> (Jilid 1: Bab Adab I'tikaf dan Lailatul Qadr).</li>
+                <li>Wahbah Az-Zuhaili. (2010). <em>Fiqih Islam wa Adillatuhu</em>. (Terjemahan). Jakarta: Gema Insani.</li>
+                <li>Al-Qur'anul Karim dan Terjemahannya, Kementerian Agama RI.</li>
+            </ul>
+        </section>
+
+        <!-- =========================================
+             UJI FORMATIF (ENHANCED VERSION)
+             ========================================= -->
+        <div class="quiz-container" id="uji-formatif">
+            <div class="quiz-header">
+                <h2 style="color: var(--gold-primary); font-size: 1.8rem; margin-bottom: 0.5rem;">📝 Uji Formatif Pertemuan 16</h2>
+                <p style="color: var(--text-secondary);">Evaluasi Pemahaman Materi Hikmah I'tikaf & Adab-adabnya</p>
+                <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--gold-light);">
+                    📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) &nbsp;|&nbsp; ✍️ Bagian B: Essay (5 soal, 20 poin/soal)
+                </div>
+            </div>
+
+            <!-- Timer & Progress -->
+            <div class="quiz-meta">
+                <div class="timer-display">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>Waktu: <span id="timer">00:00</span></span>
+                </div>
+                <div class="progress-wrapper">
+                    <div class="progress-label">Progres Pengerjaan: <span id="progress-text">0/15 soal dijawab</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="quizForm">
+                <!-- Identitas -->
+                <div class="content-section" style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1.5rem; font-size: 1.2rem;">📋 Identitas Siswa</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div class="form-group">
+                            <label class="form-label">Nama Lengkap *</label>
+                            <input type="text" id="nama" class="form-input" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">No. Absen / NIS *</label>
+                            <input type="text" id="nis" class="form-input" placeholder="Contoh: 12345" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tanggal Ujian</label>
+                            <input type="date" id="tanggal" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Kelas</label>
+                            <select id="kelas" class="form-select">
+                                <option value="VIII-A">VIII-A</option>
+                                <option value="VIII-B">VIII-B</option>
+                                <option value="VIII-C">VIII-C</option>
+                                <option value="VIII-D">VIII-D</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <h3 style="color: var(--text-primary); margin: 2rem 0 1.5rem; font-size: 1.3rem;">📋 Bagian A: Pilihan Ganda</h3>
+                
+                <div class="question-card" data-topic="hikmah">
+                    <p class="question-text">1. Salah satu hikmah i'tikaf dari dimensi spiritual adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Hikmah</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q1" value="A"> A. Menambah kekayaan</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="B"> B. Menumbuhkan cinta kepada Allah dan membersihkan jiwa</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="C"> C. Menggugurkan kewajiban shalat</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="D"> D. Menambah sifat sombong</label>
+                    </div>
+                    <div class="feedback" id="fb-q1"></div>
+                </div>
+
+                <div class="question-card" data-topic="lailatul">
+                    <p class="question-text">2. Lailatul Qadr terjadi pada... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Lailatul Qadr</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q2" value="A"> A. 10 hari pertama Ramadhan</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="B"> B. 10 hari tengah Ramadhan</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="C"> C. 10 malam terakhir Ramadhan (terutama malam ganjil)</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="D"> D. Setiap malam sepanjang tahun</label>
+                    </div>
+                    <div class="feedback" id="fb-q2"></div>
+                </div>
+
+                <div class="question-card" data-topic="lailatul">
+                    <p class="question-text">3. Keistimewaan Lailatul Qadr menurut QS. Al-Qadr adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Lailatul Qadr</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q3" value="A"> A. Lebih baik dari 100 bulan</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="B"> B. Lebih baik dari 1000 bulan</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="C"> C. Lebih baik dari 10.000 bulan</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="D"> D. Sama dengan malam lainnya</label>
+                    </div>
+                    <div class="feedback" id="fb-q3"></div>
+                </div>
+
+                <div class="question-card" data-topic="adab">
+                    <p class="question-text">4. Berikut ini yang termasuk adab i'tikaf yang dianjurkan adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Adab</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q4" value="A"> A. Berbicara hal yang tidak bermanfaat</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="B"> B. Menggunakan gadget berlebihan</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="C"> C. Memperbanyak dzikir, doa, dan membaca Al-Qur'an</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="D"> D. Tidur sepanjang hari</label>
+                    </div>
+                    <div class="feedback" id="fb-q4"></div>
+                </div>
+
+                <div class="question-card" data-topic="adab">
+                    <p class="question-text">5. Doa yang diajarkan Rasulullah saw. untuk Lailatul Qadr adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Adab</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q5" value="A"> A. Allāhumma innaka 'afuwwun tuhibbul-'afwa fa'fu 'annī</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="B"> B. Rabbana ātinā fiddunyā hasanah</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="C"> C. Subhanallāhil 'azhīm</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="D"> D. Astaghfirullāhal 'azhīm</label>
+                    </div>
+                    <div class="feedback" id="fb-q5"></div>
+                </div>
+
+                <div class="question-card" data-topic="hikmah">
+                    <p class="question-text">6. Salah satu hikmah i'tikaf dari dimensi sosial adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Hikmah</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q6" value="A"> A. Membersihkan jiwa</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="B"> B. Memakmurkan masjid dan menjadi teladan bagi umat</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="C"> C. Melatih kesabaran</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="D"> D. Meraih Lailatul Qadr</label>
+                    </div>
+                    <div class="feedback" id="fb-q6"></div>
+                </div>
+
+                <div class="question-card" data-topic="praktik">
+                    <p class="question-text">7. Waktu terbaik untuk berdoa dan bermunajat kepada Allah selama i'tikaf adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Praktik</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q7" value="A"> A. Setelah shalat dzuhur</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="B"> B. Sepertiga malam terakhir</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="C"> C. Setelah shalat ashar</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="D"> D. Setelah makan sahur</label>
+                    </div>
+                    <div class="feedback" id="fb-q7"></div>
+                </div>
+
+                <div class="question-card" data-topic="dalil">
+                    <p class="question-text">8. Surah Al-Qadr ayat 1-3 menjelaskan tentang... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Dalil Naqli</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q8" value="A"> A. Kewajiban puasa Ramadhan</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="B"> B. Keistimewaan Lailatul Qadr yang lebih baik dari 1000 bulan</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="C"> C. Ketentuan zakat fitrah</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="D"> D. Larangan riba</label>
+                    </div>
+                    <div class="feedback" id="fb-q8"></div>
+                </div>
+
+                <div class="question-card" data-topic="contoh">
+                    <p class="question-text">9. Ahmad ingin i'tikaf 10 hari terakhir Ramadhan. Amalan utama yang sebaiknya dilakukan Ahmad adalah... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Contoh Kasus</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q9" value="A"> A. Tidur sepanjang hari untuk mengumpulkan tenaga</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="B"> B. Berbicara dengan teman-teman tentang urusan dunia</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="C"> C. Memperbanyak qiyamul lail, membaca Al-Qur'an, dan berdoa mencari Lailatul Qadr</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="D"> D. Menggunakan gadget untuk hiburan</label>
+                    </div>
+                    <div class="feedback" id="fb-q9"></div>
+                </div>
+
+                <div class="question-card" data-topic="hikmah">
+                    <p class="question-text">10. I'tikaf disebut sebagai "madrasah pendidikan spiritual" karena... 
+                        <span class="points-badge">10 POIN</span>
+                        <span class="topic-badge">Hikmah</span>
+                    </p>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="q10" value="A"> A. I'tikaf adalah tempat untuk belajar ilmu dunia</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="B"> B. I'tikaf mendidik jiwa menjadi lebih sabar, khusyuk, dan dekat kepada Allah</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="C"> C. I'tikaf adalah sekolah formal</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="D"> D. I'tikaf adalah tempat untuk bersantai</label>
+                    </div>
+                    <div class="feedback" id="fb-q10"></div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <h3 style="color: var(--text-primary); margin: 3rem 0 1.5rem; font-size: 1.3rem;">✍️ Bagian B: Essay</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                    💡 <em>Catatan: Sistem akan memberikan nilai simulasi berdasarkan kelengkapan jawaban (>30 karakter). Penilaian akhir yang sebenarnya tetap berada di wewenang guru.</em>
+                </p>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 1: Jelaskan minimal 5 hikmah i'tikaf dari berbagai dimensi (spiritual, psikologis, sosial)! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay1" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 2: Jelaskan keistimewaan Lailatul Qadr berdasarkan QS. Al-Qadr! Mengapa i'tikaf 10 hari terakhir Ramadhan menjadi sarana utama untuk meraihnya? <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay2" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 3: Sebutkan minimal 5 adab i'tikaf yang dianjurkan! Jelaskan masing-masing! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay3" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 4: Tuliskan doa yang diajarkan Rasulullah saw. untuk Lailatul Qadr dalam bahasa Arab, latin, dan artinya! Jelaskan makna doa tersebut! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay4" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="question-card">
+                    <p class="question-text">Essay 5: Jelaskan bagaimana i'tikaf menjadi wujud "cinta pada kesucian ibadah dan masjid"! Hubungkan dengan konsep "tamu Allah di rumah-Nya"! <span class="points-badge">20 POIN</span></p>
+                    <textarea id="essay5" class="form-textarea" placeholder="Tuliskan jawaban Anda di sini..."></textarea>
+                </div>
+
+                <!-- Hasil Uji -->
+                <div id="hasil-uji" class="result-box">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1rem;">📊 Hasil Uji Formatif</h3>
+                    
+                    <div class="score-breakdown">
+                        <div class="score-item">
+                            <div class="label">Pilihan Ganda</div>
+                            <div class="value"><span id="mc-result">0</span>/100</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Essay (Simulasi)</div>
+                            <div class="value"><span id="essay-result">0</span>/100</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Waktu Pengerjaan</div>
+                            <div class="value" id="time-result">00:00</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="label">Benar PG</div>
+                            <div class="value"><span id="correct-count">0</span>/10</div>
+                        </div>
+                    </div>
+                    
+                    <div style="border-top: 1px solid var(--border-gold); padding-top: 1rem; margin-top: 1rem; text-align: center;">
+                        <div style="color: var(--gold-light); font-size: 1rem; margin-bottom: 0.5rem;">Skor Akhir Total</div>
+                        <div class="score-display"><span id="total-result">0</span> <span style="font-size: 1.5rem; color: var(--text-secondary);">/ 200</span></div>
+                        <div id="grade-display" style="font-size: 1.2rem; color: var(--gold-light); margin-top: 0.5rem;"></div>
+                    </div>
+
+                    <!-- Analisis Kelemahan -->
+                    <div class="weakness-analysis" id="weakness-analysis" style="display: none;">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Analisis Kelemahan & Saran Perbaikan</h4>
+                        <ul class="weakness-list" id="weakness-list"></ul>
+                    </div>
+                </div>
+
+                <!-- Tombol Aksi -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary" onclick="calculateScore()">
+                        <i class="fas fa-check-circle"></i> KIRIM JAWABAN & LIHAT HASIL
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="downloadPDF()">
+                        <i class="fas fa-file-pdf"></i> UNDUH PDF LENGKAP
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="downloadTXT()">
+                        <i class="fas fa-file-alt"></i> UNDUH SKOR (TXT)
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="resetQuiz()">
+                        <i class="fas fa-redo"></i> MULAI ULANG
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="sendEmail()">
+                        <i class="fas fa-envelope"></i> KIRIM KE EMAIL GURU
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 1rem; color: var(--gold-primary);">
+                Fikih Kelas 8 Semester 1
+            </p>
+            <p>&copy; 2026 Ermawati, S.H.I. — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p style="margin-top: 0.5rem;">
+                Email: <a href="mailto:erma34779@gmail.com" style="color: var(--gold-primary);">erma34779@gmail.com</a>
+            </p>
+            <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem;">
+                <a href="15.html" class="nav-link" style="font-size: 0.85rem;"><i class="fas fa-arrow-left"></i> Pertemuan 15</a>
+                <a href="17.html" class="nav-link" style="font-size: 0.85rem;">UAS (Pertemuan 17) <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- =========================================
+         JAVASCRIPT LOGIC (ENHANCED)
+         ========================================= -->
+    <script>
+        // =========================================
+        // DATA SOAL & KUNCI JAWABAN
+        // =========================================
+        const quizData = {
+            q1: { 
+                correct: 'B', 
+                topic: 'Hikmah',
+                explanation: 'Hikmah DIMENSI SPIRITUAL i\'tikaf: (1) Menumbuhkan cinta kepada Allah, (2) Membersihkan jiwa (tazkiyatun nafs), (3) Meraih Lailatul Qadr. Pilihan A, C, D bukan hikmah i\'tikaf.' 
+            },
+            q2: { 
+                correct: 'C', 
+                topic: 'Lailatul Qadr',
+                explanation: 'Lailatul Qadr terjadi pada 10 MALAM TERAKHIR RAMADHAN, terutama pada MALAM GANJIL (21, 23, 25, 27, 29) menurut hadits paling kuat dari Aisyah ra.' 
+            },
+            q3: { 
+                correct: 'B', 
+                topic: 'Lailatul Qadr',
+                explanation: 'QS. Al-Qadr ayat 3: "Lailatul qadr khairum min alfi syahr" = Malam kemuliaan itu LEBIH BAIK DARI SERIBU BULAN. 1000 bulan = 83 tahun 4 bulan!' 
+            },
+            q4: { 
+                correct: 'C', 
+                topic: 'Adab',
+                explanation: 'Adab i\'tikaf yang DIANJURKAN: memperbanyak dzikir, doa, dan membaca Al-Qur\'an. Yang DIHINDARI: bicara tidak bermanfaat, gadget berlebihan, tidur sepanjang hari.' 
+            },
+            q5: { 
+                correct: 'A', 
+                topic: 'Adab',
+                explanation: 'Doa Lailatul Qadr yang diajarkan Rasulullah saw. kepada Aisyah ra.: "Allāhumma innaka \'afuwwun tuhibbul-\'afwa fa\'fu \'annī" (Ya Allah, Engkau Maha Pemaaf, Engkau mencintai maaf, maka maafkanlah aku). (HR. Tirmidzi)' 
+            },
+            q6: { 
+                correct: 'B', 
+                topic: 'Hikmah',
+                explanation: 'Hikmah DIMENSI SOSIAL i\'tikaf: (1) Memakmurkan masjid, (2) Menjadi teladan bagi umat, (3) Menyeimbangkan dunia-akhirat. Pilihan A = spiritual, C = psikologis, D = spiritual.' 
+            },
+            q7: { 
+                correct: 'B', 
+                topic: 'Praktik',
+                explanation: 'Waktu TERBAIK untuk berdoa adalah SEPERTIGA MALAM TERAKHIR (sekitar 02.00-04.00). Rasulullah saw. bersabda: "Tuhan kita turun ke langit dunia setiap malam pada sepertiga malam terakhir..." (HR. Bukhari & Muslim)' 
+            },
+            q8: { 
+                correct: 'B', 
+                topic: 'Dalil Naqli',
+                explanation: 'Surah Al-Qadr (103) ayat 1-3 menjelaskan KEISTIMEWAAN LAILATUL QADR yang lebih baik dari 1000 bulan. Ini adalah surah khusus tentang malam kemuliaan.' 
+            },
+            q9: { 
+                correct: 'C', 
+                topic: 'Contoh Kasus',
+                explanation: 'Amalan UTAMA i\'tikaf 10 hari terakhir: (1) Qiyamul lail, (2) Membaca Al-Qur\'an, (3) Berdoa mencari Lailatul Qadr. Tidur, bicara dunia, dan gadget adalah hal yang HARUS DIKURANGI.' 
+            },
+            q10: { 
+                correct: 'B', 
+                topic: 'Hikmah',
+                explanation: 'I\'tikaf disebut "MADRASAH PENDIDIKAN SPIRITUAL" karena mendidik jiwa menjadi lebih sabar, khusyuk, dan dekat kepada Allah. Setelah i\'tikaf, mu\'takif seharusnya menjadi pribadi yang LEBIH BAIK.' 
+            }
+        };
+
+        // =========================================
+        // TIMER & PROGRESS
+        // =========================================
+        let timerInterval;
+        let seconds = 0;
+        let quizStarted = false;
+
+        function startTimer() {
+            if (quizStarted) return;
+            quizStarted = true;
+            timerInterval = setInterval(() => {
+                seconds++;
+                const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+                const secs = (seconds % 60).toString().padStart(2, '0');
+                document.getElementById('timer').innerText = `${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function getFormattedTime() {
+            const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const secs = (seconds % 60).toString().padStart(2, '0');
+            return `${mins}:${secs}`;
+        }
+
+        function updateProgress() {
+            let answered = 0;
+            for (let i = 1; i <= 10; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+            }
+            for (let i = 1; i <= 5; i++) {
+                if (document.getElementById(`essay${i}`).value.trim().length > 0) answered++;
+            }
+            const total = 15;
+            const percent = (answered / total) * 100;
+            document.getElementById('progress-fill').style.width = percent + '%';
+            document.getElementById('progress-text').innerText = `${answered}/${total} soal dijawab`;
+        }
+
+        document.querySelectorAll('input[type="radio"]').forEach(el => {
+            el.addEventListener('change', () => { startTimer(); updateProgress(); });
+        });
+        document.querySelectorAll('textarea').forEach(el => {
+            el.addEventListener('input', () => { startTimer(); updateProgress(); });
+        });
+
+        // =========================================
+        // HITUNG SKOR
+        // =========================================
+        function calculateScore() {
+            const nama = document.getElementById('nama').value.trim();
+            if (!nama) {
+                alert('Mohon isi Nama Lengkap terlebih dahulu!');
+                document.getElementById('nama').focus();
+                return;
+            }
+
+            stopTimer();
+
+            let mcScore = 0;
+            let correctCount = 0;
+            const topicStats = {};
+
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const data = quizData[`q${i}`];
+                const card = document.querySelector(`.question-card[data-topic="${data.topic}"]`);
+                const feedback = document.getElementById(`fb-q${i}`);
+                
+                if (!topicStats[data.topic]) {
+                    topicStats[data.topic] = { correct: 0, total: 0 };
+                }
+                topicStats[data.topic].total++;
+
+                if (selected && selected.value === data.correct) {
+                    mcScore += 10;
+                    correctCount++;
+                    topicStats[data.topic].correct++;
+                    card.classList.add('correct');
+                    card.classList.remove('incorrect');
+                    feedback.className = 'feedback show correct';
+                    feedback.innerHTML = `<strong><i class="fas fa-check-circle"></i> BENAR!</strong> ${data.explanation}`;
+                } else {
+                    card.classList.add('incorrect');
+                    card.classList.remove('correct');
+                    feedback.className = 'feedback show incorrect';
+                    const userAnswer = selected ? selected.value : 'Tidak dijawab';
+                    feedback.innerHTML = `<strong><i class="fas fa-times-circle"></i> KURANG TEPAT</strong> 
+                        Jawaban Anda: ${userAnswer} | Jawaban Benar: <strong>${data.correct}</strong><br>
+                        <em style="margin-top: 0.5rem; display: block;">${data.explanation}</em>`;
+                }
+            }
+
+            let essayScore = 0;
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim();
+                if (answer.length > 30) {
+                    essayScore += 20;
+                } else if (answer.length > 0) {
+                    essayScore += 10;
+                }
+            }
+
+            const totalScore = mcScore + essayScore;
+            
+            document.getElementById('mc-result').innerText = mcScore;
+            document.getElementById('essay-result').innerText = essayScore;
+            document.getElementById('total-result').innerText = totalScore;
+            document.getElementById('correct-count').innerText = correctCount;
+            document.getElementById('time-result').innerText = getFormattedTime();
+            
+            let grade = '';
+            const percentage = (totalScore / 200) * 100;
+            if (percentage >= 90) grade = '🏆 MUMTAZ (Istimewa)';
+            else if (percentage >= 80) grade = '🌟 JAYYID JIDDAN (Sangat Baik)';
+            else if (percentage >= 70) grade = '✨ JAYYID (Baik)';
+            else if (percentage >= 60) grade = '📖 MAQBUL (Cukup)';
+            else grade = '💪 PERLU BIMBINGAN LANJUT';
+            document.getElementById('grade-display').innerText = grade;
+
+            const weaknesses = [];
+            for (const [topic, stats] of Object.entries(topicStats)) {
+                if (stats.correct < stats.total) {
+                    const percent = (stats.correct / stats.total) * 100;
+                    let suggestion = '';
+                    switch(topic) {
+                        case 'Hikmah': suggestion = 'Pelajari 9 hikmah i\'tikaf dari 3 dimensi: spiritual (cinta Allah, tazkiyah, Lailatul Qadr), psikologis (sabar, detoks, fokus), sosial (makmurkan masjid, teladan, keseimbangan).'; break;
+                        case 'Lailatul Qadr': suggestion = 'Hafalkan: Lailatul Qadr pada 10 malam ganjil terakhir Ramadhan, lebih baik dari 1000 bulan (83 tahun 4 bulan). Pelajari QS. Al-Qadr: 1-5.'; break;
+                        case 'Adab': suggestion = 'Pelajari 10 adab i\'tikaf: dzikir, tadarus, qiyamul lail, taubat, jaga lisan, sedekah, belajar, jaga kebersihan masjid, kurangi tidur, doakan umat.'; break;
+                        case 'Praktik': suggestion = 'Pelajari waktu terbaik berdoa: sepertiga malam terakhir. Pelajari panduan praktik i\'tikaf 5 langkah.'; break;
+                        case 'Dalil Naqli': suggestion = 'Hafalkan QS. Al-Qadr: 1-3 tentang keistimewaan Lailatul Qadr. Pelajari juga doa Lailatul Qadr dari HR. Tirmidzi.'; break;
+                        case 'Contoh Kasus': suggestion = 'Amalan utama i\'tikaf: qiyamul lail, tadarus Al-Qur\'an, berdoa mencari Lailatul Qadr. Hindari: tidur, bicara dunia, gadget.'; break;
+                    }
+                    weaknesses.push({ topic, percent, suggestion });
+                }
+            }
+
+            const weaknessBox = document.getElementById('weakness-analysis');
+            const weaknessList = document.getElementById('weakness-list');
+            if (weaknesses.length > 0) {
+                weaknessList.innerHTML = weaknesses.map(w => 
+                    `<li><strong>📌 ${w.topic.toUpperCase()}</strong> (${w.percent.toFixed(0)}% benar)<br>${w.suggestion}</li>`
+                ).join('');
+                weaknessBox.style.display = 'block';
+            } else {
+                weaknessBox.style.display = 'none';
+            }
+
+            const resultBox = document.getElementById('hasil-uji');
+            resultBox.classList.add('active');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            if (essayScore < 100) {
+                setTimeout(() => {
+                    alert('Catatan: Nilai Essay adalah simulasi otomatis berdasarkan kelengkapan jawaban. Guru akan meninjau jawaban Anda secara manual.');
+                }, 500);
+            }
+        }
+
+        // =========================================
+        // DOWNLOAD PDF
+        // =========================================
+        function downloadPDF() {
+            const element = document.getElementById('main-content');
+            const nama = document.getElementById('nama').value || 'Siswa';
+            
+            const opt = {
+                margin: [0.5, 0.5, 0.5, 0.5],
+                filename: `Uji_Formatif_Pertemuan_16_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, backgroundColor: '#022c22' },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            const btn = event.target.closest('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses PDF...';
+            btn.disabled = true;
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }).catch(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                alert('Gagal membuat PDF. Silakan coba lagi.');
+            });
+        }
+
+        // =========================================
+        // DOWNLOAD TXT
+        // =========================================
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value;
+            const tanggal = document.getElementById('tanggal').value || new Date().toLocaleDateString('id-ID');
+            const mc = document.getElementById('mc-result').innerText;
+            const essay = document.getElementById('essay-result').innerText;
+            const total = document.getElementById('total-result').innerText;
+            const correct = document.getElementById('correct-count').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText;
+
+            let pgDetail = '';
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const userAns = selected ? selected.value : '-';
+                const correctAns = quizData[`q${i}`].correct;
+                const status = userAns === correctAns ? '✓ BENAR' : '✗ SALAH';
+                pgDetail += `  Soal ${i.toString().padStart(2, ' ')}: Jawaban Anda = ${userAns} | Kunci = ${correctAns} | ${status}\n`;
+            }
+
+            let essayDetail = '';
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim() || '(Tidak dijawab)';
+                const shortAns = answer.length > 100 ? answer.substring(0, 100) + '...' : answer;
+                essayDetail += `  Essay ${i}: ${shortAns}\n\n`;
+            }
+
+            const text = `╔══════════════════════════════════════════════════════════╗
+║          HASIL UJI FORMATIF - FIKIH KELAS 8             ║
+║              MTsN 10 AGAM - SEMESTER 1                  ║
+╚══════════════════════════════════════════════════════════╝
+
+Mata Pelajaran : Fikih Kelas 8 Semester 1
+Materi         : Pertemuan 16 - Hikmah I'tikaf & Adab-adabnya
+Bab            : BAB 4 - I'tikaf (Pertemuan Puncak)
+Sekolah        : MTsN 10 Agam
+Guru Pengampu  : Ermawati, S.H.I. (erma34779@gmail.com)
+Tanggal Ujian  : ${tanggal}
+Waktu Pengerjaan: ${waktu}
+
+═══════════════════════════════════════════════════════════
+                    IDENTITAS SISWA
+═══════════════════════════════════════════════════════════
+Nama Lengkap : ${nama}
+NIS          : ${nis}
+Kelas        : ${kelas}
+
+═══════════════════════════════════════════════════════════
+                  RINGKASAN NILAI
+═══════════════════════════════════════════════════════════
+Nilai Pilihan Ganda   : ${mc} / 100  (${correct}/10 benar)
+Nilai Essay (Simulasi): ${essay} / 100
+───────────────────────────────────────────────────────────
+NILAI AKHIR TOTAL     : ${total} / 200
+PREDIKAT              : ${grade}
+
+═══════════════════════════════════════════════════════════
+                 DETAIL JAWABAN PILIHAN GANDA
+═══════════════════════════════════════════════════════════
+${pgDetail}
+═══════════════════════════════════════════════════════════
+                 DETAIL JAWABAN ESSAY
+═══════════════════════════════════════════════════════════
+${essayDetail}
+═══════════════════════════════════════════════════════════
+CATATAN PENTING
+═══════════════════════════════════════════════════════════
+• Pertemuan 16 adalah PERTUMUAN PUNCAK BAB 4 (I'tikaf).
+• Setelah ini, siswa akan menghadapi UAS (Pertemuan 17) 
+  yang menguji seluruh materi semester 1.
+• Nilai Essay di atas adalah SIMULASI OTOMATIS berdasarkan 
+  kelengkapan jawaban (>30 karakter).
+• Penilaian akhir yang sebenarnya berada di wewenang guru 
+  pengampu (Ibu Ermawati, S.H.I.).
+
+═══════════════════════════════════════════════════════════
+Dokumen ini digenerate otomatis pada: ${new Date().toLocaleString('id-ID')}
+© 2026 Ermawati, S.H.I. - MTsN 10 Agam
+═══════════════════════════════════════════════════════════`;
+            
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Skor_Detail_Pertemuan16_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // =========================================
+        // RESET QUIZ
+        // =========================================
+        function resetQuiz() {
+            if(!confirm('Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang?')) return;
+            
+            document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+            document.querySelectorAll('textarea').forEach(el => el.value = '');
+            document.getElementById('nama').value = '';
+            document.getElementById('nis').value = '';
+            document.getElementById('tanggal').value = '';
+            
+            document.getElementById('mc-result').innerText = '0';
+            document.getElementById('essay-result').innerText = '0';
+            document.getElementById('total-result').innerText = '0';
+            document.getElementById('correct-count').innerText = '0';
+            document.getElementById('time-result').innerText = '00:00';
+            document.getElementById('grade-display').innerText = '';
+            document.getElementById('hasil-uji').classList.remove('active');
+            document.getElementById('weakness-analysis').style.display = 'none';
+            
+            document.querySelectorAll('.question-card').forEach(el => {
+                el.classList.remove('correct', 'incorrect');
+            });
+            document.querySelectorAll('.feedback').forEach(el => {
+                el.className = 'feedback';
+                el.innerHTML = '';
+            });
+            
+            stopTimer();
+            seconds = 0;
+            quizStarted = false;
+            document.getElementById('timer').innerText = '00:00';
+            document.getElementById('progress-fill').style.width = '0%';
+            document.getElementById('progress-text').innerText = '0/15 soal dijawab';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // =========================================
+        // KIRIM EMAIL
+        // =========================================
+        function sendEmail() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value;
+            const total = document.getElementById('total-result').innerText;
+            const mc = document.getElementById('mc-result').innerText;
+            const essay = document.getElementById('essay-result').innerText;
+            const correct = document.getElementById('correct-count').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText || 'Belum dinilai';
+            
+            if (total === '0' || !document.getElementById('hasil-uji').classList.contains('active')) {
+                alert('Silakan kerjakan uji formatif dan klik "KIRIM JAWABAN & LIHAT HASIL" terlebih dahulu sebelum mengirim email.');
+                return;
+            }
+
+            const subject = encodeURIComponent(`Hasil Uji Formatif Pertemuan 16 (Hikmah & Adab I'tikaf) - ${nama} - ${kelas}`);
+            const body = encodeURIComponent(`Assalamu'alaikum Wr. Wb.
+
+Yth. Ibu Ermawati, S.H.I.,
+
+Berikut adalah hasil uji formatif saya pada Pertemuan 16 (Pertemuan Puncak BAB 4 - Hikmah I'tikaf & Adab-adabnya):
+
+═══════════════════════════════════
+IDENTITAS SISWA
+═══════════════════════════════════
+Nama  : ${nama}
+NIS   : ${nis}
+Kelas : ${kelas}
+
+═══════════════════════════════════
+HASIL PENILAIAN
+═══════════════════════════════════
+Pilihan Ganda    : ${mc}/100 (${correct}/10 benar)
+Essay (Simulasi) : ${essay}/100
+Waktu Pengerjaan : ${waktu}
+───────────────────────────────────
+NILAI AKHIR      : ${total}/200
+PREDIKAT         : ${grade}
+
+Mohon bimbingan dan koreksinya untuk jawaban essay.
+
+Jazakumullahu Khairan Katsiran.
+Wassalamu'alaikum Wr. Wb.
+
+───────────────────────────────────
+Dikirim otomatis dari Sistem Uji Formatif Fikih Kelas 8
+© 2026 MTsN 10 Agam`);
+            
+            window.location.href = `mailto:erma34779@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        document.getElementById('tanggal').valueAsDate = new Date();
+    </script>
+</body>
+</html>
