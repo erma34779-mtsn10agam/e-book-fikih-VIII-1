@@ -1,0 +1,2271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Akhir Semester (UAS) | Fikih Kelas 8 Semester 1</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        :root {
+            --bg-dark: #022c22;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-input: rgba(255, 255, 255, 0.05);
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-gold: rgba(212, 175, 55, 0.3);
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --bab1: #10b981;
+            --bab2: #3b82f6;
+            --bab3: #a855f7;
+            --bab4: #ec4899;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: var(--gold-primary); transition: var(--transition); }
+        a:hover { color: var(--gold-light); }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+
+        /* UAS Hero */
+        .uas-hero {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(2, 44, 34, 0.9) 100%);
+            border: 2px solid var(--gold-primary);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .uas-hero::before {
+            content: '🏆';
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            font-size: 4rem;
+            opacity: 0.15;
+        }
+        .uas-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        .uas-title {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 50%, var(--gold-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        .uas-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        .uas-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .uas-info-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-gold);
+        }
+        .uas-info-item .label { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.25rem; }
+        .uas-info-item .value { color: var(--gold-primary); font-weight: 600; font-size: 1.1rem; }
+
+        .top-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 0; border-bottom: 1px solid var(--border-gold); margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
+        }
+        .nav-link {
+            display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500; font-size: 0.95rem;
+            border: 1px solid var(--border-gold); padding: 0.5rem 1rem; border-radius: 50px;
+        }
+        .nav-link:hover { background: var(--gold-primary); color: var(--bg-dark); }
+
+        .section-header {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+        }
+        .section-header.pg::before { background: var(--bab1); }
+        .section-header.pgk::before { background: var(--bab2); }
+        .section-header.bs::before { background: var(--bab3); }
+        .section-header.mj::before { background: var(--gold-primary); }
+        
+        .section-number {
+            display: inline-block;
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .section-title-main {
+            color: var(--gold-primary);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .section-desc { color: var(--text-secondary); margin-bottom: 1rem; }
+        .section-rules {
+            background: rgba(212, 175, 55, 0.08);
+            border-left: 3px solid var(--gold-primary);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1rem;
+        }
+        .section-rules ul { list-style: none; padding-left: 0; }
+        .section-rules ul li {
+            padding: 0.35rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .section-rules ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold-primary);
+            font-weight: 700;
+        }
+
+        .content-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .question-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        .question-card.correct { border-color: var(--success); background: rgba(16, 185, 129, 0.05); }
+        .question-card.incorrect { border-color: var(--error); background: rgba(239, 68, 68, 0.05); }
+        .question-card.partial { border-color: var(--warning); background: rgba(245, 158, 11, 0.05); }
+        
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .question-number {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gold-primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .question-number .num {
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        .question-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .badge-bab {
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: white;
+        }
+        .badge-bab.bab1 { background: var(--bab1); }
+        .badge-bab.bab2 { background: var(--bab2); }
+        .badge-bab.bab3 { background: var(--bab3); }
+        .badge-bab.bab4 { background: var(--bab4); }
+        
+        .points-badge {
+            display: inline-block;
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+        .type-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold-light);
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-gold);
+        }
+
+        .question-text {
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .radio-group, .checkbox-group { display: flex; flex-direction: column; gap: 0.6rem; }
+        .radio-label, .checkbox-label {
+            display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem;
+            border-radius: 8px; cursor: pointer; transition: var(--transition);
+            border: 1px solid transparent;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .radio-label:hover, .checkbox-label:hover { background: rgba(212, 175, 55, 0.05); }
+        .radio-label input[type="radio"], .checkbox-label input[type="checkbox"] {
+            accent-color: var(--gold-primary);
+            width: 18px; height: 18px;
+            cursor: pointer;
+        }
+
+        .bs-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+        .bs-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.85rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            font-weight: 600;
+        }
+        .bs-label.benar { background: rgba(16, 185, 129, 0.1); color: var(--success); }
+        .bs-label.salah { background: rgba(239, 68, 68, 0.1); color: var(--error); }
+        .bs-label:hover { border-color: currentColor; }
+        .bs-label input { display: none; }
+        .bs-label.selected { border-color: currentColor; background: rgba(255, 255, 255, 0.05); }
+
+        .match-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: center;
+        }
+        .match-left {
+            background: rgba(212, 175, 55, 0.08);
+            padding: 0.85rem 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--gold-primary);
+            font-weight: 500;
+        }
+        .match-arrow { color: var(--gold-primary); font-size: 1.2rem; }
+        .match-select {
+            width: 100%;
+            background: var(--bg-input);
+            border: 1px solid var(--border-gold);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+        .match-select:focus { outline: none; border-color: var(--gold-primary); }
+
+        .feedback {
+            margin-top: 1rem;
+            padding: 0.85rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .feedback.show { display: block; animation: fadeIn 0.4s ease; }
+        .feedback.correct { background: rgba(16, 185, 129, 0.1); border-left: 3px solid var(--success); color: #a7f3d0; }
+        .feedback.incorrect { background: rgba(239, 68, 68, 0.1); border-left: 3px solid var(--error); color: #fecaca; }
+        .feedback.partial { background: rgba(245, 158, 11, 0.1); border-left: 3px solid var(--warning); color: #fde68a; }
+        .feedback strong { display: block; margin-bottom: 0.25rem; }
+
+        .quiz-meta {
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+            background: rgba(212, 175, 55, 0.08);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 1rem;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        .timer-display {
+            display: flex; align-items: center; gap: 0.5rem;
+            color: var(--gold-primary); font-weight: 600; font-size: 1.1rem;
+        }
+        .progress-wrapper { flex: 1; min-width: 200px; margin: 0 1rem; }
+        .progress-label { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.25rem; }
+        .progress-bar {
+            width: 100%; height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px; overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+            width: 0%; transition: width 0.4s ease; border-radius: 4px;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(2, 44, 34, 0.9) 100%);
+            border: 2px solid var(--gold-primary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            display: none;
+        }
+        .result-box.active { display: block; animation: fadeIn 0.5s ease; }
+        .score-display {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--gold-primary);
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .score-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .score-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border-gold);
+        }
+        .score-item .label { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.25rem; }
+        .score-item .value { font-size: 1.5rem; font-weight: 700; color: var(--gold-primary); }
+
+        .weakness-analysis {
+            background: rgba(239, 68, 68, 0.05);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .weakness-analysis h4 { color: #fecaca; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .weakness-list { list-style: none; }
+        .weakness-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        .weakness-list li:last-child { border-bottom: none; }
+        .weakness-list li strong { color: var(--gold-light); }
+
+        .btn-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+            padding: 1rem 1.5rem; border-radius: 8px; font-weight: 600;
+            cursor: pointer; transition: var(--transition); border: none; font-size: 0.95rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--gold-primary) 0%, #b8941f 100%); color: var(--bg-dark); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4); }
+        .btn-outline { background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-primary); }
+        .btn-outline:hover { background: var(--gold-primary); color: var(--bg-dark); }
+        .btn-secondary { background: rgba(255, 255, 255, 0.1); color: var(--text-primary); border: 1px solid var(--border-gold); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { display: block; margin-bottom: 0.5rem; color: var(--gold-light); font-weight: 500; font-size: 0.95rem; }
+        .form-input, .form-select {
+            width: 100%; background: var(--bg-input); border: 1px solid var(--border-gold); border-radius: 8px;
+            padding: 0.85rem 1rem; color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 1rem;
+        }
+        .form-input:focus, .form-select:focus {
+            outline: none; border-color: var(--gold-primary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .footer { text-align: center; padding: 3rem 0; margin-top: 4rem; border-top: 1px solid var(--border-gold); color: var(--text-secondary); font-size: 0.9rem; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .uas-title { font-size: 2rem; }
+            .content-section, .section-header { padding: 1.25rem; }
+            .btn-group { grid-template-columns: 1fr; }
+            .quiz-meta { flex-direction: column; align-items: stretch; }
+            .match-container { grid-template-columns: 1fr; }
+            .match-arrow { transform: rotate(90deg); justify-self: center; }
+            .bs-group { grid-template-columns: 1fr; }
+        }
+
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .btn-group, .footer, .quiz-meta { display: none !important; }
+            .content-section, .section-header, .result-box { border: 1px solid #ccc; background: white; color: black; break-inside: avoid; }
+            .uas-title, .section-title-main { color: #000 !important; -webkit-text-fill-color: #000 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="main-content">
+        <nav class="top-nav">
+            <a href="16.html" class="nav-link"><i class="fas fa-arrow-left"></i> Pertemuan 16</a>
+            <span style="color: var(--text-secondary); font-weight: 500;">Fikih Kelas 8 Semester 1</span>
+            <a href="index.html" class="nav-link">Daftar Isi <i class="fas fa-book"></i></a>
+        </nav>
+
+        <div class="uas-hero">
+            <div class="uas-badge">🏆 UJIAN AKHIR SEMESTER</div>
+            <h1 class="uas-title">UAS Fikih Kelas 8</h1>
+            <p class="uas-subtitle">Semester 1 — Tahun Pelajaran 2026/2027</p>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                Menguji pemahaman menyeluruh materi BAB 1 (Sujud), BAB 2 (Zakat), BAB 3 (Puasa), dan BAB 4 (I'tikaf)
+            </p>
+            <div class="uas-info">
+                <div class="uas-info-item">
+                    <div class="label">Materi Ujian</div>
+                    <div class="value">BAB 1 - 4</div>
+                </div>
+                <div class="uas-info-item">
+                    <div class="label">Jumlah Soal</div>
+                    <div class="value">50 Soal</div>
+                </div>
+                <div class="uas-info-item">
+                    <div class="label">Total Skor</div>
+                    <div class="value">160 Poin</div>
+                </div>
+                <div class="uas-info-item">
+                    <div class="label">Waktu</div>
+                    <div class="value">120 Menit</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-meta">
+            <div class="timer-display">
+                <i class="fas fa-stopwatch"></i>
+                <span>Waktu: <span id="timer">00:00</span></span>
+            </div>
+            <div class="progress-wrapper">
+                <div class="progress-label">Progres Pengerjaan: <span id="progress-text">0/50 soal dijawab</span></div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <form id="uasForm">
+            <!-- Identitas -->
+            <div class="content-section">
+                <h3 style="color: var(--gold-primary); margin-bottom: 1.5rem; font-size: 1.3rem;">
+                    <i class="fas fa-user-graduate"></i> Identitas Siswa
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div class="form-group">
+                        <label class="form-label">Nama Lengkap *</label>
+                        <input type="text" id="nama" class="form-input" placeholder="Masukkan nama lengkap" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">No. Absen / NIS *</label>
+                        <input type="text" id="nis" class="form-input" placeholder="Contoh: 12345" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Kelas *</label>
+                        <select id="kelas" class="form-select" required>
+                            <option value="">Pilih Kelas</option>
+                            <option value="VIII-A">VIII-A</option>
+                            <option value="VIII-B">VIII-B</option>
+                            <option value="VIII-C">VIII-C</option>
+                            <option value="VIII-D">VIII-D</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tanggal Ujian</label>
+                        <input type="date" id="tanggal" class="form-input">
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================
+                 BAGIAN A: PILIHAN GANDA (30 SOAL × 2 POIN = 60 POIN)
+                 ========================================= -->
+            <div class="section-header pg">
+                <div class="section-number">A</div>
+                <h2 class="section-title-main">Pilihan Ganda</h2>
+                <p class="section-desc">Pilihlah satu jawaban yang paling tepat!</p>
+                <div class="section-rules">
+                    <ul>
+                        <li>Terdiri dari <strong>30 soal</strong> dengan bobot <strong>2 poin per soal</strong> (total 60 poin)</li>
+                        <li>Materi tersebar merata dari BAB 1 (Sujud), BAB 2 (Zakat), BAB 3 (Puasa), dan BAB 4 (I'tikaf)</li>
+                        <li>Pilih <strong>SATU</strong> jawaban yang paling tepat untuk setiap soal</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PG 1 - BAB 1 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">1</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab1">BAB 1</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Secara bahasa, kata "sahwi" dalam sujud sahwi memiliki arti...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q1" value="A"> A. Sempurna</label>
+                    <label class="radio-label"><input type="radio" name="q1" value="B"> B. Lupa</label>
+                    <label class="radio-label"><input type="radio" name="q1" value="C"> C. Terima kasih</label>
+                    <label class="radio-label"><input type="radio" name="q1" value="D"> D. Membaca</label>
+                </div>
+                <div class="feedback" id="fb-q1"></div>
+            </div>
+
+            <!-- PG 2 - BAB 1 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">2</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab1">BAB 1</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Bacaan yang dianjurkan saat melakukan sujud sahwi adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q2" value="A"> A. Subhana rabbiyal a'la</label>
+                    <label class="radio-label"><input type="radio" name="q2" value="B"> B. Subhana man laa yanaamu wa laa yashu</label>
+                    <label class="radio-label"><input type="radio" name="q2" value="C"> C. Sajada wajhiya lilladzii khalaqahu</label>
+                    <label class="radio-label"><input type="radio" name="q2" value="D"> D. Allāhumma laka shumtu</label>
+                </div>
+                <div class="feedback" id="fb-q2"></div>
+            </div>
+
+            <!-- PG 3 - BAB 1 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">3</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab1">BAB 1</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Sujud syukur dilakukan ketika...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q3" value="A"> A. Lupa dalam shalat</label>
+                    <label class="radio-label"><input type="radio" name="q3" value="B"> B. Membaca ayat sajdah</label>
+                    <label class="radio-label"><input type="radio" name="q3" value="C"> C. Mendapat nikmat besar atau terhindar dari musibah</label>
+                    <label class="radio-label"><input type="radio" name="q3" value="D"> D. Ragu jumlah rakaat</label>
+                </div>
+                <div class="feedback" id="fb-q3"></div>
+            </div>
+
+            <!-- PG 4 - BAB 1 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">4</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab1">BAB 1</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Menurut Madzhab Syafi'i, jumlah ayat sajdah dalam Al-Qur'an adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q4" value="A"> A. 11 ayat</label>
+                    <label class="radio-label"><input type="radio" name="q4" value="B"> B. 14 ayat</label>
+                    <label class="radio-label"><input type="radio" name="q4" value="C"> C. 15 ayat</label>
+                    <label class="radio-label"><input type="radio" name="q4" value="D"> D. 20 ayat</label>
+                </div>
+                <div class="feedback" id="fb-q4"></div>
+            </div>
+
+            <!-- PG 5 - BAB 1 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">5</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab1">BAB 1</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Jenis sujud yang hanya dilakukan 1 kali sujud adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q5" value="A"> A. Sujud Sahwi</label>
+                    <label class="radio-label"><input type="radio" name="q5" value="B"> B. Sujud Syukur</label>
+                    <label class="radio-label"><input type="radio" name="q5" value="C"> C. Sujud Tilawah</label>
+                    <label class="radio-label"><input type="radio" name="q5" value="D"> D. Sujud dalam shalat fardhu</label>
+                </div>
+                <div class="feedback" id="fb-q5"></div>
+            </div>
+
+            <!-- PG 6 - BAB 1 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">6</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab1">BAB 1</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Jika seseorang lupa tasyahud awal dan langsung berdiri, maka sujud sahwi dilakukan...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q6" value="A"> A. Setelah salam</label>
+                    <label class="radio-label"><input type="radio" name="q6" value="B"> B. Sebelum salam</label>
+                    <label class="radio-label"><input type="radio" name="q6" value="C"> C. Di tengah shalat</label>
+                    <label class="radio-label"><input type="radio" name="q6" value="D"> D. Tidak perlu sujud sahwi</label>
+                </div>
+                <div class="feedback" id="fb-q6"></div>
+            </div>
+
+            <!-- PG 7 - BAB 1 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">7</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab1">BAB 1</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Sujud sahwi menurut Madzhab Syafi'i hukumnya...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q7" value="A"> A. Wajib</label>
+                    <label class="radio-label"><input type="radio" name="q7" value="B"> B. Sunnah Muakkad</label>
+                    <label class="radio-label"><input type="radio" name="q7" value="C"> C. Mubah</label>
+                    <label class="radio-label"><input type="radio" name="q7" value="D"> D. Makruh</label>
+                </div>
+                <div class="feedback" id="fb-q7"></div>
+            </div>
+
+            <!-- PG 8 - BAB 1 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">8</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab1">BAB 1</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Salah satu hikmah sujud tilawah adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q8" value="A"> A. Mengajarkan sombong</label>
+                    <label class="radio-label"><input type="radio" name="q8" value="B"> B. Menanamkan pengagungan terhadap firman Allah</label>
+                    <label class="radio-label"><input type="radio" name="q8" value="C"> C. Menggugurkan kewajiban shalat</label>
+                    <label class="radio-label"><input type="radio" name="q8" value="D"> D. Menambah dosa</label>
+                </div>
+                <div class="feedback" id="fb-q8"></div>
+            </div>
+
+            <!-- PG 9 - BAB 2 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">9</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab2">BAB 2</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Zakat merupakan rukun Islam yang ke...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q9" value="A"> A. Kedua</label>
+                    <label class="radio-label"><input type="radio" name="q9" value="B"> B. Ketiga</label>
+                    <label class="radio-label"><input type="radio" name="q9" value="C"> C. Keempat</label>
+                    <label class="radio-label"><input type="radio" name="q9" value="D"> D. Kelima</label>
+                </div>
+                <div class="feedback" id="fb-q9"></div>
+            </div>
+
+            <!-- PG 10 - BAB 2 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">10</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab2">BAB 2</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Orang yang baru masuk Islam termasuk golongan mustahik...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q10" value="A"> A. Fakir</label>
+                    <label class="radio-label"><input type="radio" name="q10" value="B"> B. Miskin</label>
+                    <label class="radio-label"><input type="radio" name="q10" value="C"> C. Muallaf</label>
+                    <label class="radio-label"><input type="radio" name="q10" value="D"> D. Gharim</label>
+                </div>
+                <div class="feedback" id="fb-q10"></div>
+            </div>
+
+            <!-- PG 11 - BAB 2 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">11</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab2">BAB 2</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Takaran zakat fitrah untuk setiap jiwa adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q11" value="A"> A. 1 kg beras</label>
+                    <label class="radio-label"><input type="radio" name="q11" value="B"> B. 2,5 kg beras</label>
+                    <label class="radio-label"><input type="radio" name="q11" value="C"> C. 5 kg beras</label>
+                    <label class="radio-label"><input type="radio" name="q11" value="D"> D. 10 kg beras</label>
+                </div>
+                <div class="feedback" id="fb-q11"></div>
+            </div>
+
+            <!-- PG 12 - BAB 2 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">12</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab2">BAB 2</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Nisab zakat emas adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q12" value="A"> A. 20 dinar = 85 gram</label>
+                    <label class="radio-label"><input type="radio" name="q12" value="B"> B. 200 dirham = 595 gram</label>
+                    <label class="radio-label"><input type="radio" name="q12" value="C"> C. 10 dinar = 42,5 gram</label>
+                    <label class="radio-label"><input type="radio" name="q12" value="D"> D. 100 dinar = 425 gram</label>
+                </div>
+                <div class="feedback" id="fb-q12"></div>
+            </div>
+
+            <!-- PG 13 - BAB 2 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">13</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab2">BAB 2</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Nisab zakat pertanian adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q13" value="A"> A. 85 gram emas</label>
+                    <label class="radio-label"><input type="radio" name="q13" value="B"> B. 595 gram perak</label>
+                    <label class="radio-label"><input type="radio" name="q13" value="C"> C. 5 wasq = ± 653 kg gabah</label>
+                    <label class="radio-label"><input type="radio" name="q13" value="D"> D. 1000 kg beras</label>
+                </div>
+                <div class="feedback" id="fb-q13"></div>
+            </div>
+
+            <!-- PG 14 - BAB 2 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">14</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab2">BAB 2</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Kadar zakat rikaz (barang temuan) adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q14" value="A"> A. 2,5%</label>
+                    <label class="radio-label"><input type="radio" name="q14" value="B"> B. 5%</label>
+                    <label class="radio-label"><input type="radio" name="q14" value="C"> C. 10%</label>
+                    <label class="radio-label"><input type="radio" name="q14" value="D"> D. 20%</label>
+                </div>
+                <div class="feedback" id="fb-q14"></div>
+            </div>
+
+            <!-- PG 15 - BAB 2 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">15</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab2">BAB 2</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Pak Hasan memiliki usaha dengan modal Rp200 juta, untung Rp100 juta, piutang Rp50 juta, dan hutang Rp30 juta. Berapa zakat perdagangan yang harus dikeluarkan?</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q15" value="A"> A. Rp6.000.000</label>
+                    <label class="radio-label"><input type="radio" name="q15" value="B"> B. Rp8.000.000</label>
+                    <label class="radio-label"><input type="radio" name="q15" value="C"> C. Rp10.000.000</label>
+                    <label class="radio-label"><input type="radio" name="q15" value="D"> D. Rp12.000.000</label>
+                </div>
+                <div class="feedback" id="fb-q15"></div>
+            </div>
+
+            <!-- PG 16 - BAB 2 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">16</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab2">BAB 2</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Salah satu hikmah zakat adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q16" value="A"> A. Menambah sifat kikir</label>
+                    <label class="radio-label"><input type="radio" name="q16" value="B"> B. Menyucikan harta dan mewujudkan keadilan sosial</label>
+                    <label class="radio-label"><input type="radio" name="q16" value="C"> C. Mengurangi harta secara permanen</label>
+                    <label class="radio-label"><input type="radio" name="q16" value="D"> D. Membuat si miskin bergantung</label>
+                </div>
+                <div class="feedback" id="fb-q16"></div>
+            </div>
+
+            <!-- PG 17 - BAB 3 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">17</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab3">BAB 3</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Ayat Al-Qur'an yang menjadi landasan utama kewajiban puasa Ramadhan adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q17" value="A"> A. QS. Al-Baqarah: 183</label>
+                    <label class="radio-label"><input type="radio" name="q17" value="B"> B. QS. Al-Baqarah: 196</label>
+                    <label class="radio-label"><input type="radio" name="q17" value="C"> C. QS. An-Nisa: 92</label>
+                    <label class="radio-label"><input type="radio" name="q17" value="D"> D. QS. Al-Maidah: 89</label>
+                </div>
+                <div class="feedback" id="fb-q17"></div>
+            </div>
+
+            <!-- PG 18 - BAB 3 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">18</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab3">BAB 3</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Berikut ini yang BUKAN merupakan syarat sah puasa adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q18" value="A"> A. Islam</label>
+                    <label class="radio-label"><input type="radio" name="q18" value="B"> B. Suci dari haid dan nifas</label>
+                    <label class="radio-label"><input type="radio" name="q18" value="C"> C. Kaya raya</label>
+                    <label class="radio-label"><input type="radio" name="q18" value="D"> D. Niat</label>
+                </div>
+                <div class="feedback" id="fb-q18"></div>
+            </div>
+
+            <!-- PG 19 - BAB 3 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">19</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab3">BAB 3</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Berikut ini yang MEMBATALKAN puasa adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q19" value="A"> A. Mimpi basah saat tidur</label>
+                    <label class="radio-label"><input type="radio" name="q19" value="B"> B. Muntah tidak sengaja</label>
+                    <label class="radio-label"><input type="radio" name="q19" value="C"> C. Makan dan minum dengan sengaja</label>
+                    <label class="radio-label"><input type="radio" name="q19" value="D"> D. Lupa lalu makan/minum</label>
+                </div>
+                <div class="feedback" id="fb-q19"></div>
+            </div>
+
+            <!-- PG 20 - BAB 3 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">20</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab3">BAB 3</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Puasa Arafah dilakukan pada tanggal 9 Dzulhijjah dan keutamaannya adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q20" value="A"> A. Menghapus dosa 1 tahun</label>
+                    <label class="radio-label"><input type="radio" name="q20" value="B"> B. Menghapus dosa 2 tahun</label>
+                    <label class="radio-label"><input type="radio" name="q20" value="C"> C. Seperti puasa setahun</label>
+                    <label class="radio-label"><input type="radio" name="q20" value="D"> D. Puasa paling disukai Allah</label>
+                </div>
+                <div class="feedback" id="fb-q20"></div>
+            </div>
+
+            <!-- PG 21 - BAB 3 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">21</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab3">BAB 3</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Puasa yang diharamkan adalah puasa pada hari...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q21" value="A"> A. Senin dan Kamis</label>
+                    <label class="radio-label"><input type="radio" name="q21" value="B"> B. Idul Fitri dan Idul Adha</label>
+                    <label class="radio-label"><input type="radio" name="q21" value="C"> C. Ayyamul Bidh</label>
+                    <label class="radio-label"><input type="radio" name="q21" value="D"> D. Sya'ban</label>
+                </div>
+                <div class="feedback" id="fb-q21"></div>
+            </div>
+
+            <!-- PG 22 - BAB 3 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">22</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab3">BAB 3</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Orang tua renta yang tidak mampu berpuasa dan tidak ada harapan sembuh, kewajibannya adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q22" value="A"> A. Qadha di hari lain</label>
+                    <label class="radio-label"><input type="radio" name="q22" value="B"> B. Fidyah (memberi makan 1 miskin per hari)</label>
+                    <label class="radio-label"><input type="radio" name="q22" value="C"> C. Kafarat (puasa 2 bulan berturut-turut)</label>
+                    <label class="radio-label"><input type="radio" name="q22" value="D"> D. Tidak ada kewajiban</label>
+                </div>
+                <div class="feedback" id="fb-q22"></div>
+            </div>
+
+            <!-- PG 23 - BAB 3 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">23</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab3">BAB 3</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Puasa Daud dilakukan dengan cara...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q23" value="A"> A. Setiap hari sepanjang tahun</label>
+                    <label class="radio-label"><input type="radio" name="q23" value="B"> B. Selang-seling (sehari puasa, sehari tidak)</label>
+                    <label class="radio-label"><input type="radio" name="q23" value="C"> C. Hanya di bulan Ramadhan</label>
+                    <label class="radio-label"><input type="radio" name="q23" value="D"> D. Hanya di hari Jumat</label>
+                </div>
+                <div class="feedback" id="fb-q23"></div>
+            </div>
+
+            <!-- PG 24 - BAB 3 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">24</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab3">BAB 3</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Waktu niat puasa Ramadhan adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q24" value="A"> A. Pagi hari sebelum dzuhur</label>
+                    <label class="radio-label"><input type="radio" name="q24" value="B"> B. Malam hari sebelum terbit fajar</label>
+                    <label class="radio-label"><input type="radio" name="q24" value="C"> C. Saat berbuka puasa</label>
+                    <label class="radio-label"><input type="radio" name="q24" value="D"> D. Kapan saja selama Ramadhan</label>
+                </div>
+                <div class="feedback" id="fb-q24"></div>
+            </div>
+
+            <!-- PG 25 - BAB 4 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">25</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab4">BAB 4</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Secara bahasa, kata "i'tikaf" (الاعْتِكَافُ) berarti...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q25" value="A"> A. Berpuasa</label>
+                    <label class="radio-label"><input type="radio" name="q25" value="B"> B. Berdiam diri / menetap</label>
+                    <label class="radio-label"><input type="radio" name="q25" value="C"> C. Berdoa</label>
+                    <label class="radio-label"><input type="radio" name="q25" value="D"> D. Bersuci</label>
+                </div>
+                <div class="feedback" id="fb-q25"></div>
+            </div>
+
+            <!-- PG 26 - BAB 4 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">26</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab4">BAB 4</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Hukum i'tikaf pada 10 hari terakhir Ramadhan menurut jumhur ulama adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q26" value="A"> A. Wajib</label>
+                    <label class="radio-label"><input type="radio" name="q26" value="B"> B. Sunnah Muakkad</label>
+                    <label class="radio-label"><input type="radio" name="q26" value="C"> C. Mubah</label>
+                    <label class="radio-label"><input type="radio" name="q26" value="D"> D. Makruh</label>
+                </div>
+                <div class="feedback" id="fb-q26"></div>
+            </div>
+
+            <!-- PG 27 - BAB 4 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">27</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab4">BAB 4</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Berikut ini yang BUKAN merupakan syarat i'tikaf adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q27" value="A"> A. Islam</label>
+                    <label class="radio-label"><input type="radio" name="q27" value="B"> B. Berakal</label>
+                    <label class="radio-label"><input type="radio" name="q27" value="C"> C. Kaya raya</label>
+                    <label class="radio-label"><input type="radio" name="q27" value="D"> D. Suci dari hadas besar</label>
+                </div>
+                <div class="feedback" id="fb-q27"></div>
+            </div>
+
+            <!-- PG 28 - BAB 4 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">28</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab4">BAB 4</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Berikut ini yang MEMBATALKAN i'tikaf adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q28" value="A"> A. Tidur di dalam masjid</label>
+                    <label class="radio-label"><input type="radio" name="q28" value="B"> B. Makan dan minum di dalam masjid</label>
+                    <label class="radio-label"><input type="radio" name="q28" value="C"> C. Keluar masjid tanpa uzur syar'i</label>
+                    <label class="radio-label"><input type="radio" name="q28" value="D"> D. Membaca Al-Qur'an</label>
+                </div>
+                <div class="feedback" id="fb-q28"></div>
+            </div>
+
+            <!-- PG 29 - BAB 4 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">29</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab4">BAB 4</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Lailatul Qadr terjadi pada...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q29" value="A"> A. 10 hari pertama Ramadhan</label>
+                    <label class="radio-label"><input type="radio" name="q29" value="B"> B. 10 hari tengah Ramadhan</label>
+                    <label class="radio-label"><input type="radio" name="q29" value="C"> C. 10 malam terakhir Ramadhan (terutama malam ganjil)</label>
+                    <label class="radio-label"><input type="radio" name="q29" value="D"> D. Setiap malam sepanjang tahun</label>
+                </div>
+                <div class="feedback" id="fb-q29"></div>
+            </div>
+
+            <!-- PG 30 - BAB 4 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">30</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab4">BAB 4</span>
+                        <span class="points-badge">2 POIN</span>
+                    </div>
+                </div>
+                <p class="question-text">Doa yang diajarkan Rasulullah saw. untuk Lailatul Qadr adalah...</p>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q30" value="A"> A. Allāhumma innaka 'afuwwun tuhibbul-'afwa fa'fu 'annī</label>
+                    <label class="radio-label"><input type="radio" name="q30" value="B"> B. Rabbana ātinā fiddunyā hasanah</label>
+                    <label class="radio-label"><input type="radio" name="q30" value="C"> C. Subhanallāhil 'azhīm</label>
+                    <label class="radio-label"><input type="radio" name="q30" value="D"> D. Astaghfirullāhal 'azhīm</label>
+                </div>
+                <div class="feedback" id="fb-q30"></div>
+            </div>
+
+            <!-- =========================================
+                 BAGIAN B: PILIHAN GANDA KOMPLEKS (10 SOAL × 5 POIN = 50 POIN)
+                 ========================================= -->
+            <div class="section-header pgk">
+                <div class="section-number">B</div>
+                <h2 class="section-title-main">Pilihan Ganda Kompleks</h2>
+                <p class="section-desc">Pilihlah LEBIH DARI SATU jawaban yang benar!</p>
+                <div class="section-rules">
+                    <ul>
+                        <li>Terdiri dari <strong>10 soal</strong> dengan bobot <strong>5 poin per soal</strong> (total 50 poin)</li>
+                        <li>Setiap soal memiliki <strong>2 atau lebih jawaban benar</strong></li>
+                        <li>Pilih <strong>SEMUA</strong> jawaban yang benar untuk mendapat poin penuh</li>
+                        <li>Jika jawaban benar sebagian, mendapat poin parsial (sebagian)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PGK 31 - BAB 1 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">31</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab1">BAB 1</span>
+                        <span class="points-badge">5 POIN</span>
+                        <span class="type-badge">KOMPLEKS</span>
+                    </div>
+                </div>
+                <p class="question-text">Berikut ini yang merupakan penyebab dilakukannya sujud sahwi adalah... (pilih semua yang benar)</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-label"><input type="checkbox" name="q31" value="A"> A. Lupa menambah rakaat</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q31" value="B"> B. Lupa tasyahud awal</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q31" value="C"> C. Ragu jumlah rakaat</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q31" value="D"> D. Membaca ayat sajdah</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q31" value="E"> E. Mendapat nikmat besar</label>
+                </div>
+                <div class="feedback" id="fb-q31"></div>
+            </div>
+
+            <!-- PGK 32 - BAB 1 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">32</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab1">BAB 1</span>
+                        <span class="points-badge">5 POIN</span>
+                        <span class="type-badge">KOMPLEKS</span>
+                    </div>
+                </div>
+                <p class="question-text">Berikut ini yang merupakan perbedaan antara sujud sahwi, sujud syukur, dan sujud tilawah adalah... (pilih semua yang benar)</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-label"><input type="checkbox" name="q32" value="A"> A. Sujud sahwi karena lupa, sujud syukur karena nikmat, sujud tilawah karena ayat sajdah</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q32" value="B"> B. Sujud sahwi & syukur 2 kali, sujud tilawah 1 kali</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q32" value="C"> C. Ketiganya sama persis</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q32" value="D"> D. Bacaan khusus masing-masing berbeda</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q32" value="E"> E. Sujud sahwi dilakukan dalam shalat</label>
+                </div>
+                <div class="feedback" id="fb-q32"></div>
+            </div>
+
+            <!-- PGK 33 - BAB 2 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">33</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab2">BAB 2</span>
+                        <span class="points-badge">5 POIN</span>
+                        <span class="type-badge">KOMPLEKS</span>
+                    </div>
+                </div>
+                <p class="question-text">Berikut ini yang termasuk 8 golongan mustahik (penerima zakat) adalah... (pilih semua yang benar)</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-label"><input type="checkbox" name="q33" value="A"> A. Fakir</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q33" value="B"> B. Miskin</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q33" value="C"> C. Amil</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q33" value="D"> D. Muallaf</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q33" value="E"> E. Pedagang kaya</label>
+                </div>
+                <div class="feedback" id="fb-q33"></div>
+            </div>
+
+            <!-- PGK 34 - BAB 2 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">34</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab2">BAB 2</span>
+                        <span class="points-badge">5 POIN</span>
+                        <span class="type-badge">KOMPLEKS</span>
+                    </div>
+                </div>
+                <p class="question-text">Perbedaan antara zakat fitrah dan zakat mal adalah... (pilih semua yang benar)</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-label"><input type="checkbox" name="q34" value="A"> A. Zakat fitrah untuk jiwa, zakat mal untuk harta</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q34" value="B"> B. Zakat fitrah 2,5 kg, zakat mal persentase tertentu</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q34" value="C"> C. Zakat fitrah tidak perlu nisab, zakat mal perlu nisab</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q34" value="D"> D. Keduanya sama persis</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q34" value="E"> E. Zakat fitrah menjelang Idul Fitri, zakat mal kapan saja</label>
+                </div>
+                <div class="feedback" id="fb-q34"></div>
+            </div>
+
+            <!-- PGK 35 - BAB 2 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">35</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab2">BAB 2</span>
+                        <span class="points-badge">5 POIN</span>
+                        <span class="type-badge">KOMPLEKS</span>
+                    </div>
+                </div>
+                <p class="question-text">Berikut ini yang merupakan hikmah zakat adalah... (pilih semua yang benar)</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-label"><input type="checkbox" name="q35" value="A"> A. Menyucikan harta dan jiwa</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q35" value="B"> B. Mewujudkan keadilan sosial</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q35" value="C"> C. Memperkuat ukhuwah islamiyah</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q35" value="D"> D. Menambah sifat kikir</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q35" value="E"> E. Menggerakkan roda ekonomi</label>
+                </div>
+                <div class="feedback" id="fb-q35"></div>
+            </div>
+
+            <!-- PGK 36 - BAB 3 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">36</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab3">BAB 3</span>
+                        <span class="points-badge">5 POIN</span>
+                        <span class="type-badge">KOMPLEKS</span>
+                    </div>
+                </div>
+                <p class="question-text">Berikut ini yang merupakan syarat sah puasa adalah... (pilih semua yang benar)</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-label"><input type="checkbox" name="q36" value="A"> A. Islam</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q36" value="B"> B. Tamyiz (mampu membedakan)</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q36" value="C"> C. Suci dari haid dan nifas</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q36" value="D"> D. Niat</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q36" value="E"> E. Kaya raya</label>
+                </div>
+                <div class="feedback" id="fb-q36"></div>
+            </div>
+
+            <!-- PGK 37 - BAB 3 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">37</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab3">BAB 3</span>
+                        <span class="points-badge">5 POIN</span>
+                        <span class="type-badge">KOMPLEKS</span>
+                    </div>
+                </div>
+                <p class="question-text">Berikut ini yang termasuk puasa sunnah adalah... (pilih semua yang benar)</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-label"><input type="checkbox" name="q37" value="A"> A. Puasa Senin-Kamis</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q37" value="B"> B. Puasa Ayyamul Bidh</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q37" value="C"> C. Puasa Daud</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q37" value="D"> D. Puasa Ramadhan</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q37" value="E"> E. Puasa Arafah</label>
+                </div>
+                <div class="feedback" id="fb-q37"></div>
+            </div>
+
+            <!-- PGK 38 - BAB 3 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">38</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab3">BAB 3</span>
+                        <span class="points-badge">5 POIN</span>
+                        <span class="type-badge">KOMPLEKS</span>
+                    </div>
+                </div>
+                <p class="question-text">Berikut ini yang termasuk puasa yang diharamkan adalah... (pilih semua yang benar)</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-label"><input type="checkbox" name="q38" value="A"> A. Puasa Idul Fitri</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q38" value="B"> B. Puasa Idul Adha</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q38" value="C"> C. Puasa Hari Tasyriq</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q38" value="D"> D. Puasa Senin-Kamis</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q38" value="E"> E. Puasa Wishal (berturut-turut tanpa berbuka)</label>
+                </div>
+                <div class="feedback" id="fb-q38"></div>
+            </div>
+
+            <!-- PGK 39 - BAB 4 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">39</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab4">BAB 4</span>
+                        <span class="points-badge">5 POIN</span>
+                        <span class="type-badge">KOMPLEKS</span>
+                    </div>
+                </div>
+                <p class="question-text">Berikut ini yang merupakan hikmah i'tikaf adalah... (pilih semua yang benar)</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-label"><input type="checkbox" name="q39" value="A"> A. Menumbuhkan cinta kepada Allah</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q39" value="B"> B. Membersihkan jiwa</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q39" value="C"> C. Meraih Lailatul Qadr</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q39" value="D"> D. Menambah kekayaan</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q39" value="E"> E. Memakmurkan masjid</label>
+                </div>
+                <div class="feedback" id="fb-q39"></div>
+            </div>
+
+            <!-- PGK 40 - BAB 4 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">40</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab4">BAB 4</span>
+                        <span class="points-badge">5 POIN</span>
+                        <span class="type-badge">KOMPLEKS</span>
+                    </div>
+                </div>
+                <p class="question-text">Berikut ini yang merupakan adab i'tikaf yang dianjurkan adalah... (pilih semua yang benar)</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-label"><input type="checkbox" name="q40" value="A"> A. Memperbanyak dzikir dan doa</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q40" value="B"> B. Membaca Al-Qur'an (tadarus)</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q40" value="C"> C. Shalat sunnah dan qiyamul lail</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q40" value="D"> D. Menggunakan gadget berlebihan</label>
+                    <label class="checkbox-label"><input type="checkbox" name="q40" value="E"> E. Bertaubat dan beristighfar</label>
+                </div>
+                <div class="feedback" id="fb-q40"></div>
+            </div>
+
+            <!-- =========================================
+                 BAGIAN C: BENAR/SALAH (5 SOAL × 5 POIN = 25 POIN)
+                 ========================================= -->
+            <div class="section-header bs">
+                <div class="section-number">C</div>
+                <h2 class="section-title-main">Benar atau Salah</h2>
+                <p class="section-desc">Tentukan apakah pernyataan berikut BENAR atau SALAH!</p>
+                <div class="section-rules">
+                    <ul>
+                        <li>Terdiri dari <strong>5 soal</strong> dengan bobot <strong>5 poin per soal</strong> (total 25 poin)</li>
+                        <li>Pilih <strong>BENAR</strong> jika pernyataan sesuai dengan syariat Islam</li>
+                        <li>Pilih <strong>SALAH</strong> jika pernyataan bertentangan dengan syariat Islam</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BS 41 - BAB 1 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">41</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab1">BAB 1</span>
+                        <span class="points-badge">5 POIN</span>
+                        <span class="type-badge">B/S</span>
+                    </div>
+                </div>
+                <p class="question-text">Sujud tilawah dilakukan 2 kali sujud seperti sujud sahwi dan sujud syukur.</p>
+                <div class="bs-group">
+                    <label class="bs-label benar"><input type="radio" name="q41" value="BENAR"> <i class="fas fa-check"></i> BENAR</label>
+                    <label class="bs-label salah"><input type="radio" name="q41" value="SALAH"> <i class="fas fa-times"></i> SALAH</label>
+                </div>
+                <div class="feedback" id="fb-q41"></div>
+            </div>
+
+            <!-- BS 42 - BAB 2 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">42</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab2">BAB 2</span>
+                        <span class="points-badge">5 POIN</span>
+                        <span class="type-badge">B/S</span>
+                    </div>
+                </div>
+                <p class="question-text">Kadar zakat rikaz (barang temuan) adalah 20% (1/5) dari total harta temuan.</p>
+                <div class="bs-group">
+                    <label class="bs-label benar"><input type="radio" name="q42" value="BENAR"> <i class="fas fa-check"></i> BENAR</label>
+                    <label class="bs-label salah"><input type="radio" name="q42" value="SALAH"> <i class="fas fa-times"></i> SALAH</label>
+                </div>
+                <div class="feedback" id="fb-q42"></div>
+            </div>
+
+            <!-- BS 43 - BAB 3 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">43</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab3">BAB 3</span>
+                        <span class="points-badge">5 POIN</span>
+                        <span class="type-badge">B/S</span>
+                    </div>
+                </div>
+                <p class="question-text">Puasa Arafah keutamaannya adalah menghapus dosa 2 tahun (tahun lalu dan tahun yang akan datang).</p>
+                <div class="bs-group">
+                    <label class="bs-label benar"><input type="radio" name="q43" value="BENAR"> <i class="fas fa-check"></i> BENAR</label>
+                    <label class="bs-label salah"><input type="radio" name="q43" value="SALAH"> <i class="fas fa-times"></i> SALAH</label>
+                </div>
+                <div class="feedback" id="fb-q43"></div>
+            </div>
+
+            <!-- BS 44 - BAB 3 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">44</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab3">BAB 3</span>
+                        <span class="points-badge">5 POIN</span>
+                        <span class="type-badge">B/S</span>
+                    </div>
+                </div>
+                <p class="question-text">Puasa 6 hari di bulan Syawal keutamaannya adalah seperti puasa setahun penuh.</p>
+                <div class="bs-group">
+                    <label class="bs-label benar"><input type="radio" name="q44" value="BENAR"> <i class="fas fa-check"></i> BENAR</label>
+                    <label class="bs-label salah"><input type="radio" name="q44" value="SALAH"> <i class="fas fa-times"></i> SALAH</label>
+                </div>
+                <div class="feedback" id="fb-q44"></div>
+            </div>
+
+            <!-- BS 45 - BAB 4 -->
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">45</span></div>
+                    <div class="question-badges">
+                        <span class="badge-bab bab4">BAB 4</span>
+                        <span class="points-badge">5 POIN</span>
+                        <span class="type-badge">B/S</span>
+                    </div>
+                </div>
+                <p class="question-text">Lailatul Qadr keutamaannya adalah lebih baik dari 1000 bulan.</p>
+                <div class="bs-group">
+                    <label class="bs-label benar"><input type="radio" name="q45" value="BENAR"> <i class="fas fa-check"></i> BENAR</label>
+                    <label class="bs-label salah"><input type="radio" name="q45" value="SALAH"> <i class="fas fa-times"></i> SALAH</label>
+                </div>
+                <div class="feedback" id="fb-q45"></div>
+            </div>
+
+            <!-- =========================================
+                 BAGIAN D: MENJODOHKAN (5 SOAL × 5 POIN = 25 POIN)
+                 ========================================= -->
+            <div class="section-header mj">
+                <div class="section-number">D</div>
+                <h2 class="section-title-main">Menjodohkan</h2>
+                <p class="section-desc">Jodohkan pernyataan di sebelah kiri dengan jawaban yang tepat di sebelah kanan!</p>
+                <div class="section-rules">
+                    <ul>
+                        <li>Terdiri dari <strong>5 soal</strong> dengan bobot <strong>5 poin per soal</strong> (total 25 poin)</li>
+                        <li>Pilih jawaban yang paling tepat dari dropdown untuk setiap pasangan</li>
+                        <li>Setiap jawaban hanya digunakan <strong>1 kali</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-number"><span class="num">46-50</span></div>
+                    <div class="question-badges">
+                        <span class="points-badge">25 POIN</span>
+                        <span class="type-badge">MENJODOHKAN</span>
+                    </div>
+                </div>
+                <p class="question-text">Jodohkan pasangan-pasangan berikut (soal 46-50):</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div class="match-container">
+                        <div class="match-left">46. Sujud Sahwi</div>
+                        <div class="match-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <select class="match-select" name="q46">
+                            <option value="">Pilih jawaban...</option>
+                            <option value="A">Lupa dalam shalat</option>
+                            <option value="B">Mendapat nikmat / terhindar musibah</option>
+                            <option value="C">Membaca ayat sajdah</option>
+                            <option value="D">2,5 kg beras per jiwa</option>
+                            <option value="E">Lebih baik dari 1000 bulan</option>
+                        </select>
+                    </div>
+                    <div class="match-container">
+                        <div class="match-left">47. Sujud Syukur</div>
+                        <div class="match-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <select class="match-select" name="q47">
+                            <option value="">Pilih jawaban...</option>
+                            <option value="A">Lupa dalam shalat</option>
+                            <option value="B">Mendapat nikmat / terhindar musibah</option>
+                            <option value="C">Membaca ayat sajdah</option>
+                            <option value="D">2,5 kg beras per jiwa</option>
+                            <option value="E">Lebih baik dari 1000 bulan</option>
+                        </select>
+                    </div>
+                    <div class="match-container">
+                        <div class="match-left">48. Zakat Fitrah</div>
+                        <div class="match-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <select class="match-select" name="q48">
+                            <option value="">Pilih jawaban...</option>
+                            <option value="A">Lupa dalam shalat</option>
+                            <option value="B">Mendapat nikmat / terhindar musibah</option>
+                            <option value="C">Membaca ayat sajdah</option>
+                            <option value="D">2,5 kg beras per jiwa</option>
+                            <option value="E">Lebih baik dari 1000 bulan</option>
+                        </select>
+                    </div>
+                    <div class="match-container">
+                        <div class="match-left">49. Sujud Tilawah</div>
+                        <div class="match-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <select class="match-select" name="q49">
+                            <option value="">Pilih jawaban...</option>
+                            <option value="A">Lupa dalam shalat</option>
+                            <option value="B">Mendapat nikmat / terhindar musibah</option>
+                            <option value="C">Membaca ayat sajdah</option>
+                            <option value="D">2,5 kg beras per jiwa</option>
+                            <option value="E">Lebih baik dari 1000 bulan</option>
+                        </select>
+                    </div>
+                    <div class="match-container">
+                        <div class="match-left">50. Lailatul Qadr</div>
+                        <div class="match-arrow"><i class="fas fa-arrow-right"></i></div>
+                        <select class="match-select" name="q50">
+                            <option value="">Pilih jawaban...</option>
+                            <option value="A">Lupa dalam shalat</option>
+                            <option value="B">Mendapat nikmat / terhindar musibah</option>
+                            <option value="C">Membaca ayat sajdah</option>
+                            <option value="D">2,5 kg beras per jiwa</option>
+                            <option value="E">Lebih baik dari 1000 bulan</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="feedback" id="fb-mj"></div>
+            </div>
+        </form>
+
+        <!-- Hasil Ujian -->
+        <div id="hasil-uji" class="result-box">
+            <h3 style="color: var(--gold-primary); margin-bottom: 1rem; text-align: center;">📊 Hasil Ujian Akhir Semester</h3>
+            
+            <div class="score-breakdown">
+                <div class="score-item">
+                    <div class="label">Pilihan Ganda (A)</div>
+                    <div class="value"><span id="pg-result">0</span>/60</div>
+                </div>
+                <div class="score-item">
+                    <div class="label">PG Kompleks (B)</div>
+                    <div class="value"><span id="pgk-result">0</span>/50</div>
+                </div>
+                <div class="score-item">
+                    <div class="label">Benar/Salah (C)</div>
+                    <div class="value"><span id="bs-result">0</span>/25</div>
+                </div>
+                <div class="score-item">
+                    <div class="label">Menjodohkan (D)</div>
+                    <div class="value"><span id="mj-result">0</span>/25</div>
+                </div>
+                <div class="score-item">
+                    <div class="label">Waktu Pengerjaan</div>
+                    <div class="value" id="time-result">00:00</div>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid var(--border-gold); padding-top: 1.5rem; margin-top: 1.5rem; text-align: center;">
+                <div style="color: var(--gold-light); font-size: 1rem; margin-bottom: 0.5rem;">Skor Akhir Total</div>
+                <div class="score-display"><span id="total-result">0</span> <span style="font-size: 1.5rem; color: var(--text-secondary);">/ 160</span></div>
+                <div id="grade-display" style="font-size: 1.3rem; color: var(--gold-light); margin-top: 0.5rem;"></div>
+            </div>
+
+            <div class="weakness-analysis" id="bab-analysis" style="display: none;">
+                <h4><i class="fas fa-chart-bar"></i> Analisis Per BAB</h4>
+                <ul class="weakness-list" id="bab-list"></ul>
+            </div>
+
+            <div class="weakness-analysis" id="weakness-analysis" style="display: none;">
+                <h4><i class="fas fa-exclamation-triangle"></i> Analisis Kelemahan & Saran Perbaikan</h4>
+                <ul class="weakness-list" id="weakness-list"></ul>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary" onclick="calculateScore()">
+                <i class="fas fa-check-circle"></i> KIRIM JAWABAN & LIHAT HASIL
+            </button>
+            <button type="button" class="btn btn-outline" onclick="downloadPDF()">
+                <i class="fas fa-file-pdf"></i> UNDUH PDF LENGKAP
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="downloadTXT()">
+                <i class="fas fa-file-alt"></i> UNDUH SKOR (TXT)
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="resetQuiz()">
+                <i class="fas fa-redo"></i> MULAI ULANG
+            </button>
+            <button type="button" class="btn btn-outline" onclick="sendEmail()">
+                <i class="fas fa-envelope"></i> KIRIM KE EMAIL GURU
+            </button>
+        </div>
+
+        <footer class="footer">
+            <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 1rem; color: var(--gold-primary);">
+                UAS Fikih Kelas 8 Semester 1
+            </p>
+            <p>&copy; 2026 Ermawati, S.H.I. — MTsN 10 Agam. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p style="margin-top: 0.5rem;">
+                Email: <a href="mailto:erma34779@gmail.com" style="color: var(--gold-primary);">erma34779@gmail.com</a>
+            </p>
+            <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="16.html" class="nav-link" style="font-size: 0.85rem;"><i class="fas fa-arrow-left"></i> Pertemuan 16</a>
+                <a href="index.html" class="nav-link" style="font-size: 0.85rem;"><i class="fas fa-book"></i> Daftar Isi</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // =========================================
+        // KUNCI JAWABAN LENGKAP
+        // =========================================
+        
+        // PILIHAN GANDA (1-30) - 2 poin/soal
+        const pgAnswers = {
+            q1: { correct: 'B', topic: 'BAB 1 - Sujud Sahwi', bab: 'bab1',
+                explanation: '"Sahwi" (السَّهْوُ) secara bahasa berarti LUPA.' },
+            q2: { correct: 'B', topic: 'BAB 1 - Sujud Sahwi', bab: 'bab1',
+                explanation: 'Bacaan sujud sahwi: "Subhana man laa yanaamu wa laa yashu" (Maha Suci Dzat yang tidak tidur dan tidak lupa).' },
+            q3: { correct: 'C', topic: 'BAB 1 - Sujud Syukur', bab: 'bab1',
+                explanation: 'Sujud syukur dilakukan ketika mendapat NIKMAT BESAR atau terhindar dari MUSIBAH.' },
+            q4: { correct: 'C', topic: 'BAB 1 - Sujud Tilawah', bab: 'bab1',
+                explanation: 'Menurut Madzhab Syafi\'i, jumlah ayat sajdah ada 15 AYAT.' },
+            q5: { correct: 'C', topic: 'BAB 1 - Sujud Tilawah', bab: 'bab1',
+                explanation: 'Sujud TILAWAH hanya dilakukan 1 KALI sujud. Sahwi & Syukur masing-masing 2 kali.' },
+            q6: { correct: 'B', topic: 'BAB 1 - Sujud Sahwi', bab: 'bab1',
+                explanation: 'Lupa tasyahud awal = KEKURANGAN, maka sujud sahwi dilakukan SEBELUM salam.' },
+            q7: { correct: 'B', topic: 'BAB 1 - Sujud Sahwi', bab: 'bab1',
+                explanation: 'Menurut Madzhab Syafi\'i, sujud sahwi hukumnya SUNNAH MUAKKAD (sangat dianjurkan).' },
+            q8: { correct: 'B', topic: 'BAB 1 - Sujud Tilawah', bab: 'bab1',
+                explanation: 'Hikmah sujud tilawah: menanamkan PENGAGUNGAN terhadap firman Allah.' },
+            q9: { correct: 'B', topic: 'BAB 2 - Zakat', bab: 'bab2',
+                explanation: 'Zakat adalah RUKUN ISLAM KE-3 setelah Syahadat (1) dan Shalat (2).' },
+            q10: { correct: 'C', topic: 'BAB 2 - Mustahik', bab: 'bab2',
+                explanation: 'MUALLAF adalah orang yang baru masuk Islam atau diharapkan masuk Islam.' },
+            q11: { correct: 'B', topic: 'BAB 2 - Zakat Fitrah', bab: 'bab2',
+                explanation: 'Takaran zakat fitrah = 2,5 KG (1 sha\' = 4 mud) makanan pokok per jiwa.' },
+            q12: { correct: 'A', topic: 'BAB 2 - Zakat Emas', bab: 'bab2',
+                explanation: 'Nisab emas = 20 DINAR = 85 GRAM emas murni.' },
+            q13: { correct: 'C', topic: 'BAB 2 - Zakat Pertanian', bab: 'bab2',
+                explanation: 'Nisab zakat pertanian = 5 wasq = ± 653 KG GABAH.' },
+            q14: { correct: 'D', topic: 'BAB 2 - Zakat Rikaz', bab: 'bab2',
+                explanation: 'Kadar zakat rikaz = 20% (1/5) dari total harta temuan.' },
+            q15: { correct: 'B', topic: 'BAB 2 - Perhitungan', bab: 'bab2',
+                explanation: 'Harta bersih = 200 + 100 + 50 − 30 = Rp320 juta. Zakat = 2,5% × 320jt = Rp8.000.000.' },
+            q16: { correct: 'B', topic: 'BAB 2 - Hikmah Zakat', bab: 'bab2',
+                explanation: 'Hikmah zakat: MENYUCIKAN harta dan mewujudkan KEADILAN SOSIAL.' },
+            q17: { correct: 'A', topic: 'BAB 3 - Dalil Puasa', bab: 'bab3',
+                explanation: 'QS. Al-Baqarah: 183 adalah DALIL UTAMA kewajiban puasa Ramadhan.' },
+            q18: { correct: 'C', topic: 'BAB 3 - Syarat Sah', bab: 'bab3',
+                explanation: '"KAYA RAYA" BUKAN syarat sah puasa. Syarat sah: Islam, Tamyiz, Suci haid/nifas, Niat, di waktu yang boleh.' },
+            q19: { correct: 'C', topic: 'BAB 3 - Pembatal', bab: 'bab3',
+                explanation: 'Makan & minum dengan SENGAJA membatalkan puasa. Mimpi basah, muntah tidak sengaja, & lupa TIDAK membatalkan.' },
+            q20: { correct: 'B', topic: 'BAB 3 - Puasa Arafah', bab: 'bab3',
+                explanation: 'Puasa Arafah menghapus dosa 2 TAHUN (tahun lalu & tahun yang akan datang).' },
+            q21: { correct: 'B', topic: 'BAB 3 - Puasa Haram', bab: 'bab3',
+                explanation: 'Puasa Idul Fitri & Idul Adha hukumnya HARAM. Hari Tasyriq juga haram.' },
+            q22: { correct: 'B', topic: 'BAB 3 - Fidyah', bab: 'bab3',
+                explanation: 'Orang tua renta yang tidak mampu & tidak ada harapan sembuh = FIDYAH (beri makan 1 miskin/hari).' },
+            q23: { correct: 'B', topic: 'BAB 3 - Puasa Daud', bab: 'bab3',
+                explanation: 'Puasa DAUD dilakukan SELANG-SELING: sehari puasa, sehari tidak.' },
+            q24: { correct: 'B', topic: 'BAB 3 - Niat Puasa', bab: 'bab3',
+                explanation: 'Niat puasa Ramadhan WAJIB di MALAM HARI sebelum terbit fajar (subuh).' },
+            q25: { correct: 'B', topic: 'BAB 4 - Pengertian I\'tikaf', bab: 'bab4',
+                explanation: '"I\'tikaf" (الاعْتِكَافُ) secara bahasa berarti BERDIAM DIRI / MENETAP.' },
+            q26: { correct: 'B', topic: 'BAB 4 - Hukum I\'tikaf', bab: 'bab4',
+                explanation: 'I\'tikaf 10 hari terakhir Ramadhan hukumnya SUNNAH MUAKKAD (sangat dianjurkan).' },
+            q27: { correct: 'C', topic: 'BAB 4 - Syarat I\'tikaf', bab: 'bab4',
+                explanation: '"KAYA RAYA" BUKAN syarat i\'tikaf. Syarat: Islam, Berakal, Suci hadas besar, Di masjid, Niat, Izin suami (wanita).' },
+            q28: { correct: 'C', topic: 'BAB 4 - Pembatal I\'tikaf', bab: 'bab4',
+                explanation: 'KELUAR MASJID TANPA UZUR SYAR\'I membatalkan i\'tikaf. Tidur, makan, membaca Al-Qur\'an TIDAK membatalkan.' },
+            q29: { correct: 'C', topic: 'BAB 4 - Lailatul Qadr', bab: 'bab4',
+                explanation: 'Lailatul Qadr terjadi pada 10 MALAM TERAKHIR RAMADHAN, terutama malam GANJIL (21, 23, 25, 27, 29).' },
+            q30: { correct: 'A', topic: 'BAB 4 - Doa Lailatul Qadr', bab: 'bab4',
+                explanation: 'Doa Lailatul Qadr: "Allāhumma innaka \'afuwwun tuhibbul-\'afwa fa\'fu \'annī" (HR. Tirmidzi).' }
+        };
+
+        // PG KOMPLEKS (31-40) - 5 poin/soal
+        const pgkAnswers = {
+            q31: { correct: ['A', 'B', 'C'], topic: 'BAB 1 - Sujud Sahwi', bab: 'bab1',
+                explanation: 'Penyebab sujud sahwi: LUPA menambah rakaat (A), LUPA tasyahud awal (B), RAGU jumlah rakaat (C). D = tilawah, E = syukur.' },
+            q32: { correct: ['A', 'B', 'D', 'E'], topic: 'BAB 1 - Perbandingan Sujud', bab: 'bab1',
+                explanation: 'Perbedaan 3 sujud: sebab (A), jumlah (B), bacaan (D), posisi (E). C SALAH karena ketiganya BERBEDA.' },
+            q33: { correct: ['A', 'B', 'C', 'D'], topic: 'BAB 2 - Mustahik', bab: 'bab2',
+                explanation: '8 Mustahik: Fakir, Miskin, Amil, Muallaf, Riqab, Gharim, Fisabilillah, Ibnu Sabil. E (Pedagang kaya) BUKAN mustahik.' },
+            q34: { correct: ['A', 'B', 'C', 'E'], topic: 'BAB 2 - Perbedaan Zakat', bab: 'bab2',
+                explanation: 'Perbedaan: Fitrah untuk JIWA (A), 2,5 kg (B), tidak perlu nisab (C), menjelang Idul Fitri (E). D SALAH.' },
+            q35: { correct: ['A', 'B', 'C', 'E'], topic: 'BAB 2 - Hikmah Zakat', bab: 'bab2',
+                explanation: 'Hikmah zakat: Menyucikan (A), Keadilan sosial (B), Ukhuwah (C), Menggerakkan ekonomi (E). D SALAH.' },
+            q36: { correct: ['A', 'B', 'C', 'D'], topic: 'BAB 3 - Syarat Sah Puasa', bab: 'bab3',
+                explanation: 'Syarat sah puasa: ISLAM (A), TAMYIZ (B), SUCI dari haid/nifas (C), NIAT (D). E (Kaya raya) BUKAN syarat.' },
+            q37: { correct: ['A', 'B', 'C', 'E'], topic: 'BAB 3 - Puasa Sunnah', bab: 'bab3',
+                explanation: 'Puasa sunnah: Senin-Kamis (A), Ayyamul Bidh (B), Daud (C), Arafah (E). D SALAH karena Ramadhan adalah puasa WAJIB.' },
+            q38: { correct: ['A', 'B', 'C', 'E'], topic: 'BAB 3 - Puasa Haram', bab: 'bab3',
+                explanation: 'Puasa HARAM: Idul Fitri (A), Idul Adha (B), Hari Tasyriq (C), Wishal (E). D SALAH karena Senin-Kamis SUNNAH.' },
+            q39: { correct: ['A', 'B', 'C', 'E'], topic: 'BAB 4 - Hikmah I\'tikaf', bab: 'bab4',
+                explanation: 'Hikmah i\'tikaf: Cinta Allah (A), Membersihkan jiwa (B), Lailatul Qadr (C), Memakmurkan masjid (E). D SALAH.' },
+            q40: { correct: ['A', 'B', 'C', 'E'], topic: 'BAB 4 - Adab I\'tikaf', bab: 'bab4',
+                explanation: 'Adab i\'tikaf: Dzikir/doa (A), Tadarus (B), Qiyamul lail (C), Taubat (E). D SALAH karena gadget HARUS DIKURANGI.' }
+        };
+
+        // BENAR/SALAH (41-45) - 5 poin/soal
+        const bsAnswers = {
+            q41: { correct: 'SALAH', topic: 'BAB 1 - Sujud Tilawah', bab: 'bab1',
+                explanation: 'SALAH! Sujud tilawah hanya dilakukan 1 KALI sujud, bukan 2 kali.' },
+            q42: { correct: 'BENAR', topic: 'BAB 2 - Zakat Rikaz', bab: 'bab2',
+                explanation: 'BENAR! Kadar zakat rikaz = 20% (1/5) dari total harta temuan.' },
+            q43: { correct: 'BENAR', topic: 'BAB 3 - Puasa Arafah', bab: 'bab3',
+                explanation: 'BENAR! Puasa Arafah menghapus dosa 2 TAHUN (tahun lalu & tahun yang akan datang).' },
+            q44: { correct: 'BENAR', topic: 'BAB 3 - Puasa Syawal', bab: 'bab3',
+                explanation: 'BENAR! Puasa Ramadhan + 6 hari Syawal = seperti puasa SETAHUN PENUH.' },
+            q45: { correct: 'BENAR', topic: 'BAB 4 - Lailatul Qadr', bab: 'bab4',
+                explanation: 'BENAR! Lailatul Qadr LEBIH BAIK DARI 1000 BULAN (QS. Al-Qadr: 3).' }
+        };
+
+        // MENJODOHKAN (46-50) - 5 poin/soal
+        const mjAnswers = {
+            q46: 'A', // Sujud Sahwi → Lupa dalam shalat
+            q47: 'B', // Sujud Syukur → Mendapat nikmat / terhindar musibah
+            q48: 'D', // Zakat Fitrah → 2,5 kg beras per jiwa
+            q49: 'C', // Sujud Tilawah → Membaca ayat sajdah
+            q50: 'E'  // Lailatul Qadr → Lebih baik dari 1000 bulan
+        };
+
+        // =========================================
+        // TIMER & PROGRESS
+        // =========================================
+        let timerInterval;
+        let seconds = 0;
+        let quizStarted = false;
+
+        function startTimer() {
+            if (quizStarted) return;
+            quizStarted = true;
+            timerInterval = setInterval(() => {
+                seconds++;
+                const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+                const secs = (seconds % 60).toString().padStart(2, '0');
+                document.getElementById('timer').innerText = `${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function stopTimer() { clearInterval(timerInterval); }
+
+        function getFormattedTime() {
+            const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const secs = (seconds % 60).toString().padStart(2, '0');
+            return `${mins}:${secs}`;
+        }
+
+        function updateProgress() {
+            let answered = 0;
+            // PG (1-30)
+            for (let i = 1; i <= 30; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+            }
+            // PG Kompleks (31-40)
+            for (let i = 31; i <= 40; i++) {
+                if (document.querySelectorAll(`input[name="q${i}"]:checked`).length > 0) answered++;
+            }
+            // B/S (41-45)
+            for (let i = 41; i <= 45; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+            }
+            // Menjodohkan (46-50)
+            for (let i = 46; i <= 50; i++) {
+                if (document.querySelector(`select[name="q${i}"]`).value !== '') answered++;
+            }
+            
+            const total = 50;
+            const percent = (answered / total) * 100;
+            document.getElementById('progress-fill').style.width = percent + '%';
+            document.getElementById('progress-text').innerText = `${answered}/${total} soal dijawab`;
+        }
+
+        document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => {
+            el.addEventListener('change', () => { startTimer(); updateProgress(); });
+        });
+        document.querySelectorAll('.match-select').forEach(el => {
+            el.addEventListener('change', () => { startTimer(); updateProgress(); });
+        });
+
+        document.querySelectorAll('.bs-label input').forEach(el => {
+            el.addEventListener('change', function() {
+                const group = this.closest('.bs-group');
+                group.querySelectorAll('.bs-label').forEach(l => l.classList.remove('selected'));
+                this.closest('.bs-label').classList.add('selected');
+            });
+        });
+
+        // =========================================
+        // HITUNG SKOR
+        // =========================================
+        function calculateScore() {
+            const nama = document.getElementById('nama').value.trim();
+            const nis = document.getElementById('nis').value.trim();
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !nis || !kelas) {
+                alert('Mohon lengkapi data identitas (Nama, NIS, Kelas) terlebih dahulu!');
+                return;
+            }
+
+            stopTimer();
+
+            let pgScore = 0, pgkScore = 0, bsScore = 0, mjScore = 0;
+            const babStats = { bab1: { correct: 0, total: 0 }, bab2: { correct: 0, total: 0 }, bab3: { correct: 0, total: 0 }, bab4: { correct: 0, total: 0 } };
+            const topicStats = {};
+
+            // ===== PILIHAN GANDA (1-30) - 2 poin/soal =====
+            for (let i = 1; i <= 30; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const data = pgAnswers[`q${i}`];
+                const card = document.querySelectorAll('.question-card')[i - 1];
+                const feedback = document.getElementById(`fb-q${i}`);
+                
+                babStats[data.bab].total++;
+                if (!topicStats[data.topic]) topicStats[data.topic] = { correct: 0, total: 0 };
+                topicStats[data.topic].total++;
+
+                if (selected && selected.value === data.correct) {
+                    pgScore += 2;
+                    babStats[data.bab].correct++;
+                    topicStats[data.topic].correct++;
+                    card.classList.add('correct');
+                    feedback.className = 'feedback show correct';
+                    feedback.innerHTML = `<strong><i class="fas fa-check-circle"></i> BENAR! (+2 poin)</strong> ${data.explanation}`;
+                } else {
+                    card.classList.add('incorrect');
+                    feedback.className = 'feedback show incorrect';
+                    const userAnswer = selected ? selected.value : 'Tidak dijawab';
+                    feedback.innerHTML = `<strong><i class="fas fa-times-circle"></i> KURANG TEPAT</strong> Jawaban Anda: ${userAnswer} | Jawaban Benar: <strong>${data.correct}</strong><br><em style="margin-top: 0.5rem; display: block;">${data.explanation}</em>`;
+                }
+            }
+
+            // ===== PG KOMPLEKS (31-40) - 5 poin/soal =====
+            for (let i = 31; i <= 40; i++) {
+                const selected = document.querySelectorAll(`input[name="q${i}"]:checked`);
+                const data = pgkAnswers[`q${i}`];
+                const card = document.querySelectorAll('.question-card')[i - 1];
+                const feedback = document.getElementById(`fb-q${i}`);
+                
+                babStats[data.bab].total++;
+                if (!topicStats[data.topic]) topicStats[data.topic] = { correct: 0, total: 0 };
+                topicStats[data.topic].total++;
+
+                const userAnswers = Array.from(selected).map(s => s.value).sort();
+                const correctAnswers = [...data.correct].sort();
+                
+                const correctSelected = userAnswers.filter(a => correctAnswers.includes(a));
+                const wrongSelected = userAnswers.filter(a => !correctAnswers.includes(a));
+                
+                let score = 0;
+                let status = 'incorrect';
+                
+                if (userAnswers.length === correctAnswers.length && 
+                    JSON.stringify(userAnswers) === JSON.stringify(correctAnswers)) {
+                    score = 5;
+                    status = 'correct';
+                    babStats[data.bab].correct++;
+                    topicStats[data.topic].correct++;
+                } else if (correctSelected.length > 0 && wrongSelected.length === 0) {
+                    score = (correctSelected.length / correctAnswers.length) * 5;
+                    status = 'partial';
+                }
+
+                pgkScore += score;
+
+                if (status === 'correct') {
+                    card.classList.add('correct');
+                    feedback.className = 'feedback show correct';
+                    feedback.innerHTML = `<strong><i class="fas fa-check-circle"></i> BENAR SEMUA! (+5 poin)</strong> ${data.explanation}`;
+                } else if (status === 'partial') {
+                    card.classList.add('partial');
+                    feedback.className = 'feedback show partial';
+                    feedback.innerHTML = `<strong><i class="fas fa-exclamation-circle"></i> BENAR SEBAGIAN (+${score.toFixed(1)} poin)</strong> Jawaban benar: <strong>${data.correct.join(', ')}</strong><br><em style="margin-top: 0.5rem; display: block;">${data.explanation}</em>`;
+                } else {
+                    card.classList.add('incorrect');
+                    feedback.className = 'feedback show incorrect';
+                    feedback.innerHTML = `<strong><i class="fas fa-times-circle"></i> KURANG TEPAT</strong> Jawaban Benar: <strong>${data.correct.join(', ')}</strong><br><em style="margin-top: 0.5rem; display: block;">${data.explanation}</em>`;
+                }
+            }
+
+            // ===== BENAR/SALAH (41-45) - 5 poin/soal =====
+            for (let i = 41; i <= 45; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const data = bsAnswers[`q${i}`];
+                const card = document.querySelectorAll('.question-card')[i - 1];
+                const feedback = document.getElementById(`fb-q${i}`);
+                
+                babStats[data.bab].total++;
+                if (!topicStats[data.topic]) topicStats[data.topic] = { correct: 0, total: 0 };
+                topicStats[data.topic].total++;
+
+                if (selected && selected.value === data.correct) {
+                    bsScore += 5;
+                    babStats[data.bab].correct++;
+                    topicStats[data.topic].correct++;
+                    card.classList.add('correct');
+                    feedback.className = 'feedback show correct';
+                    feedback.innerHTML = `<strong><i class="fas fa-check-circle"></i> BENAR! (+5 poin)</strong> ${data.explanation}`;
+                } else {
+                    card.classList.add('incorrect');
+                    feedback.className = 'feedback show incorrect';
+                    const userAnswer = selected ? selected.value : 'Tidak dijawab';
+                    feedback.innerHTML = `<strong><i class="fas fa-times-circle"></i> KURANG TEPAT</strong> Jawaban Anda: ${userAnswer} | Jawaban Benar: <strong>${data.correct}</strong><br><em style="margin-top: 0.5rem; display: block;">${data.explanation}</em>`;
+                }
+            }
+
+            // ===== MENJODOHKAN (46-50) - 5 poin/soal =====
+            let mjCorrectCount = 0;
+            const mjDetails = [];
+            const mjLabels = {
+                q46: 'Sujud Sahwi', q47: 'Sujud Syukur', q48: 'Zakat Fitrah',
+                q49: 'Sujud Tilawah', q50: 'Lailatul Qadr'
+            };
+
+            for (let i = 46; i <= 50; i++) {
+                const selected = document.querySelector(`select[name="q${i}"]`).value;
+                const correct = mjAnswers[`q${i}`];
+                babStats.bab1.total++; // distribusi merata
+                if (selected === correct) {
+                    mjCorrectCount++;
+                    mjDetails.push(`✓ ${mjLabels[`q${i}`]} → ${selected} (BENAR)`);
+                } else {
+                    mjDetails.push(`✗ ${mjLabels[`q${i}`]} → ${selected || '-'} (Seharusnya: ${correct})`);
+                }
+            }
+
+            mjScore = mjCorrectCount * 5;
+            babStats.bab1.correct += mjCorrectCount; // distribusi merata
+
+            const mjFeedback = document.getElementById('fb-mj');
+            const mjCard = document.querySelector('.question-card:last-of-type');
+            if (mjCorrectCount === 5) {
+                mjCard.classList.add('correct');
+                mjFeedback.className = 'feedback show correct';
+            } else if (mjCorrectCount > 0) {
+                mjCard.classList.add('partial');
+                mjFeedback.className = 'feedback show partial';
+            } else {
+                mjCard.classList.add('incorrect');
+                mjFeedback.className = 'feedback show incorrect';
+            }
+            mjFeedback.innerHTML = `<strong>Hasil Menjodohkan: ${mjCorrectCount}/5 benar (+${mjScore} poin)</strong><br>${mjDetails.join('<br>')}`;
+
+            // ===== TOTAL SKOR =====
+            const totalScore = pgScore + pgkScore + bsScore + mjScore;
+            
+            document.getElementById('pg-result').innerText = pgScore;
+            document.getElementById('pgk-result').innerText = pgkScore.toFixed(1);
+            document.getElementById('bs-result').innerText = bsScore;
+            document.getElementById('mj-result').innerText = mjScore;
+            document.getElementById('total-result').innerText = totalScore.toFixed(1);
+            document.getElementById('time-result').innerText = getFormattedTime();
+            
+            let grade = '';
+            const percentage = (totalScore / 160) * 100;
+            if (percentage >= 90) grade = '🏆 MUMTAZ (Istimewa)';
+            else if (percentage >= 80) grade = '🌟 JAYYID JIDDAN (Sangat Baik)';
+            else if (percentage >= 70) grade = '✨ JAYYID (Baik)';
+            else if (percentage >= 60) grade = '📖 MAQBUL (Cukup)';
+            else grade = '💪 PERLU BIMBINGAN LANJUT';
+            document.getElementById('grade-display').innerText = grade;
+
+            // ===== ANALISIS PER BAB =====
+            const babList = document.getElementById('bab-list');
+            const babNames = { bab1: 'BAB 1 - Sujud', bab2: 'BAB 2 - Zakat', bab3: 'BAB 3 - Puasa', bab4: 'BAB 4 - I\'tikaf' };
+            let babHtml = '';
+            for (const [bab, stats] of Object.entries(babStats)) {
+                if (stats.total > 0) {
+                    const percent = (stats.correct / stats.total) * 100;
+                    let status = '';
+                    if (percent >= 80) status = '🌟 Sangat Baik';
+                    else if (percent >= 60) status = '✨ Baik';
+                    else if (percent >= 40) status = '📖 Perlu Peningkatan';
+                    else status = '💪 Perlu Belajar Ulang';
+                    babHtml += `<li><strong>${babNames[bab]}</strong>: ${stats.correct}/${stats.total} benar (${percent.toFixed(0)}%) — ${status}</li>`;
+                }
+            }
+            babList.innerHTML = babHtml;
+            document.getElementById('bab-analysis').style.display = 'block';
+
+            // ===== ANALISIS KELEMAHAN =====
+            const weaknesses = [];
+            for (const [topic, stats] of Object.entries(topicStats)) {
+                if (stats.correct < stats.total) {
+                    const percent = (stats.correct / stats.total) * 100;
+                    let suggestion = '';
+                    if (topic.includes('BAB 1')) suggestion = 'Pelajari kembali materi Sujud (Sahwi, Syukur, Tilawah) dari Pertemuan 1-4.';
+                    else if (topic.includes('BAB 2')) suggestion = 'Pelajari kembali materi Zakat (Fitrah, Mal, Pertanian, Ternak, Rikaz) dari Pertemuan 5-9.';
+                    else if (topic.includes('BAB 3')) suggestion = 'Pelajari kembali materi Puasa (Ketentuan, Wajib, Sunnah, Haram/Makruh) dari Pertemuan 11-14.';
+                    else if (topic.includes('BAB 4')) suggestion = 'Pelajari kembali materi I\'tikaf (Ketentuan, Hikmah, Adab) dari Pertemuan 15-16.';
+                    weaknesses.push({ topic, percent, suggestion });
+                }
+            }
+
+            const weaknessBox = document.getElementById('weakness-analysis');
+            const weaknessList = document.getElementById('weakness-list');
+            if (weaknesses.length > 0) {
+                weaknessList.innerHTML = weaknesses.map(w => 
+                    `<li><strong>📌 ${w.topic}</strong> (${w.percent.toFixed(0)}% benar)<br>${w.suggestion}</li>`
+                ).join('');
+                weaknessBox.style.display = 'block';
+            } else {
+                weaknessBox.style.display = 'none';
+            }
+
+            const resultBox = document.getElementById('hasil-uji');
+            resultBox.classList.add('active');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // =========================================
+        // DOWNLOAD PDF
+        // =========================================
+        function downloadPDF() {
+            const element = document.getElementById('main-content');
+            const nama = document.getElementById('nama').value || 'Siswa';
+            
+            const opt = {
+                margin: [0.5, 0.5, 0.5, 0.5],
+                filename: `UAS_Fikih_Kelas8_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, backgroundColor: '#022c22' },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            const btn = event.target.closest('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses PDF...';
+            btn.disabled = true;
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }).catch(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                alert('Gagal membuat PDF. Silakan coba lagi.');
+            });
+        }
+
+        // =========================================
+        // DOWNLOAD TXT
+        // =========================================
+        function downloadTXT() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value || '-';
+            const tanggal = document.getElementById('tanggal').value || new Date().toLocaleDateString('id-ID');
+            const pg = document.getElementById('pg-result').innerText;
+            const pgk = document.getElementById('pgk-result').innerText;
+            const bs = document.getElementById('bs-result').innerText;
+            const mj = document.getElementById('mj-result').innerText;
+            const total = document.getElementById('total-result').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText;
+
+            const text = `╔══════════════════════════════════════════════════════════╗
+║      UJIAN AKHIR SEMESTER (UAS) - FIKIH KELAS 8         ║
+║              MTsN 10 AGAM - SEMESTER 1                  ║
+╚══════════════════════════════════════════════════════════╝
+
+Mata Pelajaran : Fikih Kelas 8 Semester 1
+Ujian          : UJIAN AKHIR SEMESTER (UAS)
+Materi         : BAB 1 (Sujud), BAB 2 (Zakat), BAB 3 (Puasa), BAB 4 (I'tikaf)
+Sekolah        : MTsN 10 Agam
+Guru Pengampu  : Ermawati, S.H.I. (erma34779@gmail.com)
+Tanggal Ujian  : ${tanggal}
+Waktu Pengerjaan: ${waktu}
+
+═══════════════════════════════════════════════════════════
+                    IDENTITAS SISWA
+═══════════════════════════════════════════════════════════
+Nama Lengkap : ${nama}
+NIS          : ${nis}
+Kelas        : ${kelas}
+
+═══════════════════════════════════════════════════════════
+                  RINGKASAN NILAI
+═══════════════════════════════════════════════════════════
+Bagian A - Pilihan Ganda (30 soal × 2)    : ${pg} / 60
+Bagian B - PG Kompleks (10 soal × 5)      : ${pgk} / 50
+Bagian C - Benar/Salah (5 soal × 5)       : ${bs} / 25
+Bagian D - Menjodohkan (5 soal × 5)       : ${mj} / 25
+───────────────────────────────────────────────────────────
+NILAI AKHIR TOTAL                         : ${total} / 160
+PREDIKAT                                  : ${grade}
+
+═══════════════════════════════════════════════════════════
+STRUKTUR SOAL
+═══════════════════════════════════════════════════════════
+• Pilihan Ganda (30 soal × 2 poin = 60 poin)
+• Pilihan Ganda Kompleks (10 soal × 5 poin = 50 poin)
+• Benar/Salah (5 soal × 5 poin = 25 poin)
+• Menjodohkan (5 soal × 5 poin = 25 poin)
+• TOTAL: 50 soal = 160 poin
+
+═══════════════════════════════════════════════════════════
+DISTRIBUSI MATERI
+═══════════════════════════════════════════════════════════
+• BAB 1 - Sujud (Pertemuan 1-4)
+• BAB 2 - Zakat (Pertemuan 5-9)
+• BAB 3 - Puasa (Pertemuan 11-14)
+• BAB 4 - I'tikaf (Pertemuan 15-16)
+
+═══════════════════════════════════════════════════════════
+CATATAN PENTING
+═══════════════════════════════════════════════════════════
+• UAS ini menguji materi BAB 1-4 secara menyeluruh.
+• Penilaian akhir yang sebenarnya berada di wewenang guru 
+  pengampu (Ibu Ermawati, S.H.I.).
+• Selamat melanjutkan ke semester 2!
+
+═══════════════════════════════════════════════════════════
+Dokumen ini digenerate otomatis pada: ${new Date().toLocaleString('id-ID')}
+© 2026 Ermawati, S.H.I. - MTsN 10 Agam
+═══════════════════════════════════════════════════════════`;
+            
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `UAS_Fikih_Kelas8_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // =========================================
+        // RESET QUIZ
+        // =========================================
+        function resetQuiz() {
+            if(!confirm('Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang?')) return;
+            
+            document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => {
+                el.checked = false;
+            });
+            document.querySelectorAll('.match-select').forEach(el => el.selectedIndex = 0);
+            document.querySelectorAll('.bs-label').forEach(el => el.classList.remove('selected'));
+            document.getElementById('nama').value = '';
+            document.getElementById('nis').value = '';
+            document.getElementById('kelas').value = '';
+            document.getElementById('tanggal').value = '';
+            
+            ['pg-result', 'bs-result', 'mj-result'].forEach(id => {
+                document.getElementById(id).innerText = '0';
+            });
+            document.getElementById('pgk-result').innerText = '0';
+            document.getElementById('total-result').innerText = '0';
+            document.getElementById('time-result').innerText = '00:00';
+            document.getElementById('grade-display').innerText = '';
+            document.getElementById('hasil-uji').classList.remove('active');
+            document.getElementById('weakness-analysis').style.display = 'none';
+            document.getElementById('bab-analysis').style.display = 'none';
+            
+            document.querySelectorAll('.question-card').forEach(el => {
+                el.classList.remove('correct', 'incorrect', 'partial');
+            });
+            document.querySelectorAll('.feedback').forEach(el => {
+                el.className = 'feedback';
+                el.innerHTML = '';
+            });
+            
+            stopTimer();
+            seconds = 0;
+            quizStarted = false;
+            document.getElementById('timer').innerText = '00:00';
+            document.getElementById('progress-fill').style.width = '0%';
+            document.getElementById('progress-text').innerText = '0/50 soal dijawab';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // =========================================
+        // KIRIM EMAIL
+        // =========================================
+        function sendEmail() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const kelas = document.getElementById('kelas').value || '-';
+            const total = document.getElementById('total-result').innerText;
+            const pg = document.getElementById('pg-result').innerText;
+            const pgk = document.getElementById('pgk-result').innerText;
+            const bs = document.getElementById('bs-result').innerText;
+            const mj = document.getElementById('mj-result').innerText;
+            const waktu = getFormattedTime();
+            const grade = document.getElementById('grade-display').innerText || 'Belum dinilai';
+            
+            if (total === '0' || !document.getElementById('hasil-uji').classList.contains('active')) {
+                alert('Silakan kerjakan UAS dan klik "KIRIM JAWABAN & LIHAT HASIL" terlebih dahulu sebelum mengirim email.');
+                return;
+            }
+
+            const subject = encodeURIComponent(`Hasil UAS Fikih Kelas 8 - ${nama} - ${kelas}`);
+            const body = encodeURIComponent(`Assalamu'alaikum Wr. Wb.
+
+Yth. Ibu Ermawati, S.H.I.,
+
+Berikut adalah hasil Ujian Akhir Semester (UAS) Fikih Kelas 8 saya:
+
+═══════════════════════════════════
+IDENTITAS SISWA
+═══════════════════════════════════
+Nama  : ${nama}
+NIS   : ${nis}
+Kelas : ${kelas}
+
+═══════════════════════════════════
+HASIL PENILAIAN
+═══════════════════════════════════
+Bagian A - Pilihan Ganda       : ${pg}/60
+Bagian B - PG Kompleks         : ${pgk}/50
+Bagian C - Benar/Salah         : ${bs}/25
+Bagian D - Menjodohkan         : ${mj}/25
+Waktu Pengerjaan               : ${waktu}
+───────────────────────────────────
+NILAI AKHIR TOTAL              : ${total}/160
+PREDIKAT                       : ${grade}
+
+Mohon bimbingan dan koreksinya.
+
+Jazakumullahu Khairan Katsiran.
+Wassalamu'alaikum Wr. Wb.
+
+───────────────────────────────────
+Dikirim otomatis dari Sistem UAS Fikih Kelas 8
+© 2026 MTsN 10 Agam`);
+            
+            window.location.href = `mailto:erma34779@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        document.getElementById('tanggal').valueAsDate = new Date();
+    </script>
+</body>
+</html>
